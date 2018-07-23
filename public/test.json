@@ -1,0 +1,252 @@
+{"frames": {
+
+"/scenes/1Mockup-1/1/device/_00000.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00001.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00002.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00003.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00004.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00005.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00006.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00007.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00008.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00009.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00010.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00011.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00012.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00013.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00014.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00015.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00016.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00017.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00018.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00019.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00020.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00021.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00022.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00023.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00024.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00025.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00026.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00027.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00028.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+},
+"/scenes/1Mockup-1/1/device/_00029.png":
+{
+    "frame": {"x":0,"y":0,"w":800,"h":600},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":400,"h":300},
+    "sourceSize": {"w":800,"h":600}
+}},
+"meta": {
+    "app": "http://www.texturepacker.com",
+    "version": "1.0",
+    "image": "test.png",
+    "format": "RGBA8888",
+    "size": {"w":800,"h":600},
+    "scale": "1",
+    "smartupdate": "$TexturePacker:SmartUpdate:2f213a6b451f9f5719773418dfe80ae8$"
+}
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Looped</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M5,0 L5,2 L1.496094,2 C0.675781,2 0,2.675781 0,3.496094 L0,10.503906 C0,11.324219 0.675781,12 1.496094,12 L4,12 L4,11 L1.496094,11 C1.214844,11 1,10.785156 1,10.503906 L1,3.496094 C1,3.214844 1.214844,3 1.496094,3 L5,3 L5,5 L7.5,2.5 L5,0 Z M9,2 L9,3 L11.503906,3 C11.785156,3 12,3.214844 12,3.496094 L12,10.503906 C12,10.785156 11.785156,11 11.503906,11 L8,11 L8,9 L5.5,11.5 L8,14 L8,12 L11.503906,12 C12.324219,12 13,11.324219 13,10.503906 L13,3.496094 C13,2.675781 12.324219,2 11.503906,2 L9,2 Z" id="Looped" fill="#767676" fill-rule="nonzero"></path>
+    </g>
+</svg>

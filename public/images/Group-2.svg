@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="30px" viewBox="0 0 39 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Editor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Render-Copy-5" transform="translate(-609.000000, -567.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-5" transform="translate(525.000000, 567.000000)">
+                <g id="Group-2" transform="translate(84.000000, 0.000000)">
+                    <path d="M3,0 C1.3425,0 0,1.3425 0,3 L0,27 C0,28.6575 1.3425,30 3,30 L9,30 C10.6575,30 12,28.6575 12,27 L12,3 C12,1.3425 10.6575,0 9,0 L3,0 Z M15,0 L15,3 L36,3 L36,18 L15,18 L15,24 L36,24 C37.6575,24 39,22.6575 39,21 L39,3 C39,1.3425 37.6575,0 36,0 L15,0 Z M22.5,19.5 C23.328,19.5 24,20.172 24,21 C24,21.828 23.328,22.5 22.5,22.5 C21.672,22.5 21,21.828 21,21 C21,20.172 21.672,19.5 22.5,19.5 Z M6,21 C6.828,21 7.5,21.672 7.5,22.5 C7.5,23.328 6.828,24 6,24 C5.172,24 4.5,23.328 4.5,22.5 C4.5,21.672 5.172,21 6,21 Z M15,27 L15,30 L30,30 C30.8284271,30 31.5,29.3284271 31.5,28.5 C31.5,27.6715729 30.8284271,27 30,27 L15,27 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

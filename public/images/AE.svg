@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Splash" transform="translate(-150.000000, -758.000000)" fill="#1B1B1B" fill-rule="nonzero">
+            <g id="Group-5" transform="translate(145.000000, 698.000000)">
+                <path d="M6.5,60 C5.6774686,60 5,60.6774686 5,61.5 L5,62.5 L5,70.5 C5,71.322531 5.6774686,72 6.5,72 L17.5,72 C18.322531,72 19,71.322531 19,70.5 L19,63.5 C19,62.6774686 18.322531,62 17.5,62 L10.7988281,62 L10.1445312,60.7871094 C9.8835911,60.3027204 9.3751898,60 8.8242188,60 L6.5,60 Z M6.5,61 L8.8242188,61 C9.0092477,61 9.176612,61.1001077 9.2636719,61.2617188 L9.6621094,62 L6,62 L6,61.5 C6,61.2185314 6.2185314,61 6.5,61 Z M6,63 L17.5,63 C17.781469,63 18,63.2185314 18,63.5 L18,70.5 C18,70.781469 17.781469,71 17.5,71 L6.5,71 C6.2185314,71 6,70.781469 6,70.5 L6,63 Z M12,64 L12,67 L10,67 L12.5,69.5 L15,67 L13,67 L13,64 L12,64 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

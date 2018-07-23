@@ -1,0 +1,56 @@
+var definitions = {
+	data: {
+		blend_modes: [{
+			title: "NORMAL",
+			mode: PIXI.BLEND_MODES.NORMAL
+		}, {
+			title: "ADD",
+			mode: PIXI.BLEND_MODES.ADD
+		}, {
+			title: "MULTIPLY",
+			mode: PIXI.BLEND_MODES.MULTIPLY
+		}, {
+			title: "SCREEN",
+			mode: PIXI.BLEND_MODES.SCREEN
+		}, {
+			title: "OVERLAY",
+			mode: PIXI.BLEND_MODES.OVERLAY
+		}, {
+			title: "DARKEN",
+			mode: PIXI.BLEND_MODES.DARKEN
+		}, {
+			title: "LIGHTEN",
+			mode: PIXI.BLEND_MODES.LIGHTEN
+		}, {
+			title: "COLOR_DODGE",
+			mode: PIXI.BLEND_MODES.COLOR_DODGE
+		}, {
+			title: "COLOR_BURN",
+			mode: PIXI.BLEND_MODES.COLOR_BURN
+		}, {
+			title: "HARD_LIGHT",
+			mode: PIXI.BLEND_MODES.HARD_LIGHT
+		}, {
+			title: "SOFT_LIGHT",
+			mode: PIXI.BLEND_MODES.SOFT_LIGHT
+		}, {
+			title: "DIFFERENCE",
+			mode: PIXI.BLEND_MODES.DIFFERENCE
+		}, {
+			title: "EXCLUSION",
+			mode: PIXI.BLEND_MODES.EXCLUSION
+		}, {
+			title: "HUE",
+			mode: PIXI.BLEND_MODES.HUE
+		}, {
+			title: "SATURATION",
+			mode: PIXI.BLEND_MODES.SATURATION
+		}, {
+			title: "COLOR",
+			mode: PIXI.BLEND_MODES.COLOR
+		}, {
+			title: "LUMINOSITY",
+			mode: PIXI.BLEND_MODES.LUMINOSITY
+		}],
+	}
+}

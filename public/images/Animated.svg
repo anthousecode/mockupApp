@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Animated</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M1.5,0 C0.675781,0 0,0.675781 0,1.5 L0,10.5 C0,11.324219 0.675781,12 1.5,12 L10.5,12 C11.324219,12 12,11.324219 12,10.5 L12,1.5 C12,0.675781 11.324219,0 10.5,0 L1.5,0 Z M1.5,1 L10.5,1 C10.78125,1 11,1.21875 11,1.5 L11,10.5 C11,10.78125 10.78125,11 10.5,11 L1.5,11 C1.21875,11 1,10.78125 1,10.5 L1,1.5 C1,1.21875 1.21875,1 1.5,1 Z M3,2 L3,10 L10,5.992188 L3,2 Z M4,3.71875 L7.984375,5.992188 L4,8.277344 L4,3.71875 Z" id="Animated" fill="#767676" fill-rule="nonzero"></path>
+    </g>
+</svg>
