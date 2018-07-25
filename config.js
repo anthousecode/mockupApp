@@ -1,12 +1,14 @@
 /* Конфигурация приложения */
 
+const path = '/home/user/Projects/mockupApp'
+
 var config = {
 
-    port : 80,   
-    path : '/var/www/public/scenes/',
-    storage : '/var/www/public/store/',
-    public_path : '/var/www/public',
-    path_export: '/var/www/public/export/',
+    port : 8080,
+    path : `${path}/public/scenes/`,
+    storage : `${path}/public/store/`,
+    public_path : `${path}/public`,
+    path_export: `${path}/public/export/`,
     relpath : '/scenes/',
 
 };

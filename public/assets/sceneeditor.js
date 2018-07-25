@@ -42,7 +42,7 @@ const SceneEditor = {
 	data: function() {
 		return {
 			app: '',
-			showtooltips: true, // вкл\выкл показа подсказок 
+			showtooltips: false, // вкл\выкл показа подсказок
 			tooltips: [true, false, false, false],
 		}
 	},
