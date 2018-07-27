@@ -16,6 +16,7 @@ function decodeBase64Image(dataString) {
 	}
 	response.type = matches[1];
 	response.data = new Buffer(matches[2], 'base64');
+    console.log(matches[2]);
 	return response;
 }
 /* ЗАПРОС НА ЭКСПОРТ ДАННЫХ */
@@ -28,6 +29,7 @@ router.all('/', function(req, res, next) {
 		// Генерируем случайный ID
 		var seed = crypto.randomBytes(20);
 		var uniqueSHA1String = crypto.createHash('sha1').update(seed).digest('hex');
+
 		console.log('HASH: ' + path + uniqueSHA1String);
 		// Создаем папку для экспорта данных
 		fs.mkdirSync(path + uniqueSHA1String);

@@ -560,13 +560,13 @@ new PIXI.filters.PixelateFilter(vm.effectpixilate)
 
 								if(vm.fpswarning === false){
 								vm.fpswarning = true;
-        vm.$notify({
+        /*vm.$notify({
    	      duration: 3000,
          	customClass : 'notification-box',
           message: 'Low perfomance detected, we are strongly recommended dont use any software in background!',
           position: 'bottom-right',
         	onClose: function(){vm.fpswarning = false;}
-        });
+        });*/
 
    
 }

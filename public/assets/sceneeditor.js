@@ -42,7 +42,7 @@ const SceneEditor = {
 	data: function() {
 		return {
 			app: '',
-			showtooltips: true, // вкл\выкл показа подсказок 
+			showtooltips: false, // вкл\выкл показа подсказок
 			tooltips: [true, false, false, false],
 		}
 	},
@@ -50,6 +50,7 @@ const SceneEditor = {
 		var _this = this;
 		axios.post('/api/scenes/' + this.$route.params.id).then(function(response) {
 			store.commit('loaddata', response.data);
+			console.log(response.data);
 			// Генерация события - загрузка данных
 			_this.$emit('eventname', true)
 		}).catch(function(error) {

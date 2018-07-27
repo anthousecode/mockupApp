@@ -2,11 +2,11 @@
 
 var config = {
 
-    port : 80,   
-    path : '/var/www/public/scenes/',
-    storage : '/var/www/public/store/',
-    public_path : '/var/www/public',
-    path_export: '/var/www/public/export/',
+    port : 8080,
+    path : '/home/alex-pc/MockUp/mockupApp/public/scenes/',
+    storage : '/home/alex-pc/MockUp/mockupApp/public/store/',
+    public_path : '/home/alex-pc/MockUp/mockupApp/public',
+    path_export: '/home/alex-pc/MockUp/mockupApp/public/export/',
     relpath : '/scenes/',
 
 };
