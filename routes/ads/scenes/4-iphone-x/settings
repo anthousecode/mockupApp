@@ -1,0 +1,10 @@
+{
+"name":"4 iPhone X Appearing",
+"loop":false,
+"background-type" : "linear",
+"background-color" : ["0","9B9BA0","0.5","CACACA","1","CACACA"],
+"background-orientation" : [0, 2160, 4096, 0],
+"width":4096,
+"height":2160,
+"blendmode" : "SCREEN"
+}

@@ -39,8 +39,9 @@ router.all('/', function(req, res, next) {
 	// Сохранение изображений 
 	else {
 		if (req.body.unique_id && req.body.count) {
+			console.log(req.body.frame)
 			img_converted = decodeBase64Image(req.body.chunk);
-			console.log(path + req.body.unique_id + '/' + req.body.frame + '.png');
+			//console.log(path + req.body.unique_id + '/' + req.body.frame + '.png');
 			fs.writeFile(path + req.body.unique_id + '/' + req.body.frame + '.png', img_converted.data, function(err) {
 				if (err) {
 					return console.log(err);
