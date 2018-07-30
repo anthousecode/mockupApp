@@ -17,6 +17,7 @@ var apiExportVideoRouter   = require('./routes/exportvideo');
 var apiScenesPngTransform  = require('./routes/pngtransform');
 var apiDownloadExportVideo = require('./routes/downloader');
 var apiGetGradientsList    = require('./routes/getgradientlist');
+var mergeImages = require('./routes/mergeImages/mergeImages')
 
 
 var app = express();
@@ -65,6 +66,7 @@ app.use('/api/scenes', apiScenesIdRouter);
 app.use('/api/exportvideo', apiExportVideoRouter);
 app.use('/scenes', apiScenesPngTransform);
 app.use('/export', apiDownloadExportVideo);
+app.use('/api/mergeimages', mergeImages);
 
 
 

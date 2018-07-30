@@ -9,6 +9,8 @@ var config = {
     storage : `${path}/public/store/`,
     public_path : `${path}/public`,
     path_export: `${path}/public/export/`,
+    back_export: `${path}/routes/mergeImages/session/`,
+    back_scenes: `${path}/routes/ads/scenes/`,
     relpath : '/scenes/',
 
 };
