@@ -79,7 +79,7 @@ var vm = new Vue({
 			origratio: '',
 			origratiolock: true,
 			origsize: [4096, 2160],
-			exportsize: [1280, 720],
+			exportsize: [800, 450],
 			size: [0, 0],
 			fileList: [{
 				name: 'test.jpeg',
@@ -781,7 +781,8 @@ function generateThumbnail(i) {
 
 				//Выставляем исходное разрешение для рендера	
 				//vm.renderScene(1920, 1080);
-				vm.renderScene(1280, 720);
+				//vm.renderScene(1280, 720);
+                vm.renderScene(800, 450);
 				//vm.renderScene(2048, 1080);
 			},
 			/********************* Show rubber band ***********************/
