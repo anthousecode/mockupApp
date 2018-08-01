@@ -9,7 +9,7 @@ var exportTools = {
 		exportUid: 0,
 		renderframe: '',
 		subrenderer_client: '',
-		initWidth: '1280',
+		initWidth: '800',
 		exportmode: 'SD',
 		vselectmode: false,
 		renderStart: false,
@@ -185,7 +185,7 @@ var exportTools = {
 					texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, deform);
 					subrenderer_client.renderer.render(texture_cover_distort, renderTextureCover);
 					subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask);
-					var mockup_layer = new PIXI.Sprite(porthiRes[layersindex]);
+					//var mockup_layer = new PIXI.Sprite(porthiRes[layersindex]);
 					var blink_layer = new PIXI.Sprite(porthiRes[layersindex]);
 					var cover_layer = new PIXI.Sprite(renderTextureCover)
 					var mask_layer = new PIXI.Sprite(renderTextureMask)
@@ -195,7 +195,7 @@ var exportTools = {
 					cover_container.addChild(blink_layer);
 					cover_container.addChild(mask_layer);
 					cover_container.mask = mask_layer;
-					subrenderer_client.stage.addChild(mockup_layer);
+					//subrenderer_client.stage.addChild(mockup_layer);
 					subrenderer_client.stage.addChild(cover_container);
 				}
 				console.log('Sent frame #', index);
@@ -250,8 +250,11 @@ var exportTools = {
 				} else {
 						console.log('render video')
 					var dataofframe = subrenderer_client.renderer.extract.base64(renderTexture);
+					// vm.sequence.push(dataofframe);
+					// console.log( 'arrChunk', vm.sequence);
 					axios.post('/api/exportvideo', {
 						unique_id: uid,
+						scene_id: vm.scenestore.s_id,
 						frame: index,
 						count: vm.scenestore.s_frames,
 						chunk: dataofframe,
@@ -262,7 +265,10 @@ var exportTools = {
 						height: portHeight
 					}).then(function(r) {
 						subrenderer_client.destroy(true)
-						console.log(r.data);
+						console.log(index);
+						console.log(portWidth, portHeight);
+
+
 						index++;
 						vm.pecentrender = Math.round(index / (vm.scenestore.s_frames) * 100);
 						vm.endDate = new Date();

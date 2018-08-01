@@ -34,7 +34,7 @@ var renderCore = {
 		texturePreload: false,
 		frameRate: 30,
 		CurrentVideoFrame: 0,
-	
+
 		mockup_object: [],
 		mockup_object_blink: [],
 		basepreloading: 0,
@@ -214,9 +214,9 @@ var renderCore = {
 			// Just for test
 			var index;
 			var layersindex;
-		
+
 			var coversequence=[];
-			// Init data	
+			// Init data
 			for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 				vm.loResTextureMockup[layersindex] = [];
 				vm.coversequence[layersindex] = [];
@@ -252,6 +252,7 @@ var renderCore = {
 					//	vm.cover_object.texture.baseTexture.source.currentTime = 0;
 					vm.mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png', true, PIXI.SCALE_MODES.LINEAR));
 				}
+                
 				for (index = 0; index < vm.scenestore.s_frames; index++) {
 					for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 						vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.size[0] + '/' + vm.size[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
@@ -280,6 +281,7 @@ var renderCore = {
 					vm.mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
 					vm.cover_object[layersindex] = vm.coversequence[layersindex][0];
 				}
+
 				var smart = new PIXI.Graphics()
 				var centerRect = []
 				var squaresRect = []
@@ -347,7 +349,7 @@ var renderCore = {
 						.on('click', function() {
 								vm.openUploader(this.indexoflayer);
 
-						
+
 						})
 						.on('mouseover', function(event) {
 							vm.isMockupOver = this.indexoflayer;
@@ -390,7 +392,7 @@ var renderCore = {
 											.on('mouseup', onDragStop)
 											.on('mousemove', onDragMove)
 											*/
-					//	vm.isHiResTextureNext = false;	
+					//	vm.isHiResTextureNext = false;
 					//	vm.texturePreload = new PIXI.Texture.fromImage(vm.scenestore.s_uri + layer + '/device/4096/2160/' + vm.scenestore.s_layers[0].l_data[vm.hiResLastId++].i_img_uri)
 					//	vm.mockup_object.texture.on('update', function() {
 					//		vm.FLAG_MOCKUP_UPDATED = true;
@@ -429,7 +431,7 @@ new PIXI.filters.PixelateFilter(vm.effectpixilate)
 
 	];
 						if (vm.currentframe >= vm.loadedframe) {
-						
+
 							vm.currentframe = vm.loadedframe - vm.prebufferframes;
 							if (vm.currentframe < 0) vm.currentframe = 0;
 							for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
@@ -465,7 +467,7 @@ new PIXI.filters.PixelateFilter(vm.effectpixilate)
 						for (i = 1; i < vm.scenestore.s_mcount; i++) {
 							if (vm.currentframe > _.max([vm.mockup_object[i].currentFrame, vm.mockup_object_blink[i].currentFrame]))
 								vm.currentframe = _.max([vm.mockup_object[i].currentFrame, vm.mockup_object_blink[i].currentFrame])
-							
+
 						}
 						//vm.cover_object.texture.baseTexture.source.currentTime = vm.currentframe / vm.frameRate
 						//	vm.cover_object.texture.baseTexture.source.currentTime = vm.currentframe;
@@ -483,7 +485,7 @@ new PIXI.filters.PixelateFilter(vm.effectpixilate)
 							}
 						}
 						//Finalise stop state in non-loop mode
-			
+
 						if (vm.repeat_btn_state === false && vm.currentframe >= vm.scenestore.s_frames-1) {
 						for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 									vm.currentframe = 0;
@@ -541,19 +543,19 @@ new PIXI.filters.PixelateFilter(vm.effectpixilate)
 						}
 					})
 					// end render event
-				
 
-       
+
+
 				iop.minFPS = 1;
 				setInterval(function() {
 						if (vm.playing) {
 
 							vm.fps = Math.round(iop.FPS)
-			
+
 							if (vm.fps > 30) vm.fps = 30;
 							vm.fpscolor = 'success';
 							//vm.fpswarning = false;
-						
+
 							if (vm.fps < 30) vm.fpscolor = 'warning';
 							if (vm.fps < 15) {
 								vm.fpscolor = 'danger';
@@ -568,7 +570,7 @@ new PIXI.filters.PixelateFilter(vm.effectpixilate)
         	onClose: function(){vm.fpswarning = false;}
         });*/
 
-   
+
 }
 								//vm.fpswarning = true;
 							}

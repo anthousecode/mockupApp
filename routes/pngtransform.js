@@ -8,8 +8,8 @@ var im = require('imagemagick');
 router.all('/:sceneid/:scenelayer/device/:width/:height/:picture', function (req, res, next) {
 	var sceneid = req.params.sceneid;
 	var scenelayer = req.params.scenelayer;
-	var width = req.params.width;
-	var height = req.params.height;
+	var width = 800;
+	var height = 450;
 	var filename = req.params.picture;
 
 	var pathtoorig = config.path + sceneid + '/' + scenelayer + '/device/' + filename;
@@ -24,7 +24,8 @@ router.all('/:sceneid/:scenelayer/device/:width/:height/:picture', function (req
 			width: width,
 			height: height,
 			format: 'png',
-		}, function (err, stdout, stderr) {
+		},
+		 function (err, stdout, stderr) {
 			if (err) throw err;
 			if (!fs.existsSync(config.path + sceneid + '/' + scenelayer + '/device/' + width))
 				fs.mkdirSync(config.path + sceneid + '/' + scenelayer + '/device/' + width); // Создаем папку если нет

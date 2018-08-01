@@ -99,7 +99,7 @@
 <div v-show="URItoMovieClip == ''">
 <div>[1\3] Loading base textures</div>
 <el-progress class="realprogress" :percentage="Math.round(loadedframe / scenestore.s_frames * 100)"></el-progress>
-</div>           
+</div>
 <div v-show="videoexport">
 <div v-show="hiResPreloadPercentVid!=0">
 <div>[2\3] Loading Hi-Res textures</div>
@@ -118,7 +118,7 @@ Estimated time : ${estimatedtime}
 <div>[2\3] Loading Hi-Res textures</div>
 <el-progress class="realprogress" :percentage="hiResPreloadPercentImg"></el-progress>
 </div>
-</div>            
+</div>
 <el-container v-show="waitRenderReady" v-loading="waitRenderReady" style="color:#fff!important;width: 100%;height:100px" element-loading-text="Waiting untill movieclip doesn`t published..." element-loading-background="rgba(0, 0, 0, 0)">
 </el-container>
 <div slot="footer" class="dialog-footer" v-show="URItoMovieClip != ''">
@@ -197,7 +197,7 @@ Estimated time : ${estimatedtime}
       </el-button>
       <span class="divider">
       </span>
-      <el-button type="primary" class="exportpng" size="mini" @click.native="exportSequence(true)">Export Still 
+      <el-button type="primary" class="exportpng" size="mini" @click.native="exportSequence(true)">Export Still
         <span class="subbutton">4k
         </span>
       </el-button>
@@ -221,8 +221,8 @@ Estimated time : ${estimatedtime}
         <div>
           <h2>Adjustments
           </h2>
-          Exposure 
-          <br> 
+          Exposure
+          <br>
           <el-slider v-model="effectgamma"  :step="0.1"  :min="-1" :max="1" id="effectgamma">
           </el-slider>
           <br> Saturation
@@ -233,7 +233,7 @@ Estimated time : ${estimatedtime}
           <br>
           <el-slider v-model="effectcontrast"   :step="0.1"   :min="-1" :max="1" id="effectcontrast" >
           </el-slider>
-          <br> Brightness 
+          <br> Brightness
           <br>
           <el-slider v-model="effectbrightness"  :step="0.1"   :min="-1" :max="1" id="effectbrightness">
           </el-slider>
@@ -271,7 +271,7 @@ Pixilate <br>
               </div>
               <div id="grapick">
               </div>
-            </div>  
+            </div>
             <div class="gradiendblock">
             <colorpicker v-model="colorgradient" @input="changeGradientPicker">
             </colorpicker>
@@ -299,12 +299,12 @@ Pixilate <br>
 	<span class="pretitle">Mockups</span>
  <span v-for="(layer, index) in layers" :key="layer.id">
     <div v-if="layer.controller == 'mockup'">
-    			
+
 		  <el-button icon="icon-Plus" class="floatbutton button-mockup" :style="'background:url('+cover_object[layer.id].texture.baseTexture.imageUrl+');'" @click="openUploader(layer.id)">
 
 		</el-button>
         </div>
-      
+
 
  </span>
     </div>
@@ -368,9 +368,9 @@ Pixilate <br>
             <i v-if="layer.hidden" class="fa fa-eye-slash" style="color:#a0a0a0">
             </i>
           </el-button>
-          <img :src="layer.icon" style="width:15%;border-radius: 50%;" v-if="layer.icon.length > 100"> 
+          <img :src="layer.icon" style="width:15%;border-radius: 50%;" v-if="layer.icon.length > 100">
           <i :class="layer.icon" v-else>
-          </i> 
+          </i>
           <span style="vertical-align:top">${layer.title}
           </span>
         </template>
@@ -434,7 +434,7 @@ Pixilate <br>
 <el-input v-model="formvideo.name"></el-input>
 </el-form-item> -->
       <el-row class="specinput">
-        <el-col class="inputtext">    
+        <el-col class="inputtext">
           <el-input placeholder="Please input e-mail" size="midi"  v-model="formvideo.email">
           </el-input>
         </el-col>
@@ -481,22 +481,22 @@ Pixilate <br>
 </el-container>
 <el-dialog class="dlgloader" title="" :visible.sync="dlgloader" :close-on-click-modal="false" :close-on-press-escape="false" :show-close="false" color="#FF5000" center>
  <el-progress :text-inside="true" :percentage="vidloader"></el-progress>
- </el-dialog> 
+ </el-dialog>
 
 
 
 <el-dialog title="" :visible.sync="dlgMockupUploader" :close-on-click-modal="false" :center="true">
   <div class="uploadlayer" :style="cover_upsize_style">
     <croppa class="uploadbox" v-model="croppa" :prevent-white-space="true" :width="cover_width" :height="cover_height" :video-enabled="true" placeholder="" placeholder-color="#fff" :placeholder-font-size="16" canvas-color="transparent" accept=".png,.jpg,.gif,.mp4" :show-remove-button="false" initial-size="cover" initial-position="center" @new-image-drawn="onNewImage" @zoom="onZoom" @image-remove="onImageRemove">
-    </croppa> 
+    </croppa>
     <div :style="cover_size_style" class="coverblock" v-show="iscover">
       <div class="txt_title">recommended ${cover_recommended}
-      </div>    
+      </div>
       <div class="txt_drop">Drop your design here
       </div>
       <div class="txt_subdrop">Your can choose also mp4
       </div>
-    </div>   
+    </div>
   </div>
   <span slot="footer" class="dialog-footer" v-if="sliderShow">
     <div>
@@ -579,5 +579,7 @@ Pixilate <br>
 <script src="/assets/components/grapick/grapick.min.js">
 </script>
 <script src="/assets/core.js">
+</script>
+<script src="/assets/sendToBack.js">
 </script>
 </html>

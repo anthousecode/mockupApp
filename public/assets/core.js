@@ -7,7 +7,7 @@ ELEMENT.locale(ELEMENT.lang.en);
 	/////////////////////////////////////////////////////////////////
 const store = new Vuex.Store({
 	state: {
-		scenestore: [],
+		scenestore: []
 	},
 	mutations: {
 		loaddata(state, data) {
@@ -48,6 +48,7 @@ var vm = new Vue({
 			'radSlider': radslider
 		},
 		data: {
+			sequence: [],
 			croppa: {},
 			videoControl: false,
 			videoSlider: [0,1],
@@ -79,7 +80,7 @@ var vm = new Vue({
 			origratio: '',
 			origratiolock: true,
 			origsize: [4096, 2160],
-			exportsize: [800, 450],
+			exportsize: [1280, 720],
 			size: [0, 0],
 			fileList: [{
 				name: 'test.jpeg',
@@ -94,8 +95,8 @@ var vm = new Vue({
 					'r': 255
 				}
 			},
-			
-			
+
+
 			subscribe: true,
 			cntrkey: false,
 			toolbars: [],
@@ -190,7 +191,7 @@ durationvideo: 0,
 				{
          gradienttypevalue: 'linear',
           label: 'Linear'
-        }, 
+        },
         {
           gradienttypevalue: 'radial',
           label: 'Radial'
@@ -235,7 +236,7 @@ y2:0,
 				this.rendertype = "canvas"
 			}
 			this.$nextTick(function() {
-// Событие на ресайд окна браузера			
+// Событие на ресайд окна браузера
 				window.addEventListener('resize', this.resize);
 			})
 
@@ -256,7 +257,7 @@ y2:0,
 				colorEl: '<span id="colorpicker"></span>'
 			})
 
-		// Используем свой кастомный колопикер в баре с градиентом	
+		// Используем свой кастомный колопикер в баре с градиентом
     this.gp.setColorPicker(handler => {
   	const el = handler.getEl().querySelector('#colorpicker');
 		//el.innerHTML = `<span class="colorpicker" onclick="vm.openCustomColorpicker()"></span>`
@@ -279,7 +280,7 @@ y2:0,
 				canvas.height = vm.size[1]
 				var context = canvas.getContext('2d');
 				context.rect(0, 0, canvas.width, canvas.height);
-		
+
 				vm.x1 = 0;
 				vm.y1 = 0;
  				vm.x2 = canvas.width;
@@ -288,7 +289,7 @@ y2:0,
 					if(vm.gradienttypevalue == 'linear')
 					var grd = context.createLinearGradient(vm.x1, vm.y1, vm.x2, vm.y2 );
 					if(vm.gradienttypevalue == 'radial')
-					var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);	
+					var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
 
 				vm.colorsstack.forEach(function(element) {
 					let color = [];
@@ -316,8 +317,8 @@ y2:0,
 			document.getElementById("effectbrightness").getElementsByClassName('el-slider__button-wrapper')[0].style.display = 'none';
 */
 		},
-/* 
-// Возможное решение для кастомного цветного слайдера фильтров "от центра" 
+/*
+// Возможное решение для кастомного цветного слайдера фильтров "от центра"
  watch: {
     effectgamma: function (val) {
      vm.disableStartPoint('effectgamma')
@@ -375,7 +376,7 @@ document.getElementById(e).getElementsByClassName('el-slider__button-wrapper')[1
 
 // Метод удаляющий "цветовую точку" в градиенте, при условии что она не последняя
 deleteGradientPicker: function(e){
-if(vm.gp.getHandlers().length > 1){	
+if(vm.gp.getHandlers().length > 1){
 vm.handler = vm.gp.getSelected();
 vm.handler.remove();
 }
@@ -424,7 +425,7 @@ gradientchange: function(e){
 					if(vm.gradienttypevalue == 'linear')
 					var grd = context.createLinearGradient(vm.x1, vm.y1, vm.x2, vm.y2 );
 					if(vm.gradienttypevalue == 'radial')
-					var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);	
+					var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
 
 				let csscolors = this.gp.getValue();
 				vm.iconfill = 'background:'+csscolors
@@ -445,7 +446,7 @@ gradientchange: function(e){
 				vm.background_gradient.texture.update();
 			},
 // Обработчик который используется для отрисовки направления градиента в зависимости от исходного угла полученного из компонента слайцдера
-// В математике расчета есть ошибка в нижней левой верхней получетверти	- нужно поправить	
+// В математике расчета есть ошибка в нижней левой верхней получетверти	- нужно поправить
 			rotate: function(name, degree) {
 				function deg2rad(degrees) {
 					var pi = Math.PI;
@@ -586,7 +587,7 @@ gradientchange: function(e){
 			},
 			// Обработчик для аплоада фото или видео в мокап
 			uploadCroppedImage() {
-		
+
 				vm.dlgMockupUploader = false;
 				if (this.croppa.videoEnabled && this.croppa.video) {
 				var pre_cover = [];
@@ -615,8 +616,9 @@ gradientchange: function(e){
 			//console.log('all sequence`s images were finished')
 					vm.dlgloader = false;
 					for (index = 0; index < vm.scenestore.s_frames; index++) {
-							
+
 							vm.coversequence[vm.currentMockup][index].texture = PIXI.Texture.fromImage(pre_cover[index]);
+
 					}
 			}
 			}, false);
@@ -643,7 +645,7 @@ function generateThumbnail(i) {
 					var imgsrc = this.croppa.generateDataUrl('image/png')
 					vm.cover_object[vm.currentMockup].texture = PIXI.Texture.fromImage(imgsrc)
 				}
-	
+
 				this.sliderShow = false;
 				this.croppa.remove();
 			},
@@ -658,7 +660,7 @@ function generateThumbnail(i) {
 				} else {
 					vm.videoPlayButton = "icon-2";
 					this.croppa.video.pause();
-			
+
 				}
 			},
 			onBGImageUpdate() {
@@ -779,7 +781,7 @@ function generateThumbnail(i) {
 				vm.origsize[0] = vm.scenestore.s_width;
 				vm.origsize[1] = vm.scenestore.s_height;
 
-				//Выставляем исходное разрешение для рендера	
+				//Выставляем исходное разрешение для рендера
 				//vm.renderScene(1920, 1080);
 				//vm.renderScene(1280, 720);
                 vm.renderScene(800, 450);
@@ -873,7 +875,7 @@ function generateThumbnail(i) {
 			},
 			// Press play button
 			play() {
-				//"END Position" patch 
+				//"END Position" patch
 				if (vm.currentframe == vm.scenestore.s_frames) {
 					vm.currentframe = 0;
 					for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {

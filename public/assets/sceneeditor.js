@@ -62,6 +62,7 @@ const SceneEditor = {
 			this.getWindowWidth()
 			this.getWindowHeight();
 		})
+		console.log(vm.coversequence);
 	},
 	methods: {
 		// Переключалка между подсказками
