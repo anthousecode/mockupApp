@@ -13,11 +13,11 @@ var bodyParser = require('body-parser');
 var indexRouter		   = require('./routes/index');
 var apiScenesListRouter	   = require('./routes/sceneslist');
 var apiScenesIdRouter 	   = require('./routes/scenesid');
-var apiExportVideoRouter   = require('./routes/exportvideo');
+var apiExportVideoRouter   = require('./routes/exportVideo/exportvideo');
 var apiScenesPngTransform  = require('./routes/pngtransform');
 var apiDownloadExportVideo = require('./routes/downloader');
 var apiGetGradientsList    = require('./routes/getgradientlist');
-var mergeImages = require('./routes/mergeImages/mergeImages')
+var exportVideo = require('./routes/exportVideo/index')
 
 
 var app = express();
@@ -66,7 +66,7 @@ app.use('/api/scenes', apiScenesIdRouter);
 app.use('/api/exportvideo', apiExportVideoRouter);
 app.use('/scenes', apiScenesPngTransform);
 app.use('/export', apiDownloadExportVideo);
-app.use('/api/mergeimages', mergeImages);
+//app.use('/api/mergeimages', exportVideo);
 
 
 
