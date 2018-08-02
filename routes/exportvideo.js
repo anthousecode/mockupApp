@@ -62,7 +62,7 @@ router.all('/', function(req, res, next) {
 "mv "+path+req.body.unique_id+"/out.mp4 "+path+req.body.unique_id+"/"+req.body.filename+".mp4"
 
 Команда на получение маски
-ffmpeg -framerate 30 -i "%d.png" -qmax 2 -vf alphaextract out.mp4
+ffmpeg -framerate 30 -i "%d.png" -qmax 2 -vf alphaextract out.mp4 
 
 Команда на склеивание двух видео вертикально
 ffmpeg -framerate 30 -i "%d.png" -i out.mp4 -qmax 2 -filter_complex vstack stacked.mp4

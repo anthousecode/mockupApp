@@ -1,7 +1,7 @@
 /* Конфигурация приложения */
 
-//const path = '/home/user/Projects/mockupApp'
-const path = '/home/alex-pc/MockUp/mockupApp/'
+const path = '/home/user/Projects/mockupApp'
+//const path = '/home/alex-pc/MockUp/mockupApp/'
 var config = {
 
     port : 8080,
@@ -9,7 +9,7 @@ var config = {
     storage : `${path}/public/store/`,
     public_path : `${path}/public`,
     path_export: `${path}/public/export/`,
-    back_export: `${path}/routes/mergeImages/session/`,
+    back_export: `${path}/routes/exportVideo/sessions/`,
     back_scenes: `${path}/routes/ads/scenes/`,
     relpath : '/scenes/',
 
