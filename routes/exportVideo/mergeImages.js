@@ -1,15 +1,18 @@
-const mergeImages = require('merge-images')
-const fs = require("fs")
+const mergeImages = require('merge-images');
+const fs = require("fs");
+const Canvas = require('canvas');
 
-function mergeImage(...imagesArr) {
-    var resultImage
-    mergeImages(imagesArr)
-        .then(b64 =>
-            resultImage = b64
-        );
-    return resultImage
+const mergeImage = (...imgArr) => {
+    //console.log(imgArr)
+
+    var result = mergeImages(imgArr, {
+        Canvas: Canvas
+    })
+
+    return result
 }
 
-module.exports = mergeImage
+
+module.exports = mergeImage;
 
 
