@@ -6,6 +6,7 @@ var fs = require('fs');
 var express = require('express');
 var router = express.Router();
 var bodyParser = require("body-parser");
+var LZUTF8 = require('lzutf8');
 var img_converted;
 
 function decodeBase64Image(dataString) {
@@ -14,12 +15,13 @@ function decodeBase64Image(dataString) {
 	if (matches.length !== 3) {
 		return new Error('Invalid input string');
 	}
-	console.log(matches);
+	//console.log(matches);
 	response.type = matches[1];
 	response.data = new Buffer(matches[2], 'base64');
-	console.log('=')
+	//console.log('=')
     //console.log(matches[2]);
 	return response;
+
 }
 /* ЗАПРОС НА ЭКСПОРТ ДАННЫХ */
 router.all('/', function(req, res, next) {
@@ -43,8 +45,13 @@ router.all('/', function(req, res, next) {
 	// Сохранение изображений
 	else {
 		if (req.body.unique_id && req.body.count) {
-			console.log(req.body.frame)
-			img_converted = decodeBase64Image(req.body.chunk);
+			console.log(req.body.frame);
+			let	outputArr = Object.values(req.body.chunk);
+			let uint8 = new Uint8Array(outputArr);
+			//console.log(outputArr);
+			let output = LZUTF8.decompress(uint8);
+
+			img_converted = decodeBase64Image(output);
 			//console.log(path + req.body.unique_id + '/' + req.body.frame + '.png');
 			fs.writeFile(path + req.body.unique_id + '/' + req.body.frame + '.png', img_converted.data, function(err) {
 				if (err) {
