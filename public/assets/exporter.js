@@ -68,10 +68,12 @@ var exportTools = {
 			document.getElementById('export-video').style.boxShadow = "inset 0px 0px 0px 0px #e70000"
 			// Вызов метода прекеширования выбранного разрешения в фоне
 			vm.preloadHiRes();
+
 		},
 
 		// Основной метод, отвечающий за рендер одного кадра (механизм сборки повторяет базовый из файло pixi.core.js но для одного кадра)
 		compositeLayer(index, uid, exportpos = false) {
+
 			vm.startDate = new Date();
 			if (vm.cancelMode === true) {
 				return false;
@@ -90,6 +92,7 @@ var exportTools = {
 			document.getElementById('techzone').appendChild(subrenderer_client.view);
 			subrenderer_client.renderer.width = portWidth;
 			subrenderer_client.renderer.height = portHeight;
+
 			var loader = new PIXI.loaders.Loader();
 			if (exportpos === true) {
 				var portWidth = 4096;
@@ -150,10 +153,15 @@ var exportTools = {
 					background_gradient.texture = new PIXI.Texture.fromCanvas(canvas);
 					background_gradient.texture.update();
 				}
-				subrenderer_client.stage.addChild(scene_background);
+				//subrenderer_client.stage.addChild(scene_background);
 				if (vm.renderwebalpha === false) {
-					subrenderer_client.stage.addChild(background_gradient);
+					//subrenderer_client.stage.addChild(background_gradient);
 				}
+
+				var scene_backgroundBase64 = subrenderer_client.renderer.extract.base64(scene_background);
+				var background_gradientBase64 = subrenderer_client.renderer.extract.base64(background_gradient);
+				// vm.sendBackGrad(scene_backgroundBase64, background_gradientBase64);
+
 				//vm.colorsstack = [];
 				for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 					var deform = vm.quad_origin[layersindex][index];
@@ -201,16 +209,16 @@ var exportTools = {
 				console.log('Sent frame #', index);
 				var renderTexture = PIXI.RenderTexture.create(portWidth, portHeight);
 
-/*
+
 				subrenderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
 						gamma: vm.effectgamma + 1,
 						contrast: vm.effectcontrast + 1,
 						saturation: vm.effectsaturation + 1,
 						brightness: vm.effectbrightness + 1,
 					})];
-*/
 
-					/*,
+
+
 
 					new PIXI.filters.OldFilmFilter({
 													sepia: 0,
@@ -223,7 +231,8 @@ var exportTools = {
 													vignettingAlpha: 0,
 													vignettingBlur: 0
 												}, 0.1),
-					new PIXI.filters.PixelateFilter(vm.effectpixilate)*/
+					new PIXI.filters.PixelateFilter(vm.effectpixilate)
+
 
 				subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
 				if (exportpos === true) {
@@ -250,23 +259,45 @@ var exportTools = {
 				} else {
 						console.log('render video')
 					var dataofframe = subrenderer_client.renderer.extract.base64(renderTexture);
-					// vm.sequence.push(dataofframe);
-					// console.log( 'arrChunk', vm.sequence);
-					axios.post('/api/exportvideo', {
-						unique_id: uid,
-						scene_id: vm.scenestore.s_id,
-						frame: index,
-						count: vm.scenestore.s_frames,
-						chunk: dataofframe,
-						filename: vm.formvideo.name,
-						email: vm.formvideo.email,
-						renderalpha: vm.renderwebalpha,
-						width: portWidth,
-						height: portHeight
-					}).then(function(r) {
+					var filt = subrenderer_client.renderer.extract.base64(vm.renderer_client.stage.filters);
+
+					let output = LZUTF8.compress(dataofframe);
+					//console.log('output',output);
+					console.log(filt);
+
+					const sendDataObj = () => {
+
+						let dataObj = {
+							unique_id: uid,
+							scene_id: vm.scenestore.s_id,
+							frame: index,
+							count: vm.scenestore.s_frames,
+							chunk: output,
+							filename: vm.formvideo.name,
+							email: vm.formvideo.email,
+							renderalpha: vm.renderwebalpha,
+							width: portWidth,
+							height: portHeight,
+							scene_background: null,
+							background_gradient:null
+						}
+
+						if(vm.sendBackground) {
+							dataObj.scene_background = scene_backgroundBase64
+							dataObj.background_gradient = background_gradientBase64
+							vm.sendBackground = false
+						}
+
+						return dataObj
+					}
+
+
+					axios.post('/api/exportvideo',
+						sendDataObj()
+				).then(function(r) {
 						subrenderer_client.destroy(true)
 						console.log(index);
-						console.log(portWidth, portHeight);
+						//console.log(dataofframe);
 
 
 						index++;
@@ -369,6 +400,7 @@ var exportTools = {
 		},
 		// метод настраивающий экспорт кадров\или кадра в зависимости от параметра oneFrame
 		exportSequence(oneFrame = false) {
+			vm.sendBackground = true
 			vm.exportcurrentframe = oneFrame;
 			vm.exportFrameStatus = false;
 			vm.vformfile = false

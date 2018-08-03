@@ -183,7 +183,7 @@ var vm = new Vue({
 				class: "star-slider"
 			},
 
-durationvideo: 0,
+			durationvideo: 0,
 			colorsstack: [],
 			renderwebalpha: false,
 			a: 270,
@@ -204,23 +204,24 @@ durationvideo: 0,
 				min: 1,
 				max: 99,
 				height: '19px'
-			}),
-x1: 0,
-y1:0,
-x2:0,
-y2:0,
+				}),
+				x1:0,
+				y1:0,
+				x2:0,
+				y2:0,
         gradientlist: [],
         gradientrender:true,
         isshowcolorgradient:false,
         handler:'',
         colorgradient:{
-				rgba: {
-					'a': 1,
-					'b': 255,
-					'g': 255,
-					'r': 255
-				}
-			},
+					rgba: {
+						'a': 1,
+						'b': 255,
+						'g': 255,
+						'r': 255
+					},
+				},
+			sendBackground: true
 		},
 		computed: {
 			scenestore() {
@@ -384,7 +385,19 @@ var handlerList = vm.gp.getHandlers();
 vm.handler = handlerList[0];
 vm.handler.select()
 },
+// Метод отправляет на бек градиент и бэкграунд сцены
+sendBackGrad(background, gradient){
+	if(vm.sendBackground){
+		axios.post('/api/exportbackground', {
+			background: background,
+			gradient: gradient
+		}).then((r)=>{
+			console.log('background',r.data);
+		})
 
+		vm.sendBackground = false;
+	}
+},
 // Изменение цвета "цветовой точки" в градиенте
 changeGradientPicker: function(e){
 vm.handler = vm.gp.getSelected()
