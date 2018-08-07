@@ -137,7 +137,13 @@ var exportTools = {
 					canvas.height = portHeight
 					var context = canvas.getContext('2d');
 					context.rect(0, 0, canvas.width, canvas.height);
-					var grd = context.createLinearGradient(0, 0, canvas.width, 0);
+					var grd
+
+                    if(vm.gradienttypevalue == 'linear')
+                        grd = context.createLinearGradient(vm.x1, vm.y1, vm.exportsize[0], vm.exportsize[1] );
+                    if(vm.gradienttypevalue == 'radial')
+                        grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
+
 					vm.colorsstack.forEach(function(element) {
 						let color = [];
 						if (element.match(/rgba/)) {
@@ -210,7 +216,7 @@ var exportTools = {
 				var renderTexture = PIXI.RenderTexture.create(portWidth, portHeight);
 
 
-				subrenderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
+/*				subrenderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
 						gamma: vm.effectgamma + 1,
 						contrast: vm.effectcontrast + 1,
 						saturation: vm.effectsaturation + 1,
@@ -231,7 +237,7 @@ var exportTools = {
 													vignettingAlpha: 0,
 													vignettingBlur: 0
 												}, 0.1),
-					new PIXI.filters.PixelateFilter(vm.effectpixilate)
+					new PIXI.filters.PixelateFilter(vm.effectpixilate)*/
 
 
 				subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
@@ -259,11 +265,11 @@ var exportTools = {
 				} else {
 						console.log('render video')
 					var dataofframe = subrenderer_client.renderer.extract.base64(renderTexture);
-					var filt = subrenderer_client.renderer.extract.base64(vm.renderer_client.stage.filters);
+					//var filt = subrenderer_client.renderer.extract.base64(vm.renderer_client.stage.filters);
 
-					let output = LZUTF8.compress(dataofframe);
+					//let output = LZUTF8.compress(dataofframe);
 					//console.log('output',output);
-					console.log(filt);
+					//console.log(filt);
 
 					const sendDataObj = () => {
 
@@ -272,19 +278,27 @@ var exportTools = {
 							scene_id: vm.scenestore.s_id,
 							frame: index,
 							count: vm.scenestore.s_frames,
-							chunk: output,
+							chunk: dataofframe,
 							filename: vm.formvideo.name,
 							email: vm.formvideo.email,
 							renderalpha: vm.renderwebalpha,
 							width: portWidth,
 							height: portHeight,
 							scene_background: null,
-							background_gradient:null
+							background_gradient:null,
+							filters: null
 						}
 
 						if(vm.sendBackground) {
 							dataObj.scene_background = scene_backgroundBase64
 							dataObj.background_gradient = background_gradientBase64
+                            dataObj.filters =  {
+                                	exposure: (vm.effectgamma) * 50,
+                                    contrast: (vm.effectcontrast) * 37,
+                                    saturation: (vm.effectsaturation) * 70,
+                                    brightness: (vm.effectbrightness) * 10,
+                            }
+
 							vm.sendBackground = false
 						}
 

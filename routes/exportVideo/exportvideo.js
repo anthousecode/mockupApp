@@ -5,23 +5,36 @@ var crypto = require('crypto');
 var fs = require('fs');
 var express = require('express');
 var router = express.Router();
-var bodyParser = require("body-parser");
+var Caman = require('caman').Caman;
 
 const decodeBase64Image = require('./decodeBase64Image')
 const mergeImages = require('./mergeImages')
 
-var img_converted;
+
 var result_path
 var sequences_path
+var output_path
+
 var uniqueSHA1String
+var img_converted;
+
+var scene_backgroundBase64
+var background_gradientBase64
+var filters
 
 
 /* ЗАПРОС НА ЭКСПОРТ ДАННЫХ */
 router.all('/', function(req, res, next) {
-    //console.log(req.body)
     // Определение технических параметров
     var path = config.back_export
     let sceneId = req.body.scene_id
+
+    if (req.body.scene_background && req.body.background_gradient) {
+        scene_backgroundBase64 = req.body.scene_background
+        background_gradientBase64 = req.body.background_gradient
+        filters = req.body.filters
+        //console.log(filters)
+    }
 
     // Начало передачи изображений
     if (req.body.stream == 'start') {
@@ -36,7 +49,10 @@ router.all('/', function(req, res, next) {
 
         //создание папки где будут склеянный результат
         result_path = `${path}/${uniqueSHA1String}/result`
+        output_path =`${path}/${uniqueSHA1String}/output`
+
         fs.mkdirSync(result_path)
+        fs.mkdirSync(output_path)
         // Возвращаем уникальный ключ
         res.send({
             'unique_id': uniqueSHA1String
@@ -54,7 +70,7 @@ router.all('/', function(req, res, next) {
             console.log(req.body.frame)
             //img_converted = decodeBase64Image(req.body.chunk);
 
-            let base64String = mergeImages(`${config.back_scenes}${sceneId}/mockups/${frame}.png`, sequence)
+            let base64String = mergeImages(scene_backgroundBase64, background_gradientBase64, `${config.back_scenes}${sceneId}/mockups1280/${frame}.png`, sequence)
 
             base64String
                 .then(b64 =>
@@ -65,6 +81,18 @@ router.all('/', function(req, res, next) {
                         if (err) {
                             return console.log(err);
                         }
+
+                        Caman(b64String.data, function () {
+                            console.log(filters)
+                            this.contrast(filters.contrast)
+                            this.exposure(filters.exposure)
+                            this.saturation(filters.saturation)
+                            this.brightness(filters.brightness);
+                            this.render(function () {
+                                this.save(`${output_path}/${frame}.png`);
+                            });
+                        })
+
                         res.send({
                             'status': 'file_created'
                         });

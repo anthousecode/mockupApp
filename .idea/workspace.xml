@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="" />
+    <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/exporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/exporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/exportVideo/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/sessions/efe54a39fbe03ebb08471d2a568f150d2273d04c/result/9.png" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,32 +38,37 @@
     <session id="1435016127">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.16" value="3" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="js" value="5" />
+          <entry key="js" value="15" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="5" />
+          <entry key="JavaScript" value="15" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="6" />
+          <entry key="js" value="68" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JavaScript" value="68" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -48,15 +76,17 @@
     <session id="141693160">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -64,8 +94,8 @@
           <entry key="babelrc" value="3" />
           <entry key="gitignore" value="2" />
           <entry key="jpg" value="5" />
-          <entry key="js" value="71" />
-          <entry key="json" value="2" />
+          <entry key="js" value="74" />
+          <entry key="json" value="3" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
         </counts>
@@ -73,8 +103,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="5" />
-          <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="71" />
+          <entry key="JSON" value="6" />
+          <entry key="JavaScript" value="74" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -82,13 +112,13 @@
         <counts>
           <entry key="babelrc" value="22" />
           <entry key="gitignore" value="29" />
-          <entry key="js" value="4177" />
+          <entry key="js" value="4776" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="22" />
-          <entry key="JavaScript" value="4177" />
+          <entry key="JavaScript" value="4776" />
           <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
@@ -97,66 +127,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/components/vue-croppa/vue-croppa.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/components/vue-color/vue-color.min.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/components/vue-scrollbar/vue2-scrollbar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            <state relative-caret-position="527">
+              <caret line="85" column="47" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
+        <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+            <state relative-caret-position="476">
+              <caret line="142" column="110" selection-start-line="142" selection-start-column="110" selection-end-line="142" selection-end-column="110" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4941">
+              <caret line="437" column="56" selection-start-line="437" selection-start-column="56" selection-end-line="437" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -186,11 +178,17 @@
       <find>preloadHi</find>
       <find>readdi</find>
       <find>framesC</find>
+      <find>effectgamma</find>
+      <find>Web</find>
+      <find>el-radio-button__in</find>
+      <find>background</find>
+      <find>radia</find>
+      <find>gradient</find>
     </findStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/public</dir>
       <dir>$PROJECT_DIR$/routes</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -211,7 +209,6 @@
         <option value="$PROJECT_DIR$/routes/mergeImages/resizeImg.js" />
         <option value="$PROJECT_DIR$/routes/mergeImages/decodeBase64Image.js" />
         <option value="$PROJECT_DIR$/routes/exportVideo/decodeBase64Image.js" />
-        <option value="$PROJECT_DIR$/public/assets/exporter.js" />
         <option value="$PROJECT_DIR$/routes/exportVideo/mergeImage.js" />
         <option value="$PROJECT_DIR$/routes/exportVideo/imageResize.js" />
         <option value="$PROJECT_DIR$/routes/exportvideo.js" />
@@ -219,10 +216,11 @@
         <option value="$PROJECT_DIR$/routes/pngtransform.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/sceneslist.js" />
-        <option value="$PROJECT_DIR$/routes/exportVideo/index.js" />
         <option value="$PROJECT_DIR$/routes.exportVideo/exportvideo.js" />
-        <option value="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" />
+        <option value="$PROJECT_DIR$/routes/exportVideo/index.js" />
         <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" />
+        <option value="$PROJECT_DIR$/public/assets/exporter.js" />
       </list>
     </option>
   </component>
@@ -234,15 +232,19 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="y" value="-2" />
-    <option name="width" value="1680" />
-    <option name="height" value="1052" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1890" />
+    <option name="y" value="27" />
+    <option name="width" value="1422" />
+    <option name="height" value="444" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -261,13 +263,13 @@
             <path>
               <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="exportVideo" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,17 +325,24 @@
       <workItem from="1533113764671" duration="814000" />
       <workItem from="1533114832966" duration="1997000" />
       <workItem from="1533117890251" duration="10571000" />
+      <workItem from="1533302700217" duration="34000" />
+      <workItem from="1533303554589" duration="598000" />
+      <workItem from="1533535009980" duration="1818000" />
+      <workItem from="1533536874693" duration="60000" />
+      <workItem from="1533537206458" duration="5474000" />
+      <workItem from="1533544623898" duration="17249000" />
+      <workItem from="1533621503872" duration="2748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60734000" />
+    <option name="totallyTimeSpent" value="90131000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-2" width="1680" height="1052" extended-state="6" />
+    <frame x="1747" y="25" width="1613" height="1025" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23958962" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24402516" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -347,31 +356,11 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.36442515" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18324022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.02793296" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -395,29 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/components/vue-scrollbar/vue2-scrollbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/components/vue-color/vue-color.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/components/vue-croppa/vue-croppa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/ads/scenes/readme.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -434,20 +400,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/layer.js" />
     <entry file="file://$PROJECT_DIR$/.babelrc" />
     <entry file="file://$PROJECT_DIR$/routes/exportVideo/resizeImg.js" />
-    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="164" column="38" lean-forward="true" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6196">
-          <caret line="246" lean-forward="true" selection-start-line="246" selection-end-line="246" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/ads/scenes/0TestMockup/preview/_00000.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -464,13 +416,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/npm-debug.log" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/exportVideo/decodeBase64Image.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -506,34 +451,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/mergeImages.js">
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/components/vue-color/vue-color.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/components/vue-scrollbar/vue2-scrollbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="43" />
+        <state relative-caret-position="1156">
+          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/public/assets/components/vue-croppa/vue-croppa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="246" column="24" selection-start-line="246" selection-start-column="24" selection-end-line="246" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -544,17 +485,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportvideo.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportVideo/mergeImages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportVideo/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/radslider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="411" column="42" selection-start-line="411" selection-start-column="42" selection-end-line="411" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4941">
+          <caret line="437" column="56" selection-start-line="437" selection-start-column="56" selection-end-line="437" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+        <state relative-caret-position="527">
+          <caret line="85" column="47" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="142" column="110" selection-start-line="142" selection-start-column="110" selection-end-line="142" selection-end-column="110" />
         </state>
       </provider>
     </entry>
