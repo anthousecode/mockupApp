@@ -1,7 +1,7 @@
 /* Конфигурация приложения */
 
-const path = '/home/user/Projects/mockupApp'
-//const path = '/home/alex-pc/MockUp/mockupApp/'
+//const path = '/home/user/Projects/mockupApp'
+const path = '/home/alex-pc/MockUp/mockupApp/'
 var config = {
 
     port : 8080,
