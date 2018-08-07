@@ -221,7 +221,9 @@ var vm = new Vue({
 						'r': 255
 					},
 				},
-			sendBackground: true
+				sendBackground: true,
+				cover_base64_arr: []
+
 		},
 		computed: {
 			scenestore() {

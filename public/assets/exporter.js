@@ -161,7 +161,7 @@ var exportTools = {
 				var scene_backgroundBase64 = subrenderer_client.renderer.extract.base64(scene_background);
 				var background_gradientBase64 = subrenderer_client.renderer.extract.base64(background_gradient);
 				// vm.sendBackGrad(scene_backgroundBase64, background_gradientBase64);
-
+				vm.cover_base64_arr = [];
 				//vm.colorsstack = [];
 				for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 					var deform = vm.quad_origin[layersindex][index];
@@ -186,6 +186,7 @@ var exportTools = {
 					}
 
 					var texture_cover_distort = new PIXI.projection.Sprite2d(vm.cover_object[layersindex].texture);
+
 					var texture_cover_distort_mask = new PIXI.projection.Sprite2d(vm.mask_object[layersindex].texture);
 					var renderTextureCover = PIXI.RenderTexture.create(portWidth, portHeight);
 					var renderTextureMask = PIXI.RenderTexture.create(portWidth, portHeight);
@@ -195,43 +196,48 @@ var exportTools = {
 					subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask);
 					//var mockup_layer = new PIXI.Sprite(porthiRes[layersindex]);
 					var blink_layer = new PIXI.Sprite(porthiRes[layersindex]);
-					var cover_layer = new PIXI.Sprite(renderTextureCover)
+					var cover_layer = new PIXI.Sprite(renderTextureCover);
 					var mask_layer = new PIXI.Sprite(renderTextureMask)
+
 					blink_layer.blendMode = vm.blend_mode;
 					var cover_container = new PIXI.Container()
 					cover_container.addChild(cover_layer);
 					cover_container.addChild(blink_layer);
 					cover_container.addChild(mask_layer);
 					cover_container.mask = mask_layer;
+					let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
+					vm.cover_base64_arr.push(cover_base64);
+
 					//subrenderer_client.stage.addChild(mockup_layer);
 					subrenderer_client.stage.addChild(cover_container);
 				}
+				console.log(vm.cover_base64_arr);
 				console.log('Sent frame #', index);
 				var renderTexture = PIXI.RenderTexture.create(portWidth, portHeight);
 
 
-				subrenderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
-						gamma: vm.effectgamma + 1,
-						contrast: vm.effectcontrast + 1,
-						saturation: vm.effectsaturation + 1,
-						brightness: vm.effectbrightness + 1,
-					})];
+				// subrenderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
+				// 		gamma: vm.effectgamma + 1,
+				// 		contrast: vm.effectcontrast + 1,
+				// 		saturation: vm.effectsaturation + 1,
+				// 		brightness: vm.effectbrightness + 1,
+				// 	})];
 
 
 
 
-					new PIXI.filters.OldFilmFilter({
-													sepia: 0,
-													noise: vm.effectnoise,
-													noiseSize: vm.effectnoisesize,
-													scratch: -1,
-													scratchDensity: 0,
-													scratchWidth: 1,
-													vignetting: 0,
-													vignettingAlpha: 0,
-													vignettingBlur: 0
-												}, 0.1),
-					new PIXI.filters.PixelateFilter(vm.effectpixilate)
+					// new PIXI.filters.OldFilmFilter({
+					// 								sepia: 0,
+					// 								noise: vm.effectnoise,
+					// 								noiseSize: vm.effectnoisesize,
+					// 								scratch: -1,
+					// 								scratchDensity: 0,
+					// 								scratchWidth: 1,
+					// 								vignetting: 0,
+					// 								vignettingAlpha: 0,
+					// 								vignettingBlur: 0
+					// 							}, 0.1),
+					// new PIXI.filters.PixelateFilter(vm.effectpixilate)
 
 
 				subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
@@ -259,11 +265,12 @@ var exportTools = {
 				} else {
 						console.log('render video')
 					var dataofframe = subrenderer_client.renderer.extract.base64(renderTexture);
-					var filt = subrenderer_client.renderer.extract.base64(vm.renderer_client.stage.filters);
+					//var filt = subrenderer_client.renderer.extract.base64(vm.renderer_client.stage.filters);
 
-					let output = LZUTF8.compress(dataofframe);
-					//console.log('output',output);
-					console.log(filt);
+					//let output = LZUTF8.compress(dataofframe);
+					//console.log('output1',renderTexture);
+					//console.log('output2',dataofframe);
+					//console.log(filt);
 
 					const sendDataObj = () => {
 
@@ -272,7 +279,7 @@ var exportTools = {
 							scene_id: vm.scenestore.s_id,
 							frame: index,
 							count: vm.scenestore.s_frames,
-							chunk: output,
+							chunk: vm.cover_base64_arr,
 							filename: vm.formvideo.name,
 							email: vm.formvideo.email,
 							renderalpha: vm.renderwebalpha,

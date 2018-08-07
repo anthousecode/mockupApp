@@ -11,9 +11,9 @@ const decodeBase64Image = require('./decodeBase64Image')
 const mergeImages = require('./mergeImages')
 
 var img_converted;
-var result_path
-var sequences_path
-var uniqueSHA1String
+var result_path;
+var sequences_path;
+var uniqueSHA1String;
 
 
 /* ЗАПРОС НА ЭКСПОРТ ДАННЫХ */
@@ -45,6 +45,8 @@ router.all('/', function(req, res, next) {
     // Сохранение изображений
     else {
         if (req.body.unique_id && req.body.count) {
+
+          
 
             let sequence = req.body.chunk
             let frame = req.body.frame
