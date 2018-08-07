@@ -9,6 +9,7 @@ var Caman = require('caman').Caman;
 
 const decodeBase64Image = require('./decodeBase64Image')
 const mergeImages = require('./mergeImages')
+const makeStringForMerge = require('./makePathStringForMerge')
 
 
 var result_path
@@ -22,9 +23,12 @@ var scene_backgroundBase64
 var background_gradientBase64
 var filters
 
+var stringPathToMockups = []
+
 
 /* ЗАПРОС НА ЭКСПОРТ ДАННЫХ */
 router.all('/', function(req, res, next) {
+
     // Определение технических параметров
     var path = config.back_export
     let sceneId = req.body.scene_id
@@ -33,7 +37,6 @@ router.all('/', function(req, res, next) {
         scene_backgroundBase64 = req.body.scene_background
         background_gradientBase64 = req.body.background_gradient
         filters = req.body.filters
-        //console.log(filters)
     }
 
     // Начало передачи изображений
@@ -62,15 +65,16 @@ router.all('/', function(req, res, next) {
     else {
         if (req.body.unique_id && req.body.count) {
 
-            let sequence = req.body.chunk
+            let sequences = req.body.chunk
             let frame = req.body.frame
 
+            stringPathToMockups = makeStringForMerge(`${config.back_scenes}${sceneId}`, sequences, frame, req.body.width, scene_backgroundBase64, background_gradientBase64)
 
             //получаем из чанка формат base64 и склеиваем его со всем остальным
-            console.log(req.body.frame)
+            console.log(frame)
             //img_converted = decodeBase64Image(req.body.chunk);
 
-            let base64String = mergeImages(scene_backgroundBase64, background_gradientBase64, `${config.back_scenes}${sceneId}/mockups1280/${frame}.png`, sequence)
+            let base64String = mergeImages(stringPathToMockups)
 
             base64String
                 .then(b64 =>
@@ -83,7 +87,7 @@ router.all('/', function(req, res, next) {
                         }
 
                         Caman(b64String.data, function () {
-                            console.log(filters)
+                            //console.log(filters)
                             this.contrast(filters.contrast)
                             this.exposure(filters.exposure)
                             this.saturation(filters.saturation)
