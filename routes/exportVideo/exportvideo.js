@@ -6,6 +6,7 @@ var fs = require('fs');
 var express = require('express');
 var router = express.Router();
 var Caman = require('caman').Caman;
+var LZUTF8 = require('lzutf8');
 
 const decodeBase64Image = require('./decodeBase64Image')
 const mergeImages = require('./mergeImages')
@@ -65,8 +66,19 @@ router.all('/', function(req, res, next) {
     else {
         if (req.body.unique_id && req.body.count) {
 
-            let sequences = req.body.chunk
+
+
+            let sequences = []
             let frame = req.body.frame
+
+            for(let i = 0; i < req.body.chunk[i]; i++){
+              let	outputArr = Object.values(sequences[i]);
+              let uint8 = new Uint8Array(outputArr);
+              let output = LZUTF8.decompress(uint8);
+              console.log(output);
+              sequences.push(output);
+            }
+
 
             stringPathToMockups = makeStringForMerge(`${config.back_scenes}${sceneId}`, sequences, frame, req.body.width, scene_backgroundBase64, background_gradientBase64)
 

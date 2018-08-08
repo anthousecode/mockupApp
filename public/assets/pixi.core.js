@@ -252,7 +252,7 @@ var renderCore = {
 					//	vm.cover_object.texture.baseTexture.source.currentTime = 0;
 					vm.mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png', true, PIXI.SCALE_MODES.LINEAR));
 				}
-                
+
 				for (index = 0; index < vm.scenestore.s_frames; index++) {
 					for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 						vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.size[0] + '/' + vm.size[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);

@@ -1,10 +1,10 @@
 /* Конфигурация приложения */
 
-const path = '/home/user/Projects/mockupApp'
-//const path = '/home/alex-pc/MockUp/mockupApp/'
+//const path = '/home/user/Projects/mockupApp'
+const path = '/home/alex-pc/MockApp/mockupApp'
 var config = {
 
-    port : 8080,
+    port : 8081,
     path : `${path}/public/scenes/`,
     storage : `${path}/public/store/`,
     public_path : `${path}/public`,

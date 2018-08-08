@@ -30,6 +30,7 @@
     "jade": "~1.11.0",
     "lodash": "^4.17.5",
     "lz-string": "^1.4.4",
+    "lzutf8": "^0.5.5",
     "merge-images": "^1.1.0",
     "morgan": "~1.9.0",
     "mustache": "^2.3.0",

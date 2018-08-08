@@ -207,14 +207,13 @@ var exportTools = {
 
 					blink_layer.blendMode = vm.blend_mode;
 					var cover_container = new PIXI.Container()
+					console.log(subrenderer_client.renderer.extract.base64(blink_layer));
 					cover_container.addChild(cover_layer);
 					cover_container.addChild(blink_layer);
 					cover_container.addChild(mask_layer);
 					cover_container.mask = mask_layer;
 
-					/*let blya = subrenderer_client.renderer.extract.base64(subrenderer_client.stage)
-					console.log(`=======`, blya)
-*/
+
 					let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
 					vm.cover_base64_arr.push(cover_base64);
 
@@ -274,10 +273,15 @@ var exportTools = {
 					}, 'image/png');
 				} else {
 						console.log('render video')
-					var dataofframe = subrenderer_client.renderer.extract.base64(renderTexture);
+					//var dataofframe = subrenderer_client.renderer.extract.base64(renderTexture);
 					//var filt = subrenderer_client.renderer.extract.base64(vm.renderer_client.stage.filters);
+					for(let i = 0; i < vm.cover_base64_arr.length; i++){
 
-					let output = LZUTF8.compress(dataofframe);
+						let output = LZUTF8.compress(vm.cover_base64_arr[i]);
+						vm.cover_base64_arr[i] = output;
+					}
+					//console.log(vm.cover_base64_arr);
+					//let output = LZUTF8.compress(dataofframe);
 					//console.log('output',output);
 					//console.log(filt);
 
