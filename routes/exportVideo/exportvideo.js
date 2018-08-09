@@ -68,16 +68,16 @@ router.all('/', function(req, res, next) {
 
 
 
-            let sequences = []
+            let sequences = req.body.chunk
             let frame = req.body.frame
 
-            for(let i = 0; i < req.body.chunk[i]; i++){
-              let	outputArr = Object.values(sequences[i]);
-              let uint8 = new Uint8Array(outputArr);
-              let output = LZUTF8.decompress(uint8);
-              console.log(output);
-              sequences.push(output);
-            }
+            // for(let i = 0; i < req.body.chunk.length; i++){
+            //   let	outputArr = Object.values(sequences[i]);
+            //   let uint8 = new Uint8Array(outputArr);
+            //   let output = LZUTF8.decompress(uint8);
+            //   sequences.push(output);
+            // }
+            //console.log(sequences);
 
 
             stringPathToMockups = makeStringForMerge(`${config.back_scenes}${sceneId}`, sequences, frame, req.body.width, scene_backgroundBase64, background_gradientBase64)
