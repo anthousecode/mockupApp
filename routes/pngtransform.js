@@ -10,7 +10,6 @@ router.all('/:sceneid/:scenelayer/device/:width/:height/:picture', function (req
 	var scenelayer = req.params.scenelayer;
 	var width = req.params.width;
 	var height = req.params.height;
-	console.log('some');
 	var filename = req.params.picture;
 
 	var pathtoorig = config.path + sceneid + '/' + scenelayer + '/device/' + filename;

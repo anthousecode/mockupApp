@@ -202,7 +202,6 @@ var exportTools = {
 					subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask);
 					//var mockup_layer = new PIXI.Sprite(porthiRes[layersindex]);
 					var blink_layer = new PIXI.Sprite(porthiRes[layersindex]);
-					//console.log(blink_layer);
 					var cover_layer = new PIXI.Sprite(renderTextureCover);
 					var mask_layer = new PIXI.Sprite(renderTextureMask)
 
