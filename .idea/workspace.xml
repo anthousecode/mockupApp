@@ -2,146 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/exporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/exporter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/200606bb1f39548adf6cff6cc22b53ab2bd1cf0b/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/200606bb1f39548adf6cff6cc22b53ab2bd1cf0b/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/200606bb1f39548adf6cff6cc22b53ab2bd1cf0b/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/200606bb1f39548adf6cff6cc22b53ab2bd1cf0b/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/200606bb1f39548adf6cff6cc22b53ab2bd1cf0b/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/200606bb1f39548adf6cff6cc22b53ab2bd1cf0b/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/200606bb1f39548adf6cff6cc22b53ab2bd1cf0b/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/200606bb1f39548adf6cff6cc22b53ab2bd1cf0b/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/34ae72ec94091e8999e099ed133c357fabe5f09c/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/34ae72ec94091e8999e099ed133c357fabe5f09c/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/34ae72ec94091e8999e099ed133c357fabe5f09c/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/34ae72ec94091e8999e099ed133c357fabe5f09c/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/34ae72ec94091e8999e099ed133c357fabe5f09c/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/34ae72ec94091e8999e099ed133c357fabe5f09c/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/34ae72ec94091e8999e099ed133c357fabe5f09c/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/4cdd3b3fa0f7d6a8043006e311ec96fcb5b85584/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/4cdd3b3fa0f7d6a8043006e311ec96fcb5b85584/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/4cdd3b3fa0f7d6a8043006e311ec96fcb5b85584/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/4cdd3b3fa0f7d6a8043006e311ec96fcb5b85584/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/72a13b7218011e3bbfe9ddcab6e9dc0a01be012b/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/72a13b7218011e3bbfe9ddcab6e9dc0a01be012b/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/72a13b7218011e3bbfe9ddcab6e9dc0a01be012b/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/72a13b7218011e3bbfe9ddcab6e9dc0a01be012b/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c266df335f242779c9c1099b70fb86bc4bc5bce2/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/c6cc3483f3d5ae11fffcf2b38185e4b2b62e0db3/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/e7d8e3779f30ff27ad242d200c4f942f1adeff20/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/e7d8e3779f30ff27ad242d200c4f942f1adeff20/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f4fea0eda016c6b3d58f05081eec1811e03625ab/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f4fea0eda016c6b3d58f05081eec1811e03625ab/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f4fea0eda016c6b3d58f05081eec1811e03625ab/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f4fea0eda016c6b3d58f05081eec1811e03625ab/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f4fea0eda016c6b3d58f05081eec1811e03625ab/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f4fea0eda016c6b3d58f05081eec1811e03625ab/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f586c38a90ab3d31d909c309df9f7087a3d4f9dc/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f586c38a90ab3d31d909c309df9f7087a3d4f9dc/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/export/f586c38a90ab3d31d909c309df9f7087a3d4f9dc/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/LowerLeft" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/LowerLeft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/LowerRight" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/LowerRight" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/Offset" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/Offset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/UpperLeft" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/UpperLeft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/UpperRight" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/coordinates/UpperRight" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/layer_settings" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/layer_settings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/mask/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/mask/mask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/screen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/1/screen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/LowerLeft" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/LowerLeft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/LowerRight" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/LowerRight" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/Offset" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/Offset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/UpperLeft" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/UpperLeft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/UpperRight" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/coordinates/UpperRight" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/layer_settings" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/layer_settings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/mask/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/mask/mask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/screen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/2/screen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/--screen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/--screen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/LowerLeft" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/LowerLeft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/LowerRight" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/LowerRight" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/Offset" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/Offset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/UpperLeft" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/UpperLeft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/UpperRight" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/coordinates/UpperRight" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/layer_settings" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/layer_settings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/mask/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/mask/mask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/screen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/3/screen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/LowerLeft" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/LowerLeft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/LowerRight" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/LowerRight" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/Offset" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/Offset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/UpperLeft" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/UpperLeft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/UpperRight" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/coordinates/UpperRight" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/layer_settings" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/layer_settings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/mask/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/mask/mask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/screen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads/scenes/0TestMockup/4/screen.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/exportVideo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/exportVideo/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/exportVideo/mergeImages.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/exportVideo/mergeImages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -241,32 +108,80 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="327712235">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="7" />
+          <entry key="json" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="735" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="735" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
+        <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="76" column="62" selection-start-line="76" selection-start-column="62" selection-end-line="76" selection-end-column="62" />
+            <state relative-caret-position="173">
+              <caret line="330" column="55" selection-start-line="330" selection-start-column="55" selection-end-line="330" selection-end-column="77" />
+              <folding>
+                <element signature="e#6057#6310#0" />
+                <element signature="e#6374#6607#0" />
+                <element signature="e#9133#9299#0" />
+                <element signature="e#10431#11080#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.js">
+        <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+            <state relative-caret-position="-1615">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="198" column="30" selection-start-line="198" selection-start-column="30" selection-end-line="198" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/exportVideo/mergeImages.js">
+        <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            <state relative-caret-position="410">
+              <caret line="185" column="42" selection-start-line="185" selection-start-column="42" selection-end-line="185" selection-end-column="42" />
+              <folding>
+                <element signature="e#3085#4130#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -274,8 +189,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            <state relative-caret-position="374">
+              <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
+              <folding>
+                <element signature="e#435#2475#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -291,15 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>renderSc</find>
-      <find>Buffer</find>
-      <find>console</find>
-      <find>l_mask_height</find>
-      <find>4K</find>
-      <find>preloa</find>
-      <find>hiResTextureMockup</find>
-      <find>portWidth</find>
-      <find>exportsize</find>
       <find>readd</find>
       <find>sceneId</find>
       <find>preloadHi</find>
@@ -316,6 +225,20 @@
       <find>ble</find>
       <find>cover_base64_arr</find>
       <find>mas</find>
+      <find>scene_backgroundBase64</find>
+      <find>preload</find>
+      <find>subre</find>
+      <find>fromImage</find>
+      <find>subrenderer_client</find>
+      <find>fromIma</find>
+      <find>loader</find>
+      <find>quad_origin</find>
+      <find>el-radio-butto</find>
+      <find>changeMode</find>
+      <find>vm.scenestore</find>
+      <find>porthiRes</find>
+      <find>Sprite2</find>
+      <find>PIXI</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public</dir>
@@ -349,11 +272,11 @@
         <option value="$PROJECT_DIR$/routes.exportVideo/exportvideo.js" />
         <option value="$PROJECT_DIR$/routes/exportVideo/index.js" />
         <option value="$PROJECT_DIR$/public/assets/pixi.core.js" />
-        <option value="$PROJECT_DIR$/config.js" />
-        <option value="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" />
-        <option value="$PROJECT_DIR$/public/assets/exporter.js" />
         <option value="$PROJECT_DIR$/routes/exportVideo/mergeImages.js" />
+        <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js" />
+        <option value="$PROJECT_DIR$/public/assets/exporter.js" />
+        <option value="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" />
       </list>
     </option>
   </component>
@@ -385,13 +308,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
@@ -408,6 +335,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,16 +393,18 @@
       <workItem from="1533537206458" duration="5474000" />
       <workItem from="1533544623898" duration="17249000" />
       <workItem from="1533621503872" duration="17084000" />
+      <workItem from="1534142232695" duration="15927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104467000" />
+    <option name="totallyTimeSpent" value="120394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1747" y="25" width="1613" height="1025" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2163522" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17924528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -488,13 +418,13 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.47709498" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.073743016" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24402516" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.020754717" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -508,7 +438,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23240224" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.17430167" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -527,13 +457,6 @@
     <entry file="file://$PROJECT_DIR$/public/assets/sceneload.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2295" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/ads/scenes/readme.md">
@@ -596,13 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -623,13 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -639,13 +548,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/exportvideo.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/exportVideo/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -661,13 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="326" column="15" selection-start-line="326" selection-start-column="12" selection-end-line="326" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/components/pixi/pixi.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -675,38 +570,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        <state relative-caret-position="34">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4930">
-          <caret line="290" column="54" selection-start-line="290" selection-start-column="54" selection-end-line="290" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="76" column="62" selection-start-line="76" selection-start-column="62" selection-end-line="76" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -714,6 +588,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="64" column="36" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="198" column="30" selection-start-line="198" selection-start-column="30" selection-end-line="198" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1615">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="330" column="55" selection-start-line="330" selection-start-column="55" selection-end-line="330" selection-end-column="77" />
+          <folding>
+            <element signature="e#6057#6310#0" />
+            <element signature="e#6374#6607#0" />
+            <element signature="e#9133#9299#0" />
+            <element signature="e#10431#11080#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
+          <folding>
+            <element signature="e#435#2475#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="185" column="42" selection-start-line="185" selection-start-column="42" selection-end-line="185" selection-end-column="42" />
+          <folding>
+            <element signature="e#3085#4130#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -164,6 +164,23 @@ var exportTools = {
 					//subrenderer_client.stage.addChild(background_gradient);
 				}
 
+
+                scene_background.filters = [new PIXI.filters.AdjustmentFilter({
+                    gamma: vm.effectgamma + 1,
+                    contrast: vm.effectcontrast + 1,
+                    saturation: vm.effectsaturation + 1,
+                    brightness: vm.effectbrightness + 1,
+                })];
+				console.log(subrenderer_client)
+                background_gradient.filters = [new PIXI.filters.AdjustmentFilter({
+                    gamma: vm.effectgamma + 1,
+                    contrast: vm.effectcontrast + 1,
+                    saturation: vm.effectsaturation + 1,
+                    brightness: vm.effectbrightness + 1,
+                })];
+
+
+
 				var scene_backgroundBase64 = subrenderer_client.renderer.extract.base64(scene_background);
 				var background_gradientBase64 = subrenderer_client.renderer.extract.base64(background_gradient);
 				// vm.sendBackGrad(scene_backgroundBase64, background_gradientBase64);
@@ -211,6 +228,14 @@ var exportTools = {
 					cover_container.addChild(blink_layer);
 					cover_container.addChild(mask_layer);
 					cover_container.mask = mask_layer;
+
+
+                    cover_container.filters = [new PIXI.filters.AdjustmentFilter({
+                        gamma: vm.effectgamma + 1,
+                        contrast: vm.effectcontrast + 1,
+                        saturation: vm.effectsaturation + 1,
+                        brightness: vm.effectbrightness + 1,
+                    })];
 
 
 					let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
@@ -306,10 +331,10 @@ var exportTools = {
 							dataObj.scene_background = scene_backgroundBase64
 							dataObj.background_gradient = background_gradientBase64
                             dataObj.filters =  {
-                                	exposure: (vm.effectgamma) * 50,
-                                    contrast: (vm.effectcontrast) * 37,
-                                    saturation: (vm.effectsaturation) * 70,
-                                    brightness: (vm.effectbrightness) * 10,
+                                gamma: vm.effectgamma + 1,
+                                contrast: vm.effectcontrast + 1,
+                                saturation: vm.effectsaturation + 1,
+                                brightness: vm.effectbrightness + 1,
                             }
 
 							vm.sendBackground = false
