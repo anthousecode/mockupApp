@@ -314,30 +314,30 @@ var exportTools = {
 					//console.log('output',output);
 					//console.log(filt);
 
-					const sendDataObj = () => {
-
-						let dataObj = {
-							unique_id: uid,
-							scene_id: vm.scenestore.s_id,
-							frame: index,
-							count: vm.scenestore.s_frames,
-							chunk: vm.cover_base64_arr,
-							filename: vm.formvideo.name,
-							email: vm.formvideo.email,
-							renderalpha: vm.renderwebalpha,
-							width: portWidth,
-							height: portHeight,
-							filters: null,
-						}
-
-
-						return dataObj
-					}
+					// const sendDataObj = () => {
+					//
+					// 	let dataObj = {
+					// 		unique_id: uid,
+					// 		scene_id: vm.scenestore.s_id,
+					// 		frame: index,
+					// 		count: vm.scenestore.s_frames,
+					// 		chunk: vm.cover_base64_arr,
+					// 		filename: vm.formvideo.name,
+					// 		email: vm.formvideo.email,
+					// 		renderalpha: vm.renderwebalpha,
+					// 		width: portWidth,
+					// 		height: portHeight,
+					// 		filters: null,
+					// 	}
+					//
+					//
+					// 	return dataObj
+					// }
 
 
 					axios.post('/api/exportvideo',
 						//sendDataObj()
-						vm.sendNewData()
+						vm.sendNewData(exportratio)
 				).then(function(r) {
 						subrenderer_client.destroy(true)
 						console.log(index);
@@ -405,6 +405,7 @@ var exportTools = {
 			vm.renderwebalpha = false;
 			vm.estimatedtime = "-:-";
 			vm.firstSendData = true;
+			vm.waitRenderReady = false;
 		},
 		outRenderApp() {
 			vm.cancelMode = false;
