@@ -221,8 +221,11 @@ var vm = new Vue({
 						'r': 255
 					},
 				},
-				sendBackground: true,
-				cover_base64_arr: []
+				firstSendData: true,
+				cover_base64_arr: [],
+				texture_cover_arr: [],
+				scene_backgroundBase64: null,
+				background_gradientBase64: null
 
 		},
 		computed: {
@@ -387,18 +390,21 @@ var handlerList = vm.gp.getHandlers();
 vm.handler = handlerList[0];
 vm.handler.select()
 },
-// Метод отправляет на бек градиент и бэкграунд сцены
-sendBackGrad(background, gradient){
-	if(vm.sendBackground){
-		axios.post('/api/exportbackground', {
-			background: background,
-			gradient: gradient
-		}).then((r)=>{
-			console.log('background',r.data);
-		})
-
-		vm.sendBackground = false;
-	}
+sendNewData(exportratio){
+		let newDataObj = {
+			cover_arr: vm.texture_cover_arr,
+			background_gradient: vm.background_gradientBase64,
+			scene_background : vm.scene_backgroundBase64,
+			scene_store: vm.scenestore,
+			exportratio: exportratio,
+			filters: {
+					gamma: vm.effectgamma + 1,
+					contrast: vm.effectcontrast + 1,
+					saturation: vm.effectsaturation + 1,
+					brightness: vm.effectbrightness + 1,
+			}
+		}
+		return newDataObj;
 },
 // Изменение цвета "цветовой точки" в градиенте
 changeGradientPicker: function(e){
@@ -659,6 +665,7 @@ function generateThumbnail(i) {
 				} else {
 					var imgsrc = this.croppa.generateDataUrl('image/png')
 					vm.cover_object[vm.currentMockup].texture = PIXI.Texture.fromImage(imgsrc)
+
 				}
 
 				this.sliderShow = false;

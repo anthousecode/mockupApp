@@ -109,32 +109,32 @@ var renderCore = {
 				}
 			}
 			var buttonWidth = document.getElementById('export-video').offsetWidth
-			if (vm.exportsize[0] == vm.size[0]) {
-				for (index = 0; index < vm.scenestore.s_frames; index++) {
-					for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-						vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.exportsize[0] + '/' + vm.exportsize[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
-						//console.log(vm.hiResTextureMockup[layersindex][index]);
-						vm.hiResLastId++;
-						vm.hiResPreloadPercentVid = Math.round((vm.hiResLastId) / (vm.scenestore.s_frames*vm.scenestore.s_mcount) * 100)
-						let bproccess = Math.round((vm.hiResLastId / (vm.scenestore.s_frames * vm.scenestore.s_mcount)) * buttonWidth);
-						document.getElementById('export-video').style.boxShadow = "inset " + bproccess + "px 0px 0px 0px #e70000"
-					}
-				}
-				//vm.hiResLastId = vm.scenestore.s_frames * vm.scenestore.s_mcount;
-				//document.getElementById('export-video').style.boxShadow = "inset " + buttonWidth + "px 0px 0px 0px #e70000"
-			} else
-				for (index = 0; index < vm.scenestore.s_frames; index++) {
-					for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-						vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.exportsize[0] + '/' + vm.exportsize[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
-						//console.log(vm.hiResTextureMockup[layersindex][index]);
-						vm.hiResTextureMockup[layersindex][index].on('update', function() {
-							vm.hiResLastId++;
-							vm.hiResPreloadPercentVid = Math.round((vm.hiResLastId) / (vm.scenestore.s_frames*vm.scenestore.s_mcount) * 100)
-							let bproccess = Math.round((vm.hiResLastId / (vm.scenestore.s_frames * vm.scenestore.s_mcount)) * buttonWidth);
-							document.getElementById('export-video').style.boxShadow = "inset " + bproccess + "px 0px 0px 0px #e70000"
-						});
-					}
-				}
+			// if (vm.exportsize[0] == vm.size[0]) {
+			// 	for (index = 0; index < vm.scenestore.s_frames; index++) {
+			// 		for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+			// 			vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.exportsize[0] + '/' + vm.exportsize[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+			// 			//console.log(vm.hiResTextureMockup[layersindex][index]);
+			// 			vm.hiResLastId++;
+			// 			vm.hiResPreloadPercentVid = Math.round((vm.hiResLastId) / (vm.scenestore.s_frames*vm.scenestore.s_mcount) * 100)
+			// 			let bproccess = Math.round((vm.hiResLastId / (vm.scenestore.s_frames * vm.scenestore.s_mcount)) * buttonWidth);
+			// 			document.getElementById('export-video').style.boxShadow = "inset " + bproccess + "px 0px 0px 0px #e70000"
+			// 		}
+			// 	}
+			// 	//vm.hiResLastId = vm.scenestore.s_frames * vm.scenestore.s_mcount;
+			// 	//document.getElementById('export-video').style.boxShadow = "inset " + buttonWidth + "px 0px 0px 0px #e70000"
+			// } else
+			// 	for (index = 0; index < vm.scenestore.s_frames; index++) {
+			// 		for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+			// 			vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.exportsize[0] + '/' + vm.exportsize[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+			// 			//console.log(vm.hiResTextureMockup[layersindex][index]);
+			// 			vm.hiResTextureMockup[layersindex][index].on('update', function() {
+			// 				vm.hiResLastId++;
+			// 				vm.hiResPreloadPercentVid = Math.round((vm.hiResLastId) / (vm.scenestore.s_frames*vm.scenestore.s_mcount) * 100)
+			// 				let bproccess = Math.round((vm.hiResLastId / (vm.scenestore.s_frames * vm.scenestore.s_mcount)) * buttonWidth);
+			// 				document.getElementById('export-video').style.boxShadow = "inset " + bproccess + "px 0px 0px 0px #e70000"
+			// 			});
+			// 		}
+			// 	}
 		},
 		// Метод для открытия окна загрузки изображения на слой
 		openUploader(indexofplayer){
@@ -246,6 +246,7 @@ var renderCore = {
 					for (index = 0; index < vm.scenestore.s_frames; index++) {
 							vm.coversequence[layersindex].push(coversequencetpl);
 					}
+
 
 					//	var texture = new PIXI.Texture.fromVideo("/test.mp4")
 					//	texture.baseTexture.source.loop = true;
