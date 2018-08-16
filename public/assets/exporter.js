@@ -165,7 +165,7 @@ var exportTools = {
 				}
 
 
-                scene_background.filters = [new PIXI.filters.AdjustmentFilter({
+               /* scene_background.filters = [new PIXI.filters.AdjustmentFilter({
                     gamma: vm.effectgamma + 1,
                     contrast: vm.effectcontrast + 1,
                     saturation: vm.effectsaturation + 1,
@@ -177,7 +177,7 @@ var exportTools = {
                     contrast: vm.effectcontrast + 1,
                     saturation: vm.effectsaturation + 1,
                     brightness: vm.effectbrightness + 1,
-                })];
+                })];*/
 
 
 
@@ -230,12 +230,12 @@ var exportTools = {
 					cover_container.mask = mask_layer;
 
 
-                    cover_container.filters = [new PIXI.filters.AdjustmentFilter({
+                    /*cover_container.filters = [new PIXI.filters.AdjustmentFilter({
                         gamma: vm.effectgamma + 1,
                         contrast: vm.effectcontrast + 1,
                         saturation: vm.effectsaturation + 1,
                         brightness: vm.effectbrightness + 1,
-                    })];
+                    })];*/
 
 
 					let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
@@ -243,7 +243,7 @@ var exportTools = {
 
 					//subrenderer_client.stage.addChild(mockup_layer);
 					subrenderer_client.stage.addChild(cover_container);
-				}
+				} //конец цикла
 				//console.log(vm.cover_base64_arr);
 				console.log('Sent frame #', index);
 				var renderTexture = PIXI.RenderTexture.create(portWidth, portHeight);

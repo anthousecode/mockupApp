@@ -1,3 +1,5 @@
+
+
 const makeStringForMerge = (pathToScene, sequencesArr, frame, width, heigth, filters, ...other) => {
 
     let pathString = []
