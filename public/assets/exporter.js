@@ -71,6 +71,7 @@ var exportTools = {
 
 		},
 
+
 		// Основной метод, отвечающий за рендер одного кадра (механизм сборки повторяет базовый из файло pixi.core.js но для одного кадра)
 		compositeLayer(index, uid, exportpos = false) {
 
@@ -120,7 +121,7 @@ var exportTools = {
 						porthiRes[layersindex] = hires;
 					}
 				}
-				var scene_background = new PIXI.Graphics()
+				var scene_background = new PIXI.Graphics();
 				var background_gradient = new PIXI.Sprite();
 				scene_background.lineStyle(0, 0x000000, 0);
 				scene_background.beginFill((0xFFFFFF), 1);
@@ -171,7 +172,7 @@ var exportTools = {
                     saturation: vm.effectsaturation + 1,
                     brightness: vm.effectbrightness + 1,
                 })];
-				console.log(subrenderer_client)
+				//console.log(subrenderer_client)
                 background_gradient.filters = [new PIXI.filters.AdjustmentFilter({
                     gamma: vm.effectgamma + 1,
                     contrast: vm.effectcontrast + 1,
@@ -181,10 +182,10 @@ var exportTools = {
 
 
 
-				var scene_backgroundBase64 = subrenderer_client.renderer.extract.base64(scene_background);
-				var background_gradientBase64 = subrenderer_client.renderer.extract.base64(background_gradient);
-				// vm.sendBackGrad(scene_backgroundBase64, background_gradientBase64);
+				vm.scene_backgroundBase64 = subrenderer_client.renderer.extract.base64(scene_background);
+				vm.background_gradientBase64 = subrenderer_client.renderer.extract.base64(background_gradient);
 				vm.cover_base64_arr = [];
+
 				//vm.colorsstack = [];
 				for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 					var deform = vm.quad_origin[layersindex][index];
@@ -210,6 +211,10 @@ var exportTools = {
 
 					var texture_cover_distort = new PIXI.projection.Sprite2d(vm.cover_object[layersindex].texture);
 
+						if(vm.texture_cover_arr.length < vm.scenestore.s_layers.length){
+							let base64_cover = subrenderer_client.renderer.extract.base64(texture_cover_distort);
+							vm.texture_cover_arr.push(base64_cover);
+						}
 					var texture_cover_distort_mask = new PIXI.projection.Sprite2d(vm.mask_object[layersindex].texture);
 					var renderTextureCover = PIXI.RenderTexture.create(portWidth, portHeight);
 					var renderTextureMask = PIXI.RenderTexture.create(portWidth, portHeight);
@@ -295,7 +300,7 @@ var exportTools = {
 						vm.renderwebalpha = false;
 						vm.hiResPreloadPercentImg = 0;
 					}, 'image/png');
-				} else {
+				} else if(vm.firstSendData){
 						console.log('render video')
 					//var dataofframe = subrenderer_client.renderer.extract.base64(renderTexture);
 					//var filt = subrenderer_client.renderer.extract.base64(vm.renderer_client.stage.filters);
@@ -322,56 +327,42 @@ var exportTools = {
 							renderalpha: vm.renderwebalpha,
 							width: portWidth,
 							height: portHeight,
-							scene_background: null,
-							background_gradient:null,
-							filters: null
+							filters: null,
 						}
 
-						if(vm.sendBackground) {
-							dataObj.scene_background = scene_backgroundBase64
-							dataObj.background_gradient = background_gradientBase64
-                            dataObj.filters =  {
-                                gamma: vm.effectgamma + 1,
-                                contrast: vm.effectcontrast + 1,
-                                saturation: vm.effectsaturation + 1,
-                                brightness: vm.effectbrightness + 1,
-                            }
-
-							vm.sendBackground = false
-						}
 
 						return dataObj
 					}
 
 
 					axios.post('/api/exportvideo',
-						sendDataObj()
+						//sendDataObj()
+						vm.sendNewData()
 				).then(function(r) {
 						subrenderer_client.destroy(true)
 						console.log(index);
 
-
 						index++;
-						vm.pecentrender = Math.round(index / (vm.scenestore.s_frames) * 100);
-						vm.endDate = new Date();
-						var timeDelta = vm.endDate.getTime() - vm.startDate.getTime();
-						vm.timeDelta.push(timeDelta);
-						timeDelta = _.sum(vm.timeDelta) / vm.timeDelta.length
-						var totalsecs = parseInt((timeDelta / 1000) * (vm.scenestore.s_frames - index));
-						var totalmins = parseInt(totalsecs / 60);
-						var totalhours = parseInt(totalsecs / 3600);
-						var totaldays = parseInt(totalsecs / 3600 / 24);
-						if (totalhours > 24) totalhours = totalhours % 24
-						if (totalmins > 60) totalmins = totalmins % 3600
-						if (totalsecs > 60) totalsecs = totalsecs % 60
-						if (vm.cancelMode === false) vm.estimatedtime = totaldays + ' days left';
-						if (totaldays == 0) vm.estimatedtime = totalhours + ':' + totalmins + ' left';
-						if (totaldays == 0 && totalhours == 0) vm.estimatedtime = totalmins + ' minutes and ' + totalsecs + ' seconds left';
-						if (totaldays == 0 && totalhours == 0 && totalmins == 0) vm.estimatedtime = totalsecs + ' seconds left';
-						if (totaldays == 0 && totalhours == 0 && totalmins == 0 && totalsecs < 15) vm.estimatedtime = 'less the 15 seconds left';
-						if (totaldays == 0 && totalhours == 0 && totalmins == 0 && totalsecs < 5) vm.estimatedtime = 'less the 5 seconds left';
-						if (index < vm.scenestore.s_frames) vm.compositeLayer(index, uid, false);
-						else {
+						// vm.pecentrender = Math.round(index / (vm.scenestore.s_frames) * 100);
+						// vm.endDate = new Date();
+						// var timeDelta = vm.endDate.getTime() - vm.startDate.getTime();
+						// vm.timeDelta.push(timeDelta);
+						// timeDelta = _.sum(vm.timeDelta) / vm.timeDelta.length
+						// var totalsecs = parseInt((timeDelta / 1000) * (vm.scenestore.s_frames - index));
+						// var totalmins = parseInt(totalsecs / 60);
+						// var totalhours = parseInt(totalsecs / 3600);
+						// var totaldays = parseInt(totalsecs / 3600 / 24);
+						// if (totalhours > 24) totalhours = totalhours % 24
+						// if (totalmins > 60) totalmins = totalmins % 3600
+						// if (totalsecs > 60) totalsecs = totalsecs % 60
+						// if (vm.cancelMode === false) vm.estimatedtime = totaldays + ' days left';
+						// if (totaldays == 0) vm.estimatedtime = totalhours + ':' + totalmins + ' left';
+						// if (totaldays == 0 && totalhours == 0) vm.estimatedtime = totalmins + ' minutes and ' + totalsecs + ' seconds left';
+						// if (totaldays == 0 && totalhours == 0 && totalmins == 0) vm.estimatedtime = totalsecs + ' seconds left';
+						// if (totaldays == 0 && totalhours == 0 && totalmins == 0 && totalsecs < 15) vm.estimatedtime = 'less the 15 seconds left';
+						// if (totaldays == 0 && totalhours == 0 && totalmins == 0 && totalsecs < 5) vm.estimatedtime = 'less the 5 seconds left';
+						// if (index < vm.scenestore.s_frames) vm.compositeLayer(index, uid, false);
+						//else {
 							vm.waitRenderReady = true;
 							var getStatus = setInterval(function() {
 								vm.estimatedtime == '-:-'
@@ -397,10 +388,11 @@ var exportTools = {
 									});
 								}
 							}, 500);
-						}
+						//}
 					}).catch(function(error) {
 						console.log(error);
 					});
+					vm.firstSendData = false
 				}
 			});
 		},
@@ -412,6 +404,7 @@ var exportTools = {
 			vm.videoexport = false;
 			vm.renderwebalpha = false;
 			vm.estimatedtime = "-:-";
+			vm.firstSendData = true;
 		},
 		outRenderApp() {
 			vm.cancelMode = false;

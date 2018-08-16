@@ -45,7 +45,6 @@ router.all('/', function(req, res, next) {
         background_gradientBase64 = req.body.background_gradient
         filter = req.body.filters
     }
-
     // Начало передачи изображений
     if (req.body.stream == 'start') {
 
