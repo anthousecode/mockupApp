@@ -1,0 +1,9 @@
+{
+"name":"Surface Studio Turntable",
+"loop":false,
+"background-type" : "flat",
+"background-color" : ["#fefefe"],
+"width":4096,
+"height":3072,
+"blendmode" : "SCREEN"
+}
