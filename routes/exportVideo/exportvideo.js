@@ -53,7 +53,6 @@ router.all('/', function(req, res, next) {
         background_gradientBase64 = req.body.background_gradient
         filter = req.body.filters
     }
-    console.log(req.body);
     // Начало передачи изображений
     if (req.body.stream == 'start') {
 
@@ -79,15 +78,12 @@ router.all('/', function(req, res, next) {
     }
     // Сохранение изображений
     else {
-        if (req.body.unique_id && req.body.count) {
-
-
-
+        if (req.body.unique_id && req.body.scene_store) {
             let sequences = req.body.chunk
             let frame = req.body.frame
             let width = req.body.width
             let height = req.body.height
-            let scenestore = req.body.scenestore
+            let scenestore = req.body.scene_store
             let exportratio = req.body.exportratio
 
             // for(let i = 0; i < req.body.chunk.length; i++){
@@ -103,6 +99,16 @@ router.all('/', function(req, res, next) {
             var cover_object = []
             var coversequence = []
 
+            var setPoint = (x, y) => {
+                var square = new PIXI.Sprite(PIXI.Texture.WHITE);
+                //square.tint = 0xff0000;
+                square.factor = 1;
+                //square.anchor.set(0.5);
+                square.position.set(x, y);
+                return square;
+            }
+
+            console.log(scenestore)
 
 
 
@@ -126,19 +132,19 @@ router.all('/', function(req, res, next) {
                 for (layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
                     coversequence[layersindex] = []
                     cover_object[layersindex] = coversequence[layersindex][0]
-                    loader.add(vm.scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + width + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                    loader.add(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + width + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
                 }
 
 
                 loader.load(() => {
-                    for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                    for (layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
 
-                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
-                        for (index = 0; index < vm.scenestore.s_frames; index++) {
+                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
+                        for (index = 0; index < scenestore.s_frames; index++) {
                             coversequence[layersindex].push(coversequencetpl);
-                        }
+                        }``
 
-                        let hires = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + portWidth + '/' + portHeight + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                        let hires = new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + portWidth + '/' + portHeight + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
                         porthiRes[layersindex] = hires;
                     }
 
@@ -151,16 +157,16 @@ router.all('/', function(req, res, next) {
                             let offsetx = 0 - scenestore.s_layers[layersindex].l_data[index].i_offset.x;
                             let offsety = 0 - scenestore.s_layers[layersindex].l_data[index].i_offset.y;
                             let obj_origin = [
-                                vm.setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperleft.x - offsetx) / exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y - offsety) / exportratio),
-                                vm.setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperright.x - offsetx) / exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.y - offsety) / exportratio),
-                                vm.setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerright.x - offsetx) / exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.y - offsety) / exportratio),
-                                vm.setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x - offsetx) / exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y - offsety) / exportratio),
+                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperleft.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_upperleft.y - offsety) / exportratio),
+                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperright.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_upperright.y - offsety) / exportratio),
+                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerright.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_lowerright.y - offsety) / exportratio),
+                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y - offsety) / exportratio),
                             ];
                             deform = obj_origin.map(function(s) {
                                 return s.position
                             });
                         } else {
-                            deform = [vm.setPoint(0, 0), vm.setPoint(1, 0), vm.setPoint(1, 1), vm.setPoint(0, 1)].map(function(s) {
+                            deform = [setPoint(0, 0), setPoint(1, 0), setPoint(1, 1), setPoint(0, 1)].map(function(s) {
                                 return s.position
                             });
                         }
@@ -168,7 +174,7 @@ router.all('/', function(req, res, next) {
                         //сгенерить cover_object
                         var texture_cover_distort = new PIXI.projection.Sprite2d(cover_object[layersindex].texture);
 
-                        var texture_cover_distort_mask = new PIXI.projection.Sprite2d(vm.mask_object[layersindex].texture);
+                        var texture_cover_distort_mask = new PIXI.projection.Sprite2d(mask_object[layersindex].texture);
                         var renderTextureCover = PIXI.RenderTexture.create(width, height);
                         var renderTextureMask = PIXI.RenderTexture.create(width, height);
                         texture_cover_distort.proj.mapSprite(texture_cover_distort, deform);

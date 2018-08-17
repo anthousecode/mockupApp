@@ -337,7 +337,20 @@ var exportTools = {
 
 					axios.post('/api/exportvideo',
 						//sendDataObj()
-						vm.sendNewData(exportratio)
+                        {
+                            cover_arr: vm.texture_cover_arr,
+                            background_gradient: vm.background_gradientBase64,
+                            scene_background : vm.scene_backgroundBase64,
+                            scene_store: vm.scenestore,
+                            exportratio: exportratio,
+                            unique_id: uid,
+                            filters: {
+                                gamma: vm.effectgamma + 1,
+                                contrast: vm.effectcontrast + 1,
+                                saturation: vm.effectsaturation + 1,
+                                brightness: vm.effectbrightness + 1,
+                            }
+                        }
 				).then(function(r) {
 						subrenderer_client.destroy(true)
 						console.log(index);
