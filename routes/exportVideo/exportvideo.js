@@ -124,6 +124,7 @@ router.all('/', function(req, res, next) {
                     powerPreference: "high-performance"
                 });
 
+
                 subrenderer_client.renderer.width = width;
                 subrenderer_client.renderer.height = height;
 
