@@ -47,13 +47,11 @@ router.all('/', function(req, res, next) {
     // Определение технических параметров
     var path = config.back_export
     let sceneId = req.body.scene_id
-
     if (req.body.scene_background && req.body.background_gradient) {
         scene_backgroundBase64 = req.body.scene_background
         background_gradientBase64 = req.body.background_gradient
         filter = req.body.filters
     }
-    console.log(req.body);
     // Начало передачи изображений
     if (req.body.stream == 'start') {
 
@@ -67,9 +65,10 @@ router.all('/', function(req, res, next) {
         fs.mkdirSync(sequences_path);
 
         //создание папки где будут склеянный результат
-        result_path = `${path}/${uniqueSHA1String}/result`
-        output_path =`${path}/${uniqueSHA1String}/output`
+        result_path = `${path}${uniqueSHA1String}/result`
+        output_path =`${path}${uniqueSHA1String}/output`
 
+        //console.log(path);
         fs.mkdirSync(result_path)
         fs.mkdirSync(output_path)
         // Возвращаем уникальный ключ
@@ -81,13 +80,13 @@ router.all('/', function(req, res, next) {
     else {
         if (req.body.unique_id && req.body.count) {
 
-
+            console.log(req.body.scene_store);
 
             let sequences = req.body.chunk
             let frame = req.body.frame
             let width = req.body.width
             let height = req.body.height
-            let scenestore = req.body.scenestore
+            let scenestore = req.body.scene_store
             let exportratio = req.body.exportratio
 
             // for(let i = 0; i < req.body.chunk.length; i++){
@@ -99,7 +98,6 @@ router.all('/', function(req, res, next) {
             //console.log(sequences);
 
             var porthiRes = []
-
             var cover_object = []
             var coversequence = []
 
@@ -126,19 +124,19 @@ router.all('/', function(req, res, next) {
                 for (layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
                     coversequence[layersindex] = []
                     cover_object[layersindex] = coversequence[layersindex][0]
-                    loader.add(vm.scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + width + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                    loader.add(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + width + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
                 }
 
 
                 loader.load(() => {
-                    for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                    for (layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
 
-                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
-                        for (index = 0; index < vm.scenestore.s_frames; index++) {
+                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
+                        for (index = 0; index < scenestore.s_frames; index++) {
                             coversequence[layersindex].push(coversequencetpl);
                         }
 
-                        let hires = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + portWidth + '/' + portHeight + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                        let hires = new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + portWidth + '/' + portHeight + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
                         porthiRes[layersindex] = hires;
                     }
 
@@ -186,7 +184,7 @@ router.all('/', function(req, res, next) {
                         cover_container.addChild(blink_layer);
                         cover_container.addChild(mask_layer);
                         cover_container.mask = mask_layer;
-
+                        //console.log(subrenderer_client.renderer.extract.base64(cover_container));
                         subrenderer_client.stage.addChild(mockup_layer);
                         subrenderer_client.stage.addChild(cover_container);
                     } //конец цикла

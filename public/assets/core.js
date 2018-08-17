@@ -390,13 +390,15 @@ var handlerList = vm.gp.getHandlers();
 vm.handler = handlerList[0];
 vm.handler.select()
 },
-sendNewData(exportratio){
+sendNewData(exportratio, uid){
 		let newDataObj = {
 			cover_arr: vm.texture_cover_arr,
 			background_gradient: vm.background_gradientBase64,
 			scene_background : vm.scene_backgroundBase64,
 			scene_store: vm.scenestore,
 			exportratio: exportratio,
+			unique_id: uid,
+			count: vm.scenestore.s_frames,
 			filters: {
 					gamma: vm.effectgamma + 1,
 					contrast: vm.effectcontrast + 1,

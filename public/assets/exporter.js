@@ -80,7 +80,7 @@ var exportTools = {
 				return false;
 			}
 			var porthiRes = []
-
+			var uid = uid
 			// Для сборки используется доп рендер subrenderer_client отличный от основного
 			var subrenderer_client = new PIXI.Application({
 				width: portWidth,
@@ -337,7 +337,7 @@ var exportTools = {
 
 					axios.post('/api/exportvideo',
 						//sendDataObj()
-						vm.sendNewData(exportratio)
+						vm.sendNewData(exportratio, uid)
 				).then(function(r) {
 						subrenderer_client.destroy(true)
 						console.log(index);
