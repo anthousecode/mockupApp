@@ -15,6 +15,7 @@ var PIXI = require('pixi-shim')
 var pix = PIXI
 var filters = require('pixi-filters')
 const {AdjustmentFilter} = require('@pixi/filter-adjustment');
+var projection = require('pixi-projection')
 
 var { PIXI } = require('node-pixi')
 
@@ -81,10 +82,10 @@ router.all('/', function(req, res, next) {
         if (req.body.unique_id && req.body.scene_store) {
             let sequences = req.body.chunk
             let frame = req.body.frame
-            let width = req.body.width
-            let height = req.body.height
             let scenestore = req.body.scene_store
             let exportratio = req.body.exportratio
+            let width = 1280
+            let height = 720
 
             // for(let i = 0; i < req.body.chunk.length; i++){
             //   let	outputArr = Object.values(sequences[i]);
@@ -108,12 +109,14 @@ router.all('/', function(req, res, next) {
                 return square;
             }
 
-            console.log(scenestore)
-
-
+            readImage = (path) => {
+                let pathToImage = fs.readFileSync(`${config.back_scenes}${path}`, 'base64')
+                return `data:image/png;base64,${pathToImage}`
+            }
 
             // Основной метод, отвечающий за рендер одного кадра (механизм сборки повторяет базовый из файло pixi.core.js но для одного кадра)
             const compositeLayer =(index) => {
+
                 var subrenderer_client = new PIXI.Application({
                     forceCanvas: true,
                     width: width,
@@ -130,22 +133,29 @@ router.all('/', function(req, res, next) {
 
                 var loader = new PIXI.loaders.Loader();
 
-                for (layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
-                    coversequence[layersindex] = []
-                    cover_object[layersindex] = coversequence[layersindex][0]
-                    loader.add(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + width + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
-                }
 
 
                 loader.load(() => {
-                    for (layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
+                    console.log('load!')
 
-                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
-                        for (index = 0; index < scenestore.s_frames; index++) {
+                    for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
+                        coversequence[layersindex] = []
+                        cover_object[layersindex] = coversequence[layersindex][0]
+                        PIXI.loader.add(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width +  '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                    }
+
+
+                    for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
+                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg'), true, PIXI.SCALE_MODES.LINEAR));
+                        for (let i = 0; i < scenestore.s_frames; i++) {
                             coversequence[layersindex].push(coversequencetpl);
-                        }``
 
-                        let hires = new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + portWidth + '/' + portHeight + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                            cover_object[layersindex] = coversequence[layersindex][0]
+                            PIXI.loader.add(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width  + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri));
+
+                        }
+
+                        let hires = new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width +  '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri));
                         porthiRes[layersindex] = hires;
                     }
 
@@ -173,7 +183,7 @@ router.all('/', function(req, res, next) {
                         }
 
                         //сгенерить cover_object
-                        var texture_cover_distort = new PIXI.projection.Sprite2d(cover_object[layersindex].texture);
+                        var texture_cover_distort = PIXI.projection.Sprite2d(cover_object[layersindex].texture);
 
                         var texture_cover_distort_mask = new PIXI.projection.Sprite2d(mask_object[layersindex].texture);
                         var renderTextureCover = PIXI.RenderTexture.create(width, height);
@@ -200,6 +210,8 @@ router.all('/', function(req, res, next) {
 
                     subrenderer_client.renderer.render(subrenderer_client.stage)
 
+                    console.log(subrenderer_client)
+
                     subrenderer_client.view.toBuffer('png').then(buffer => {
                         fs.writeFileSync(`${result_path}/${index}.png`, buffer);
                     }).catch(err => {
@@ -209,7 +221,9 @@ router.all('/', function(req, res, next) {
                 })
             }
 
-            for(let i =0; i< scenestore.s_frames; i++) compositeLayer(i)
+            for(let i =0; i < scenestore.s_frames; i++) {
+                compositeLayer(i)
+            }
 
 
             /*loader.load(() => {

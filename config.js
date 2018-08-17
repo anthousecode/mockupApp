@@ -10,7 +10,7 @@ var config = {
     public_path : `${path}/public`,
     path_export: `${path}/public/export/`,
     back_export: `${path}/routes/exportVideo/sessions/`,
-    back_scenes: `${path}/routes/ads/scenes/`,
+    back_scenes: `${path}/routes`,
     relpath : '/scenes/',
 
 };
