@@ -337,7 +337,7 @@ var exportTools = {
 
 					axios.post('/api/exportvideo',
 						//sendDataObj()
-						vm.sendNewData(exportratio, uid)
+						vm.sendNewData(exportratio, uid, portWidth, portHeight)
 				).then(function(r) {
 						subrenderer_client.destroy(true)
 						console.log(index);

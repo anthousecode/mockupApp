@@ -41,6 +41,7 @@
     "node-pixi": "^0.4.5",
     "nodemon": "^1.18.3",
     "pixi-filters": "^2.6.1",
+    "pixi-projection": "^0.2.1",
     "pixi-shim": "^1.3.7",
     "pixi.js": "^4.8.1",
     "sys": "0.0.1"

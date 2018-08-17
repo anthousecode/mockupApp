@@ -107,8 +107,6 @@ router.all('/', function(req, res, next) {
                 return square;
             }
 
-            console.log(scenestore)
-
 
 
             // Основной метод, отвечающий за рендер одного кадра (механизм сборки повторяет базовый из файло pixi.core.js но для одного кадра)
@@ -132,9 +130,8 @@ router.all('/', function(req, res, next) {
                 for (layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
                     coversequence[layersindex] = []
                     cover_object[layersindex] = coversequence[layersindex][0]
-                    loader.add(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + width + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                    loader.add(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + height + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
                 }
-
 
                 loader.load(() => {
                     for (layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
@@ -142,9 +139,9 @@ router.all('/', function(req, res, next) {
                         let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
                         for (index = 0; index < scenestore.s_frames; index++) {
                             coversequence[layersindex].push(coversequencetpl);
-                        }``
+                        }
 
-                        let hires = new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + portWidth + '/' + portHeight + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                        let hires = new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + height + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
                         porthiRes[layersindex] = hires;
                     }
 
@@ -268,7 +265,6 @@ router.all('/', function(req, res, next) {
             //stringPathToMockups = makeStringForMerge(`${config.back_scenes}${sceneId}`, sequences, frame, width, height, scene_backgroundBase64, background_gradientBase64)
 
             //получаем из чанка формат base64 и склеиваем его со всем остальным
-            console.log(frame)
             //img_converted = decodeBase64Image(req.body.chunk);
 
             //let base64String = mergeImages(stringPathToMockups)
