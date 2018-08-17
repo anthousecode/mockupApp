@@ -78,10 +78,7 @@ router.all('/', function(req, res, next) {
     }
     // Сохранение изображений
     else {
-        if (req.body.unique_id && req.body.count) {
-
-            console.log(req.body.scene_store);
-
+        if (req.body.unique_id && req.body.scene_store) {
             let sequences = req.body.chunk
             let frame = req.body.frame
             let width = req.body.width
@@ -101,6 +98,16 @@ router.all('/', function(req, res, next) {
             var cover_object = []
             var coversequence = []
 
+            var setPoint = (x, y) => {
+                var square = new PIXI.Sprite(PIXI.Texture.WHITE);
+                //square.tint = 0xff0000;
+                square.factor = 1;
+                //square.anchor.set(0.5);
+                square.position.set(x, y);
+                return square;
+            }
+
+            console.log(scenestore)
 
 
 
@@ -115,6 +122,7 @@ router.all('/', function(req, res, next) {
                     antialias: true,
                     powerPreference: "high-performance"
                 });
+
 
                 subrenderer_client.renderer.width = width;
                 subrenderer_client.renderer.height = height;
@@ -134,7 +142,7 @@ router.all('/', function(req, res, next) {
                         let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
                         for (index = 0; index < scenestore.s_frames; index++) {
                             coversequence[layersindex].push(coversequencetpl);
-                        }
+                        }``
 
                         let hires = new PIXI.Texture.fromImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + portWidth + '/' + portHeight + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri);
                         porthiRes[layersindex] = hires;
@@ -149,16 +157,16 @@ router.all('/', function(req, res, next) {
                             let offsetx = 0 - scenestore.s_layers[layersindex].l_data[index].i_offset.x;
                             let offsety = 0 - scenestore.s_layers[layersindex].l_data[index].i_offset.y;
                             let obj_origin = [
-                                vm.setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperleft.x - offsetx) / exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y - offsety) / exportratio),
-                                vm.setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperright.x - offsetx) / exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.y - offsety) / exportratio),
-                                vm.setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerright.x - offsetx) / exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.y - offsety) / exportratio),
-                                vm.setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x - offsetx) / exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y - offsety) / exportratio),
+                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperleft.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_upperleft.y - offsety) / exportratio),
+                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperright.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_upperright.y - offsety) / exportratio),
+                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerright.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_lowerright.y - offsety) / exportratio),
+                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y - offsety) / exportratio),
                             ];
                             deform = obj_origin.map(function(s) {
                                 return s.position
                             });
                         } else {
-                            deform = [vm.setPoint(0, 0), vm.setPoint(1, 0), vm.setPoint(1, 1), vm.setPoint(0, 1)].map(function(s) {
+                            deform = [setPoint(0, 0), setPoint(1, 0), setPoint(1, 1), setPoint(0, 1)].map(function(s) {
                                 return s.position
                             });
                         }
@@ -166,7 +174,7 @@ router.all('/', function(req, res, next) {
                         //сгенерить cover_object
                         var texture_cover_distort = new PIXI.projection.Sprite2d(cover_object[layersindex].texture);
 
-                        var texture_cover_distort_mask = new PIXI.projection.Sprite2d(vm.mask_object[layersindex].texture);
+                        var texture_cover_distort_mask = new PIXI.projection.Sprite2d(mask_object[layersindex].texture);
                         var renderTextureCover = PIXI.RenderTexture.create(width, height);
                         var renderTextureMask = PIXI.RenderTexture.create(width, height);
                         texture_cover_distort.proj.mapSprite(texture_cover_distort, deform);
