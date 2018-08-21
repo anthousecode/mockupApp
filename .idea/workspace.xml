@@ -56,7 +56,7 @@
     <session id="141693160">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="2" />
@@ -65,13 +65,15 @@
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
-          <entry key="project.open.time.23" value="2" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.23" value="3" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -79,7 +81,7 @@
           <entry key="babelrc" value="4" />
           <entry key="gitignore" value="2" />
           <entry key="jpg" value="5" />
-          <entry key="js" value="102" />
+          <entry key="js" value="108" />
           <entry key="json" value="3" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
@@ -89,7 +91,7 @@
         <counts>
           <entry key="Image" value="5" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="102" />
+          <entry key="JavaScript" value="108" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -97,13 +99,13 @@
         <counts>
           <entry key="babelrc" value="22" />
           <entry key="gitignore" value="29" />
-          <entry key="js" value="8476" />
+          <entry key="js" value="8779" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="22" />
-          <entry key="JavaScript" value="8476" />
+          <entry key="JavaScript" value="8779" />
           <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
@@ -144,8 +146,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="218" column="71" selection-start-line="218" selection-start-column="71" selection-end-line="218" selection-end-column="71" />
+            <state relative-caret-position="2418">
+              <caret line="233" column="72" lean-forward="true" selection-start-line="233" selection-start-column="72" selection-end-line="233" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -153,8 +155,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-36">
-              <caret line="223" column="53" selection-start-line="223" selection-start-column="53" selection-end-line="223" selection-end-column="53" />
+            <state relative-caret-position="192">
+              <caret line="211" column="115" selection-start-line="211" selection-start-column="115" selection-end-line="211" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -162,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7562">
-              <caret line="255" column="157" selection-start-line="255" selection-start-column="157" selection-end-line="255" selection-end-column="157" />
+            <state relative-caret-position="-603">
+              <caret line="351" column="24" selection-start-line="351" selection-start-column="24" selection-end-line="351" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -179,10 +181,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>vm.scenestore</find>
-      <find>Sprite2</find>
-      <find>PIXI</find>
-      <find>fro</find>
       <find>porthiRes[layersindex]</find>
       <find>pixi.co</find>
       <find>sub</find>
@@ -209,6 +207,10 @@
       <find>porthiRes</find>
       <find>texture_cover_distort_mask</find>
       <find>mask_object</find>
+      <find>PIXI.projection</find>
+      <find>renderTextureCover</find>
+      <find>.pop</find>
+      <find>des</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public</dir>
@@ -377,21 +379,24 @@
       <workItem from="1534485328603" duration="6316000" />
       <workItem from="1534497009800" duration="4431000" />
       <workItem from="1534745994076" duration="3404000" />
-      <workItem from="1534751788017" duration="7334000" />
+      <workItem from="1534751788017" duration="9479000" />
+      <workItem from="1534767995067" duration="585000" />
+      <workItem from="1534833491968" duration="3493000" />
+      <workItem from="1534839247279" duration="6138000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171955000" />
+    <option name="totallyTimeSpent" value="184316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-2" width="1680" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49886104" visible="true" weight="0.15087508" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="npm" order="3" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49886104" visible="true" weight="0.13880508" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -401,8 +406,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.4284165" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.2483731" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -419,8 +424,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js</url>
-          <line>250</line>
+          <line>260</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js</url>
+          <line>125</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -428,11 +438,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/assets/definitions.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/sceneload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2295" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/ads/scenes/readme.md">
       <provider selected="true" editor-type-id="text-editor" />
@@ -558,13 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -602,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="391" column="2" selection-start-line="391" selection-start-column="2" selection-end-line="391" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -623,24 +614,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="249" column="7" lean-forward="true" selection-start-line="249" selection-start-column="7" selection-end-line="249" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/sprites/Sprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="340" column="52" selection-start-line="340" selection-start-column="52" selection-end-line="340" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/resource-loader/lib/Loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="469" column="17" selection-start-line="469" selection-start-column="17" selection-end-line="469" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13107">
+          <caret line="771" column="36" selection-start-line="771" selection-start-column="36" selection-end-line="771" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/sceneload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="176" column="10" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7562">
-          <caret line="255" column="157" selection-start-line="255" selection-start-column="157" selection-end-line="255" selection-end-column="157" />
+        <state relative-caret-position="-603">
+          <caret line="351" column="24" selection-start-line="351" selection-start-column="24" selection-end-line="351" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
-          <caret line="223" column="53" selection-start-line="223" selection-start-column="53" selection-end-line="223" selection-end-column="53" />
+        <state relative-caret-position="192">
+          <caret line="211" column="115" selection-start-line="211" selection-start-column="115" selection-end-line="211" selection-end-column="115" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="218" column="71" selection-start-line="218" selection-start-column="71" selection-end-line="218" selection-end-column="71" />
+        <state relative-caret-position="2418">
+          <caret line="233" column="72" lean-forward="true" selection-start-line="233" selection-start-column="72" selection-end-line="233" selection-end-column="72" />
         </state>
       </provider>
     </entry>
