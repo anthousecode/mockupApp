@@ -3,7 +3,6 @@
 const path = '/home/user/Projects/mockupApp'
 //const path = '/home/alex-pc/MockApp/mockupApp'
 var config = {
-
     port : 8080,
     path : `${path}/public/scenes/`,
     storage : `${path}/public/store/`,

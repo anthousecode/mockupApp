@@ -216,6 +216,7 @@ var exportTools = {
 							vm.texture_cover_arr.push(base64_cover);
 						}
 					var texture_cover_distort_mask = new PIXI.projection.Sprite2d(vm.mask_object[layersindex].texture);
+                    console.log(texture_cover_distort)
 					var renderTextureCover = PIXI.RenderTexture.create(portWidth, portHeight);
 					var renderTextureMask = PIXI.RenderTexture.create(portWidth, portHeight);
 					texture_cover_distort.proj.mapSprite(texture_cover_distort, deform);

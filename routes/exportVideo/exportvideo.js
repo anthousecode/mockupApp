@@ -9,11 +9,22 @@ var Caman = require('caman').Caman;
 var LZUTF8 = require('lzutf8');
 var canvas = require('canvas')
 
+
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-var PIXI = require('pixi-shim')
-var pix = PIXI
+/*global.window = (new JSDOM(``, { pretendToBeVisual: true })).window;
+window.requestAnimationFrame(timestamp => {
+    console.log(timestamp > 0);
+});
+
+global.document = window.document;
+
+global.navigator = {
+    userAgent: 'node.js',
+};*/
+
+var pixi = require('pixi-shim')
 var filters = require('pixi-filters')
 const {AdjustmentFilter} = require('@pixi/filter-adjustment');
 var projection = require('pixi-projection')
@@ -89,6 +100,8 @@ router.all('/', function(req, res, next) {
             let exportratio = req.body.exportratio
             let width = 1280
             let height = 720
+            let scene_background = new PIXI.Sprite(new PIXI.Texture.fromImage(req.body.scene_background))
+            let background_gradient = new PIXI.Sprite(new PIXI.Texture.fromImage(req.body.background_gradient))
 
             // for(let i = 0; i < req.body.chunk.length; i++){
             //   let	outputArr = Object.values(sequences[i]);
@@ -161,6 +174,9 @@ router.all('/', function(req, res, next) {
                         loader.add(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width +  '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri));
                     }*/
 
+                    subrenderer_client.stage.addChild(scene_background);
+                    subrenderer_client.stage.addChild(background_gradient);
+
 
                     for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
 
@@ -221,17 +237,14 @@ router.all('/', function(req, res, next) {
                         var renderTextureMask = PIXI.RenderTexture.create(width, height);
                         texture_cover_distort.proj.mapSprite(texture_cover_distort, deform);
                         texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, deform)
-                        subrenderer_client.render(texture_cover_distort, renderTextureCover)
-                        subrenderer_client.view.toBuffer('png').then(buffer => {
-                            fs.writeFileSync(`${result_path}/${index}.png`, buffer);
-                        })
-                        subrenderer_client.render(texture_cover_distort_mask, renderTextureMask);
+                        subrenderer_client.renderer.__proto__.render(texture_cover_distort, renderTextureCover)
+                        subrenderer_client.renderer.__proto__.render(texture_cover_distort_mask, renderTextureMask);
                         var mockup_layer = new PIXI.Sprite(porthiRes[layersindex]);
                         var blink_layer = new PIXI.Sprite(porthiRes[layersindex]);
                         var cover_layer = new PIXI.Sprite(renderTextureCover);
                         var mask_layer = new PIXI.Sprite(renderTextureMask)
 
-                        blink_layer.blendMode = PIXI.BLEND_MODES.SCREEN;
+                        //blink_layer.blendMode = PIXI.BLEND_MODES.SCREEN;
                         var cover_container = new PIXI.Container()
                         cover_container.addChild(cover_layer);
                         //cover_container.addChild(blink_layer);
@@ -240,25 +253,29 @@ router.all('/', function(req, res, next) {
 
                         //subrenderer_client.stage.addChild(mockup_layer);
                         subrenderer_client.stage.addChild(cover_container);
+
+                        subrenderer_client.render()
+
+                        subrenderer_client.view.toBuffer('png').then(buffer => {
+                            fs.writeFileSync(`${result_path}/${index}.png`, buffer);
+                        }).catch(err => {
+                            console.error(err);
+                        });
                     } //конец цикла
 
                     console.log('the end')
                     //subrenderer_client.render(subrenderer_client.stage)
 
-                    var renderTexture = PIXI.RenderTexture.create(width, height);
-                    subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
-                    subrenderer_client.render()
 
-                    subrenderer_client.view.toBuffer('png').then(buffer => {
-                        fs.writeFileSync(`${result_path}/${index}.png`, buffer);
-                    }).catch(err => {
-                        console.error(err);
-                    });
+                    var renderTexture = PIXI.RenderTexture.create(width, height);
+                    //subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
+
 
                 })
             }
 
-            for(let i =0; i < /*scenestore.s_frames*/ 15; i++) {
+
+            for(let i =0; i < /*scenestore.s_frames*/ 15 ; i++) {
                 compositeLayer(i)
             }
 
