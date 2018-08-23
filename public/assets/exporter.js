@@ -239,7 +239,9 @@ var exportTools = {
 
 
 					let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
-					vm.cover_base64_arr.push(cover_base64);
+
+                    if(vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft == false) vm.cover_base64_arr.push(``);
+                    else vm.cover_base64_arr.push(cover_base64);
 
 					//subrenderer_client.stage.addChild(mockup_layer);
 					subrenderer_client.stage.addChild(cover_container);

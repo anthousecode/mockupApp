@@ -10,7 +10,7 @@ const makeStringForMerge = (pathToScene, sequencesArr, frame, width, heigth, fil
     for(let i = 0; i < sequencesArr.length; i++) {
 
         pathString.push(`${path}/${i+1}/device/${width}/${frame}.png`)
-        pathString.push(sequencesArr[i])
+        if (sequencesArr[i] !== ``) pathString.push(sequencesArr[i])
 
     }
 
