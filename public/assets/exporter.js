@@ -180,8 +180,6 @@ var exportTools = {
                     brightness: vm.effectbrightness + 1,
                 })];*/
 
-
-
 				vm.scene_backgroundBase64 = subrenderer_client.renderer.extract.base64(scene_background);
 				vm.background_gradientBase64 = subrenderer_client.renderer.extract.base64(background_gradient);
 				vm.cover_base64_arr = [];
@@ -209,6 +207,8 @@ var exportTools = {
 						}
 					}
 
+
+
 					var texture_cover_distort = new PIXI.projection.Sprite2d(vm.cover_object[layersindex].texture);
 
 						if(vm.texture_cover_arr.length < vm.scenestore.s_layers.length){
@@ -216,7 +216,6 @@ var exportTools = {
 							vm.texture_cover_arr.push(base64_cover);
 						}
 					var texture_cover_distort_mask = new PIXI.projection.Sprite2d(vm.mask_object[layersindex].texture);
-                    console.log(texture_cover_distort)
 					var renderTextureCover = PIXI.RenderTexture.create(portWidth, portHeight);
 					var renderTextureMask = PIXI.RenderTexture.create(portWidth, portHeight);
 					texture_cover_distort.proj.mapSprite(texture_cover_distort, deform);

@@ -94,7 +94,7 @@ router.all('/', function(req, res, next) {
     // Сохранение изображений
     else {
         if (req.body.unique_id && req.body.scene_store) {
-            let sequences = req.body.chunk
+            let sequences = req.body.cover_arr
             let frame = req.body.frame
             let scenestore = req.body.scene_store
             let exportratio = req.body.exportratio
@@ -186,7 +186,7 @@ router.all('/', function(req, res, next) {
                             porthiRes[layersindex] = hires;
                         }
 
-                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImageJPG(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg'), true, PIXI.SCALE_MODES.LINEAR));
+                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(sequences[layersindex], true, PIXI.SCALE_MODES.LINEAR));
                         for (let i = 0; i < scenestore.s_frames; i++) {
                             coversequence[layersindex].push(coversequencetpl);
 
@@ -231,6 +231,7 @@ router.all('/', function(req, res, next) {
                             });
                         }
 
+
                         var texture_cover_distort = new PIXI.projection.Sprite2d(cover_object[layersindex].texture);
                         var texture_cover_distort_mask = new PIXI.projection.Sprite2d(mask_object[layersindex].texture);
                         var renderTextureCover = PIXI.RenderTexture.create(width, height);
@@ -244,14 +245,14 @@ router.all('/', function(req, res, next) {
                         var cover_layer = new PIXI.Sprite(renderTextureCover);
                         var mask_layer = new PIXI.Sprite(renderTextureMask)
 
-                        //blink_layer.blendMode = PIXI.BLEND_MODES.SCREEN;
+                        blink_layer.blendMode = PIXI.BLEND_MODES.SCREEN;
                         var cover_container = new PIXI.Container()
                         cover_container.addChild(cover_layer);
                         //cover_container.addChild(blink_layer);
                         //cover_container.addChild(mask_layer);
                         //cover_container.mask = mask_layer;
 
-                        //subrenderer_client.stage.addChild(mockup_layer);
+                        subrenderer_client.stage.addChild(mockup_layer);
                         subrenderer_client.stage.addChild(cover_container);
 
                         subrenderer_client.render()
@@ -276,6 +277,7 @@ router.all('/', function(req, res, next) {
 
 
             for(let i =0; i < /*scenestore.s_frames*/ 15 ; i++) {
+                console.log(i)
                 compositeLayer(i)
             }
 
@@ -337,7 +339,7 @@ router.all('/', function(req, res, next) {
             //stringPathToMockups = makeStringForMerge(`${config.back_scenes}${sceneId}`, sequences, frame, width, height, scene_backgroundBase64, background_gradientBase64)
 
             //получаем из чанка формат base64 и склеиваем его со всем остальным
-            console.log(frame)
+            //console.log(frame)
             //img_converted = decodeBase64Image(req.body.chunk);
 
             //let base64String = mergeImages(stringPathToMockups)
