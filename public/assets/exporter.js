@@ -185,7 +185,7 @@ var exportTools = {
 				vm.cover_base64_arr = [];
 
 				//vm.colorsstack = [];
-				for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+				for (let layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 					var deform = vm.quad_origin[layersindex][index];
 					if (exportpos === true) {
 						if (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
@@ -206,8 +206,6 @@ var exportTools = {
 							});
 						}
 					}
-
-
 
 					var texture_cover_distort = new PIXI.projection.Sprite2d(vm.cover_object[layersindex].texture);
 
