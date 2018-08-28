@@ -216,25 +216,25 @@ var exportTools = {
 							vm.texture_cover_arr.push(base64_cover);
 						}
 					var texture_cover_distort_mask = new PIXI.projection.Sprite2d(vm.mask_object[layersindex].texture);
-                    console.log(texture_cover_distort)
+          //console.log(texture_cover_distort)
 					var renderTextureCover = PIXI.RenderTexture.create(portWidth, portHeight);
 					var renderTextureMask = PIXI.RenderTexture.create(portWidth, portHeight);
 					texture_cover_distort.proj.mapSprite(texture_cover_distort, deform);
 					texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, deform);
 					subrenderer_client.renderer.render(texture_cover_distort, renderTextureCover);
+					console.log('render',subrenderer_client.renderer.render);
 					subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask);
 					//var mockup_layer = new PIXI.Sprite(porthiRes[layersindex]);
 					var blink_layer = new PIXI.Sprite(porthiRes[layersindex]);
 					var cover_layer = new PIXI.Sprite(renderTextureCover);
-					var mask_layer = new PIXI.Sprite(renderTextureMask)
-
+					var mask_layer = new PIXI.Sprite(renderTextureMask);
 					blink_layer.blendMode = vm.blend_mode;
 					var cover_container = new PIXI.Container()
 					cover_container.addChild(cover_layer);
 					cover_container.addChild(blink_layer);
 					cover_container.addChild(mask_layer);
 					cover_container.mask = mask_layer;
-
+					console.log(subrenderer_client.renderer.extract.base64);
 
                     /*cover_container.filters = [new PIXI.filters.AdjustmentFilter({
                         gamma: vm.effectgamma + 1,
@@ -244,8 +244,8 @@ var exportTools = {
                     })];*/
 
 
-					let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
-					vm.cover_base64_arr.push(cover_base64);
+					// let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
+					// vm.cover_base64_arr.push(cover_base64);
 
 					//subrenderer_client.stage.addChild(mockup_layer);
 					subrenderer_client.stage.addChild(cover_container);

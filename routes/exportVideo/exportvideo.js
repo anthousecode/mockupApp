@@ -7,34 +7,27 @@ var express = require('express');
 var router = express.Router();
 var Caman = require('caman').Caman;
 var LZUTF8 = require('lzutf8');
-var canvas = require('canvas')
-
+var webgl = require('node-webgl');
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const CircularJSON = require('circular-json');
 
-/*global.window = (new JSDOM(``, { pretendToBeVisual: true })).window;
-window.requestAnimationFrame(timestamp => {
-    console.log(timestamp > 0);
-});
-
-global.document = window.document;
-
-global.navigator = {
-    userAgent: 'node.js',
-};*/
-
-var pixi = require('pixi-shim')
+var PIXI = require('pixi-shim')
+var pix = PIXI
 var filters = require('pixi-filters')
 const {AdjustmentFilter} = require('@pixi/filter-adjustment');
 var projection = require('pixi-projection')
 
-var { PIXI } = require('node-pixi')
+//var { PIXI } = require('node-pixi')
 
 const decodeBase64Image = require('./decodeBase64Image')
 const mergeImages = require('./mergeImages')
 const makeStringForMerge = require('./makePathStringForMerge')
-
+var MockBrowser = require('mock-browser').mocks.MockBrowser;
+var mock = new MockBrowser();
+var document = MockBrowser.createDocument();
+var window = MockBrowser.createWindow();
 
 var result_path
 var sequences_path
@@ -91,6 +84,7 @@ router.all('/', function(req, res, next) {
             'unique_id': uniqueSHA1String
         });
     }
+
     // Сохранение изображений
     else {
         if (req.body.unique_id && req.body.scene_store) {
@@ -130,11 +124,6 @@ router.all('/', function(req, res, next) {
                 return `data:image/png;base64,${pathToImage}`
             }
 
-            const readImageJPG = (path) => {
-                let pathToImage = fs.readFileSync(`${config.back_scenes}${path}`, 'base64')
-                return `data:image/jpg;base64,${pathToImage}`
-            }
-
             // Основной метод, отвечающий за рендер одного кадра (механизм сборки повторяет базовый из файло pixi.core.js но для одного кадра)
             const compositeLayer =(index) => {
 
@@ -142,7 +131,6 @@ router.all('/', function(req, res, next) {
                 var porthiRes = []
 
                 var subrenderer_client = new PIXI.Application({
-                    forceCanvas: true,
                     width: width,
                     height: height,
                     transparent: true,
@@ -155,17 +143,17 @@ router.all('/', function(req, res, next) {
                 subrenderer_client.renderer.width = width;
                 subrenderer_client.renderer.height = height;
 
-                var loader = new PIXI.loaders.Loader();
+                var loader = PIXI.loader;
 
 
                 for (let layersindex = 0; layersindex < scenestore.s_frames; layersindex++) {
                     coversequence[layersindex] = []
                 }
 
-
+                console.log(PIXI.utils.isWebGLSupported());
 
                 loader.load(() => {
-                    console.log('load!')
+                    //console.log('load!')
 
                     /*for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
                         coversequence[layersindex] = []
@@ -177,16 +165,11 @@ router.all('/', function(req, res, next) {
                     subrenderer_client.stage.addChild(scene_background);
                     subrenderer_client.stage.addChild(background_gradient);
 
-
                     for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
 
-                        for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
-                            //console.log(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri)
-                            let hires = new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri));
-                            porthiRes[layersindex] = hires;
-                        }
 
-                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImageJPG(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg'), true, PIXI.SCALE_MODES.LINEAR));
+
+                        let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg'), true, PIXI.SCALE_MODES.LINEAR));
                         for (let i = 0; i < scenestore.s_frames; i++) {
                             coversequence[layersindex].push(coversequencetpl);
 
@@ -195,12 +178,7 @@ router.all('/', function(req, res, next) {
 
                         }
 
-                        for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
-                            // Loading sequences
-                            cover_object[layersindex] = coversequence[layersindex][0];
-                            mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png'), true, PIXI.SCALE_MODES.LINEAR))
 
-                        }
 
                         /*console.log(scenestore.s_layers)
 
@@ -209,58 +187,81 @@ router.all('/', function(req, res, next) {
                     }
 
                     for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
+                        //console.log(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri)
+                        let hires = new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/device/' + width + '/' + scenestore.s_layers[layersindex].l_data[index].i_img_uri));
+                        porthiRes[layersindex] = hires;
+                    }
+
+                    for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
+                        // Loading sequences
+                        cover_object[layersindex] = coversequence[layersindex][0];
+                        mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png'), true, PIXI.SCALE_MODES.LINEAR))
+
+                    }
+                    for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
                         //нужно сгенерить quad_origin!
                         //var deform = quad_origin[layersindex][index]
-                        var deform
+                        var deform;
 
-                        if (scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
-                            let offsetx = 0 - scenestore.s_layers[layersindex].l_data[index].i_offset.x;
-                            let offsety = 0 - scenestore.s_layers[layersindex].l_data[index].i_offset.y;
-                            let obj_origin = [
-                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperleft.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_upperleft.y - offsety) / exportratio),
-                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperright.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_upperright.y - offsety) / exportratio),
-                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerright.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_lowerright.y - offsety) / exportratio),
-                                setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y - offsety) / exportratio),
-                            ];
-                            deform = obj_origin.map(function(s) {
-                                return s.position
-                            });
-                        } else {
-                            deform = [setPoint(0, 0), setPoint(1, 0), setPoint(1, 1), setPoint(0, 1)].map(function(s) {
-                                return s.position
-                            });
-                        }
+                              if (scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
+                                  let offsetx = 0 - scenestore.s_layers[layersindex].l_data[index].i_offset.x;
+                                  let offsety = 0 - scenestore.s_layers[layersindex].l_data[index].i_offset.y;
+                                  let obj_origin = [
+                                      setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperleft.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_upperleft.y - offsety) / exportratio),
+                                      setPoint((scenestore.s_layers[layersindex].l_data[index].i_upperright.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_upperright.y - offsety) / exportratio),
+                                      setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerright.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_lowerright.y - offsety) / exportratio),
+                                      setPoint((scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x - offsetx) / exportratio, (scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y - offsety) / exportratio),
+                                  ];
+                                  deform = obj_origin.map(function(s) {
+                                      return s.position
+                                  });
+                              } else {
+                                  deform = [setPoint(0, 0), setPoint(1, 0), setPoint(1, 1), setPoint(0, 1)].map(function(s) {
+                                      return s.position
+                                  });
+                              }
+
+                        //сгенерить cover_object
+
+
+
 
                         var texture_cover_distort = new PIXI.projection.Sprite2d(cover_object[layersindex].texture);
                         var texture_cover_distort_mask = new PIXI.projection.Sprite2d(mask_object[layersindex].texture);
                         var renderTextureCover = PIXI.RenderTexture.create(width, height);
                         var renderTextureMask = PIXI.RenderTexture.create(width, height);
                         texture_cover_distort.proj.mapSprite(texture_cover_distort, deform);
-                        texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, deform)
-                        subrenderer_client.renderer.__proto__.render(texture_cover_distort, renderTextureCover)
-                        subrenderer_client.renderer.__proto__.render(texture_cover_distort_mask, renderTextureMask);
+                        texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, deform);
+                        subrenderer_client.renderer.render(texture_cover_distort, renderTextureCover);
+                        subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask);
+                        //console.log('render', subrenderer_client.render);
                         var mockup_layer = new PIXI.Sprite(porthiRes[layersindex]);
                         var blink_layer = new PIXI.Sprite(porthiRes[layersindex]);
                         var cover_layer = new PIXI.Sprite(renderTextureCover);
-                        var mask_layer = new PIXI.Sprite(renderTextureMask)
+                        var mask_layer = new PIXI.Sprite(renderTextureMask);
 
-                        //blink_layer.blendMode = PIXI.BLEND_MODES.SCREEN;
-                        var cover_container = new PIXI.Container()
+                        blink_layer.blendMode = PIXI.BLEND_MODES.SCREEN;
+                        var cover_container = new PIXI.Container();
                         cover_container.addChild(cover_layer);
-                        //cover_container.addChild(blink_layer);
-                        //cover_container.addChild(mask_layer);
-                        //cover_container.mask = mask_layer;
-
-                        //subrenderer_client.stage.addChild(mockup_layer);
+                        cover_container.addChild(blink_layer);
+                        cover_container.addChild(mask_layer);
+                        cover_container.mask = mask_layer;
+                        // if(index == 5 && layersindex == 3){
+                        //   var input = CircularJSON.stringify(mask_layer);
+                        //   var output = LZUTF8.compress(input, {outputEncoding: "Base64"});
+                        //   console.log('>>>>>>>>>>>>>>>>>>>>>',output)
+                        //
+                        // }
+                        subrenderer_client.stage.addChild(mockup_layer);
                         subrenderer_client.stage.addChild(cover_container);
 
                         subrenderer_client.render()
 
-                        subrenderer_client.view.toBuffer('png').then(buffer => {
-                            fs.writeFileSync(`${result_path}/${index}.png`, buffer);
-                        }).catch(err => {
-                            console.error(err);
-                        });
+                        // subrenderer_client.view.toBuffer('png').then(buffer => {
+                        //     fs.writeFileSync(`${result_path}/${index}.png`, buffer);
+                        // }).catch(err => {
+                        //     console.error(err);
+                        // });
                     } //конец цикла
 
                     console.log('the end')
@@ -274,8 +275,8 @@ router.all('/', function(req, res, next) {
                 })
             }
 
-
-            for(let i =0; i < /*scenestore.s_frames*/ 15 ; i++) {
+            for(let i =0; i < 60; i++) {
+              console.log(i);
                 compositeLayer(i)
             }
 
@@ -337,7 +338,7 @@ router.all('/', function(req, res, next) {
             //stringPathToMockups = makeStringForMerge(`${config.back_scenes}${sceneId}`, sequences, frame, width, height, scene_backgroundBase64, background_gradientBase64)
 
             //получаем из чанка формат base64 и склеиваем его со всем остальным
-            console.log(frame)
+            //console.log(frame)
             //img_converted = decodeBase64Image(req.body.chunk);
 
             //let base64String = mergeImages(stringPathToMockups)
