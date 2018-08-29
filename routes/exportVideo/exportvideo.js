@@ -7,7 +7,7 @@ var express = require('express');
 var router = express.Router();
 var Caman = require('caman').Caman;
 var LZUTF8 = require('lzutf8');
-//var canvas = require('canvas')
+var canvas = require('canvas')
 var webgl = require('node-webgl')
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -23,6 +23,7 @@ global.document = window.document;
 global.navigator = {
     userAgent: 'node.js',
 };*/
+
 
 var PIXI = require('pixi-shim')
 var filters = require('pixi-filters')
@@ -100,8 +101,8 @@ router.all('/', function(req, res, next) {
             let frame = req.body.frame
             let scenestore = req.body.scene_store
             let exportratio = req.body.exportratio
-            let width = 1280
-            let height = 720
+            let width = 4096
+            let height = 2160
             let scene_background = new PIXI.Sprite(new PIXI.Texture.fromImage(req.body.scene_background))
             let background_gradient = new PIXI.Sprite(new PIXI.Texture.fromImage(req.body.background_gradient))
             //var gl = require('gl')(width, height, { preserveDrawingBuffer: true })
@@ -129,7 +130,7 @@ router.all('/', function(req, res, next) {
 
             // Основной метод, отвечающий за рендер одного кадра (механизм сборки повторяет базовый из файло pixi.core.js но для одного кадра)
             const compositeLayer =(index) => {
-                var porthiRes = []
+
 
                 var subrenderer_client = new PIXI.Application({
                     forceCanvas: false,
@@ -141,13 +142,12 @@ router.all('/', function(req, res, next) {
                     powerPreference: "high-performance",
                 });
 
-
                 subrenderer_client.renderer.width = width;
                 subrenderer_client.renderer.height = height;
 
                 var cover_object = []
                 var coversequence = []
-
+                var porthiRes = []
                 for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
                     coversequence[layersindex] = []
                 }
@@ -175,25 +175,20 @@ router.all('/', function(req, res, next) {
                         porthiRes[layersindex] = hires;
                     }
 
-
                     for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
 
                         let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(sequences[layersindex], true, PIXI.SCALE_MODES.LINEAR));
-
                         for (let i = 0; i < scenestore.s_frames; i++) {
                             coversequence[layersindex].push(coversequencetpl);
                         }
                         mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png'), true, PIXI.SCALE_MODES.LINEAR))
                     }
 
-
                     for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
                         // Loading sequences
                         cover_object[layersindex] = coversequence[layersindex][0];
                     }
-
                     for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
-
                         var deform
 
                         if (scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
@@ -214,24 +209,21 @@ router.all('/', function(req, res, next) {
                             });
                         }
 
-                        for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
-                            // Loading sequences
-                            cover_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
-                        }
+                        cover_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
+                        mask_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
 
                         var texture_cover_distort = new PIXI.projection.Sprite2d(cover_object[layersindex].texture)
-                        //var texture_cover_distort_mask = new PIXI.projection.Sprite2d(mask_object[layersindex].texture)
+                        var texture_cover_distort_mask = new PIXI.projection.Sprite2d(mask_object[layersindex].texture)
                         var renderTextureCover = PIXI.RenderTexture.create(width, height)
                         var renderTextureMask = PIXI.RenderTexture.create(width, height)
                         texture_cover_distort.proj.mapSprite(texture_cover_distort, deform)
-                        //texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, deform)
+                        texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, deform)
                         subrenderer_client.renderer.render(texture_cover_distort, renderTextureCover)
-                        //subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask)
+                        subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask)
                         var mockup_layer = new PIXI.Sprite(porthiRes[layersindex])
                         var blink_layer = new PIXI.Sprite(porthiRes[layersindex])
                         var cover_layer = new PIXI.Sprite(renderTextureCover)
                         var mask_layer = new PIXI.Sprite(renderTextureMask)
-
 
                         blink_layer.blendMode = PIXI.BLEND_MODES.SCREEN
                         var cover_container = new PIXI.Container()
@@ -239,10 +231,8 @@ router.all('/', function(req, res, next) {
                         cover_container.addChild(blink_layer);
                         cover_container.addChild(mask_layer);
                         cover_container.mask = mask_layer;
-
                         subrenderer_client.stage.addChild(mockup_layer);
                         subrenderer_client.stage.addChild(cover_container);
-                        console.log(`end loop`)
 
                     } //конец цикла
 
