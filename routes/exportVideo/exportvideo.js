@@ -1,43 +1,39 @@
-var config = require('../../config');
-var LZString = require('lz-string');
-var exec = require('executive');
-var crypto = require('crypto');
-var fs = require('fs');
-var express = require('express');
-var router = express.Router();
-var Caman = require('caman').Caman;
-var LZUTF8 = require('lzutf8');
-var canvas = require('canvas')
-var webgl = require('node-webgl')
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+var PIXI = require('pixi-shim');
+var PIXI = require('pixi.js');
+var webgl = require('node-webgl-raub');
+const glfw = require('glfw-raub');
+const { Window, Document } = glfw;
 
+Document.setWebgl(webgl); // plug this WebGL impl into the Document
+const doc = new Document();
 
-/*global.window = (new JSDOM(``, { pretendToBeVisual: true })).window;
-window.requestAnimationFrame(timestamp => {
-    console.log(timestamp > 0);
-});
-
-global.document = window.document;
-
+global.document = global.window = doc;
 global.navigator = {
-    userAgent: 'node.js',
-};*/
+    userAgent: 'node.js'
+};
 
+const canvas = document.createElement('canvas'); // === doc
+const gl = canvas.getContext('webgl'); // === webgl
 
-var PIXI = require('pixi-shim')
-var filters = require('pixi-filters')
+var filters = require('pixi-filters');
 const {AdjustmentFilter} = require('@pixi/filter-adjustment');
 var projection = require('pixi-projection')
-var render = require("node-graphics")
+
+
 
 var {PIXI} = require('node-pixi')
 
-const decodeBase64Image = require('./decodeBase64Image')
-const mergeImages = require('./mergeImages')
-const makeStringForMerge = require('./makePathStringForMerge')
+console.log(PIXI.utils.isWebGLSupported())
 
 
+
+var config = require('../../config');
+var fs = require('fs');
+var crypto = require('crypto');
+
+
+var express = require('express');
+var router = express.Router();
 var result_path
 var sequences_path
 var output_path
@@ -53,10 +49,7 @@ var indexId = 0
 var mask_object = []
 
 var stringPathToMockups = []
-
-
 var subrenderer_client
-
 
 /* ЗАПРОС НА ЭКСПОРТ ДАННЫХ */
 router.all('/', function(req, res, next) {
@@ -101,11 +94,10 @@ router.all('/', function(req, res, next) {
             let frame = req.body.frame
             let scenestore = req.body.scene_store
             let exportratio = req.body.exportratio
-            let width = 4096
-            let height = 2160
+            let width = 1280
+            let height = 720
             let scene_background = new PIXI.Sprite(new PIXI.Texture.fromImage(req.body.scene_background))
             let background_gradient = new PIXI.Sprite(new PIXI.Texture.fromImage(req.body.background_gradient))
-            //var gl = require('gl')(width, height, { preserveDrawingBuffer: true })
 
             // for(let i = 0; i < req.body.chunk.length; i++){
             //   let	outputArr = Object.values(sequences[i]);
@@ -113,6 +105,12 @@ router.all('/', function(req, res, next) {
             //   let output = LZUTF8.decompress(uint8);
             //   sequences.push(output);
             // }
+            //console.log(sequences);
+
+
+
+            var cover_object = []
+            var coversequence = []
 
             var setPoint = (x, y) => {
                 var square = new PIXI.Sprite(PIXI.Texture.WHITE);
@@ -141,6 +139,7 @@ router.all('/', function(req, res, next) {
                     antialias: true,
                     powerPreference: "high-performance",
                 });
+
 
                 subrenderer_client.renderer.width = width;
                 subrenderer_client.renderer.height = height;
@@ -208,7 +207,6 @@ router.all('/', function(req, res, next) {
                                 return s.position
                             });
                         }
-
                         cover_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
                         mask_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
 
@@ -317,7 +315,7 @@ router.all('/', function(req, res, next) {
             //stringPathToMockups = makeStringForMerge(`${config.back_scenes}${sceneId}`, sequences, frame, width, height, scene_backgroundBase64, background_gradientBase64)
 
             //получаем из чанка формат base64 и склеиваем его со всем остальным
-            //console.log(frame)
+            console.log(frame)
             //img_converted = decodeBase64Image(req.body.chunk);
 
             //let base64String = mergeImages(stringPathToMockups)

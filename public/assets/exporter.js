@@ -180,6 +180,8 @@ var exportTools = {
                     brightness: vm.effectbrightness + 1,
                 })];*/
 
+
+
 				vm.scene_backgroundBase64 = subrenderer_client.renderer.extract.base64(scene_background);
 				vm.background_gradientBase64 = subrenderer_client.renderer.extract.base64(background_gradient);
 				vm.cover_base64_arr = [];
@@ -236,8 +238,8 @@ var exportTools = {
                     })];*/
 
 
-					let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
-					vm.cover_base64_arr.push(cover_base64);
+					// let cover_base64 = subrenderer_client.renderer.extract.base64(cover_container);
+					// vm.cover_base64_arr.push(cover_base64);
 
 					//subrenderer_client.stage.addChild(mockup_layer);
 					subrenderer_client.stage.addChild(cover_container);
