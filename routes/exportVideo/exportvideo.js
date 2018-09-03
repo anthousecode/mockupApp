@@ -1,8 +1,6 @@
 /*var PIXI = require('pixi-shim')
 var PIXI = require('pixi.js')*/
-var {PIXI} = require('node-pixi');
-
-
+var {PIXI} = require('node-pixi')
 
 console.log(`webgl support:`,PIXI.utils.isWebGLSupported())
 
@@ -105,7 +103,7 @@ router.all('/', function(req, res, next) {
                 return square;
             }
 
-            const readImage = (path) => {
+            const readImage = path => {
                 let b64Image = fs.readFileSync(`${config.back_scenes}${path}`, 'base64')
                 return `data:image/png;base64,${b64Image}`
             }
@@ -125,7 +123,7 @@ router.all('/', function(req, res, next) {
                 });
 
                 var a = new PIXI.Application({
-                    forceCanvas: true,
+                    forceCanvas: false,
                     width: width,
                     height: height,
                     transparent: true,
@@ -159,8 +157,8 @@ router.all('/', function(req, res, next) {
                 loader.load(() => {
                     console.log('load!')
 
-                    subrenderer_client.stage.addChild(scene_background);
-                    subrenderer_client.stage.addChild(background_gradient);
+                    /*subrenderer_client.stage.addChild(scene_background);
+                    subrenderer_client.stage.addChild(background_gradient);*/
 
 
                     for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
@@ -175,6 +173,7 @@ router.all('/', function(req, res, next) {
                             coversequence[layersindex].push(coversequencetpl);
                         }
                         mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png'), true, PIXI.SCALE_MODES.LINEAR))
+
                     }
 
                     for (let layersindex = 0; layersindex < scenestore.s_mcount; layersindex++) {
@@ -201,19 +200,18 @@ router.all('/', function(req, res, next) {
                                 return s.position
                             });
                         }
-                        //cover_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
-                        mask_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
+                        cover_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
+                        //mask_object[layersindex].proj.mapSprite(coversequence[layersindex][index], deform);
 
                         var texture_cover_distort = new PIXI.projection.Sprite2d(cover_object[layersindex].texture)
                         var texture_cover_distort_mask = new PIXI.projection.Sprite2d(mask_object[layersindex].texture)
-                        var renderTextureCover = new PIXI.RenderTexture.create(width, height)
-                        var renderTextureMask =  new PIXI.RenderTexture.create(width, height)
+                        var renderTextureCover = PIXI.RenderTexture.create(width, height)
+                        var renderTextureMask =  PIXI.RenderTexture.create(width, height)
                         texture_cover_distort.proj.mapSprite(texture_cover_distort, deform)
                         texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, deform)
-                        console.log(1)
                         subrenderer_client.renderer.render(texture_cover_distort, renderTextureCover)
-                        console.log(2)
                         //subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask)
+                        console.log(123123)
                         var mockup_layer = new PIXI.Sprite(porthiRes[layersindex])
                         var blink_layer = new PIXI.Sprite(porthiRes[layersindex])
                         var cover_layer = new PIXI.Sprite(renderTextureCover)
@@ -226,27 +224,34 @@ router.all('/', function(req, res, next) {
                         //cover_container.addChild(mask_layer);
                         //cover_container.mask = mask_layer;
                         subrenderer_client.stage.addChild(mockup_layer);
-                        subrenderer_client.stage.addChild(cover_container);
+                        subrenderer_client.stage.addChild(cover_layer);
 
                     } //конец цикла
+                    let rendererTexture = PIXI.RenderTexture.create(width, height)
 
+                    console.log(`+++++++`)
+                    subrenderer_client.renderer.render(subrenderer_client.stage, rendererTexture)
                     subrenderer_client.render()
-
-
-                    a.view.toBuffer('png').then(buffer => {
+                    console.log(`---------`)
+                    subrenderer_client.view.toBuffer('png').then(buffer => {
                         fs.writeFileSync(`${result_path}/${index}.png`, buffer);
                     }).catch(err => {
                         console.error(err);
                     });
+
+
+
                     console.log('the end')
 
                 })
             }
-
-            for(let i =0; i < /*scenestore.s_frames*/ 1 ; i++) {
-                console.log(`index`,i)
-                compositeLayer(95)
-            }
+            const loadFrame = setInterval(() => {
+                if(indexId == 15) clearInterval(loadFrame)
+                else {
+                    compositeLayer(indexId)
+                    indexId++
+                }
+            }, 1000)
 
 
             /*loader.load(() => {

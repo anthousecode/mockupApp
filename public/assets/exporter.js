@@ -185,7 +185,6 @@ var exportTools = {
 				vm.scene_backgroundBase64 = subrenderer_client.renderer.extract.base64(scene_background);
 				vm.background_gradientBase64 = subrenderer_client.renderer.extract.base64(background_gradient);
 				vm.cover_base64_arr = [];
-
 				//vm.colorsstack = [];
 				for (let layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 					var deform = vm.quad_origin[layersindex][index];
