@@ -1,6 +1,6 @@
 /* Конфигурация приложения */
 
-const path = '/home/user/Projects/mockupApp'
+const path = '/home/natalia/WORK/mockup/mockupApp'
 //const path = '/home/alex-pc/MockApp/mockupApp'
 var config = {
 
