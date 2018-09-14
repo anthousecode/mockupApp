@@ -6,5 +6,6 @@
 "background-orientation" : [0, 2160, 4096, 0],
 "width":4096,
 "height":2160,
-"blendmode" : "SCREEN"
+"blendmode" : "SCREEN",
+"animated" : true
 }

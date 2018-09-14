@@ -32,10 +32,17 @@ router.all('/:id', function (req, res, next) {
 		}
 
 		// Получаем массив превью
-		previews = fs.readdirSync(path + '/preview');
-		for (var l = 0; l < previews.length; l++) {
-			previews[l] = '/scenes/' + id + '/preview/' + previews[l];
+		var previews
+		if(settings.animated) {
+            previews = fs.readdirSync(path + '/preview');
+            for (var l = 0; l < previews.length; l++) {
+                previews[l] = '/scenes/' + id + '/preview/' + previews[l];
+            }
 		}
+
+
+
+
 
 		// Считаем слои
 		var layers = glob.sync(path + "/**/layer_settings");
@@ -86,6 +93,8 @@ router.all('/:id', function (req, res, next) {
 			var num;
 			var i_icon_uri;
 
+			var staticImages
+
 			for (var k = 0; k < layers.length; k++) {
 
 				// Получаем путь и ID
@@ -97,12 +106,28 @@ router.all('/:id', function (req, res, next) {
 				l_name = fs.readFileSync(layers[k]).toString();
 				l_name = (JSON.parse(l_name)).name;
 
+
+                // получаем массив статических картинок
+                if(!settings.animated) {
+                    staticImages = fs.readdirSync(`${path}/${l_id}/devices`);
+                    for (var l = 0; l < staticImages.length; l++) {
+                        staticImages[l] = `scenes/${id}/${l_id}/device/${staticImages[l]}/mockup.png`
+                    }
+                }
+
 				// Получаем коодинаты
-				LowerLeft = fs.readFileSync(l_id_path + '/coordinates/LowerLeft').toString().replace(/\r/g, "\n").split("\n");
-				LowerRight = fs.readFileSync(l_id_path + '/coordinates/LowerRight').toString().replace(/\r/g, "\n").split("\n");
-				UpperLeft = fs.readFileSync(l_id_path + '/coordinates/UpperLeft').toString().replace(/\r/g, "\n").split("\n");
-				UpperRight = fs.readFileSync(l_id_path + '/coordinates/UpperRight').toString().replace(/\r/g, "\n").split("\n");
-				Offset = fs.readFileSync(l_id_path + '/coordinates/Offset').toString().replace(/\r/g, "\n").split("\n");
+
+				if(settings.animated) {
+                    LowerLeft = fs.readFileSync(l_id_path + '/coordinates/LowerLeft').toString().replace(/\r/g, "\n").split("\n");
+                    LowerRight = fs.readFileSync(l_id_path + '/coordinates/LowerRight').toString().replace(/\r/g, "\n").split("\n");
+                    UpperLeft = fs.readFileSync(l_id_path + '/coordinates/UpperLeft').toString().replace(/\r/g, "\n").split("\n");
+                    UpperRight = fs.readFileSync(l_id_path + '/coordinates/UpperRight').toString().replace(/\r/g, "\n").split("\n");
+                    Offset = fs.readFileSync(l_id_path + '/coordinates/Offset').toString().replace(/\r/g, "\n").split("\n");
+				}else {
+                    var setup = fs.readFileSync(`${path}/${l_id}/Setup`);
+                    setup = JSON.parse(setup.toString())
+                    console.log(setup)
+				}
 				Crop = [
 '518	102',
 '1324.6	102',
@@ -199,7 +224,6 @@ router.all('/:id', function (req, res, next) {
 					Frames_arr[Frames_arr.length] = {
 						i_mask_uri: i_mask_uri,
 						i_img_uri: i_img_uri,
-
 						i_upperright: i_upperright,
 						i_upperleft: i_upperleft,
 						i_lowerright: i_lowerright,
@@ -209,21 +233,21 @@ router.all('/:id', function (req, res, next) {
 
 				} 
 
+
 				data = fs.readFileSync(l_id_path + '/icon.png');
 				i_icon_uri = 'data:image/png;base64,' + Buffer.from(data).toString('base64');
 
 				var dimensions = sizeOf(l_id_path + '/screen.jpg');
 
-
 				s_layers[s_layers.length] = {
 					l_id: l_id,
-          l_crop: l_crop,
+          			l_crop: l_crop,
 					l_name: l_name,
 					l_cover_ratio: dimensions.width / dimensions.height,
 					l_mask_width: dimensions.width,
 					l_mask_height: dimensions.height,
 					l_icon_uri: i_icon_uri,
-					l_data: Frames_arr,
+					l_data: (settings.animated ? Frames_arr : staticImages),
 					l_enable: true
 				}
 
@@ -240,7 +264,8 @@ router.all('/:id', function (req, res, next) {
 				s_mcount: layers.length,
 				s_looped: settings.loop,
 				s_frames: frames,
-				s_layers: s_layers
+				s_layers: s_layers,
+                s_animated: settings.animated
 			};
 
 			res.send(result);

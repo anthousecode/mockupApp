@@ -61,7 +61,6 @@ router.all('/', function(req, res, next) {
                 });
 
                 var settingsdata = JSON.parse(fs.readFileSync(value).toString())
-
                 if(typeof(settingsdata.padwidth) == 'undefined' || typeof(settingsdata.padheight) == 'undefined'){
                     var dimensions = sizeOf(path.dirname(config.path) + '/' + preview_collection[0]);
                 }
@@ -78,7 +77,8 @@ router.all('/', function(req, res, next) {
                     s_frames: scene_frames[scene_id],
                     s_padtitle : (typeof(settingsdata.padtitle) == 'undefined') ? '' : settingsdata.padtitle,
                     s_padlink : (typeof(settingsdata.padlink) == 'undefined') ? '' : settingsdata.padlink,
-                    s_padlinktext:  (typeof(settingsdata.padlinktext) == 'undefined') ? '' : settingsdata.padlinktext
+                    s_padlinktext:  (typeof(settingsdata.padlinktext) == 'undefined') ? '' : settingsdata.padlinktext,
+                    s_animated: settingsdata.animated,
                 })
             }, sceneconfig);
             callback(null, sceneconfig);
