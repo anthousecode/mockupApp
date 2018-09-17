@@ -14,6 +14,7 @@ var renderCore = {
         mask_object: [],
         cover_object: [],
         shadow_object: [],
+        currentMockup: [],
         scene_background: new PIXI.Graphics(),
         background_gradient: new PIXI.Sprite(),
         scene_gradient: new PIXI.Container(),
@@ -77,6 +78,15 @@ var renderCore = {
             //square.anchor.set(0.5);
             square.position.set(x, y);
             return square;
+        },
+        chooseMockup(id) {
+            let Devices = vm.scenestore.s_layers[0].l_data
+
+            Devices.forEach(e => {
+                if(e.i_img_title == id) {
+                    vm.currentMockup = e
+                }
+            })
         },
         // Предзагрзчик текстур высокого разрешения (разрешения для экспорта видео)
         preloadHiRes(xx) {
