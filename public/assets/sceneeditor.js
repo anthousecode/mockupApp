@@ -46,6 +46,7 @@ const SceneEditor = {
 			tooltips: [true, false, false, false],
 		}
 	},
+
 	mounted: function() {
 		var _this = this;
 		axios.post('/api/scenes/' + this.$route.params.id).then(function(response) {
@@ -64,6 +65,7 @@ const SceneEditor = {
 		})
 		console.log(vm.coversequence);
 	},
+
 	methods: {
 		// Переключалка между подсказками
 		nextTooltip() {
