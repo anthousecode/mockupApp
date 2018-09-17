@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/assets/staticCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticCore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/Shadow.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/Shadow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/devices/Black Clay/mockup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/devices/Silver/mockup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/devices/Space Gray/mockup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/devices/White Clay/mockup.png" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/staticSceneId.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,25 +58,37 @@
     <session id="141693160">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.23" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.23" value="3" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.7" value="6" />
+          <entry key="project.open.time.8" value="11" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="babelrc" value="3" />
+          <entry key="babelrc" value="4" />
           <entry key="gitignore" value="2" />
+          <entry key="gypi" value="1" />
           <entry key="jpg" value="5" />
-          <entry key="js" value="84" />
+          <entry key="js" value="139" />
           <entry key="json" value="3" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
@@ -88,22 +97,22 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="5" />
-          <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="84" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JSON" value="7" />
+          <entry key="JavaScript" value="139" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="babelrc" value="22" />
           <entry key="gitignore" value="29" />
-          <entry key="js" value="6123" />
+          <entry key="js" value="13237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="22" />
-          <entry key="JavaScript" value="6123" />
+          <entry key="JavaScript" value="13237" />
           <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
@@ -144,26 +153,8 @@
       <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/core.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="106" column="46" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pngtransform.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/pngtransform.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="153">
+              <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -171,8 +162,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="16" />
+            <state relative-caret-position="-14">
+              <caret line="16" column="73" lean-forward="true" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -198,9 +189,34 @@
       <file leaf-file-name="scenesid.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-96">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="346">
+              <caret line="41" lean-forward="true" selection-end-line="328" selection-end-column="24" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="staticSceneId.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/staticSceneId.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="34" selection-start-line="34" selection-end-line="40" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sceneslist.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/sceneslist.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2366">
+              <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exportvideo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/exportvideo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2212" />
           </provider>
         </entry>
       </file>
@@ -209,15 +225,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1560">
               <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Setup.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/Setup.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -242,39 +249,39 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loader</find>
-      <find>quad_origin</find>
-      <find>el-radio-butto</find>
-      <find>changeMode</find>
-      <find>vm.scenestore</find>
-      <find>porthiRes</find>
-      <find>Sprite2</find>
-      <find>PIXI</find>
+      <find>cons</find>
+      <find>loader.add</find>
+      <find>exportratio</find>
+      <find>offsety</find>
+      <find>coversequencetpl</find>
+      <find>defor</find>
+      <find>data</find>
+      <find>distort_layers</find>
+      <find>cover_object</find>
+      <find>proj.mapSprite</find>
+      <find>vm.cover_object</find>
+      <find>coversequence[layersindex].push(coversequencetpl)</find>
+      <find>coversequence[layersindex] = []</find>
+      <find>proj</find>
       <find>coversequence</find>
-      <find>cover_base64_arr</find>
-      <find>v-if</find>
-      <find>effectsaturation</find>
-      <find>sceneslist</find>
-      <find>axi</find>
-      <find>water</find>
-      <find>s_layers</find>
-      <find>setu</find>
-      <find>getElementById(&quot;canvas&quot;)</find>
-      <find>Animated</find>
-      <find>scenedlist</find>
-      <find>openscene</find>
-      <find>mock</find>
-      <find>store</find>
-      <find>canvas</find>
-      <find>changeCropZoneTo</find>
-      <find>console</find>
-      <find>renderer_client</find>
-      <find>filter</find>
+      <find>proj.</find>
+      <find>global</find>
+      <find>console.lo</find>
+      <find>this.rendertype = &quot;canvas&quot;</find>
+      <find>context.fillRect</find>
+      <find>PIXI.utils.isWebGLSupported()</find>
+      <find>clien</find>
+      <find>//</find>
+      <find>blendMode</find>
+      <find>rendere</find>
+      <find>sprites</find>
+      <find>mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(readImage(scenestore.s_uri + scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png'), true, PIXI.SCALE_MODES.LINEAR))</find>
+      <find>mask_object</find>
+      <find>Sprite</find>
       <find>renderCore</find>
-      <find>/scenes</find>
     </findStrings>
     <replaceStrings>
-      <replace>static_renderer_client</replace>
+      <replace>Rerere</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public</dir>
@@ -288,9 +295,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/public/assets/sceneeditor.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/routes/mergeImages.js" />
-        <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/routes/mergeImages/decodeBase64.js" />
         <option value="$PROJECT_DIR$/routes/mergeImages/mergeImages.js" />
         <option value="$PROJECT_DIR$/routes/mergeImages/index.js" />
@@ -301,26 +308,26 @@
         <option value="$PROJECT_DIR$/routes/exportVideo/imageResize.js" />
         <option value="$PROJECT_DIR$/routes/exportvideo.js" />
         <option value="$PROJECT_DIR$/routes/pngtransform.js" />
-        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/sceneslist.js" />
         <option value="$PROJECT_DIR$/routes.exportVideo/exportvideo.js" />
         <option value="$PROJECT_DIR$/routes/exportVideo/index.js" />
         <option value="$PROJECT_DIR$/routes/exportVideo/mergeImages.js" />
-        <option value="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" />
-        <option value="$PROJECT_DIR$/config.js" />
-        <option value="$PROJECT_DIR$/public/assets/exporter.js" />
-        <option value="$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js" />
-        <option value="$PROJECT_DIR$/public/assets/sceneeditor.js" />
-        <option value="$PROJECT_DIR$/public/scenes/iPhone-8/Setup" />
-        <option value="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/Setup" />
-        <option value="$PROJECT_DIR$/public/assets/pixi.core.js" />
-        <option value="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/Setup.json" />
-        <option value="$PROJECT_DIR$/routes/sceneslist.js" />
-        <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/public/assets/sceneload.js" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/routes/exportVideo/convertToBase64.js" />
+        <option value="$PROJECT_DIR$/node_modules/pixi.js/lib/polyfill/index.js" />
         <option value="$PROJECT_DIR$/public/assets/core.js" />
-        <option value="$PROJECT_DIR$/.git/config" />
-        <option value="$PROJECT_DIR$/routes/scenesid.js" />
-        <option value="$PROJECT_DIR$/public/assets/staticCore.js" />
+        <option value="$PROJECT_DIR$/public/assets/pixi.core.js" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js" />
+        <option value="$PROJECT_DIR$/node_modules/pixi.js/lib/core/textures/Texture.js" />
+        <option value="$PROJECT_DIR$/node_modules/gl/browser_index.js" />
+        <option value="$PROJECT_DIR$/node_modules/pixi.js/lib/core/sprites/webgl/SpriteRenderer.js" />
+        <option value="$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js" />
+        <option value="$PROJECT_DIR$/node_modules/node-pixi/lib/dom.js" />
+        <option value="$PROJECT_DIR$/public/assets/exporter.js" />
+        <option value="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/staticSceneId.js" />
       </list>
     </option>
   </component>
@@ -341,9 +348,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2087" />
-    <option name="width" value="1442" />
-    <option name="height" value="849" />
+    <option name="x" value="350" />
+    <option name="width" value="3361" />
+    <option name="height" value="976" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -371,13 +378,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="штвуч&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;inde&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;index&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/public" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -400,6 +406,14 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="exporter.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="exporter.js" working-dir="$PROJECT_DIR$/public/assets" />
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.exporter.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -428,14 +442,42 @@
       <workItem from="1533544623898" duration="17249000" />
       <workItem from="1533621503872" duration="17084000" />
       <workItem from="1534142232695" duration="15927000" />
-      <workItem from="1536907318023" duration="12551000" />
-      <workItem from="1536928946538" duration="2800000" />
-      <workItem from="1537163600323" duration="14537000" />
+      <workItem from="1534323357338" duration="7326000" />
+      <workItem from="1534406409293" duration="14032000" />
+      <workItem from="1534424622925" duration="1390000" />
+      <workItem from="1534485328603" duration="6316000" />
+      <workItem from="1534497009800" duration="4431000" />
+      <workItem from="1534745994076" duration="3404000" />
+      <workItem from="1534751788017" duration="9479000" />
+      <workItem from="1534767995067" duration="585000" />
+      <workItem from="1534833491968" duration="3493000" />
+      <workItem from="1534839247279" duration="6138000" />
+      <workItem from="1534850119801" duration="4343000" />
+      <workItem from="1534861014910" duration="1527000" />
+      <workItem from="1534863033355" duration="1395000" />
+      <workItem from="1534926503716" duration="5389000" />
+      <workItem from="1534940242778" duration="5035000" />
+      <workItem from="1534949400904" duration="3641000" />
+      <workItem from="1535003662472" duration="2199000" />
+      <workItem from="1535349441098" duration="9271000" />
+      <workItem from="1535374357492" duration="4644000" />
+      <workItem from="1535441445695" duration="1011000" />
+      <workItem from="1535444479945" duration="16316000" />
+      <workItem from="1535521882579" duration="2830000" />
+      <workItem from="1535527888411" duration="10236000" />
+      <workItem from="1535610423162" duration="5467000" />
+      <workItem from="1535618927374" duration="14602000" />
+      <workItem from="1535697894678" duration="12354000" />
+      <workItem from="1535713102380" duration="9620000" />
+      <workItem from="1535968468574" duration="5921000" />
+      <workItem from="1535976745208" duration="1307000" />
+      <workItem from="1535978261134" duration="1438000" />
+      <workItem from="1535980347330" duration="8811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169307000" />
+    <option name="totallyTimeSpent" value="326183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-2" width="1680" height="1052" extended-state="6" />
@@ -450,35 +492,47 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.050884955" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13495575" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49779248" visible="true" weight="0.17380808" />
+      <window_info id="Structure" order="0" sideWeight="0.5022075" side_tool="true" weight="0.23717561" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.32934782" />
+      <window_info id="Favorites" order="1" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18768859" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286334" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49779248" visible="true" weight="0.08207604" />
+      <window_info id="Structure" order="0" sideWeight="0.5022075" side_tool="true" weight="0.23717561" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.4067245" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.598913" />
+      <window_info id="Favorites" order="1" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,38 +541,7 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="602" height="250" key="Git.Branch.Popup" />
-    <state width="602" height="250" key="Git.Branch.Popup/1680.1050/1680.1050" />
-    <state width="602" height="250" key="Git.Branch.Popup@1680.1050" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6396">
-          <caret line="246" column="51" selection-start-line="246" selection-start-column="51" selection-end-line="246" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/ads/scenes/readme.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js" />
-    <entry file="file://$PROJECT_DIR$/routes/mergeImages/decodeBase64.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/http-errors/index.js" />
-    <entry file="file://$PROJECT_DIR$/routes/downloader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/layer.js" />
-    <entry file="file://$PROJECT_DIR$/.babelrc" />
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/resizeImg.js" />
-    <entry file="file://$PROJECT_DIR$/routes/ads/scenes/0TestMockup/preview/_00000.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/ads/scenes/0TestMockup/preview/_00007.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -539,12 +562,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/pngtransform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/getgradientlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="626">
           <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/components/vue-color/vue-color.min.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -560,6 +593,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportVideo/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1066">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/radslider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -584,157 +638,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
+    <entry file="file://$PROJECT_DIR$/.babelrc" />
+    <entry file="file://$PROJECT_DIR$/routes/exportVideo/convertToBase64.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/polyfill/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
+        <state relative-caret-position="68">
+          <caret line="10" selection-start-line="10" selection-end-line="24" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/route.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2106">
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        <state relative-caret-position="194">
+          <caret line="111" column="2" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="100" selection-start-column="100" selection-end-column="100" />
+        <state relative-caret-position="336">
+          <caret line="249" column="7" lean-forward="true" selection-start-line="249" selection-start-column="7" selection-end-line="249" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/sendToBack.js" />
-    <entry file="file://$PROJECT_DIR$/public/assets/tools.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/shapes.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/radslider.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/resource-loader/lib/Loader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/definitions.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scenes/iPhone-8/Setup" />
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/exportvideo.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/Setup" />
-    <entry file="file://$PROJECT_DIR$/public/images/Animated.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/sceneslist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/sceneload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="180" column="9" selection-start-line="180" selection-start-column="9" selection-end-line="180" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="196" column="12" selection-start-line="196" selection-start-column="12" selection-end-line="196" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.git/config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#1;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-container#0;n#span#0;n#el-dialog#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#el-tab-pane#1;n#el-tabs#0;n#el-popover#1;n#div#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-container#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#el-container#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#el-col#0;n#el-row#0;n#el-footer#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#el-button#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#div#0;n#el-card#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-container#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1066">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/Setup.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="16" />
+        <state relative-caret-position="160">
+          <caret line="469" column="17" selection-start-line="469" selection-start-column="17" selection-end-line="469" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -745,17 +675,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/pngtransform.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/sceneload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="369">
+          <caret line="176" column="10" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="106" column="46" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
+        <state relative-caret-position="-105">
+          <caret line="274" column="9" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/textures/Texture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="657" column="5" selection-start-line="657" selection-start-column="5" selection-end-line="657" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gl/browser_index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="44" selection-start-line="44" selection-end-line="50" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/Application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="134" column="22" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gl/webgl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="3493" column="19" selection-start-line="3493" selection-start-column="19" selection-end-line="3493" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/sprites/Sprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/config.gypi">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/sprites/webgl/SpriteRenderer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3791">
+          <caret line="223" column="47" selection-start-line="223" selection-start-column="47" selection-end-line="223" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/ticker/TickerListener.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/core/ticker/Ticker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="410" column="36" selection-start-line="410" selection-start-column="36" selection-end-line="410" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/polyfill/requestAnimationFrame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/mergeImages/mergeImages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportVideo/makePathStringForMerge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/node-pixi/lib/dom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="540" column="48" selection-start-line="540" selection-start-column="48" selection-end-line="540" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="196" column="12" selection-start-line="196" selection-start-column="12" selection-end-line="196" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="186" column="41" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportVideo/exportvideo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="226" column="24" lean-forward="true" selection-start-line="226" selection-start-column="24" selection-end-line="226" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/exportvideo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2212" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="41" lean-forward="true" selection-end-line="328" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/sceneslist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2366">
+          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="16" column="73" lean-forward="true" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/staticSceneId.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="34" selection-start-line="34" selection-end-line="40" selection-end-column="14" />
         </state>
       </provider>
     </entry>
