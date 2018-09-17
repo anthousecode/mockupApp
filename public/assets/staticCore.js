@@ -223,12 +223,14 @@ var renderCore = {
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 vm.loResTextureMockup[layersindex] = [];
                 vm.coversequence[layersindex] = [];
+                vm.shadow_object = []
                 vm.quad[layersindex] = [];
                 vm.distort_layers[layersindex] = new PIXI.Container();
                 vm.mockup_blink_layers[layersindex] = new PIXI.Container();
             }
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg');
+                loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'Shadow.png');
                 if(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png') {
                     loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png');
                 }
@@ -246,8 +248,10 @@ var renderCore = {
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                     //vm.cover_object[layersindex]
                     let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
+                    let coverShadow = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'Shadow.png', true, PIXI.SCALE_MODES.LINEAR));
                     for (index = 0; index < vm.scenestore.s_frames; index++) {
                         vm.coversequence[layersindex].push(coversequencetpl);
+                        vm.shadow_object[layersindex].push(coverShadow)
                     }
 
                     //	var texture = new PIXI.Texture.fromVideo("/test.mp4")
@@ -285,6 +289,7 @@ var renderCore = {
                     vm.mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
                     vm.mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
                     vm.cover_object[layersindex] = vm.coversequence[layersindex][0];
+                    vm.shadow_object[layersindex] = vm.shadow_object[layersindex][0]
                 }
 
                 var smart = new PIXI.Graphics()
@@ -378,6 +383,7 @@ var renderCore = {
                                 smart.clear();
                         });
                     vm.global_project[layersindex] = new PIXI.Container()
+                    vm.global_project[layersindex].addChild(vm.shadow_object[layersindex]);
                     vm.global_project[layersindex].addChild(vm.mockup_object[layersindex]);
                     vm.global_project[layersindex].addChild(vm.distort_layers[layersindex]);
                 }
@@ -418,6 +424,29 @@ var renderCore = {
                         contrast:  vm.effectcontrast+1,
                         saturation:  vm.effectsaturation+1,
                         brightness:  vm.effectbrightness+1,
+                    })
+                        /*
+                        ,new PIXI.filters.OldFilmFilter({
+                                                        sepia: 0,
+                                                        noise: vm.effectnoise,
+                                                        noiseSize: vm.effectnoisesize,
+                                                        scratch: -1,
+                                                        scratchDensity: 0,
+                                                        scratchWidth: 1,
+                                                        vignetting: 0,
+                                                        vignettingAlpha: 0,
+                                                        vignettingBlur: 0
+                                                    }, 0.1),
+                        new PIXI.filters.PixelateFilter(vm.effectpixilate)
+                        */
+
+                    ];
+
+                    vm.global_project.filters = [new PIXI.filters.AdjustmentFilter({
+                        gamma: vm.device.effectgamma+1 ,
+                        contrast:  vm.device.effectcontrast+1,
+                        saturation:  vm.device.effectsaturation+1,
+                        brightness:  vm.device.effectbrightness+1,
                     })
                         /*
                         ,new PIXI.filters.OldFilmFilter({

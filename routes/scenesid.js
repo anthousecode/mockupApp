@@ -128,7 +128,11 @@ router.all('/:id', function (req, res, next) {
 
 				]//fs.readFileSync(l_id_path + '/coordinates/SelectBox').toString().replace(/\r/g, "\n").split("\n");
 
-				Device = glob.sync(l_id_path + '/device/*.png');
+				if(settings.animated) {
+                    Device = glob.sync(l_id_path + '/device/*.png');
+				}else {
+                    Device = glob.sync(l_id_path + '/devices/Silver/*.png');
+				}
 
 				var temp_case;
 
