@@ -38,7 +38,7 @@ router.all('/:id', function (req, res, next) {
             for (var l = 0; l < previews.length; l++) {
                 previews[l] = '/scenes/' + id + '/preview/' + previews[l];
             }
-		}
+		}else previews = fs.readdirSync(path + '/preview')
 
 
 
@@ -107,13 +107,6 @@ router.all('/:id', function (req, res, next) {
 				l_name = (JSON.parse(l_name)).name;
 
 
-                // получаем массив статических картинок
-                if(!settings.animated) {
-                    staticImages = fs.readdirSync(`${path}/${l_id}/devices`);
-                    for (var l = 0; l < staticImages.length; l++) {
-                        staticImages[l] = `scenes/${id}/${l_id}/device/${staticImages[l]}/mockup.png`
-                    }
-                }
 
 				// Получаем коодинаты
 
@@ -124,9 +117,8 @@ router.all('/:id', function (req, res, next) {
                     UpperRight = fs.readFileSync(l_id_path + '/coordinates/UpperRight').toString().replace(/\r/g, "\n").split("\n");
                     Offset = fs.readFileSync(l_id_path + '/coordinates/Offset').toString().replace(/\r/g, "\n").split("\n");
 				}else {
-                    var setup = fs.readFileSync(`${path}/${l_id}/Setup`);
-                    setup = JSON.parse(setup.toString())
-                    console.log(setup)
+                    var setup = fs.readFileSync(`${path}/${l_id}/Setup.json`);
+                    setup = JSON.parse(setup)
 				}
 				Crop = [
 '518	102',
@@ -161,45 +153,67 @@ router.all('/:id', function (req, res, next) {
 					Offset: {}
 				};
 
-				var ll_length = LowerLeft.length;
+				if(settings.animated) {
+                    var ll_length = LowerLeft.length;
 
-				for (var v = 0; v < ll_length; v++) {
+                    for (var v = 0; v < ll_length; v++) {
 
-					temp_case = LowerLeft[v].trim();
-					temp_case = temp_case.split("\t");
-					xy_arr.LowerLeft[temp_case[0]] = {
-						'x': temp_case[1],
-						'y': temp_case[2]
-					};
+                        temp_case = LowerLeft[v].trim();
+                        temp_case = temp_case.split("\t");
+                        xy_arr.LowerLeft[temp_case[0]] = {
+                            'x': temp_case[1],
+                            'y': temp_case[2]
+                        };
 
-					temp_case = LowerRight[v].trim();
-					temp_case = temp_case.split("\t");
-					xy_arr.LowerRight[temp_case[0]] = {
-						'x': temp_case[1],
-						'y': temp_case[2]
-					};
+                        temp_case = LowerRight[v].trim();
+                        temp_case = temp_case.split("\t");
+                        xy_arr.LowerRight[temp_case[0]] = {
+                            'x': temp_case[1],
+                            'y': temp_case[2]
+                        };
 
-					temp_case = UpperLeft[v].trim();
-					temp_case = temp_case.split("\t");
-					xy_arr.UpperLeft[temp_case[0]] = {
-						'x': temp_case[1],
-						'y': temp_case[2]
-					};
+                        temp_case = UpperLeft[v].trim();
+                        temp_case = temp_case.split("\t");
+                        xy_arr.UpperLeft[temp_case[0]] = {
+                            'x': temp_case[1],
+                            'y': temp_case[2]
+                        };
 
-					temp_case = UpperRight[v].trim();
-					temp_case = temp_case.split("\t");
-					xy_arr.UpperRight[temp_case[0]] = {
-						'x': temp_case[1],
-						'y': temp_case[2]
-					};
+                        temp_case = UpperRight[v].trim();
+                        temp_case = temp_case.split("\t");
+                        xy_arr.UpperRight[temp_case[0]] = {
+                            'x': temp_case[1],
+                            'y': temp_case[2]
+                        };
 
-					temp_case = Offset[v].trim();
-					temp_case = temp_case.split("\t");
-					xy_arr.Offset[temp_case[0]] = {
-						'x': temp_case[1],
-						'y': temp_case[2]
-					};
+                        temp_case = Offset[v].trim();
+                        temp_case = temp_case.split("\t");
+                        xy_arr.Offset[temp_case[0]] = {
+                            'x': temp_case[1],
+                            'y': temp_case[2]
+                        };
 
+                    }
+				}
+
+				if(!settings.animated) {
+                    xy_arr.LowerLeft = {
+                        'x': setup.LowerLeft.split(` `)[0],
+                        'y': setup.LowerLeft.split(` `)[1]
+                    }
+                    xy_arr.LowerRight = {
+                        'x': setup.LowerRight.split(` `)[0],
+                        'y': setup.LowerRight.split(` `)[1]
+                    }
+                    xy_arr.UpperLeft = {
+                        'x': setup.UpperLeft.split(` `)[0],
+                        'y': setup.UpperLeft.split(` `)[1]
+                    }
+                    xy_arr.UpperRight = {
+                        'x': setup.UpperRight.split(` `)[0],
+                        'y': setup.UpperRight.split(` `)[1]
+                    }
+                    xy_arr.Offset = setup.Zindex
 				}
 
 				frames = Device.length;
@@ -215,23 +229,51 @@ router.all('/:id', function (req, res, next) {
 
 					num = parseInt(i_img_uri.replace(/\D/g, ''));
 
-					i_lowerleft = ((xy_arr.LowerLeft[num] != undefined) ? xy_arr.LowerLeft[num] : false);
-					i_lowerright = ((xy_arr.LowerRight[num] != undefined) ? xy_arr.LowerRight[num] : false);
-					i_upperleft = ((xy_arr.UpperLeft[num] != undefined) ? xy_arr.UpperLeft[num] : false);
-					i_upperright = ((xy_arr.UpperRight[num] != undefined) ? xy_arr.UpperRight[num] : false);
-					i_offset = ((xy_arr.Offset[num] != undefined) ? xy_arr.Offset[num] : false);
+					if(settings.animated) {
+                        i_lowerleft = ((xy_arr.LowerLeft[num] != undefined) ? xy_arr.LowerLeft[num] : false);
+                        i_lowerright = ((xy_arr.LowerRight[num] != undefined) ? xy_arr.LowerRight[num] : false);
+                        i_upperleft = ((xy_arr.UpperLeft[num] != undefined) ? xy_arr.UpperLeft[num] : false);
+                        i_upperright = ((xy_arr.UpperRight[num] != undefined) ? xy_arr.UpperRight[num] : false);
+                        i_offset = ((xy_arr.Offset[num] != undefined) ? xy_arr.Offset[num] : false);
 
-					Frames_arr[Frames_arr.length] = {
-						i_mask_uri: i_mask_uri,
-						i_img_uri: i_img_uri,
-						i_upperright: i_upperright,
-						i_upperleft: i_upperleft,
-						i_lowerright: i_lowerright,
-						i_lowerleft: i_lowerleft,
-						i_offset: i_offset
+                        Frames_arr[Frames_arr.length] = {
+                            i_mask_uri: i_mask_uri,
+                            i_img_uri: i_img_uri,
+                            i_upperright: i_upperright,
+                            i_upperleft: i_upperleft,
+                            i_lowerright: i_lowerright,
+                            i_lowerleft: i_lowerleft,
+                            i_offset: i_offset
+                        }
 					}
 
-				} 
+				}
+
+                if(!settings.animated) {
+                    i_lowerleft = xy_arr.LowerLeft
+                    i_lowerright = xy_arr.LowerRight
+                    i_upperleft = xy_arr.UpperLeft
+                    i_upperright = xy_arr.UpperRight
+                    i_offset = xy_arr.Offset
+
+                    staticImages = fs.readdirSync(`${path}/${l_id}/devices`);
+                    imageTitle = fs.readdirSync(`${path}/${l_id}/devices`);
+                    for (var l = 0; l < staticImages.length; l++) {
+                        staticImages[l] = `scenes/${id}/${l_id}/device/${staticImages[l]}/mockup.png`
+
+                        Frames_arr.push(
+                            {
+                                i_img_title: imageTitle[l],
+                                i_img_uri: staticImages[l],
+                                i_upperright: i_upperright,
+                                i_upperleft: i_upperleft,
+                                i_lowerright: i_lowerright,
+                                i_lowerleft: i_lowerleft,
+                                i_offset: i_offset
+                            }
+                        )
+                    }
+                }
 
 
 				data = fs.readFileSync(l_id_path + '/icon.png');
@@ -247,7 +289,7 @@ router.all('/:id', function (req, res, next) {
 					l_mask_width: dimensions.width,
 					l_mask_height: dimensions.height,
 					l_icon_uri: i_icon_uri,
-					l_data: (settings.animated ? Frames_arr : staticImages),
+					l_data: Frames_arr,
 					l_enable: true
 				}
 

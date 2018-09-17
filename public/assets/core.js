@@ -7,7 +7,8 @@ ELEMENT.locale(ELEMENT.lang.en);
 	/////////////////////////////////////////////////////////////////
 const store = new Vuex.Store({
 	state: {
-		scenestore: []
+		scenestore: [],
+		isAnimated: null,
 	},
 	mutations: {
 		loaddata(state, data) {
