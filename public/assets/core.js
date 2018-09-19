@@ -30,10 +30,16 @@ const router = new VueRouter({
 		routes: [{
 			path: '/',
 			component: SceneLoad
-		}, {
+		},
+		{
 			path: '/edit/:id',
 			component: SceneEditor
-		}]
+		},
+		{
+			path: '/static/:id',
+			component: StaticSceneEditor
+		}
+		]
 	})
 	/////////////////////////////////////////////////////////////////
   // Основная часть
