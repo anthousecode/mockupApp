@@ -202,7 +202,7 @@ const StaticSceneEditor = {
             })
         },
         colorAdjBar(id, item) {
-            this.
+
             let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
             if(item.value[0] < 0){
                 bar.style.backgroundColor = '#f97050';
