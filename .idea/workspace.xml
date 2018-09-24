@@ -137,18 +137,18 @@
     <session id="868765766">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1466" />
+          <entry key="css" value="1486" />
           <entry key="gitignore" value="2" />
           <entry key="html" value="32" />
-          <entry key="js" value="2933" />
+          <entry key="js" value="3045" />
           <entry key="svg" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1466" />
+          <entry key="CSS" value="1486" />
           <entry key="HTML" value="240" />
-          <entry key="JavaScript" value="2725" />
+          <entry key="JavaScript" value="2837" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SVG" value="6" />
         </counts>
@@ -186,17 +186,16 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7719298">
+    <splitter split-orientation="horizontal" split-proportion="0.49809307">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="145" column="23" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="23" />
+                <state relative-caret-position="444">
+                  <caret line="204" column="17" lean-forward="true" selection-start-line="204" selection-start-column="17" selection-end-line="204" selection-end-column="17" />
                   <folding>
                     <element signature="n#div#0;n#template#0;n#div#1;n#div#1;n#div#0;n#!!top" />
-                    <element signature="e#1565#2089#0" />
                   </folding>
                 </state>
               </provider>
@@ -219,7 +218,7 @@
             <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-392">
-                  <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+                  <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
                   <folding>
                     <element signature="n#style#0;n#el-col#1;n#el-row#0;n#el-container#0;n#!!top" expanded="true" />
                   </folding>
@@ -234,8 +233,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/assets/themes/default/staticscene.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="55">
-                  <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
+                <state relative-caret-position="56">
+                  <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -280,9 +279,9 @@
       <find>right_float_bar</find>
       <find>url()</find>
       <find>images/AE.svg</find>
-      <find>colorAdjBar</find>
       <find>grapic</find>
       <find>el-select</find>
+      <find>colorAdjBar</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public</dir>
@@ -329,8 +328,8 @@
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/public/assets/sceneload.js" />
         <option value="$PROJECT_DIR$/public/images/icons/Shape.svg" />
-        <option value="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" />
         <option value="$PROJECT_DIR$/public/assets/staticsceneeditor.js" />
+        <option value="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" />
       </list>
     </option>
   </component>
@@ -471,12 +470,12 @@
       <workItem from="1534142232695" duration="15927000" />
       <workItem from="1537255673730" duration="15412000" />
       <workItem from="1537338602543" duration="21635000" />
-      <workItem from="1537770088095" duration="14794000" />
+      <workItem from="1537770088095" duration="18350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175405000" />
+    <option name="totallyTimeSpent" value="178961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1617" height="1062" extended-state="6" />
@@ -496,7 +495,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.44047618" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.27597404" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -723,7 +722,7 @@
     <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-392">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#el-col#1;n#el-row#0;n#el-container#0;n#!!top" expanded="true" />
           </folding>
@@ -775,21 +774,20 @@
     <entry file="file://$PROJECT_DIR$/public/images/icons/color.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/themes/default/staticscene.css">
+    <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
+        <state relative-caret-position="444">
+          <caret line="204" column="17" lean-forward="true" selection-start-line="204" selection-start-column="17" selection-end-line="204" selection-end-column="17" />
+          <folding>
+            <element signature="n#div#0;n#template#0;n#div#1;n#div#1;n#div#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/themes/default/staticscene.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="145" column="23" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="23" />
-          <folding>
-            <element signature="n#div#0;n#template#0;n#div#1;n#div#1;n#div#0;n#!!top" />
-            <element signature="e#1565#2089#0" />
-          </folding>
+        <state relative-caret-position="56">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
         </state>
       </provider>
     </entry>

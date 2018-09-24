@@ -18,7 +18,7 @@ const StaticSceneEditor = {
                                 <div class="adj-bar__icon">
                                     <img :src="range.icon">
                                 </div>
-                                <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @change="colorAdjBar(index, range)"></el-slider>
+                                <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
                             </div>
                         </div>
                     </div>   
@@ -202,6 +202,7 @@ const StaticSceneEditor = {
             })
         },
         colorAdjBar(id, item) {
+            this.
             let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
             if(item.value[0] < 0){
                 bar.style.backgroundColor = '#f97050';
@@ -221,6 +222,7 @@ const StaticSceneEditor = {
             document.getElementById("canvas").style.height = (document.getElementById("workspace").offsetHeight) + 'px';
         }
     },
+
     beforeDestroy() {
         store.commit('loaddata', []);
         //window.removeEventListener('resize', this.getWindowWidth);
