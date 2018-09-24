@@ -126,7 +126,7 @@ var renderStaticCore = {
             if (vm.exportsize[0] == vm.size[0]) {
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                        vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`static/${vm.current_device.i_img_uri}`);
+                        vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
                         //console.log(vm.hiResTextureMockup[layersindex][index]);
                         vm.hiResLastId++;
                         vm.hiResPreloadPercentVid = Math.round((vm.hiResLastId) / (vm.scenestore.s_frames*vm.scenestore.s_mcount) * 100)
@@ -139,7 +139,7 @@ var renderStaticCore = {
             } else
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                        vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`static/${vm.current_device.i_img_uri}`);
+                        vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
                         //console.log(vm.hiResTextureMockup[layersindex][index]);
                         vm.hiResTextureMockup[layersindex][index].on('update', function() {
                             vm.hiResLastId++;
@@ -296,8 +296,8 @@ var renderStaticCore = {
 
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                        console.log(`static/${vm.current_device.i_img_uri}`)
-                        vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`static/${vm.current_device.i_img_uri}`);
+                        console.log(`${vm.current_device.i_img_uri}`)
+                        vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
                         if (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
                             let obj = [
                                 vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.x) / vm.reduceratioX, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y) / vm.reduceratioY),
@@ -383,10 +383,6 @@ var renderStaticCore = {
                     vm.mockup_object_blink[layersindex].loop = false;
                     vm.mockup_object_blink[layersindex].animationSpeed = 0.5;
                     vm.mockup_object_blink[layersindex].blendMode = vm.blend_mode;
-
-                    var a = vm.renderer_client.extract.pixels(vm.mockup_object[layersindex].texture)
-
-                    console.log(a)
 
                     var texture_cover_mask_distort = new PIXI.projection.Sprite2d(vm.cover_object[layersindex].texture)
                     texture_cover_mask_distort.texture = PIXI.Texture.WHITE

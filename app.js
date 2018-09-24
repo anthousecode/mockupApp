@@ -68,7 +68,7 @@ app.use('/api/scenes', apiScenesIdRouter)
 app.use('/api/staticscenes', apiStaticScenesIdRouter)
 app.use('/api/exportvideo', apiExportVideoRouter)
 app.use('/scenes', apiScenesPngTransform)
-app.use('/edit/static/scenes', apiStaticScenesPngTransform)
+app.use('/static/scenes', apiStaticScenesPngTransform)
 app.use('/export', apiDownloadExportVideo)
 //app.use('/api/mergeimages', exportVideo)
 

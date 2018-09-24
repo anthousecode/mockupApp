@@ -5,16 +5,556 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/staticPngTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/brightness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/color.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/contrast.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/device-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/exposure.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/imgedit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/saturation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/upload.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00018.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00021.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00022.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00023.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00025.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00026.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00027.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00028.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00029.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00030.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00031.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00032.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00033.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00034.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00035.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00036.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00037.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00038.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00039.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00040.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00041.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00042.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00043.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00044.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00045.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00046.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00047.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00048.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00049.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00050.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00051.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00052.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00053.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00054.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00055.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00056.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00057.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00058.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00059.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00060.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00061.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00062.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00063.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00064.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00065.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00066.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00067.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00068.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00069.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00070.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00071.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00072.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00073.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00074.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00075.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00076.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00077.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00078.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00079.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00080.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00081.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00082.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00083.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00084.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00085.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00086.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00087.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00088.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00089.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00090.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00091.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00092.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00093.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00094.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00095.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00096.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00097.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00098.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00099.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00106.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00113.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00115.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00116.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00117.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00118.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00119.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00121.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00122.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00123.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00124.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00125.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00126.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00127.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00129.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00130.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00131.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00132.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00133.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00134.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00135.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00136.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00137.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00138.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00139.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00140.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00141.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00142.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00143.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00145.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00146.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00147.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00148.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00149.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00151.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00153.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00154.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00155.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00156.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00157.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00158.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/1280/_00159.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00018.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00021.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00022.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00023.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00025.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00026.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00027.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00028.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00029.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00030.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00031.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00032.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00033.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00034.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00035.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00036.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00037.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00038.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00039.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00040.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00041.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00042.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00043.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00044.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00045.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00046.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00047.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00048.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00049.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00050.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00051.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00052.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00053.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00054.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00055.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00056.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00057.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00058.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00059.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00060.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00061.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00062.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00063.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00064.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00065.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00066.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00067.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00068.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00069.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00070.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00071.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00072.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00073.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00074.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00075.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00076.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00077.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00078.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00079.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00080.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00081.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00082.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00083.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00084.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00085.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00086.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00087.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00088.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00089.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00090.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00091.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00092.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00093.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00094.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00095.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00096.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00097.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00098.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00099.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00106.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00113.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00115.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00116.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00117.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00118.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00119.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00121.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00122.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00123.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00124.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00125.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00126.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00127.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00129.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00130.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00131.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00132.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00133.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00134.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00135.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00136.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00137.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00138.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00139.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00140.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00141.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00142.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00143.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00145.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00146.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00147.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00148.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00149.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00151.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00153.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00154.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00155.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00156.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00157.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00158.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scenes/surfacestudio/1/device/800/_00159.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/sceneload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/sceneload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/staticCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticCore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhone-8/settings" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iPhone-8/settings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/pngtransform.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/pngtransform.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/scenesid.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/scenesid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00071.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00071.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00072.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00072.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00073.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00073.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00074.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00074.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00075.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00075.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00076.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00076.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00077.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00077.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00078.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00078.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00079.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00079.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00080.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00080.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00081.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00081.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00082.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00082.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00083.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00083.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00084.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00084.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00085.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00085.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00086.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00086.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00087.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00087.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00088.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00088.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00089.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00089.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00090.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00090.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00091.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00091.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00092.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00092.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00093.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/1/device/800/_00093.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00071.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00071.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00072.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00072.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00073.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00073.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00074.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00074.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00075.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00075.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00076.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00076.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00077.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00077.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00078.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00078.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00079.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00079.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00080.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00080.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00081.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00081.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00082.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00082.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00083.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00083.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00084.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00084.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00085.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00085.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00086.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00086.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00087.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00087.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00088.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00088.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00089.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00089.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00090.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00090.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00091.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00091.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00092.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/2/device/800/_00092.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00070.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00070.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00071.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00071.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00072.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00072.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00073.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00073.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00074.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00074.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00075.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00075.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00076.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00076.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00077.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00077.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00078.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00078.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00079.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00079.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00080.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00080.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00081.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00081.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00082.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00082.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00083.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00083.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00084.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00084.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00085.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00085.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00086.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00086.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00087.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00087.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00088.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00088.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00089.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00089.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00090.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00090.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00091.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00091.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00092.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/3/device/800/_00092.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00070.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00070.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00071.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00071.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00072.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00072.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00073.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00073.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00074.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00074.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00075.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00075.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00076.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00076.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00077.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00077.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00078.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00078.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00079.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00079.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00080.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00080.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00081.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00081.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00082.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00082.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00083.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00083.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00084.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00084.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00085.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00085.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00086.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00086.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00087.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00087.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00088.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00088.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00089.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00089.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00090.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00090.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00091.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00091.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00092.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/4-iphone-x/4/device/800/_00092.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00000.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00000.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00001.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00002.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00002.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00003.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00003.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00004.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00004.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00005.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00005.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00006.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00006.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00007.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00007.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00008.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00008.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00009.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00009.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00010.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00010.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00011.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00011.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00012.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00012.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00013.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00013.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00014.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00014.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00015.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00015.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00016.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00016.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00017.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00017.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00018.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00018.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00019.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00019.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00020.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00020.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00021.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00021.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00022.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00022.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00023.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00023.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00024.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00024.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00025.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00025.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00026.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00026.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00027.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00027.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00028.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00028.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00029.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00029.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00030.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00030.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00031.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00031.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00032.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00032.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00033.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00033.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00034.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00034.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00035.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00035.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00036.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00036.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00037.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00037.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00038.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00038.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00039.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00039.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00040.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00040.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00041.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00041.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00042.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00042.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00043.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00043.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00044.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00044.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00045.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00045.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00046.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00046.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00047.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00047.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00048.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00048.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00049.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00049.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00050.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00050.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00051.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00051.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00052.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00052.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00053.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00053.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00054.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00054.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00055.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00055.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00056.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00056.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00057.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00057.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00058.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00058.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00059.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00059.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00060.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00060.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00061.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00061.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00062.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00062.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00063.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00063.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00064.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00064.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00065.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00065.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00066.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00066.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00067.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00067.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00068.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00068.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00069.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00069.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00070.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00070.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00071.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00071.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00072.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00072.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00073.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00073.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00074.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00074.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00075.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00075.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00076.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00076.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00077.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00077.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00078.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00078.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00079.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00079.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00080.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00080.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00081.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00081.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00082.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00082.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00083.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00083.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00084.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00084.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00085.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00085.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00086.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00086.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00087.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00087.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00088.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00088.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00089.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00089.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00090.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00090.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00091.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00091.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00092.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00092.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00093.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00093.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00094.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00094.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00095.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00095.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00096.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00096.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00097.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00097.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00098.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00098.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00099.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00099.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00100.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00101.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00102.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00102.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00103.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00103.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00104.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00104.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00105.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00105.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00106.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00106.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00107.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00107.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00108.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00108.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00109.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00109.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00110.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00110.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00111.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00111.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00112.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00112.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00113.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00113.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00114.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00114.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00115.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00115.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00116.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00116.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00117.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00117.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00118.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00118.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00119.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00119.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iphone-x-looped/1/device/800/_00120.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -164,8 +704,8 @@
       <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/core.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-643">
-              <caret line="271" column="14" selection-start-line="271" selection-start-column="14" selection-end-line="271" selection-end-column="14" />
+            <state relative-caret-position="415">
+              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -179,38 +719,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scenesid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
+            <state relative-caret-position="160">
+              <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sceneeditor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="75" column="20" lean-forward="true" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="383" column="77" lean-forward="true" selection-start-line="383" selection-start-column="77" selection-end-line="383" selection-end-column="77" />
+            <state relative-caret-position="267">
+              <caret line="673" column="56" selection-start-line="673" selection-start-column="50" selection-end-line="673" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pngtransform.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/pngtransform.js">
+      <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="95" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="519" column="7" selection-start-line="519" selection-start-column="7" selection-end-line="519" selection-end-column="7" />
+            <state relative-caret-position="-962">
+              <caret line="161" column="25" lean-forward="true" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -228,7 +768,6 @@
     <findStrings>
       <find>hires</find>
       <find>;</find>
-      <find>static</find>
       <find>STATIC</find>
       <find>render</find>
       <find>offset</find>
@@ -256,6 +795,7 @@
       <find>vm.mock</find>
       <find>tint</find>
       <find>Alp</find>
+      <find>static</find>
     </findStrings>
     <replaceStrings>
       <replace>Rerere</replace>
@@ -291,7 +831,6 @@
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/routes/exportVideo/convertToBase64.js" />
         <option value="$PROJECT_DIR$/node_modules/pixi.js/lib/polyfill/index.js" />
-        <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js" />
         <option value="$PROJECT_DIR$/node_modules/pixi.js/lib/core/textures/Texture.js" />
         <option value="$PROJECT_DIR$/node_modules/gl/browser_index.js" />
@@ -302,14 +841,15 @@
         <option value="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" />
         <option value="$PROJECT_DIR$/routes/staticSceneId.js" />
         <option value="$PROJECT_DIR$/public/assets/sceneeditor.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/assets/pixi.core.js" />
         <option value="$PROJECT_DIR$/public/assets/core.js" />
         <option value="$PROJECT_DIR$/routes/scenesid.js" />
-        <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/routes/staticPngTransform.js" />
         <option value="$PROJECT_DIR$/routes/pngtransform.js" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/public/assets/staticCore.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -371,7 +911,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="зтп&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngtransform.js&#10;inde&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;index&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;зтп&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngtransform.js&#10;inde&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;index&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/public" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -476,11 +1016,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="414246000" />
+    <option name="totallyTimeSpent" value="415360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-2" width="1680" height="1052" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49779248" visible="true" weight="0.2112251" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -490,35 +1029,46 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info id="Structure" order="0" sideWeight="0.5022075" side_tool="true" weight="0.23717561" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.19800885" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.30752212" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49779248" visible="true" weight="0.2112251" />
+      <window_info id="Structure" order="0" sideWeight="0.5022075" side_tool="true" weight="0.23717561" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32853982" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.19800885" />
+      <window_info id="Favorites" order="1" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49779248" weight="0.17380808" />
       <window_info id="Structure" order="0" sideWeight="0.5022075" side_tool="true" weight="0.23717561" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286334" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.37942478" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286334" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
       <window_info id="Favorites" order="1" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -529,13 +1079,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/exportVideo/decodeBase64Image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/getgradientlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="626">
@@ -742,31 +1285,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/staticSceneId.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3302">
           <caret line="226" selection-start-line="226" selection-end-line="226" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -787,13 +1309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-643">
-          <caret line="271" column="14" selection-start-line="271" selection-start-column="14" selection-end-line="271" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3172">
@@ -808,10 +1323,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/pngtransform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="95" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="519" column="7" selection-start-line="519" selection-start-column="7" selection-end-line="519" selection-end-column="7" />
+        <state relative-caret-position="83">
+          <caret line="524" column="9" selection-start-line="524" selection-start-column="9" selection-end-line="524" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/sceneeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="75" column="20" lean-forward="true" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-962">
+          <caret line="161" column="25" lean-forward="true" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="673" column="56" selection-start-line="673" selection-start-column="50" selection-end-line="673" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -822,17 +1379,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/pngtransform.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="95" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="383" column="77" lean-forward="true" selection-start-line="383" selection-start-column="77" selection-end-line="383" selection-end-column="77" />
+        <state relative-caret-position="160">
+          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
         </state>
       </provider>
     </entry>

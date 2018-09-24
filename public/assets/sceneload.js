@@ -75,10 +75,10 @@ const SceneLoad = {
             </span>
             <span v-else>
               <div class="_wf-preview">
-                <el-button type="text" @click="openscene(scene.s_id)" @mouseover.native.prevent="startsequence(index)" @mouseleave.native.prevent="stopsequence(index)">
+                <el-button type="text" @click="openscene(scene.s_id, scene.s_animated)" @mouseover.native.prevent="startsequence(index)" @mouseleave.native.prevent="stopsequence(index)">
                   <img :src="scene.s_uri_poster" class="imageres _wf-image">
                 </el-button>              
-                <el-button type="text" @click="openscene(scene.s_id)">
+                <el-button type="text" @click="openscene(scene.s_id, scene.s_animated)">
                   <div class="_wf-description">
                     <h1 class="_wf-heading-3">
                       <strong>{{scene.s_name}}
@@ -87,7 +87,7 @@ const SceneLoad = {
                     </h1>
                     <div class="_wf-tag w-clearfix">
                       <img src="images/Animated.svg" class="_wf-icon-tag">
-                      <div class="_wf-tag-text">Animated
+                      <div class="_wf-tag-text">{{ isAnimated(scene.s_animated) }}
                         <br>
                       </div>
                     </div>
@@ -176,8 +176,16 @@ const SceneLoad = {
 			this.sequenceplay = false;
 		},
 		// Открытие сцены
-		openscene: function(id) {
-			this.$router.push('/edit/' + id)
+		openscene: function(id, bool) {
+			if(bool){
+                this.$router.push('/edit/' + id)
+			}else{
+                this.$router.push('/static/' + id)
+			}
+
+		},
+        isAnimated: function(bool){
+			return bool ? "Animated" : "Static";
 		}
 	},
 
