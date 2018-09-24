@@ -40,7 +40,7 @@ const router = new VueRouter({
 	/////////////////////////////////////////////////////////////////
 var vm = new Vue({
 		el: '#app',
-		mixins: [definitions, keyEvents, mouseEvent, renderCore, exportTools, helpersTools, toolsActivators, shapesDrawers],
+		mixins: [definitions, keyEvents, mouseEvent, /*renderCore,*/ renderStaticCore, exportTools, helpersTools, toolsActivators, shapesDrawers],
 		delimiters: ['${', '}'],
 		router: router,
 		components: {
@@ -80,8 +80,8 @@ var vm = new Vue({
 			rendertype: '',
 			origratio: '',
 			origratiolock: true,
-			origsize: [4096, 2160],
-			exportsize: [1280, 720],
+			origsize: [6500, 4500],
+			exportsize: [3250, 2250],
 			size: [0, 0],
 			fileList: [{
 				name: 'test.jpeg',
@@ -632,7 +632,6 @@ gradientchange: function(e){
 			//console.log('all sequence`s images were finished')
 					vm.dlgloader = false;
 					for (index = 0; index < vm.scenestore.s_frames; index++) {
-
 							vm.coversequence[vm.currentMockup][index].texture = PIXI.Texture.fromImage(pre_cover[index]);
 
 					}
@@ -800,8 +799,8 @@ function generateThumbnail(i) {
 				//Выставляем исходное разрешение для рендера
 				//vm.renderScene(1920, 1080);
 				//vm.renderScene(1280, 720);
-        vm.renderScene(800, 450);
-				//vm.renderScene(2048, 1080);
+        //vm.renderScene(800, 450);
+				vm.renderScene(1310, 843);
 			},
 			/********************* Show rubber band ***********************/
 			// Инициализация выделялки объекта
