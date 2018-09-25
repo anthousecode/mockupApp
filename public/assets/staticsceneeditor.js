@@ -32,17 +32,8 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <template v-if="isDeviceShow">
-                        <!--<div class="device" @click="deviceDialog = true">
-                            <div class="arrow-icon"></div>
-                            <div class="device-upload">
-                                <div class="upload-icon"></div>
-                            </div>
-                        </div>-->
-                        
                          <span v-for="(layer, index) in layers" :key="layer.id">
                             <div v-if="layer.controller == 'mockup'">
-                             <!--<el-button icon="icon-Plus" class="floatbutton button-mockup" :style="'background:url('+cover_object[layer.id].texture.baseTexture.imageUrl+');'" @click="showUploadWindow(layer.id)">
-		                     </el-button>-->
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
                                  <div class="arrow-icon"></div>
                                     <div class="device-upload button-mockup" :style="'background:url('+cover_object[layer.id].texture.baseTexture.imageUrl+');'">
