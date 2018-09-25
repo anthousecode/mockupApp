@@ -32,17 +32,8 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <template v-if="isDeviceShow">
-                        <div class="device" @click="onDeviceDialogShow">
-                            <div class="arrow-icon"></div>
-                            <div class="device-upload">
-                                <div class="upload-icon"></div>
-                            </div>
-                        </div>-->
-                        
                          <span v-for="(layer, index) in layers" :key="layer.id">
                             <div v-if="layer.controller == 'mockup'">
-                             <!--<el-button icon="icon-Plus" class="floatbutton button-mockup" :style="'background:url('+cover_object[layer.id].texture.baseTexture.imageUrl+');'" @click="showUploadWindow(layer.id)">
-		                     </el-button>-->
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
                                  <div class="arrow-icon"></div>
                                     <div class="device-upload button-mockup" :style="'background:url('+cover_object[layer.id].texture.baseTexture.imageUrl+');'">
@@ -63,7 +54,7 @@ const StaticSceneEditor = {
                                 <div class="material-list">
                                     <div class="material-list__item" v-for="(item, i) in devices" :key="i" @click="deviceHandler(item)">
                                         <div class="color-icon" :style="{backgroundColor: item.color}"></div>
-                                        <span>{{item.title}}</span>
+                                        <span>{{item.i_img_title}}</span>
                                     </div>
                                     <div class="material-list__item">
                                         <div class="color-icon color"></div>
@@ -91,7 +82,7 @@ const StaticSceneEditor = {
                                 </div>
                                 <div class="shadow-prop">
                                     <span>Opacity</span>
-                                    <el-slider v-model="opacity"></el-slider>
+                                    <el-slider v-model="opacity" :min="0" :max="1" :step="0.01" @input="changeShadowOpacity"></el-slider>
                                 </div>
                             </template>
                         </div>
@@ -110,15 +101,13 @@ const StaticSceneEditor = {
                     </template>   
                 </div>
             </div>
-            
-            <!-- Device dialog   -->
-            <el-dialog  :visible.sync="deviceDialog" width="545px">
-              <div class="modal-device-wrap"></div>
-            </el-dialog>
         </div> 
     `,
     data: function(){
         return{
+            layers: [],
+            cover_object: [],
+            scenestore: '',
             isAdjShow: false,
             isDeviceShow: false,
             isMaterialsShow: false,
@@ -147,18 +136,7 @@ const StaticSceneEditor = {
 
                 }
             ],
-            devices:[
-                {
-                    color: '#d7d7d7',
-                    title: 'White Clay'
-                },{
-                    color: '#161616',
-                    title: 'Black Clay'
-                },{
-                    color: '#5a5a5a',
-                    title: 'Official color'
-                }
-            ],
+            devices:[],
             blendingItems: [
                 {value: "Multiply", label: "Multiply"}
             ],
@@ -174,7 +152,24 @@ const StaticSceneEditor = {
             console.log(response.data);
             // Генерация события - загрузка данных
             _this.$emit('eventname', true)
-        }).catch(function (error) {
+        })
+            .then(() => {
+                this.scenestore = store.state.scenestore
+                this.cover_object = vm.cover_object
+                let devicesData = this.scenestore.s_layers[0].l_data
+                this.layers = vm.layers
+                console.log(vm.layers)
+                for (let i = 0; i < devicesData.length; i++) {
+/*                    let device
+
+                    device = {
+                        title: devicesData[i].i_img_title,
+                        color: `#d7d7d7`
+                    }*/
+                    this.devices.push(devicesData[i])
+                }
+            })
+            .catch(function (error) {
             console.log(error);
         });
         this.$nextTick(function() {
@@ -186,8 +181,15 @@ const StaticSceneEditor = {
 
     },
     methods:{
+        showUploadWindow(index){
+            vm.openUploader(index)
+            this.onDeviceDialogShow()
+        },
+        changeShadowOpacity(){
+            vm.shadow_opacity = this.opacity
+        },
         deviceHandler(item){
-            console.log(item)
+            vm.changeDevice(item)
         },
         showDevice(){
             this.isDeviceShow = !this.isDeviceShow;
@@ -242,7 +244,10 @@ const StaticSceneEditor = {
         },
         getWindowHeight(event) {
             document.getElementById("canvas").style.height = (document.getElementById("workspace").offsetHeight) + 'px';
-        }
+        },
+        onDeviceDialogShow(){
+            vm.staticDeviceDialog = true;
+        },
     },
 
     beforeDestroy() {
