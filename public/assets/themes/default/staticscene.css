@@ -132,7 +132,7 @@ div[role="slider"]{
     width: 32px;
     height: 68px;
     border-radius: 4px;
-    background-color: #f96f50;
+    /*background-color: #f96f50;*/
     border: 1px solid #d55638;
     display: flex;
     justify-content: center;
@@ -173,7 +173,7 @@ div[role="slider"]{
     justify-content: flex-start;
     align-items: center;
 }
-.material-list__item:nth-child(4){
+.material-list__item:last-child{
     position: relative;
 }
 .color-icon{
@@ -251,4 +251,11 @@ div[role="slider"]{
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.17);
     border-radius: 6px;
     background-color: #fff;
+}
+.modal-device-wrap{
+    width: 545px;
+    height: 745px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: -6px 6px 10px rgba(84, 104, 115, 0.12);
 }
