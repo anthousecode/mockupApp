@@ -12,7 +12,7 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isAdjShow"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                    <div v-if="isAdjShow">
+                    <div v-show="isAdjShow">
                         <div class="adj-dropdown">
                             <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar">
                                 <div class="adj-bar__icon">
@@ -32,7 +32,7 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <template v-if="isDeviceShow">
-                        <div class="device">
+                        <div class="device" @click="deviceDialog = true">
                             <div class="arrow-icon"></div>
                             <div class="device-upload">
                                 <div class="upload-icon"></div>
@@ -95,7 +95,12 @@ const StaticSceneEditor = {
                     </template>   
                 </div>
             </div>
-        </div>     
+            
+            <!-- Device dialog   -->
+            <el-dialog  :visible.sync="deviceDialog" width="545px">
+              <div class="modal-device-wrap"></div>
+            </el-dialog>
+        </div> 
     `,
     data: function(){
         return{
@@ -143,7 +148,8 @@ const StaticSceneEditor = {
                 {value: "Multiply", label: "Multiply"}
             ],
             blending: null,
-            opacity: 20
+            opacity: 20,
+            deviceDialog: false
         }
     },
     mounted: function() {
@@ -183,26 +189,27 @@ const StaticSceneEditor = {
         showFilters(){
             this.isAdjShow = !this.isAdjShow;
             if(this.isAdjShow){
-                this.hideAdjBarBtn();
+                // this.hideAdjBarBtn();
             }
         },
         hideAdjBarBtn(){
-            let elements = document.getElementsByClassName('.el-slider__bar');
+            let elements = document.querySelectorAll('.adj-dropdown .el-slider__runway');
             let bars = Array.prototype.slice.call( elements );
-            console.log('in -', elements);
+            // console.log('in -', bars);
             bars.forEach(item => {
-                console.log(parseInt(item.style.left));
-                if(parseInt(item.style.left) <= 50){
+                // console.log(parseInt(item.childNodes[0].style.left));
+                if(parseInt(item.childNodes[0].style.left) <= 50 && parseInt(item.childNodes[0].style.width) != 0){
                     console.log('yes')
-                    bars.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'none';
-                }else{
+                    // item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'none';
+                }else
+                {
                     console.log('no')
-                    bars.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'none';
+                    // item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'none';
                 }
             })
         },
         colorAdjBar(id, item) {
-
+            // this.hideAdjBarBtn();
             let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
             if(item.value[0] < 0){
                 bar.style.backgroundColor = '#f97050';
