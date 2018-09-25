@@ -18,7 +18,7 @@ const StaticSceneEditor = {
                                 <div class="adj-bar__icon">
                                     <img :src="range.icon">
                                 </div>
-                                <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @change="colorAdjBar(index, range)"></el-slider>
+                                <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
                             </div>
                         </div>
                     </div>   
@@ -27,14 +27,14 @@ const StaticSceneEditor = {
                 <div class="device-wrap">
                     <div class="adj-btn" @click="showDevice">
                         <div class="device-icon"></div>
-                        <span class="adj-text">iPhone X</span>
+                        <span class="adj-text">{{scenestore.s_id}}</span>
                         <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <template v-if="isDeviceShow">
                         <div class="device">
                             <div class="arrow-icon"></div>
-                            <div class="device-upload">
+                            <div class="device-upload" @click="vm.openUploader()">
                                 <div class="upload-icon"></div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@ const StaticSceneEditor = {
                                 <div class="material-list">
                                     <div class="material-list__item" v-for="(item, i) in devices" :key="i" @click="deviceHandler(item)">
                                         <div class="color-icon" :style="{backgroundColor: item.color}"></div>
-                                        <span>{{item.title}}</span>
+                                        <span>{{item.i_img_title}}</span>
                                     </div>
                                     <div class="material-list__item">
                                         <div class="color-icon color"></div>
@@ -76,7 +76,7 @@ const StaticSceneEditor = {
                                 </div>
                                 <div class="shadow-prop">
                                     <span>Opacity</span>
-                                    <el-slider v-model="opacity"></el-slider>
+                                    <el-slider v-model="opacity" :min="0" :max="1" :step="0.01" @input="changeShadowOpacity"></el-slider>
                                 </div>
                             </template>
                         </div>
@@ -99,6 +99,7 @@ const StaticSceneEditor = {
     `,
     data: function(){
         return{
+            scenestore: '',
             isAdjShow: false,
             isDeviceShow: false,
             isMaterialsShow: false,
@@ -127,23 +128,12 @@ const StaticSceneEditor = {
 
                 }
             ],
-            devices:[
-                {
-                    color: '#d7d7d7',
-                    title: 'White Clay'
-                },{
-                    color: '#161616',
-                    title: 'Black Clay'
-                },{
-                    color: '#5a5a5a',
-                    title: 'Official color'
-                }
-            ],
+            devices:[],
             blendingItems: [
                 {value: "Multiply", label: "Multiply"}
             ],
             blending: null,
-            opacity: 20
+            opacity: 1
         }
     },
     mounted: function() {
@@ -153,7 +143,21 @@ const StaticSceneEditor = {
             console.log(response.data);
             // Генерация события - загрузка данных
             _this.$emit('eventname', true)
-        }).catch(function (error) {
+        })
+            .then(() => {
+                this.scenestore = store.state.scenestore
+                let devicesData = this.scenestore.s_layers[0].l_data
+                for (let i = 0; i < devicesData.length; i++) {
+/*                    let device
+
+                    device = {
+                        title: devicesData[i].i_img_title,
+                        color: `#d7d7d7`
+                    }*/
+                    this.devices.push(devicesData[i])
+                }
+            })
+            .catch(function (error) {
             console.log(error);
         });
         this.$nextTick(function() {
@@ -165,8 +169,11 @@ const StaticSceneEditor = {
 
     },
     methods:{
+        changeShadowOpacity(){
+            vm.shadow_opacity = this.opacity
+        },
         deviceHandler(item){
-            console.log(item)
+            vm.changeDevice(item)
         },
         showDevice(){
             this.isDeviceShow = !this.isDeviceShow;
@@ -202,6 +209,7 @@ const StaticSceneEditor = {
             })
         },
         colorAdjBar(id, item) {
+
             let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
             if(item.value[0] < 0){
                 bar.style.backgroundColor = '#f97050';
@@ -221,6 +229,7 @@ const StaticSceneEditor = {
             document.getElementById("canvas").style.height = (document.getElementById("workspace").offsetHeight) + 'px';
         }
     },
+
     beforeDestroy() {
         store.commit('loaddata', []);
         //window.removeEventListener('resize', this.getWindowWidth);

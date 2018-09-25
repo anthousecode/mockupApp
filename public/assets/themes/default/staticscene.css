@@ -10,11 +10,18 @@
     justify-content: space-between;
 }
 .st-scene__main{
-    flex-basis: 80%;
+    width: 100%;
+    box-sizing: border-box;
     padding: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .st-scene__aside{
+    position: absolute;
+    right: 0;
+    top: 0;
     flex-basis: 230px;
     padding: 16px 18px;
 }
@@ -103,7 +110,7 @@ div[role="slider"]{
     border: none;
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.17);
     border-radius: 6px;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .adj-bar .el-slider__runway{

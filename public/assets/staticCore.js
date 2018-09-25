@@ -14,6 +14,7 @@ var renderStaticCore = {
         mask_object: [],
         cover_object: [],
         covershadow: [],
+        shadow_opacity: 1,
         shadow_object: [],
         shadowOpacity: 1,
         current_device: [],
@@ -89,6 +90,44 @@ var renderStaticCore = {
             //square.anchor.set(0.5);
             square.position.set(x, y);
             return square;
+        },
+        changeDevice(device) {
+            console.log(vm.global_project[0].children[1]._texture.baseTexture)
+            vm.current_device = device
+            let devices = vm.scenestore.s_layers[0].l_data
+            for(let i = 0; i < devices.length; i++) {
+                if(device.i_img_title == devices[i].i_img_title) {
+                    vm.current_device = devices[i]
+                }
+            }
+
+            for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                vm.mockup_object[layersindex].texture = (new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`))
+                vm.mockup_object_blink[layersindex].texture = (new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`))
+            }
+
+/*            for (index = 0; index < vm.scenestore.s_frames; index++) {
+                for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                    vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
+                }
+            }
+
+            for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+              /!*  vm.mockup_object[layersindex].destroy(true);*!/
+                // Loading sequences
+                vm.mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
+                vm.mockup_object[layersindex].width = vm.size[0]
+                vm.mockup_object[layersindex].height = vm.size[1]
+                vm.mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
+                vm.mockup_object_blink[layersindex].width = vm.size[0]
+                vm.mockup_object_blink[layersindex].height = vm.size[1]
+            }
+
+            vm.global_project[layersindex].addChild(vm.shadow_object[layersindex]);
+            vm.global_project[layersindex].addChild(vm.mockup_object[layersindex]);
+            vm.global_project[layersindex].addChild(vm.distort_layers[layersindex]);
+
+            console.log( vm.global_project[0].children[1]._texture.baseTexture)*/
         },
         // Предзагрзчик текстур высокого разрешения (разрешения для экспорта видео)
         preloadHiRes(xx) {
@@ -339,7 +378,6 @@ var renderStaticCore = {
                 var maxArea = [];
                 var padding = 30
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-
                     /////////////////////////////////////////////
                     centerRect[layersindex] = []
                     squaresRect[layersindex] = []
@@ -482,7 +520,7 @@ var renderStaticCore = {
                         })];
 
                         //настройка изменения прозрачности тени
-                        vm.shadow_object[layersindex].alpha = 1
+                        vm.shadow_object[layersindex].alpha = vm.shadow_opacity
 
                     }
 
