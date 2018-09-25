@@ -183,6 +183,7 @@ const StaticSceneEditor = {
     methods:{
         showUploadWindow(index){
             vm.openUploader(index)
+            this.onDeviceDialogShow()
         },
         changeShadowOpacity(){
             vm.shadow_opacity = this.opacity

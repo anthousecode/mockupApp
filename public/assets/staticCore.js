@@ -198,7 +198,7 @@ var renderStaticCore = {
             vm.cover_size_style = 'width:'+vm.cover_width+'px;height:'+vm.cover_height+'px;top:-'+vm.cover_height+'px;'
             vm.cover_upsize_style = 'height:'+vm.cover_height+'px';
             vm.cover_recommended = vm.scenestore.s_layers[indexofplayer].l_mask_width+ 'x' +vm.scenestore.s_layers[indexofplayer].l_mask_height;
-            vm.dlgMockupUploader = true;
+            //vm.dlgMockupUploader = true;
         },
         // Основной метод сборки сцены
         renderScene(width, height) {
