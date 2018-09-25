@@ -27,7 +27,7 @@ const StaticSceneEditor = {
                 <div class="device-wrap">
                     <div class="adj-btn" @click="showDevice">
                         <div class="device-icon"></div>
-                        <span class="adj-text">iPhone X</span>
+                        <span class="adj-text">{{scenestore.s_id}}</span>
                         <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
@@ -37,7 +37,22 @@ const StaticSceneEditor = {
                             <div class="device-upload">
                                 <div class="upload-icon"></div>
                             </div>
-                        </div>
+                        </div>-->
+                        
+                         <span v-for="(layer, index) in layers" :key="layer.id">
+                            <div v-if="layer.controller == 'mockup'">
+                             <!--<el-button icon="icon-Plus" class="floatbutton button-mockup" :style="'background:url('+cover_object[layer.id].texture.baseTexture.imageUrl+');'" @click="showUploadWindow(layer.id)">
+		                     </el-button>-->
+		                     <div class="device"  @click="showUploadWindow(layer.id)">
+                                 <div class="arrow-icon"></div>
+                                    <div class="device-upload button-mockup" :style="'background:url('+cover_object[layer.id].texture.baseTexture.imageUrl+');'">
+                                        <div class="upload-icon"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </span>
+                        
+                        
                         <div class="device-filter-wrap">
                             <div class="device-filter-header" @click="showMaterials">
                                 <i class="el-icon-caret-right el-icon--right mat-arrow" v-if="!isMaterialsShow"></i>
@@ -95,6 +110,11 @@ const StaticSceneEditor = {
                     </template>   
                 </div>
             </div>
+            
+            <!-- Device dialog   -->
+            <el-dialog  :visible.sync="deviceDialog" width="545px">
+              <div class="modal-device-wrap"></div>
+            </el-dialog>
         </div> 
     `,
     data: function(){
@@ -143,7 +163,8 @@ const StaticSceneEditor = {
                 {value: "Multiply", label: "Multiply"}
             ],
             blending: null,
-            opacity: 20
+            opacity: 1,
+            deviceDialog: false
         }
     },
     mounted: function() {
@@ -221,10 +242,7 @@ const StaticSceneEditor = {
         },
         getWindowHeight(event) {
             document.getElementById("canvas").style.height = (document.getElementById("workspace").offsetHeight) + 'px';
-        },
-        onDeviceDialogShow(){
-            vm.staticDeviceDialog = true;
-        },
+        }
     },
 
     beforeDestroy() {

@@ -1,4 +1,4 @@
-var renderCore = {
+var renderStaticCore = {
     data: {
         isTypeText: false,
         isMockupMove1: false,
@@ -13,8 +13,14 @@ var renderCore = {
         //texture_cover_distort_mask: '',
         mask_object: [],
         cover_object: [],
+        covershadow: [],
+        shadow_opacity: 1,
         shadow_object: [],
-        currentMockup: [],
+        shadowOpacity: 1,
+        current_device: [],
+        currentMockup: {},
+        scene_mask: new PIXI.Graphics(),
+        mask_container: new PIXI.Container(),
         scene_background: new PIXI.Graphics(),
         background_gradient: new PIXI.Sprite(),
         scene_gradient: new PIXI.Container(),
@@ -45,6 +51,12 @@ var renderCore = {
         effectsaturation:0,
         effectcontrast: 0,
         effectbrightness: 0,
+        devicesFilters: {
+            effectgamma: 0,
+            effectsaturation:0,
+            effectcontrast: 0,
+            effectbrightness: 0,
+        },
         effectnoise: 0,
         effectpixilate: 1,
         effectnoisesize: 0.001,
@@ -62,7 +74,7 @@ var renderCore = {
         //											   	PIXI CLIENT ENGINE  START						  			//
         //**********************************************************************//
         destroyRender(renderindex) {
-            vm.static_renderer_client.destroy(true)
+            vm.renderer_client.destroy(true)
         },
         // Метод для проверки ретины
         isRetinaDisplay() {
@@ -79,17 +91,47 @@ var renderCore = {
             square.position.set(x, y);
             return square;
         },
-        chooseMockup(id) {
-            let Devices = vm.scenestore.s_layers[0].l_data
-
-            Devices.forEach(e => {
-                if(e.i_img_title == id) {
-                    vm.currentMockup = e
+        changeDevice(device) {
+            console.log(vm.global_project[0].children[1]._texture.baseTexture)
+            vm.current_device = device
+            let devices = vm.scenestore.s_layers[0].l_data
+            for(let i = 0; i < devices.length; i++) {
+                if(device.i_img_title == devices[i].i_img_title) {
+                    vm.current_device = devices[i]
                 }
-            })
+            }
+
+            for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                vm.mockup_object[layersindex].texture = (new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`))
+                vm.mockup_object_blink[layersindex].texture = (new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`))
+            }
+
+/*            for (index = 0; index < vm.scenestore.s_frames; index++) {
+                for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                    vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
+                }
+            }
+
+            for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+              /!*  vm.mockup_object[layersindex].destroy(true);*!/
+                // Loading sequences
+                vm.mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
+                vm.mockup_object[layersindex].width = vm.size[0]
+                vm.mockup_object[layersindex].height = vm.size[1]
+                vm.mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
+                vm.mockup_object_blink[layersindex].width = vm.size[0]
+                vm.mockup_object_blink[layersindex].height = vm.size[1]
+            }
+
+            vm.global_project[layersindex].addChild(vm.shadow_object[layersindex]);
+            vm.global_project[layersindex].addChild(vm.mockup_object[layersindex]);
+            vm.global_project[layersindex].addChild(vm.distort_layers[layersindex]);
+
+            console.log( vm.global_project[0].children[1]._texture.baseTexture)*/
         },
         // Предзагрзчик текстур высокого разрешения (разрешения для экспорта видео)
         preloadHiRes(xx) {
+
             vm.exportratio = vm.origsize[0] / vm.exportsize[0];
             vm.hiResPreloadPercentVid = 0;
             var index;
@@ -104,10 +146,10 @@ var renderCore = {
                         let offsetx = 0 - vm.scenestore.s_layers[layersindex].l_data[index].i_offset.x;
                         let offsety = 0 - vm.scenestore.s_layers[layersindex].l_data[index].i_offset.y;
                         let obj_origin = [
-                            vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.x - offsetx) / vm.exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y - offsety) / vm.exportratio),
-                            vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.x - offsetx) / vm.exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.y - offsety) / vm.exportratio),
-                            vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.x - offsetx) / vm.exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.y - offsety) / vm.exportratio),
-                            vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x - offsetx) / vm.exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y - offsety) / vm.exportratio),
+                            vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.x) / vm.exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y) / vm.exportratio),
+                            vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.x ) / vm.exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.y ) / vm.exportratio),
+                            vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.x ) / vm.exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.y ) / vm.exportratio),
+                            vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x ) / vm.exportratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y ) / vm.exportratio),
                         ];
                         vm.quad_origin[layersindex].push(obj_origin.map(function(s) {
                             return s.position
@@ -123,7 +165,7 @@ var renderCore = {
             if (vm.exportsize[0] == vm.size[0]) {
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                        vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.exportsize[0] + '/' + vm.exportsize[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                        vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
                         //console.log(vm.hiResTextureMockup[layersindex][index]);
                         vm.hiResLastId++;
                         vm.hiResPreloadPercentVid = Math.round((vm.hiResLastId) / (vm.scenestore.s_frames*vm.scenestore.s_mcount) * 100)
@@ -136,7 +178,7 @@ var renderCore = {
             } else
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                        vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.exportsize[0] + '/' + vm.exportsize[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                        vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
                         //console.log(vm.hiResTextureMockup[layersindex][index]);
                         vm.hiResTextureMockup[layersindex][index].on('update', function() {
                             vm.hiResLastId++;
@@ -160,10 +202,21 @@ var renderCore = {
         },
         // Основной метод сборки сцены
         renderScene(width, height) {
+
+            console.log(PIXI.BLEND_MODES)
+
+            let Devices = vm.scenestore.s_layers[0].l_data
+            vm.current_device = Devices[0]
+            console.log(`===staticCoreRender=== `)
+            console.log(vm.currentMockup)
+
             vm.size[0] = width
             vm.size[1] = height
+
             vm.origratio = vm.origsize[0] / vm.origsize[1]
-            vm.reduceratio = vm.origsize[0] / vm.size[0]
+            vm.reduceratioX = vm.origsize[0] / vm.size[0]
+            vm.reduceratioY = vm.origsize[1] / vm.size[1]
+
             var frames = vm.scenestore;
             vm.ratio = vm.size[0] / vm.size[1];
             PIXI.utils.skipHello()
@@ -176,7 +229,7 @@ var renderCore = {
             while (vm.loResTextureMockup.length) {
                 vm.loResTextureMockup.pop();
             }
-            while (vm.quad_origin.length) {
+            while (vm.length) {
                 vm.quad_origin.pop();
             }
             while (vm.quad.length) {
@@ -186,26 +239,27 @@ var renderCore = {
             vm.quad_origin.length = 0;
             vm.loResTextureMockup.length = 0;
             vm.hiResTextureMockup.length = 0;
-            if (vm.static_renderer_client != null) {
-                vm.static_renderer_client.ticker.stop();
+            if (vm.renderer_client != null) {
+                vm.renderer_client.ticker.stop();
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                     vm.mockup_object_blink[layersindex].destroy(true);
                     vm.distort_layers[layersindex].destroy(true)
                     vm.mockup_object[layersindex].destroy(true);
                 }
-                //vm.static_renderer_client.stage.destroy(true)
-                //vm.static_renderer_client.renderer.clear();
-                //vm.static_renderer_client.renderer.reset();
-                vm.static_renderer_client.destroy(true, true);
-                //vm.static_renderer_client.renderer.destroy();
-                //vm.static_renderer_client.destroy(true,true);
+                //vm.renderer_client.stage.destroy(true)
+                //vm.renderer_client.renderer.clear();
+                //vm.renderer_client.renderer.reset();
+                vm.renderer_client.destroy(true, true);
+                vm.mask_container.destroy(true);
+                //vm.renderer_client.renderer.destroy();
+                //vm.renderer_client.destroy(true,true);
                 /*
                 var canvas = document.createElement('canvas');
                 canvas.setAttribute('id',"canvas");
                 canvas.setAttribute('class',"el-workspace-background");
                 document.getElementById('workspace').appendChild(canvas)*/
             }
-            vm.static_renderer_client = new PIXI.Application({
+            vm.renderer_client = new PIXI.Application({
                 width: vm.size[0],
                 height: vm.size[1],
                 view: document.getElementById('canvas'),
@@ -214,16 +268,26 @@ var renderCore = {
                 antialias: true,
                 powerPreference: "high-performance"
             });
-            vm.static_renderer_client.renderer.plugins.interaction.moveWhenInside = true;
+            vm.renderer_client.renderer.plugins.interaction.moveWhenInside = true;
             var loader = new PIXI.loaders.Loader();
             // Init graphics
             vm.scene_background.lineStyle(1, 0xFFFFFF, 1);
             vm.scene_background.beginFill((0xFFFFFF), 1);
             vm.scene_background.drawRect(0, 0, vm.size[0], vm.size[1]);
             vm.scene_background.endFill();
-            vm.static_renderer_client.stage.addChild(vm.scene_background);
-            vm.static_renderer_client.stage.addChild(vm.background_gradient);
-            vm.static_renderer_client.stage.addChild(vm.scene_bgimage);
+            vm.renderer_client.stage.addChild(vm.scene_background);
+            vm.renderer_client.stage.addChild(vm.background_gradient);
+            vm.renderer_client.stage.addChild(vm.scene_bgimage);
+
+//===============================================
+            vm.scene_mask.lineStyle(1, 0x000000, 1);
+            vm.scene_mask.beginFill((0x000000), 1);
+            vm.scene_mask.drawRect(0, 0, vm.size[0], vm.size[1]);
+            vm.scene_mask.endFill();
+
+
+//===============================================
+
             // Just for test
             var index;
             var layersindex;
@@ -233,20 +297,17 @@ var renderCore = {
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 vm.loResTextureMockup[layersindex] = [];
                 vm.coversequence[layersindex] = [];
-                vm.shadow_object = []
+                vm.covershadow[layersindex] = []
                 vm.quad[layersindex] = [];
                 vm.distort_layers[layersindex] = new PIXI.Container();
                 vm.mockup_blink_layers[layersindex] = new PIXI.Container();
             }
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg');
-                loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'Shadow.png');
-                if(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png') {
-                    loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png');
-                }
-                for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png');
+                /*for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                     loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.size[0] + '/' + vm.size[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[0].i_img_uri);
-                }
+                }*/
             }
             loader.onProgress.add((x) => {
                 vm.basepreloading = parseInt(x.progress);
@@ -258,10 +319,10 @@ var renderCore = {
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                     //vm.cover_object[layersindex]
                     let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
-                    let coverShadow = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'Shadow.png', true, PIXI.SCALE_MODES.LINEAR));
+                    let shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'Shadow.png'))
                     for (index = 0; index < vm.scenestore.s_frames; index++) {
                         vm.coversequence[layersindex].push(coversequencetpl);
-                        vm.shadow_object[layersindex].push(coverShadow)
+                        vm.covershadow[layersindex].push(shadow)
                     }
 
                     //	var texture = new PIXI.Texture.fromVideo("/test.mp4")
@@ -274,15 +335,14 @@ var renderCore = {
 
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                        vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/device/' + vm.size[0] + '/' + vm.size[1] + '/' + vm.scenestore.s_layers[layersindex].l_data[index].i_img_uri);
+                        console.log(`${vm.current_device.i_img_uri}`)
+                        vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
                         if (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
-                            let offsetx = 0 - vm.scenestore.s_layers[layersindex].l_data[index].i_offset.x;
-                            let offsety = 0 - vm.scenestore.s_layers[layersindex].l_data[index].i_offset.y;
                             let obj = [
-                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.x - offsetx) / vm.reduceratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y - offsety) / vm.reduceratio),
-                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.x - offsetx) / vm.reduceratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.y - offsety) / vm.reduceratio),
-                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.x - offsetx) / vm.reduceratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.y - offsety) / vm.reduceratio),
-                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x - offsetx) / vm.reduceratio, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y - offsety) / vm.reduceratio),
+                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.x) / vm.reduceratioX, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y) / vm.reduceratioY),
+                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.x) / vm.reduceratioX, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.y) / vm.reduceratioY),
+                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.x) / vm.reduceratioX, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.y) / vm.reduceratioY),
+                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x) / vm.reduceratioX, (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y) / vm.reduceratioY),
                             ];
                             vm.quad[layersindex].push(obj.map(function(s) {
                                 return s.position
@@ -297,9 +357,15 @@ var renderCore = {
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                     // Loading sequences
                     vm.mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
+                    vm.mockup_object[layersindex].width = vm.size[0]
+                    vm.mockup_object[layersindex].height = vm.size[1]
                     vm.mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
+                    vm.mockup_object_blink[layersindex].width = vm.size[0]
+                    vm.mockup_object_blink[layersindex].height = vm.size[1]
                     vm.cover_object[layersindex] = vm.coversequence[layersindex][0];
-                    vm.shadow_object[layersindex] = vm.shadow_object[layersindex][0]
+                    vm.shadow_object[layersindex] = vm.covershadow[layersindex][0]
+                    vm.shadow_object[layersindex].width = vm.size[0]
+                    vm.shadow_object[layersindex].height = vm.size[1]
                 }
 
                 var smart = new PIXI.Graphics()
@@ -355,17 +421,30 @@ var renderCore = {
                     vm.mockup_object_blink[layersindex].loop = false;
                     vm.mockup_object_blink[layersindex].animationSpeed = 0.5;
                     vm.mockup_object_blink[layersindex].blendMode = vm.blend_mode;
+
+                    var texture_cover_mask_distort = new PIXI.projection.Sprite2d(vm.cover_object[layersindex].texture)
+                    texture_cover_mask_distort.texture = PIXI.Texture.WHITE
+                    texture_cover_mask_distort.proj.mapSprite(texture_cover_mask_distort, vm.quad[layersindex][vm.currentframe])
+
+                    vm.mask_container.addChild(vm.scene_mask)
+                    vm.mask_container.addChild(texture_cover_mask_distort)
+
+                    var maskcoverb64 = vm.renderer_client.renderer.extract.base64(vm.mask_container)
+                    var maskcover = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(maskcoverb64))
+
                     // LAYERS COMPOSITE
+                    //vm.mockup_object[layersindex].tint = 0xFF0000;
+
                     vm.distort_layers[layersindex].addChild(vm.cover_object[layersindex]);
                     vm.distort_layers[layersindex].addChild(vm.mockup_object_blink[layersindex]);
-                    vm.distort_layers[layersindex].addChild(vm.mask_object[layersindex]);
-                    vm.distort_layers[layersindex].mask = vm.mask_object[layersindex]
-                    vm.distort_layers[layersindex].interactive = true;
-                    vm.distort_layers[layersindex].buttonMode = true;
-                    vm.distort_layers[layersindex].moveWhenInside = false;
+                    vm.distort_layers[layersindex].addChild(maskcover);
+                    vm.distort_layers[layersindex].mask = maskcover
+                    vm.cover_object[layersindex].interactive = true;
+                    vm.cover_object[layersindex].buttonMode = true;
+                    vm.cover_object[layersindex].moveWhenInside = false;
                     //vm.distort_layers.hitArea = new PIXI.Rectangle(_.min(minX), _.min(minY), _.max(maxW), _.max(maxH));
-                    vm.distort_layers[layersindex].indexoflayer = layersindex
-                    vm.distort_layers[layersindex]
+                    vm.cover_object[layersindex].indexoflayer = layersindex
+                    vm.cover_object[layersindex]
                         .on('click', function() {
                             vm.openUploader(this.indexoflayer);
 
@@ -397,14 +476,15 @@ var renderCore = {
                     vm.global_project[layersindex].addChild(vm.mockup_object[layersindex]);
                     vm.global_project[layersindex].addChild(vm.distort_layers[layersindex]);
                 }
+
                 for (var v = 0; v < 4; v++) vm.rubberband.push({
                     x: -1,
                     y: -1
                 });
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                    vm.static_renderer_client.stage.addChild(vm.global_project[layersindex]);
-                    //vm.static_renderer_client.stage.addChild(vm.distort_layers[layersindex]);
-                    //vm.static_renderer_client.stage.addChild(vm.tool_selector);
+                    vm.renderer_client.stage.addChild(vm.global_project[layersindex]);
+                    //vm.renderer_client.stage.addChild(vm.distort_layers[layersindex]);
+                    //vm.renderer_client.stage.addChild(vm.tool_selector);
                     // INTERACTIVE
                     //	vm.mockup_object[layersindex].interactive = true;
                     /*
@@ -422,14 +502,29 @@ var renderCore = {
                     //		vm.FLAG_MOCKUPBLINK_UPDATED = true;
                     //	})
                 }
-                vm.static_renderer_client.stage.addChild(smart);
+                vm.renderer_client.stage.addChild(smart);
                 // STARTUP ACTIONS
                 vm.initresize();
                 var loadedframe = 0;
                 var loadcounter = 0;
-                var iop = vm.static_renderer_client.ticker.add(function(deltaTime) {
+                var iop = vm.renderer_client.ticker.add(function(deltaTime) {
                     //var current_frame = vm.currentframe;
-                    vm.static_renderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
+
+                    for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+
+                        vm.global_project[layersindex].filters = [new PIXI.filters.AdjustmentFilter({
+                            gamma: vm.devicesFilters.effectgamma+1 ,
+                            contrast:  vm.devicesFilters.effectcontrast+1,
+                            saturation:  vm.devicesFilters.effectsaturation+1,
+                            brightness:  vm.devicesFilters.effectbrightness+1,
+                        })];
+
+                        //настройка изменения прозрачности тени
+                        vm.shadow_object[layersindex].alpha = vm.shadow_opacity
+
+                    }
+
+                    vm.renderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
                         gamma: vm.effectgamma+1 ,
                         contrast:  vm.effectcontrast+1,
                         saturation:  vm.effectsaturation+1,
@@ -452,28 +547,10 @@ var renderCore = {
 
                     ];
 
-                    vm.global_project.filters = [new PIXI.filters.AdjustmentFilter({
-                        gamma: vm.device.effectgamma+1 ,
-                        contrast:  vm.device.effectcontrast+1,
-                        saturation:  vm.device.effectsaturation+1,
-                        brightness:  vm.device.effectbrightness+1,
-                    })
-                        /*
-                        ,new PIXI.filters.OldFilmFilter({
-                                                        sepia: 0,
-                                                        noise: vm.effectnoise,
-                                                        noiseSize: vm.effectnoisesize,
-                                                        scratch: -1,
-                                                        scratchDensity: 0,
-                                                        scratchWidth: 1,
-                                                        vignetting: 0,
-                                                        vignettingAlpha: 0,
-                                                        vignettingBlur: 0
-                                                    }, 0.1),
-                        new PIXI.filters.PixelateFilter(vm.effectpixilate)
-                        */
 
-                    ];
+
+
+
                     if (vm.currentframe >= vm.loadedframe) {
 
                         vm.currentframe = vm.loadedframe - vm.prebufferframes;
@@ -523,7 +600,7 @@ var renderCore = {
                         // BLUR CORRECTION
                         if ((squaresRect[layersindex][vm.currentframe] / maxArea[layersindex]) * 100 < 45) {
                             let $blurdelta = (-0.98 * (squaresRect[layersindex][vm.currentframe] / maxArea[layersindex]) + 0.4455) / 0.45;
-                            vm.cover_object[layersindex].filters = [new PIXI.filters.BlurFilter($blurdelta, 20)];
+                            vm.cover_object[layersindex].filters = [new PIXI.filters.BlurFilter($blurdelta, 40)];
                         } else {
                             vm.cover_object[layersindex].filters = [];
                         }
@@ -640,7 +717,7 @@ var renderCore = {
                             inputField.x = mouseposition.x
                             inputField.y = mouseposition.y
                             inputField.width = 440
-                            vm.static_renderer_client.stage.addChild(inputField);
+                            vm.renderer_client.stage.addChild(inputField);
                         }
                         if (vm.usetool == 'drawcurve') {
                             vm.drawCurve(
@@ -657,7 +734,7 @@ var renderCore = {
                             vm.layers[0].globject.drawEllipse(0, 0, 1, 1)
                             vm.layers[0].globject.position.set(mouseposition.x, mouseposition.y)
                             vm.layers[0].globject.endFill();
-                            vm.static_renderer_client.stage.addChild(vm.layers[0].globject);
+                            vm.renderer_client.stage.addChild(vm.layers[0].globject);
                         }
                         if (vm.usetool == 'drawrect') {
                             vm.layers[0].globject.beginFill(0xFFFFFF);
@@ -665,7 +742,7 @@ var renderCore = {
                             vm.layers[0].globject.drawRoundedRect(0, 0, 0, 0, 1);
                             vm.layers[0].globject.position.set(mouseposition.x, mouseposition.y)
                             vm.layers[0].globject.endFill();
-                            vm.static_renderer_client.stage.addChild(vm.layers[0].globject);
+                            vm.renderer_client.stage.addChild(vm.layers[0].globject);
                         }
                         if (vm.usetool == 'drawstar') {
                             vm.layers[0].globject.beginFill(0xFFFFFF);
@@ -673,7 +750,7 @@ var renderCore = {
                             vm.layers[0].globject.drawStar(0, 0, 0, 0, 0)
                             vm.layers[0].globject.position.set(mouseposition.x, mouseposition.y)
                             vm.layers[0].globject.endFill();
-                            vm.static_renderer_client.stage.addChild(vm.layers[0].globject);
+                            vm.renderer_client.stage.addChild(vm.layers[0].globject);
                         }
                     } else
                     if (!this.dragging && !vm.isHoldSpace) {

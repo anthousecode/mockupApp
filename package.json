@@ -21,6 +21,7 @@
     "executive": "^1.5.13",
     "express": "~4.16.0",
     "express-session": "^1.15.6",
+    "express-trace": "0.0.3",
     "filterous": "^2.0.2-beta",
     "fs": "0.0.1-security",
     "glob": "^7.1.2",

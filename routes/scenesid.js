@@ -131,7 +131,7 @@ router.all('/:id', function (req, res, next) {
 				if(settings.animated) {
                     Device = glob.sync(l_id_path + '/device/*.png');
 				}else {
-                    Device = glob.sync(l_id_path + '/devices/Silver/*.png');
+                    Device = glob.sync(l_id_path + '/devices/**/*.png');
 				}
 
 				var temp_case;
@@ -263,7 +263,7 @@ router.all('/:id', function (req, res, next) {
                     staticImages = fs.readdirSync(`${path}/${l_id}/devices`);
                     imageTitle = fs.readdirSync(`${path}/${l_id}/devices`);
                     for (var l = 0; l < staticImages.length; l++) {
-                        staticImages[l] = `scenes/${id}/${l_id}/device/${staticImages[l]}/mockup.png`
+                        staticImages[l] = `scenes/${id}/${l_id}/devices/${staticImages[l]}/Device.png`
 
                         Frames_arr.push(
                             {

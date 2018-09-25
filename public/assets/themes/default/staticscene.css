@@ -132,7 +132,7 @@ div[role="slider"]{
     width: 32px;
     height: 68px;
     border-radius: 4px;
-    background-color: #f96f50;
+    /*background-color: #f96f50;*/
     border: 1px solid #d55638;
     display: flex;
     justify-content: center;
