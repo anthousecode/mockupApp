@@ -229,7 +229,8 @@ var vm = new Vue({
 					},
 				},
 				sendBackground: true,
-				cover_base64_arr: []
+				cover_base64_arr: [],
+            	staticDeviceDialog: false
 
 		},
 		computed: {

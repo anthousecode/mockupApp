@@ -32,7 +32,7 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <template v-if="isDeviceShow">
-                        <div class="device" @click="deviceDialog = true">
+                        <div class="device" @click="onDeviceDialogShow">
                             <div class="arrow-icon"></div>
                             <div class="device-upload">
                                 <div class="upload-icon"></div>
@@ -95,11 +95,6 @@ const StaticSceneEditor = {
                     </template>   
                 </div>
             </div>
-            
-            <!-- Device dialog   -->
-            <el-dialog  :visible.sync="deviceDialog" width="545px">
-              <div class="modal-device-wrap"></div>
-            </el-dialog>
         </div> 
     `,
     data: function(){
@@ -148,8 +143,7 @@ const StaticSceneEditor = {
                 {value: "Multiply", label: "Multiply"}
             ],
             blending: null,
-            opacity: 20,
-            deviceDialog: false
+            opacity: 20
         }
     },
     mounted: function() {
@@ -227,7 +221,10 @@ const StaticSceneEditor = {
         },
         getWindowHeight(event) {
             document.getElementById("canvas").style.height = (document.getElementById("workspace").offsetHeight) + 'px';
-        }
+        },
+        onDeviceDialogShow(){
+            vm.staticDeviceDialog = true;
+        },
     },
 
     beforeDestroy() {
