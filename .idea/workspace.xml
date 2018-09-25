@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/public/assets/staticCore.js" line="180" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/staticCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticCore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" afterDir="false" />
-    </list>
+    <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -208,20 +203,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="105" column="124" selection-start-line="105" selection-start-column="124" selection-end-line="105" selection-end-column="124" />
+            <state relative-caret-position="286">
+              <caret line="197" column="55" lean-forward="true" selection-start-line="197" selection-start-column="55" selection-end-line="197" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
+            <state relative-caret-position="-3978">
+              <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -484,16 +479,15 @@
       <workItem from="1537424249585" duration="11240000" />
       <workItem from="1537511185580" duration="19493000" />
       <workItem from="1537770944233" duration="10218000" />
-      <workItem from="1537858615749" duration="4571000" />
+      <workItem from="1537858615749" duration="5320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="429740000" />
+    <option name="totallyTimeSpent" value="430489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-2" width="1680" height="1052" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49779248" visible="true" weight="0.2112251" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -504,7 +498,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info id="Structure" order="0" sideWeight="0.5022075" side_tool="true" weight="0.23717561" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.19800885" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.30752212" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -828,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="105" column="124" selection-start-line="105" selection-start-column="124" selection-end-line="105" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -844,8 +831,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
+        <state relative-caret-position="-3978">
+          <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="197" column="55" lean-forward="true" selection-start-line="197" selection-start-column="55" selection-end-line="197" selection-end-column="55" />
         </state>
       </provider>
     </entry>
