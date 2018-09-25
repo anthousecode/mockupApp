@@ -252,10 +252,26 @@ div[role="slider"]{
     border-radius: 6px;
     background-color: #fff;
 }
-.modal-device-wrap{
+.static-device-wrap .el-dialog {
     width: 545px;
     height: 745px;
     border-radius: 6px;
     background-color: #fff;
     box-shadow: -6px 6px 10px rgba(84, 104, 115, 0.12);
+}
+
+.static-device-wrap .croppa-container canvas{
+    background-color: #f6f7f7 !important;
+    border: 2px dashed #f96f50;
+}
+
+.static-device-wrap .txt_drop{
+    font-size: 17px;
+    line-height: 24px;
+    color: rgb(29,34,36);
+}
+.static-device-wrap .txt_title{
+    font-size: 15px;
+    line-height: 24px;
+    color: #747b7f;
 }

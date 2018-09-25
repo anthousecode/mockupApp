@@ -101,11 +101,6 @@ const StaticSceneEditor = {
                     </template>   
                 </div>
             </div>
-            
-            <!-- Device dialog   -->
-            <el-dialog  :visible.sync="deviceDialog" width="545px">
-              <div class="modal-device-wrap"></div>
-            </el-dialog>
         </div> 
     `,
     data: function(){
@@ -248,7 +243,10 @@ const StaticSceneEditor = {
         },
         getWindowHeight(event) {
             document.getElementById("canvas").style.height = (document.getElementById("workspace").offsetHeight) + 'px';
-        }
+        },
+        onDeviceDialogShow(){
+            vm.staticDeviceDialog = true;
+        },
     },
 
     beforeDestroy() {
