@@ -36,7 +36,7 @@ const StaticSceneEditor = {
                             <div v-if="layer.controller == 'mockup'">
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
                                  <div class="arrow-icon"></div>
-                                    <div class="device-upload button-mockup" :style="'background:url('+cover_object[layer.id].texture.baseTexture.imageUrl+');'">
+                                    <div class="device-upload button-mockup"  v-bind:style="{ 'background-image' : 'url(' + cover_object[layer.id].texture.baseTexture.imageUrl + ')' }">
                                         <div class="upload-icon"></div>
                                     </div>
                                 </div>

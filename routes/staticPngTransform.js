@@ -5,24 +5,30 @@ const path = require('path');
 var fs = require("fs");
 var im = require('imagemagick');
 // Ловим роут GET\POST к конкретному изображению с указнанием разрешения
-router.all('/:sceneid/:scenedir/devices/:device/:picture', function (req, res, next) {
-    console.log(`sdgdzsfg`)
+router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture', function (req, res, next) {
     var sceneid = req.params.sceneid;
     var scenedir = req.params.scenedir;
-    var device = req.params.device
     var filename = req.params.picture;
+    var width = req.params.width
+    var height = req.params.height
+    var device = req.params.device
 
+    console.log(width, height)
 
+/*
     console.log(`${sceneid}/${scenedir}/devices/${device}/${filename}`)
 
-    var pathtoorig = `${config.path}${sceneid}/${scenedir}/devices/${device}/${filename}`;
+
 
     var stdout = fs.readFileSync(pathtoorig, 'binary');
     res.contentType('image/png');
-    res.end(stdout, 'binary');
+    res.end(stdout, 'binary');*/
 
-    /*if (fs.existsSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`)) {
-        var stdout = fs.readFileSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`, 'binary');
+    var pathtoorig = `${config.path}${sceneid}/${scenedir}/devices/${device}/${filename}`;
+    console.log(pathtoorig)
+
+    if (fs.existsSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`)) {
+        var stdout = fs.readFileSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`, 'binary')
         res.contentType('image/png');
         res.end(stdout, 'binary');
     } else {
@@ -41,7 +47,7 @@ router.all('/:sceneid/:scenedir/devices/:device/:picture', function (req, res, n
                 res.contentType('image/png');
                 res.end(stdout, 'binary');
             })
-    }*/
+    }
 
 })
 module.exports = router;

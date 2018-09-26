@@ -610,7 +610,7 @@ gradientchange: function(e){
 			},
 			// Обработчик для аплоада фото или видео в мокап
 			uploadCroppedImage() {
-
+                vm.staticDeviceDialog = false;
 				vm.dlgMockupUploader = false;
 				if (this.croppa.videoEnabled && this.croppa.video) {
 				var pre_cover = [];

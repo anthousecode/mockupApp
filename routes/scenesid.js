@@ -131,7 +131,7 @@ router.all('/:id', function (req, res, next) {
 				if(settings.animated) {
                     Device = glob.sync(l_id_path + '/device/*.png');
 				}else {
-                    Device = glob.sync(l_id_path + '/devices/**/*.png');
+                    Device = glob.sync(l_id_path + '/devices/*/*.png');
 				}
 
 				var temp_case;
