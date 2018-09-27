@@ -14,7 +14,7 @@ const StaticSceneEditor = {
                     </div>
                     <div v-show="isAdjShow">
                         <div class="adj-dropdown">
-                            <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar">
+                            <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
                                 <div class="adj-bar__icon">
                                     <img :src="range.icon">
                                 </div>
@@ -206,26 +206,47 @@ const StaticSceneEditor = {
         showFilters(){
             this.isAdjShow = !this.isAdjShow;
             if(this.isAdjShow){
-                // this.hideAdjBarBtn();
+                //this.hideAdjBarBtn();
             }
         },
         hideAdjBarBtn(){
             let elements = document.querySelectorAll('.adj-dropdown .el-slider__runway');
             let bars = Array.prototype.slice.call( elements );
-            // console.log('in -', bars);
+            /*console.log('in -', bars);*/
+            console.log(`===================================`)
             bars.forEach(item => {
-                // console.log(parseInt(item.childNodes[0].style.left));
-                if(parseInt(item.childNodes[0].style.left) <= 50 && parseInt(item.childNodes[0].style.width) != 0){
+                console.log(`width`,parseInt(item.childNodes[0].style.width));
+                console.log(`left`,parseInt(item.childNodes[0].style.left));
+
+                if(parseInt(item.childNodes[0].style.left) == 50 && parseInt(item.childNodes[0].style.width) == 0){
                     console.log('yes')
-                    // item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'none';
-                }else
-                {
-                    console.log('no')
-                    // item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'none';
+                    item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'inline-block';
+                    item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'none';
+                }
+
+                if(parseInt(item.childNodes[0].style.left) == 50 && parseInt(item.childNodes[0].style.width) != 0){
+                    console.log('yes')
+                    item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'none';
+                    item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'inline-block';
+                }
+                if(parseInt(item.childNodes[0].style.left) != 50 && parseInt(item.childNodes[0].style.width) != 0 && item.querySelectorAll('.el-slider__button-wrapper')[1].style.display != 'none') {
+                    item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'none';
+                    item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'inline-block';
+                }
+
+                if(parseInt(item.childNodes[0].style.left) == 50 && parseInt(item.childNodes[0].style.width) != 0 && item.querySelectorAll('.el-slider__button-wrapper')[0].style.display != 'none') {
+                    item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'none';
+                    item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'inline-block';
+                }
+
+                if(parseInt(item.childNodes[0].style.left) != 50 && parseInt(item.childNodes[0].style.width) == 0) {
+                    item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'none';
+                    item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'inline-block';
                 }
             })
         },
         colorAdjBar(id, item) {
+            this.hideAdjBarBtn()
             // this.hideAdjBarBtn();
             let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
             if(item.value[0] < 0){

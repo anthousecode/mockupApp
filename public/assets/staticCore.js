@@ -103,31 +103,10 @@ var renderStaticCore = {
 
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 vm.mockup_object[layersindex].texture = new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device.i_img_uri}`)
+                console.log(vm.mockup_object[layersindex].tint)
                 vm.mockup_object_blink[layersindex].texture = (new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device.i_img_uri}`))
             }
 
-/*            for (index = 0; index < vm.scenestore.s_frames; index++) {
-                for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                    vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.current_device.i_img_uri}`);
-                }
-            }
-
-            for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-              /!*  vm.mockup_object[layersindex].destroy(true);*!/
-                // Loading sequences
-                vm.mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
-                vm.mockup_object[layersindex].width = vm.size[0]
-                vm.mockup_object[layersindex].height = vm.size[1]
-                vm.mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
-                vm.mockup_object_blink[layersindex].width = vm.size[0]
-                vm.mockup_object_blink[layersindex].height = vm.size[1]
-            }
-
-            vm.global_project[layersindex].addChild(vm.shadow_object[layersindex]);
-            vm.global_project[layersindex].addChild(vm.mockup_object[layersindex]);
-            vm.global_project[layersindex].addChild(vm.distort_layers[layersindex]);
-
-            console.log( vm.global_project[0].children[1]._texture.baseTexture)*/
         },
         // Предзагрзчик текстур высокого разрешения (разрешения для экспорта видео)
         preloadHiRes(xx) {
@@ -361,6 +340,7 @@ var renderStaticCore = {
                     vm.mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
                     vm.mockup_object[layersindex].width = vm.size[0]
                     vm.mockup_object[layersindex].height = vm.size[1]
+
                     vm.mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
                     vm.mockup_object_blink[layersindex].width = vm.size[0]
                     vm.mockup_object_blink[layersindex].height = vm.size[1]
