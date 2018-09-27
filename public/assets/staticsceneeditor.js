@@ -1,5 +1,5 @@
 const StaticSceneEditor = {
-    template: `
+  template: `
         <div class="st-scene-wrap">
             <div id="workspace" class="st-scene__main">
                 <canvas id="canvas" class="el-workspace-background"></canvas>
@@ -21,9 +21,9 @@ const StaticSceneEditor = {
                                 <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
                             </div>
                         </div>
-                    </div>   
+                    </div>
                 </div>
-                
+
                 <div class="device-wrap">
                     <div class="adj-btn" @click="showDevice">
                         <div class="device-icon"></div>
@@ -42,8 +42,8 @@ const StaticSceneEditor = {
                                 </div>
                             </div>
                             </span>
-                        
-                        
+
+
                         <div class="device-filter-wrap">
                             <div class="device-filter-header" @click="showMaterials">
                                 <i class="el-icon-caret-right el-icon--right mat-arrow" v-if="!isMaterialsShow"></i>
@@ -56,12 +56,14 @@ const StaticSceneEditor = {
                                         <div class="color-icon" :style="{backgroundColor: item.color}"></div>
                                         <span>{{item.i_img_title}}</span>
                                     </div>
-                                    <div class="material-list__item">
+                                    <div class="material-list__item" @click="calcDevWidjetHeight">
                                         <div class="color-icon color"></div>
                                         <span>Changeable</span>
-                                        <div class="color-btn-wrap">
-                                            <div class="color-btn"></div>
-                                        </div>
+                                         <el-color-picker v-model="devColor" show-alpha :predefine="predefineColors">
+                                         </el-color-picker>
+                                        <!--<div class="color-btn-wrap">-->
+                                            <!--<div class="color-btn" @click="isDevColorShow = !isDevColorShow"></div>-->
+                                        <!--</div>-->
                                     </div>
                                 </div>
                             </template>
@@ -94,166 +96,208 @@ const StaticSceneEditor = {
                             </div>
                             <template v-if="isDevAdjShow">
                                 <div class="material-list">
-                                    
+
                                 </div>
                             </template>
                         </div>
-                    </template>   
+                    </template>
                 </div>
+
+                <!--<div class="device-color-wrap" v-show="isDevColorShow">-->
+                   <!---->
+                <!--</div>-->
             </div>
-        </div> 
+        </div>
     `,
-    data: function(){
-        return{
-            layers: [],
-            cover_object: [],
-            scenestore: '',
-            isAdjShow: false,
-            isDeviceShow: false,
-            isMaterialsShow: false,
-            isShadowShow: false,
-            isDevAdjShow: false,
-            min: -1,
-            max: 1,
-            step: 0.1,
-            adjRanges:[
-                {
-                    value: [0,0],
-                    icon: '/images/icons/exposure.svg'
-                },
-                {
-                    value: [0,0],
-                    icon: '/images/icons/saturation.svg'
-                },
-                {
-                    value: [0,0],
-                    icon: '/images/icons/contrast.svg'
-
-                },
-                {
-                    value: [0,0],
-                    icon: '/images/icons/brightness.svg'
-
-                }
-            ],
-            devices:[],
-            blendingItems: [
-                {value: "Multiply", label: "Multiply"}
-            ],
-            blending: null,
-            opacity: 1,
-            deviceDialog: false
+  data: function() {
+    return {
+      layers: [],
+      cover_object: [],
+      scenestore: '',
+      isAdjShow: false,
+      isDeviceShow: false,
+      isMaterialsShow: false,
+      isShadowShow: false,
+      isDevAdjShow: false,
+      isDevColorShow: false,
+      min: -1,
+      max: 1,
+      step: 0.1,
+      adjRanges: [
+        {
+          value: [0, 0],
+          icon: '/images/icons/exposure.svg'
+        },
+        {
+          value: [0, 0],
+          icon: '/images/icons/saturation.svg'
+        },
+        {
+          value: [0, 0],
+          icon: '/images/icons/contrast.svg'
+        },
+        {
+          value: [0, 0],
+          icon: '/images/icons/brightness.svg'
         }
-    },
-    mounted: function() {
-        var _this = this;
-        axios.post('/api/scenes/' + this.$route.params.id).then(function (response) {
-            store.commit('loaddata', response.data);
-            console.log(response.data);
-            // Генерация события - загрузка данных
-            _this.$emit('eventname', true)
-        })
-            .then(() => {
-                this.scenestore = store.state.scenestore
-                this.cover_object = vm.cover_object
-                let devicesData = this.scenestore.s_layers[0].l_data
-                this.layers = vm.layers
-                console.log(vm.layers)
-                for (let i = 0; i < devicesData.length; i++) {
-/*                    let device
+      ],
+      devices: [],
+      blendingItems: [{ value: 'Multiply', label: 'Multiply' }],
+      blending: null,
+      opacity: 1,
+      deviceDialog: false,
+      devColor: '#ff5000',
+      predefineColors: [
+        '#e50000',
+        '#ffa200',
+        '#fce600',
+        '#94531d',
+        '#58d700',
+        '#297700',
+        '#cf00e8',
+        '#2490e9',
+        '#00e7c1',
+        '#a9ec77',
+        '#1a1a1a',
+        '#4a4a4a',
+        '#9b9b9b',
+        '#ffffff'
+        // '#ff3900'
+      ]
+    };
+  },
+  mounted: function() {
+    var _this = this;
+    axios
+      .post('/api/scenes/' + this.$route.params.id)
+      .then(function(response) {
+        store.commit('loaddata', response.data);
+        console.log(response.data);
+        // Генерация события - загрузка данных
+        _this.$emit('eventname', true);
+      })
+      .then(() => {
+        this.scenestore = store.state.scenestore;
+        this.cover_object = vm.cover_object;
+        let devicesData = this.scenestore.s_layers[0].l_data;
+        this.layers = vm.layers;
+        console.log(vm.layers);
+        for (let i = 0; i < devicesData.length; i++) {
+          /*                    let device
 
                     device = {
                         title: devicesData[i].i_img_title,
                         color: `#d7d7d7`
                     }*/
-                    this.devices.push(devicesData[i])
-                }
-            })
-            .catch(function (error) {
-            console.log(error);
-        });
-        this.$nextTick(function() {
-            window.addEventListener('resize', this.getWindowWidth);
-            window.addEventListener('resize', this.getWindowHeight);
-            this.getWindowWidth()
-            this.getWindowHeight();
-        })
-
+          this.devices.push(devicesData[i]);
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    this.$nextTick(function() {
+      window.addEventListener('resize', this.getWindowWidth);
+      window.addEventListener('resize', this.getWindowHeight);
+      this.getWindowWidth();
+      this.getWindowHeight();
+    });
+  },
+  methods: {
+    showUploadWindow(index) {
+      vm.openUploader(index);
+      this.onDeviceDialogShow();
     },
-    methods:{
-        showUploadWindow(index){
-            vm.openUploader(index)
-            this.onDeviceDialogShow()
-        },
-        changeShadowOpacity(){
-            vm.shadow_opacity = this.opacity
-        },
-        deviceHandler(item){
-            vm.changeDevice(item)
-        },
-        showDevice(){
-            this.isDeviceShow = !this.isDeviceShow;
-        },
-        showMaterials(){
-            this.isMaterialsShow = !this.isMaterialsShow;
-        },
-        showShadow(){
-            this.isShadowShow = !this.isShadowShow;
-        },
-        showDevAdj(){
-            this.isDevAdjShow = !this.isDevAdjShow;
-        },
-        showFilters(){
-            this.isAdjShow = !this.isAdjShow;
-            if(this.isAdjShow){
-                // this.hideAdjBarBtn();
-            }
-        },
-        hideAdjBarBtn(){
-            let elements = document.querySelectorAll('.adj-dropdown .el-slider__runway');
-            let bars = Array.prototype.slice.call( elements );
-            // console.log('in -', bars);
-            bars.forEach(item => {
-                // console.log(parseInt(item.childNodes[0].style.left));
-                if(parseInt(item.childNodes[0].style.left) <= 50 && parseInt(item.childNodes[0].style.width) != 0){
-                    console.log('yes')
-                    // item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'none';
-                }else
-                {
-                    console.log('no')
-                    // item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'none';
-                }
-            })
-        },
-        colorAdjBar(id, item) {
-            // this.hideAdjBarBtn();
-            let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
-            if(item.value[0] < 0){
-                bar.style.backgroundColor = '#f97050';
-            }else{
-                bar.style.backgroundColor = '#ffe100';
-            }
-        },
-        nextTooltip() {
-            this.tooltips.unshift(false);
-            this.tooltips.pop();
-            if (this.tooltips.indexOf(true) == -1) this.showtooltips = false;
-        },
-        getWindowWidth(event) {
-            document.getElementById("canvas").style.width = (document.getElementById("workspace").offsetWidth) + 'px';
-        },
-        getWindowHeight(event) {
-            document.getElementById("canvas").style.height = (document.getElementById("workspace").offsetHeight) + 'px';
-        },
-        onDeviceDialogShow(){
-            vm.staticDeviceDialog = true;
-        },
+    changeShadowOpacity() {
+      vm.shadow_opacity = this.opacity;
     },
+    deviceHandler(item) {
+      vm.changeDevice(item);
+    },
+    showDevice() {
+      this.isDeviceShow = !this.isDeviceShow;
+    },
+    showMaterials() {
+      this.isMaterialsShow = !this.isMaterialsShow;
+    },
+    showShadow() {
+      this.isShadowShow = !this.isShadowShow;
+    },
+    showDevAdj() {
+      this.isDevAdjShow = !this.isDevAdjShow;
+    },
+    showFilters() {
+      this.isAdjShow = !this.isAdjShow;
+      if (this.isAdjShow) {
+        // this.hideAdjBarBtn();
+      }
+    },
+    hideAdjBarBtn() {
+      let elements = document.querySelectorAll(
+        '.adj-dropdown .el-slider__runway'
+      );
+      let bars = Array.prototype.slice.call(elements);
+      // console.log('in -', bars);
+      bars.forEach(item => {
+        // console.log(parseInt(item.childNodes[0].style.left));
+        if (
+          parseInt(item.childNodes[0].style.left) <= 50 &&
+          parseInt(item.childNodes[0].style.width) != 0
+        ) {
+          console.log('yes');
+          // item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'none';
+        } else {
+          console.log('no');
+          // item.querySelectorAll('.el-slider__button-wrapper')[0].style.display = 'none';
+        }
+      });
+    },
+    colorAdjBar(id, item) {
+      // this.hideAdjBarBtn();
+      let bar = document
+        .getElementsByClassName('adj-bar')
+        [id].querySelector('.el-slider__bar');
+      if (item.value[0] < 0) {
+        bar.style.backgroundColor = '#f97050';
+      } else {
+        bar.style.backgroundColor = '#ffe100';
+      }
+    },
+    nextTooltip() {
+      this.tooltips.unshift(false);
+      this.tooltips.pop();
+      if (this.tooltips.indexOf(true) == -1) this.showtooltips = false;
+    },
+    getWindowWidth(event) {
+      document.getElementById('canvas').style.width =
+        document.getElementById('workspace').offsetWidth + 'px';
+    },
+    getWindowHeight(event) {
+      document.getElementById('canvas').style.height =
+        document.getElementById('workspace').offsetHeight + 'px';
+    },
+    onDeviceDialogShow() {
+      vm.staticDeviceDialog = true;
+    },
+    calcDevWidjetHeight() {
+      // customize color picker display
+      let devWidjet = document.querySelector('.device-wrap');
+      let colorPicker = document.querySelectorAll(
+        '.el-color-dropdown.el-color-picker__panel'
+      )[0];
+      let devHeight = devWidjet.offsetHeight;
 
-    beforeDestroy() {
-        store.commit('loaddata', []);
-        //window.removeEventListener('resize', this.getWindowWidth);
-        //window.removeEventListener('resize', this.getWindowHeight);
-        _this.$emit('endsession', true)
+      colorPicker.style.marginTop = `55px`;
+      colorPicker.style.width = `198px`;
+      colorPicker.style.marginRight = `17px`;
+      colorPicker.style.borderRadius = `6px`;
+      colorPicker.style.boxShadow = `-6px 6px 10px rgba(84, 104, 115, 0.12)`;
     }
+  },
+
+  beforeDestroy() {
+    store.commit('loaddata', []);
+    //window.removeEventListener('resize', this.getWindowWidth);
+    //window.removeEventListener('resize', this.getWindowHeight);
+    _this.$emit('endsession', true);
+  }
 };
