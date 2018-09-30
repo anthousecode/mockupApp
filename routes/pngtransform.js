@@ -5,7 +5,8 @@ const path = require('path');
 var fs = require("fs");
 var im = require('imagemagick');
 // Ловим роут GET\POST к конкретному изображению с указнанием разрешения
-router.all('/:sceneid/:scenelayer/devices/:width/:height/:picture', function (req, res, next) {
+router.all('/:sceneid/:scenelayer/device/:width/:height/:picture', function (req, res, next) {
+	console.log(`zfsdghnzdifjghizdfuhgi;luzdfhg`)
 	var sceneid = req.params.sceneid;
 	var scenelayer = req.params.scenelayer;
 	var width = req.params.width;

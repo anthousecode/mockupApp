@@ -301,7 +301,7 @@ router.all('/:id', function (req, res, next) {
 			//console.log('AFTER: '+frames);
 			var result = {
 				s_id: req.params.id,
-				s_name: settings.name,
+				s_name:  settings.name,
 				s_width: settings.width,
 				s_height: settings.height,
 				s_uri: '/scenes/' + req.params.id + '/',

@@ -1,12 +1,15 @@
 var renderStaticCore = {
     data: {
         isTypeText: false,
+        activeChangeableDevice: false,
+        changeableDeviceColor: ``,
         isMockupMove1: false,
         isMockupOver: false,
         isMockupSelect: [false, false, false],
         dlgMockupUploader: false,
         quad: [],
         quad_origin: [],
+        activeWhiteClayDevice: false,
         //texture_cover: '',
         //texture_cover_mask: '',
         //texture_cover_distort: '',
@@ -27,7 +30,10 @@ var renderStaticCore = {
         scene_bgimage: new PIXI.Container(),
         global_project: [],
         distort_layers: [],
+        changeableDeviceColor: 0xff5000,
         mockup_blink_layers: [],
+        mockup_object_blink_screen_layers: [],
+        shadow_blend_mode: PIXI.BLEND_MODES.NORMAL,
         blend_mode: PIXI.BLEND_MODES.SCREEN,
         renderTextureCover: [],
         renderTextureMask: [],
@@ -91,8 +97,15 @@ var renderStaticCore = {
             square.position.set(x, y);
             return square;
         },
+        changeShadowBlending(blendValue) {
+            for(let value in PIXI.BLEND_MODES) {
+                if(value == blendValue) {
+                    vm.shadow_blend_mode = PIXI.BLEND_MODES[value]
+                }
+            }
+            console.log(vm.shadow_blend_mode)
+        },
         changeDevice(device) {
-            console.log(vm.global_project[0].children[1]._texture.baseTexture)
             //vm.current_device = device
             let devices = vm.scenestore.s_layers[0].l_data
             for(let i = 0; i < devices.length; i++) {
@@ -101,9 +114,12 @@ var renderStaticCore = {
                 }
             }
 
+            if(vm.current_device.i_img_title == "White Clay") {
+                vm.activeWhiteClayDevice = true
+            }else vm.activeWhiteClayDevice = false
+
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 vm.mockup_object[layersindex].texture = new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device.i_img_uri}`)
-                console.log(vm.mockup_object[layersindex].tint)
                 vm.mockup_object_blink[layersindex].texture = (new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device.i_img_uri}`))
             }
 
@@ -244,7 +260,7 @@ var renderStaticCore = {
                 height: vm.size[1],
                 view: document.getElementById('canvas'),
                 transparent: true,
-                resolution: 1, //(vm.isRetinaDisplay()) ? 2 : 1,
+                resolution: 2, //(vm.isRetinaDisplay()) ? 2 : 1,
                 antialias: true,
                 powerPreference: "high-performance",
                 autoResize:true
@@ -282,6 +298,7 @@ var renderStaticCore = {
                 vm.quad[layersindex] = [];
                 vm.distort_layers[layersindex] = new PIXI.Container();
                 vm.mockup_blink_layers[layersindex] = new PIXI.Container();
+                vm.mockup_object_blink_screen_layers[layersindex] = new PIXI.Container();
             }
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 loader.add(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg');
@@ -300,10 +317,11 @@ var renderStaticCore = {
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                     //vm.cover_object[layersindex]
                     let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
-                    let shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'Shadow.png'))
+                    let shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.size[0]}/${vm.size[1]}/Shadow.png`))
                     for (index = 0; index < vm.scenestore.s_frames; index++) {
                         vm.coversequence[layersindex].push(coversequencetpl);
                         vm.covershadow[layersindex].push(shadow)
+                        vm.covershadow[layersindex].blendMode = PIXI.BLEND_MODES.NORMAL
                     }
 
                     //	var texture = new PIXI.Texture.fromVideo("/test.mp4")
@@ -341,6 +359,9 @@ var renderStaticCore = {
                     vm.mockup_object[layersindex].width = vm.size[0]
                     vm.mockup_object[layersindex].height = vm.size[1]
 
+                    vm.mockup_object_blink_screen_layers[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
+                    vm.mockup_object_blink_screen_layers[layersindex].width = vm.size[0]
+                    vm.mockup_object_blink_screen_layers[layersindex].height = vm.size[1]
                     vm.mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
                     vm.mockup_object_blink[layersindex].width = vm.size[0]
                     vm.mockup_object_blink[layersindex].height = vm.size[1]
@@ -403,6 +424,8 @@ var renderStaticCore = {
                     vm.mockup_object_blink[layersindex].loop = false;
                     vm.mockup_object_blink[layersindex].animationSpeed = 0.5;
                     vm.mockup_object_blink[layersindex].blendMode = vm.blend_mode;
+                    vm.mockup_object_blink_screen_layers[layersindex].blendMode = PIXI.BLEND_MODES.SCREEN
+
 //=======================================
                     var texture_cover_mask_distort = new PIXI.projection.Sprite2d(vm.cover_object[layersindex].texture)
                     texture_cover_mask_distort.texture = PIXI.Texture.WHITE
@@ -411,11 +434,10 @@ var renderStaticCore = {
                     vm.mask_container.addChild(texture_cover_mask_distort)
                     var maskcoverb64 = vm.renderer_client.renderer.extract.base64(vm.mask_container)
                     var maskcover = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(maskcoverb64))
+
+
 //=======================================
                     // LAYERS COMPOSITE
-                    //vm.mockup_object[layersindex].tint = 0xFF0000;
-
-
 
 
                     vm.cover_object[layersindex].texture.baseTexture.mipmap=false;
@@ -426,6 +448,7 @@ var renderStaticCore = {
                     vm.distort_layers[layersindex].interactive = true;
                     vm.distort_layers[layersindex].buttonMode = true;
                     vm.distort_layers[layersindex].moveWhenInside = false;
+
                     //vm.distort_layers[layersindex].cacheAsBitmap = true;
                     //vm.distort_layers.hitArea = new PIXI.Rectangle(_.min(minX), _.min(minY), _.max(maxW), _.max(maxH));
                     vm.distort_layers[layersindex].indexoflayer = layersindex
@@ -497,6 +520,10 @@ var renderStaticCore = {
 
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 
+
+
+                        vm.shadow_object[layersindex].blendMode = vm.shadow_blend_mode
+
                         vm.global_project[layersindex].filters = [new PIXI.filters.AdjustmentFilter({
                             gamma: vm.devicesFilters.effectgamma+1 ,
                             contrast:  vm.devicesFilters.effectcontrast+1,
@@ -504,6 +531,21 @@ var renderStaticCore = {
                             brightness:  vm.devicesFilters.effectbrightness+1,
                         })];
 
+                        if(vm.activeWhiteClayDevice) {
+                            vm.distort_layers[layersindex].addChild(vm.mockup_object_blink_screen_layers[layersindex]);
+                            vm.mockup_object_blink[layersindex].blendMode = PIXI.BLEND_MODES.MULTIPLY
+                        }else  {
+                            vm.distort_layers[layersindex].removeChild(vm.mockup_object_blink_screen_layers[layersindex])
+                            vm.mockup_object_blink[layersindex].blendMode = vm.blend_mode
+                        }
+
+                        if(vm.activeChangeableDevice) {
+                            vm.mockup_object[layersindex].tint = vm.changeableDeviceColor
+                            vm.mockup_object_blink[layersindex].tint = 16777215
+                        }else {
+                            vm.mockup_object[layersindex].tint = 16777215
+                            vm.mockup_object_blink[layersindex].tint = 16777215
+                        }
                         //настройка изменения прозрачности тени
                         vm.shadow_object[layersindex].alpha = vm.shadow_opacity
                         //vm.distort_layers[layersindex].filters = [new PIXI.filters.BlurFilter(1,3,1)]
