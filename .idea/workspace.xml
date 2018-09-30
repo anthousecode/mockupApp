@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/public/assets/staticCore.js" line="170" />
+    <bookmark url="file://$PROJECT_DIR$/public/assets/staticCore.js" line="172" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="" />
+    <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/public/assets/staticCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticCore.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -158,11 +160,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="123" column="13" lean-forward="true" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
+            <state relative-caret-position="288">
+              <caret line="120" column="84" selection-start-line="120" selection-start-column="84" selection-end-line="120" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -184,8 +186,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+            <state relative-caret-position="234">
+              <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -208,11 +210,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staticPngTransform.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="staticPngTransform.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/staticPngTransform.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+            <state relative-caret-position="208">
+              <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -256,8 +258,8 @@
       <find>deviceHandler</find>
       <find>changeDeviceColor</find>
       <find>changeDevice</find>
-      <find>mockup_object_blink_screen_layers</find>
       <find>devColor</find>
+      <find>mockup_object_blink_screen_layers</find>
     </findStrings>
     <replaceStrings>
       <replace>Rerere</replace>
@@ -476,12 +478,12 @@
       <workItem from="1538114190379" duration="7995000" />
       <workItem from="1538135354348" duration="4705000" />
       <workItem from="1538213121859" duration="17321000" />
-      <workItem from="1538300699891" duration="15505000" />
+      <workItem from="1538300699891" duration="18978000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="523302000" />
+    <option name="totallyTimeSpent" value="526775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-2" width="1680" height="1052" extended-state="6" />
@@ -785,13 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/staticPngTransform.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/pngShadowTransform.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1246">
@@ -820,13 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -841,8 +829,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="123" column="13" lean-forward="true" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
+        <state relative-caret-position="288">
+          <caret line="120" column="84" selection-start-line="120" selection-start-column="84" selection-end-line="120" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/staticPngTransform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
         </state>
       </provider>
     </entry>

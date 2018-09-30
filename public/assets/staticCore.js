@@ -118,6 +118,8 @@ var renderStaticCore = {
                 vm.activeWhiteClayDevice = true
             }else vm.activeWhiteClayDevice = false
 
+            console.log(`${vm.size[0]}/${vm.size[1]}/${vm.current_device.i_img_uri}`)
+
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 vm.mockup_object[layersindex].texture = new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device.i_img_uri}`)
                 vm.mockup_object_blink[layersindex].texture = (new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device.i_img_uri}`))
