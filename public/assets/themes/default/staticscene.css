@@ -34,7 +34,8 @@
 /* Filters wrappers */
 .adj-wrap,
 .device-wrap,
-.device-color-wrap {
+.device-color-wrap,
+.bg-wrap{
   width: 215px;
   padding: 8px;
   margin-bottom: 8px;
@@ -186,7 +187,7 @@ div[role='slider'] {
   justify-content: flex-start;
   align-items: center;
 }
-.material-list__item:last-child {
+.material-list__item.color-picker{
   position: relative;
 }
 .color-icon {
@@ -199,44 +200,7 @@ div[role='slider'] {
 .color-icon.color {
   background: url('/images/icons/color.svg');
 }
-
-/* Customize color picker */
-.device-filter-wrap .el-color-picker__trigger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 48px;
-  height: 22px;
-  box-sizing: border-box;
-  padding: 3px;
-  border-radius: 6px;
-}
-.device-filter-wrap .el-color-picker {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.el-color-picker__icon.el-icon-arrow-down {
-  display: none;
-}
-.el-color-svpanel,
-.el-color-alpha-slider,
-.el-color-predefine {
-  width: 100%;
-}
-.el-color-predefine__color-selector:nth-child(7n + 1) {
-  margin-left: 0;
-}
-.el-color-predefine__color-selector:nth-child(10n + 1) {
-  margin-left: 8px;
-}
-.el-color-predefine__color-selector:first-child {
-  margin-left: 0;
-}
-.el-color-dropdown__btns button:nth-child(2) {
-  display: none;
-}
-/* .color-btn-wrap {
+.color-btn-wrap {
   position: absolute;
   right: 0;
   top: 0;
@@ -252,10 +216,9 @@ div[role='slider'] {
   width: 100%;
   height: 100%;
   border-radius: 4px;
-  background-color: #ff5000;
   border: 1px solid rgba(0, 0, 0, 0.29);
   cursor: pointer;
-} */
+}
 
 /* Shadows */
 .shadow-prop {
@@ -327,4 +290,13 @@ div[role='slider'] {
   font-size: 15px;
   line-height: 24px;
   color: #747b7f;
+}
+
+/*background color picker*/
+.bg-icon{
+  width: 32px;
+  height: 31px;
+  border-radius: 5px;
+  background: url("/images/icons/bg-picker.svg");
+  margin-right: 8px;
 }

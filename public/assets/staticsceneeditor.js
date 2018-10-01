@@ -56,15 +56,17 @@ const StaticSceneEditor = {
                                         <div class="color-icon" :style="{backgroundColor: item.color}"></div>
                                         <span>{{item.i_img_title}}</span>
                                     </div>
-                                    <div class="material-list__item" @click="calcDevWidjetHeight">
+                                    <div class="material-list__item color-picker">
                                         <div class="color-icon color"></div>
                                         <span @click="activeChangeableDevice">Changeable</span>
-                                         <el-color-picker v-model="devColor" @active-change="changeDeviceColor"  :predefine="predefineColors">
-                                         </el-color-picker>
-                                        <!--<div class="color-btn-wrap">-->
-                                            <!--<div class="color-btn" @click="isDevColorShow = !isDevColorShow"></div>-->
-                                        <!--</div>-->
+                                        <div class="color-btn-wrap">
+                                            <div class="color-btn" @click="isDevColorShow = !isDevColorShow" :style="{backgroundColor: calcDevColor}"></div>
+                                        </div>
+                                         <!--<el-color-picker v-model="devColor" @active-change="changeDeviceColor"  :predefine="predefineColors">-->
+                                         <!--</el-color-picker>-->
                                     </div>
+                                    <colorpicker v-model="devColor" @input="changeDeviceColor" v-show="isDevColorShow">
+                                    </colorpicker>
                                 </div>
                             </template>
                         </div>
@@ -110,24 +112,35 @@ const StaticSceneEditor = {
                     </template>
                 </div>
 
-                <!--<div class="device-color-wrap" v-show="isDevColorShow">-->
-                   <!---->
-                <!--</div>-->
+                <div class="bg-wrap">
+                    <div class="adj-btn" @click="showBgPicker">
+                            <div class="bg-icon" alt="Icon"></div>
+                            <span class="adj-text">Background</span>
+                            <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isBgShow"></i>
+                            <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
+                    </div>
+                    <div v-show="isBgShow">
+                       
+                    </div>
+                </div>
+</div>
             </div>
         </div>
     `,
+
   data: function() {
     return {
       layers: [],
       cover_object: [],
       scenestore: '',
-        changebleDevice: ``,
+      changebleDevice: ``,
       isAdjShow: false,
       isDeviceShow: false,
       isMaterialsShow: false,
       isShadowShow: false,
       isDevAdjShow: false,
       isDevColorShow: false,
+      isBgShow:false,
       min: -1,
       max: 1,
       step: 0.1,
@@ -149,7 +162,7 @@ const StaticSceneEditor = {
           icon: '/images/icons/brightness.svg'
         }
       ],
-        adjDeviceRanges: [
+      adjDeviceRanges: [
             {
                 value: [0, 0],
                 icon: '/images/icons/exposure.svg'
@@ -178,6 +191,7 @@ const StaticSceneEditor = {
       opacity: 1,
       deviceDialog: false,
       devColor: '#ff5000',
+      calcDevColor:'#ff5000',
       predefineColors: [
         '#e50000',
         '#ffa200',
@@ -194,9 +208,21 @@ const StaticSceneEditor = {
         '#9b9b9b',
         '#ffffff'
         // '#ff3900'
-      ]
+      ],
+        sketch: null,
+        colorgradient:{
+            rgba: {
+                'a': 1,
+                'b': 255,
+                'g': 255,
+                'r': 255
+            },
+        }
     };
   },
+    created(){
+        Vue.component('colorpicker', VueColor.Sketch);
+    },
   mounted: function() {
     var _this = this;
     axios
@@ -229,6 +255,7 @@ const StaticSceneEditor = {
             this.getWindowWidth()
             this.getWindowHeight();
         })
+
     },
     methods:{
         changeShadowBlending(blendValue){
@@ -239,31 +266,13 @@ const StaticSceneEditor = {
             vm.activeChangeableDevice = true
             console.log(vm.activeChangeableDevice)
         },
-        changeDeviceColor(color) {
+        changeDeviceColor() {
+            this.calcDevColor = this.devColor.hex;
             vm.activeChangeableDevice = true
-          /*console.log(this.rgbToHex(color))*/
-            vm.changeableDeviceColor = "0x"+ this.rgbToHex(color)
-            this.devColor = '#' + this.rgbToHex(color)
-        },
-        rgbToHex(color) {
-            color = ""+ color;
-            if (!color || color.indexOf("rgb") < 0) {
-                return;
-            }
-
-            if (color.charAt(0) == "#") {
-                return color;
-            }
-            var nums = /(.*?)rgb\((\d+),\s*(\d+),\s*(\d+)\)/i.exec(color),
-                r = parseInt(nums[2], 10).toString(16),
-                g = parseInt(nums[3], 10).toString(16),
-                b = parseInt(nums[4], 10).toString(16);
-
-            return (
-                (r.length == 1 ? "0"+ r : r) +
-                (g.length == 1 ? "0"+ g : g) +
-                (b.length == 1 ? "0"+ b : b)
-            );
+            let color = this.calcDevColor.substring(1);
+            console.log('color - ',color)
+            vm.changeableDeviceColor = "0x"+ color
+            // this.devColor = '#' + this.rgbToHex(color)
         },
         showUploadWindow(index){
             vm.openUploader(index)
@@ -422,21 +431,11 @@ const StaticSceneEditor = {
                     return
             }
         },
-        calcDevWidjetHeight() {
-            this.deviceHandler(this.changebleDevice)
-            this.activeChangeableDevice()
-            // customize color picker display
-            let devWidjet = document.querySelector('.device-wrap');
-            let colorPicker = document.querySelectorAll(
-                '.el-color-dropdown.el-color-picker__panel'
-            )[0];
-            let devHeight = devWidjet.offsetHeight;
-
-            colorPicker.style.marginTop = `55px`;
-            colorPicker.style.width = `198px`;
-            colorPicker.style.marginRight = `17px`;
-            colorPicker.style.borderRadius = `6px`;
-            colorPicker.style.boxShadow = `-6px 6px 10px rgba(84, 104, 115, 0.12)`;
+        showBgPicker(){
+            this.isBgShow = !this.isBgShow;
+        },
+        changeGradientPicker(){
+            console.log('choose color')
         },
         nextTooltip() {
             this.tooltips.unshift(false);

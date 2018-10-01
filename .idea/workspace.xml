@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/assets/staticCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticCore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/themes/default/overload.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/themes/default/overload.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -150,76 +156,84 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/core.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5018">
-              <caret line="811" column="76" selection-start-line="811" selection-start-column="76" selection-end-line="812" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="120" column="84" selection-start-line="120" selection-start-column="84" selection-end-line="120" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="238" column="44" selection-start-line="238" selection-start-column="44" selection-end-line="238" selection-end-column="44" />
-              <folding>
-                <element signature="e#7660#8036#0" />
-                <element signature="e#8063#8521#0" />
-                <element signature="n#!!block;n#rgbToHex#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pngtransform.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/pngtransform.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pngShadowTransform.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/pngShadowTransform.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1246">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staticPngTransform.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/staticPngTransform.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.41729322">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="224">
+                  <caret line="271" column="55" lean-forward="true" selection-start-line="271" selection-start-column="55" selection-end-line="271" selection-end-column="55" />
+                  <folding>
+                    <element signature="e#7791#8167#0" />
+                    <element signature="e#8194#8652#0" />
+                    <element signature="e#8694#8913#0" />
+                    <element signature="e#9032#9327#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="274" column="9" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-8313">
+                  <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1380">
+                  <caret line="563" column="43" lean-forward="true" selection-start-line="563" selection-start-column="43" selection-end-line="563" selection-end-column="43" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#canvas#0;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#canvas#1;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-container#0;n#span#0;n#el-dialog#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#1;n#el-tab-pane#1;n#el-tabs#0;n#el-popover#1;n#div#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-container#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#el-container#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#0;n#el-col#0;n#el-row#0;n#el-footer#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#i#1;n#el-button#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#0;n#div#0;n#el-card#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-container#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="staticscene.css" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/assets/themes/default/staticscene.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-280">
+                  <caret line="204" column="11" lean-forward="true" selection-start-line="204" selection-start-column="11" selection-end-line="204" selection-end-column="11" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -230,13 +244,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Changea</find>
-      <find>vm.mockup_object_blink[layersindex].blend_mode</find>
-      <find>blend_mode</find>
-      <find>active</find>
-      <find>mockup_object_blink_screen</find>
-      <find>PIXI.BLEND_MODES</find>
-      <find>ant</find>
       <find>anti</find>
       <find>Multi</find>
       <find>blendingItems</find>
@@ -249,17 +256,24 @@
       <find>activeW</find>
       <find>Changeable</find>
       <find>devColo</find>
-      <find>changeableDeviceColor</find>
       <find>()=&gt;</find>
       <find>activeChangeableDevice</find>
       <find>change</find>
       <find>vm.activeChangeableDevice</find>
       <find>calcDevWidjetHeight</find>
-      <find>deviceHandler</find>
-      <find>changeDeviceColor</find>
-      <find>changeDevice</find>
       <find>devColor</find>
       <find>mockup_object_blink_screen_layers</find>
+      <find>rout</find>
+      <find>grapick</find>
+      <find>color</find>
+      <find>colorpicker</find>
+      <find>colorgradient</find>
+      <find>changeDeviceColor</find>
+      <find>changeableDeviceColor</find>
+      <find>deviceHandler</find>
+      <find>changeDevice</find>
+      <find>.vc-sketch-field .vc-input__input</find>
+      <find>.vc-sketch-field .vc-input__label</find>
     </findStrings>
     <replaceStrings>
       <replace>Rerere</replace>
@@ -306,18 +320,18 @@
         <option value="$PROJECT_DIR$/routes/exportVideo/exportvideo.js" />
         <option value="$PROJECT_DIR$/routes/staticSceneId.js" />
         <option value="$PROJECT_DIR$/public/assets/sceneeditor.js" />
-        <option value="$PROJECT_DIR$/config.js" />
-        <option value="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" />
         <option value="$PROJECT_DIR$/routes/staticPngTransform.js" />
         <option value="$PROJECT_DIR$/public/assets/pixi.core.js" />
         <option value="$PROJECT_DIR$/routes/pngtransform.js" />
-        <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/routes/scenesid.js" />
-        <option value="$PROJECT_DIR$/public/assets/core.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/pngShadowTransform.js" />
-        <option value="$PROJECT_DIR$/public/assets/staticsceneeditor.js" />
         <option value="$PROJECT_DIR$/public/assets/staticCore.js" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/public/assets/core.js" />
+        <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/public/assets/staticsceneeditor.js" />
+        <option value="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" />
       </list>
     </option>
   </component>
@@ -358,7 +372,38 @@
             <path>
               <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mockupApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mockupApp" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -368,7 +413,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/scenesid.js&#10;index&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;expor&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/exporter.js&#10;inde&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;штву&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;зтп&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngtransform.js" />
+    <property name="SearchEverywhereHistoryKey" value="changeableDeviceColor&#9;null&#9;null&#10;backgroundcolor&#9;null&#9;null&#10;sketch&#9;null&#9;null&#10;colorpicker&#9;null&#9;null&#10;changeGradientPicker&#9;null&#9;null&#10;colorgradient&#9;null&#9;null&#10;gradiendblock&#9;null&#9;null&#10;index&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;expor&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/exporter.js&#10;inde&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;штву&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;зтп&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngtransform.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/public" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -377,13 +422,13 @@
     <property name="settings.editor.selected.configurable" value="com.chrisrm.idea.config" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/routes/ads" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/routes/exportVideo" />
       <recent name="$PROJECT_DIR$/routes.exportVideo" />
       <recent name="$PROJECT_DIR$/routes/mergeImages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/routes/ads" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -483,30 +528,62 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="526775000" />
+    <option name="totallyTimeSpent" value="538002000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="-2" width="1680" height="1052" extended-state="6" />
+    <frame x="65" y="-4" width="1615" height="1054" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49779248" visible="true" weight="0.22812311" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1764706" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32853982" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
-      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
-      <window_info id="Structure" order="0" sideWeight="0.5022075" side_tool="true" weight="0.23717561" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.27654868" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34355178" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49779248" visible="true" weight="0.22812311" />
+      <window_info id="Structure" order="0" sideWeight="0.5022075" side_tool="true" weight="0.23717561" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32853982" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.27654868" />
+      <window_info id="Favorites" order="1" side_tool="true" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18718593" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3939394" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -516,39 +593,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/public/assets/staticsceneeditor.js</url>
-          <line>61</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/radslider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/components/pixi/pixi.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="14278" selection-start-line="9" selection-start-column="14278" selection-end-line="9" selection-end-column="14278" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/exportVideo/mergeImages.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -590,13 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="176" column="10" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="274" column="9" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -710,13 +751,6 @@
     <entry file="file://$PROJECT_DIR$/killport">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2392">
@@ -766,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="610" column="33" lean-forward="true" selection-start-line="610" selection-start-column="33" selection-end-line="610" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -801,32 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/themes/default/staticscene.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-660">
-          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5018">
-          <caret line="811" column="76" selection-start-line="811" selection-start-column="76" selection-end-line="812" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="238" column="44" selection-start-line="238" selection-start-column="44" selection-end-line="238" selection-end-column="44" />
-          <folding>
-            <element signature="e#7660#8036#0" />
-            <element signature="e#8063#8521#0" />
-            <element signature="n#!!block;n#rgbToHex#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -834,17 +835,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/staticPngTransform.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/components/vue-color/vue-color.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret column="21437" selection-start-column="21437" selection-end-column="21437" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/themes/default/overload.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="960" column="1" selection-start-line="960" selection-start-column="1" selection-end-line="960" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/components/grapick/grapick.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="1" column="3099" selection-start-line="1" selection-start-column="3099" selection-end-line="1" selection-end-column="3099" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8313">
+          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="563" column="43" lean-forward="true" selection-start-line="563" selection-start-column="43" selection-end-line="563" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#1;n#div#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-container#0;n#span#0;n#el-dialog#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#el-tab-pane#1;n#el-tabs#0;n#el-popover#1;n#div#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-container#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-container#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#el-col#0;n#el-row#0;n#el-footer#0;n#el-container#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#1;n#el-button#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#div#0;n#el-card#0;n#el-collapse-item#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-container#0;n#el-collapse#0;n#el-aside#0;n#el-container#0;n#el-container#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="274" column="9" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="271" column="55" lean-forward="true" selection-start-line="271" selection-start-column="55" selection-end-line="271" selection-end-column="55" />
+          <folding>
+            <element signature="e#7791#8167#0" />
+            <element signature="e#8194#8652#0" />
+            <element signature="e#8694#8913#0" />
+            <element signature="e#9032#9327#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/themes/default/staticscene.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-280">
+          <caret line="204" column="11" lean-forward="true" selection-start-line="204" selection-start-column="11" selection-end-line="204" selection-end-column="11" />
         </state>
       </provider>
     </entry>
