@@ -99,11 +99,11 @@ const StaticSceneEditor = {
                             <template v-if="isDevAdjShow">
                                 <div class="material-list">
                                       <div class="adj-dropdown">
-                                        <div v-for="(range, index) in adjDeviceRanges" :key="index" class="block adj-device-bar adj-bar" >
+                                        <div v-for="(range, id) in adjDeviceRanges[index]" :key="index" class="block adj-device-bar adj-bar" >
                                             <div class="adj-bar__icon">
                                                 <img :src="range.icon">
                                             </div>
-                                            <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjDeviceBar(index, range)"></el-slider>
+                                            <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjDeviceBar(id, range, index)"></el-slider>
                                         </div>
                                       </div>
                                 </div>
@@ -197,24 +197,7 @@ const StaticSceneEditor = {
           icon: '/images/icons/brightness.svg'
         }
       ],
-      adjDeviceRanges: [
-            {
-                value: [0, 0],
-                icon: '/images/icons/exposure.svg'
-            },
-            {
-                value: [0, 0],
-                icon: '/images/icons/saturation.svg'
-            },
-            {
-                value: [0, 0],
-                icon: '/images/icons/contrast.svg'
-            },
-            {
-                value: [0, 0],
-                icon: '/images/icons/brightness.svg'
-            }
-        ],
+      adjDeviceRanges: [],
       devices: [],
       blendingItems: [
           { value: 'NORMAL', label: 'Normal' },
@@ -288,6 +271,25 @@ const StaticSceneEditor = {
           for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
               this.devColor[layersindex] = '#ff5000'
               this.calcDevColor[layersindex] = '#ff5000'
+
+              this.adjDeviceRanges[layersindex] = [
+                  {
+                      value: [0, 0],
+                      icon: '/images/icons/exposure.svg'
+                  },
+                  {
+                      value: [0, 0],
+                      icon: '/images/icons/saturation.svg'
+                  },
+                  {
+                      value: [0, 0],
+                      icon: '/images/icons/contrast.svg'
+                  },
+                  {
+                      value: [0, 0],
+                      icon: '/images/icons/brightness.svg'
+                  }
+              ]
           }
 
         for (let i = 0; i < devicesData.length; i++) {
@@ -411,8 +413,8 @@ const StaticSceneEditor = {
                 bar.style.backgroundColor = '#ffe100';
             }
         },
-        colorAdjDeviceBar(id, item) {
-            this.AdjustmentsEffectDevice(id, item)
+        colorAdjDeviceBar(id, item, index) {
+            this.AdjustmentsEffectDevice(id, item, index)
             // this.hideAdjBarBtn();
             let bar = document.getElementsByClassName("adj-device-bar")[id].querySelector('.el-slider__bar');
             if(item.value[0] < 0){
@@ -455,35 +457,35 @@ const StaticSceneEditor = {
                     return
             }
         },
-        AdjustmentsEffectDevice(id, item) {
+        AdjustmentsEffectDevice(id, item, index) {
             switch (id) {
                 case 0:
                     if(item.value[0] < 0) {
-                        vm.devicesFilters.effectgamma= item.value[0]
+                        vm.devicesFilters[index].effectgamma= item.value[0]
                     }
-                    if(item.value[1] > 0)vm.devicesFilters.effectgamma= item.value[1]
-                    if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters.effectgamma= item.value[1]
+                    if(item.value[1] > 0)vm.devicesFilters[index].effectgamma= item.value[1]
+                    if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters[index].effectgamma= item.value[1]
                     break;
                 case 1:
                     if(item.value[0] < 0) {
-                        vm.devicesFilters.effectcontrast= item.value[0]
+                        vm.devicesFilters[index].effectcontrast= item.value[0]
                     }
-                    if(item.value[1] > 0)vm.devicesFilters.effectcontrast= item.value[1]
-                    if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters.effectcontrast= item.value[1]
+                    if(item.value[1] > 0)vm.devicesFilters[index].effectcontrast= item.value[1]
+                    if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters[index].effectcontrast= item.value[1]
                     break;
                 case 2:
                     if(item.value[0] < 0) {
-                        vm.devicesFilters.effectbrightness= item.value[0]
+                        vm.devicesFilters[index].effectbrightness= item.value[0]
                     }
-                    if(item.value[1] > 0)vm.devicesFilters.effectbrightness= item.value[1]
-                    if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters.effectbrightness= item.value[1]
+                    if(item.value[1] > 0)vm.devicesFilters[index].effectbrightness= item.value[1]
+                    if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters[index].effectbrightness= item.value[1]
                     break;
                 case 3:
                     if(item.value[0] < 0) {
-                        vm.devicesFilters.effectsaturation= item.value[0]
+                        vm.devicesFilters[index].effectsaturation= item.value[0]
                     }
-                    if(item.value[1] > 0)vm.devicesFilters.effectsaturation= item.value[1]
-                    if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters.effectsaturation= item.value[1]
+                    if(item.value[1] > 0)vm.devicesFilters[index].effectsaturation= item.value[1]
+                    if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters[index].effectsaturation= item.value[1]
                     break;
                 default:
                     break

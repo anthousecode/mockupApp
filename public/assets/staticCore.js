@@ -57,12 +57,7 @@ var renderStaticCore = {
         effectsaturation:0,
         effectcontrast: 0,
         effectbrightness: 0,
-        devicesFilters: {
-            effectgamma: 0,
-            effectsaturation:0,
-            effectcontrast: 0,
-            effectbrightness: 0,
-        },
+        devicesFilters: [],
         effectnoise: 0,
         effectpixilate: 1,
         effectnoisesize: 0.001,
@@ -224,6 +219,12 @@ var renderStaticCore = {
                 vm.activeWhiteClayDevice[layersindex] = false
                 vm.activeChangeableDevice[layersindex] = false
                 vm.current_device[layersindex] = vm.scenestore.s_layers[layersindex].l_data[0]
+                vm.devicesFilters[layersindex] = {
+                    effectgamma: 0,
+                    effectsaturation:0,
+                    effectcontrast: 0,
+                    effectbrightness: 0,
+                }
             }
 
             console.log(vm.current_device)
@@ -545,10 +546,10 @@ var renderStaticCore = {
                         //vm.shadow_object[layersindex].blendMode = vm.shadow_blend_mode
 
                         vm.global_project[layersindex].filters = [new PIXI.filters.AdjustmentFilter({
-                            gamma: vm.devicesFilters.effectgamma+1 ,
-                            contrast:  vm.devicesFilters.effectcontrast+1,
-                            saturation:  vm.devicesFilters.effectsaturation+1,
-                            brightness:  vm.devicesFilters.effectbrightness+1,
+                            gamma: vm.devicesFilters[layersindex].effectgamma+1 ,
+                            contrast:  vm.devicesFilters[layersindex].effectcontrast+1,
+                            saturation:  vm.devicesFilters[layersindex].effectsaturation+1,
+                            brightness:  vm.devicesFilters[layersindex].effectbrightness+1,
                         })];
 
                         if(vm.activeWhiteClayDevice[layersindex]) {
