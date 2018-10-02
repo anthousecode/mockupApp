@@ -123,7 +123,27 @@ const StaticSceneEditor = {
                        
                     </div>
                 </div>
-</div>
+                    
+                <div class="export-wrap">
+                    <div class="adj-btn" @click="showExport">
+                            <span class="adj-text">Export</span>
+                            <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isExportShow"></i>
+                            <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
+                    </div>
+                    <div v-show="isExportShow">
+                        <p>
+                           <input type="text" size="4" v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" v-model="isTransparent">
+                            <span>Transparent</span>
+                        </p>
+                        <p class="export-btn-wrap">
+                            <button class="export-btn" v-show="!isTransparent">jpg</button>
+                            <button class="export-btn" :class="{'btn_full-width': isTransparent}">png</button>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     `,
@@ -141,6 +161,7 @@ const StaticSceneEditor = {
       isDevAdjShow: false,
       isDevColorShow: false,
       isBgShow:false,
+      isExportShow:false,
       min: -1,
       max: 1,
       step: 0.1,
@@ -209,21 +230,25 @@ const StaticSceneEditor = {
         '#ffffff'
         // '#ff3900'
       ],
-        sketch: null,
-        colorgradient:{
+      sketch: null,
+      colorgradient:{
             rgba: {
                 'a': 1,
                 'b': 255,
                 'g': 255,
                 'r': 255
             },
-        }
+      },
+      exportSize: [0,0],
+      proportion: 1,
+      isTransparent: false
     };
   },
-    created(){
-        Vue.component('colorpicker', VueColor.Sketch);
-    },
+  created(){
+    Vue.component('colorpicker', VueColor.Sketch);
+  },
   mounted: function() {
+
     var _this = this;
     axios
       .post('/api/scenes/' + this.$route.params.id)
@@ -239,6 +264,8 @@ const StaticSceneEditor = {
         let devicesData = this.scenestore.s_layers[0].l_data;
         this.layers = vm.layers;
         console.log(vm.layers);
+        this.exportSize = vm.size;
+        this.proportion = this.exportSize[1]/this.exportSize[0];
         for (let i = 0; i < devicesData.length; i++) {
             this.devices.push(devicesData[i])
           if(devicesData[i].i_img_title == `White Clay`){
@@ -302,6 +329,9 @@ const StaticSceneEditor = {
             if(this.isAdjShow){
                 //this.hideAdjBarBtn();
             }
+        },
+        showExport(){
+            this.isExportShow = !this.isExportShow;
         },
         hideAdjBarBtn(){
             let elements = document.querySelectorAll('.adj-dropdown .el-slider__runway');
@@ -451,8 +481,10 @@ const StaticSceneEditor = {
         onDeviceDialogShow(){
             vm.staticDeviceDialog = true;
         },
+        onChangeSize(){
+            this.exportSize[1] = Math.round(this.exportSize[0]*this.proportion);
+        }
     },
-
     beforeDestroy() {
         store.commit('loaddata', []);
         //window.removeEventListener('resize', this.getWindowWidth);

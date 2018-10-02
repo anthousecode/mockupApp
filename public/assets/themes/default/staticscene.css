@@ -23,8 +23,9 @@
   position: absolute;
   right: 0;
   top: 0;
-  flex-basis: 230px;
+  height:100vh;
   padding: 16px 18px;
+
 }
 
 .st-scene__aside > * {
@@ -35,7 +36,8 @@
 .adj-wrap,
 .device-wrap,
 .device-color-wrap,
-.bg-wrap{
+.bg-wrap,
+.export-wrap{
   width: 215px;
   padding: 8px;
   margin-bottom: 8px;
@@ -299,4 +301,47 @@ div[role='slider'] {
   border-radius: 5px;
   background: url("/images/icons/bg-picker.svg");
   margin-right: 8px;
+}
+
+/*export*/
+.export-wrap{
+  padding: 12px 8px;
+  position: absolute;
+  bottom: 38px;
+  color:#313a40;
+  font-size: 11px;
+}
+.export-wrap > *{
+  box-sizing: border-box;
+  padding: 0 7px;
+}
+.export-wrap .adj-arrow{
+  top: 6px;
+}
+.export-wrap input, input[type="checkbox"]{
+  color:#313a40;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #e4e6e9;
+  outline: none;
+  padding: 4px 2px;
+}
+.export-btn-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.export-btn{
+    width: 88px;
+    height: 24px;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: #f96f50;
+    border: 1px solid rgba(40,40,40,0.26);
+    outline: none;
+    cursor: pointer;
+}
+.btn_full-width{
+    width:100%;
 }
