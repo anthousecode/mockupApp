@@ -120,7 +120,21 @@ const StaticSceneEditor = {
                             <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <div v-show="isBgShow">
-                       <colorpicker v-model="bgColor" @input="changeBgColor">
+                        <div class="tabs-wrap">
+                            <el-radio-group  style="">
+                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="flat" class="grad flat"></el-radio-button>
+                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="linear" class="grad linear"></el-radio-button>
+                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="radial" class="grad radial"></el-radio-button>
+                            </el-radio-group>
+                        </div>
+                        <div class="rad-slider-wrap" v-show="gradientType='linear'">
+                            <rad-slider name="rad" :degree="rad" @rotate="rotate"></rad-slider>
+                            <div class="degree-text">{{radDegree}}&#176;</div>
+                        </div>
+                        <div class="gp-wrap" v-show="gradientType='linear'||'radial'">
+                            <div id="grapick"></div>
+                        </div>
+                       <colorpicker v-model="bgColor" @input="changeBgColor" id="staticColorPicker">
                        </colorpicker>
                     </div>
                 </div>
@@ -215,6 +229,9 @@ const StaticSceneEditor = {
       devColor: '#ff5000',
       calcDevColor:'#ff5000',
       bgColor: '#fff',
+      gradientType: 'flat',
+      radDegree: 130,
+      rad: 130,
       // predefineColors: [
       //   '#e50000',
       //   '#ffa200',
@@ -248,6 +265,7 @@ const StaticSceneEditor = {
   },
   created(){
     Vue.component('colorpicker', VueColor.Sketch);
+    Vue.component('rad-slider', radslider);
   },
   mounted: function() {
 
@@ -488,7 +506,14 @@ const StaticSceneEditor = {
         },
         changeBgColor(){
           console.log(this.bgColor.hex)
-        }
+        },
+        rotate(name, degree){
+          console.log(degree);
+          this.radDegree = degree;
+        },
+      changeGradientType(){
+          console.log('gradient - ', this.gradientType)
+      }
     },
     beforeDestroy() {
         store.commit('loaddata', []);

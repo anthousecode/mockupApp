@@ -302,7 +302,68 @@ div[role='slider'] {
   background: url("/images/icons/bg-picker.svg");
   margin-right: 8px;
 }
+.tabs-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-bottom: 1px solid #e4e6e9;
+  margin-top: 8px;
+}
+.tabs-wrap .el-radio-button .el-radio-button__inner{
+  display: none;
+}
+.tabs-wrap .grad{
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid #e4e6e9;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.tabs-wrap .grad.linear{
+  background-image: linear-gradient(0deg, #d0d0d0 0%, #ffffff 100%);
+}
+.tabs-wrap .grad.radial{
+  background-image: radial-gradient(circle at center, #ffffff 0%, #d0d0d0 100%);
+}
+.rad-slider-wrap{
+  width: 198px;
+  height: 66px;
+  border-radius: 5px;
+  background-color: #f6f7f7;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 8px 0;
+}
+.rad-slider-wrap .rad-slider{
+  background-color: #ffffff;
+  border: 1px solid #e4e6e9;
+  margin: 0 12px 0 9px;
+}
+.rad-slider-wrap .rad-slider:before{
+  box-shadow: -0.7px 0.7px 1px rgba(0,0,0,0.17);
+  background-color: #f96f50;
+  border: 1px solid rgba(0,0,0,0.12);
+}
 
+.rad-slider-wrap .degree-text{
+  width: 39px;
+  height: 25px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid #e4e6e9;
+  color:#313a40;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gp-wrap{
+  margin-bottom: 8px;
+}
 /*export*/
 .export-wrap{
   padding: 12px 8px;
