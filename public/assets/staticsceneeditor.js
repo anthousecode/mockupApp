@@ -5,7 +5,7 @@ const StaticSceneEditor = {
                 <canvas id="canvas" class="el-workspace-background"></canvas>
             </div>
             <div class="st-scene__aside">
-                <div class="adj-wrap">
+                <div :class="{'block_active':isAdjShow, 'adj-wrap': true}">
                     <div class="adj-btn" @click="showFilters">
                         <div class="adj-icon" alt="Icon"></div>
                         <span class="adj-text">Adjustments</span>
@@ -24,7 +24,7 @@ const StaticSceneEditor = {
                     </div>
                 </div>
 
-                <div class="device-wrap">
+                <div :class="{'block_active':isDeviceShow, 'device-wrap': true}">
                     <div class="adj-btn" @click="showDevice">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
@@ -112,7 +112,7 @@ const StaticSceneEditor = {
                     </template>
                 </div>
 
-                <div class="bg-wrap">
+                <div :class="{'block_active':isBgShow, 'bg-wrap': true}">
                     <div class="adj-btn" @click="showBgPicker">
                             <div class="bg-icon" alt="Icon"></div>
                             <span class="adj-text">Background</span>
@@ -125,7 +125,7 @@ const StaticSceneEditor = {
                     </div>
                 </div>
                     
-                <div class="export-wrap">
+                <div :class="{'block_active':isExportShow, 'export-wrap': true}">
                     <div class="adj-btn" @click="showExport">
                             <span class="adj-text">Export</span>
                             <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isExportShow"></i>
@@ -242,7 +242,8 @@ const StaticSceneEditor = {
       },
       exportSize: [0,0],
       proportion: 1,
-      isTransparent: false
+      isTransparent: false,
+      activeBlocks: 0
     };
   },
   created(){

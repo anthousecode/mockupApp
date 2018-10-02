@@ -2,7 +2,7 @@
 
 [v-cloak] {display:none} 
 
-#app,body,html,p,h1,h2,h3,h4,h5,h6,div,span,td,th,a{font-family: 'Karla', sans-serif;}
+#app,body,html,p,h1,h2,h3,h4,h5,h6,div,span,td,th,a{font-family: 'Inter', sans-serif;}
 
 
 .el-primary-background {background-color:#2C2C2C;color:#fff}
