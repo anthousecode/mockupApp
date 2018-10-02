@@ -120,7 +120,8 @@ const StaticSceneEditor = {
                             <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <div v-show="isBgShow">
-                       
+                       <colorpicker v-model="bgColor" @input="changeBgColor">
+                       </colorpicker>
                     </div>
                 </div>
                     
@@ -213,23 +214,23 @@ const StaticSceneEditor = {
       deviceDialog: false,
       devColor: '#ff5000',
       calcDevColor:'#ff5000',
-      predefineColors: [
-        '#e50000',
-        '#ffa200',
-        '#fce600',
-        '#94531d',
-        '#58d700',
-        '#297700',
-        '#cf00e8',
-        '#2490e9',
-        '#00e7c1',
-        '#a9ec77',
-        '#1a1a1a',
-        '#4a4a4a',
-        '#9b9b9b',
-        '#ffffff'
-        // '#ff3900'
-      ],
+      bgColor: '#fff',
+      // predefineColors: [
+      //   '#e50000',
+      //   '#ffa200',
+      //   '#fce600',
+      //   '#94531d',
+      //   '#58d700',
+      //   '#297700',
+      //   '#cf00e8',
+      //   '#2490e9',
+      //   '#00e7c1',
+      //   '#a9ec77',
+      //   '#1a1a1a',
+      //   '#4a4a4a',
+      //   '#9b9b9b',
+      //   '#ffffff'
+      // ],
       sketch: null,
       colorgradient:{
             rgba: {
@@ -483,6 +484,9 @@ const StaticSceneEditor = {
         },
         onChangeSize(){
             this.exportSize[1] = Math.round(this.exportSize[0]*this.proportion);
+        },
+        changeBgColor(){
+          console.log(this.bgColor.hex)
         }
     },
     beforeDestroy() {
