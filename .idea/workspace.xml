@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/assets/staticCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticCore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -164,7 +163,7 @@
       <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="8909">
               <caret line="552" column="28" lean-forward="true" selection-start-line="552" selection-start-column="28" selection-end-line="552" selection-end-column="28" />
             </state>
           </provider>
@@ -173,8 +172,8 @@
       <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+            <state relative-caret-position="349">
+              <caret line="103" column="71" lean-forward="true" selection-start-line="103" selection-start-column="71" selection-end-line="103" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -199,8 +198,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>background_gradient</find>
-      <find>scene</find>
       <find>shadow.pn</find>
       <find>renderSce</find>
       <find>1310</find>
@@ -226,9 +223,11 @@
       <find>calcDevColor</find>
       <find>activeChangeableDevice</find>
       <find>changeableDeviceColor</find>
-      <find>adjDeviceRanges</find>
       <find>range</find>
       <find>colorAdjDeviceBar</find>
+      <find>key</find>
+      <find>adjDeviceRanges</find>
+      <find>adjRanges</find>
     </findStrings>
     <replaceStrings>
       <replace>Rerere</replace>
@@ -466,7 +465,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="584474000" />
+    <option name="totallyTimeSpent" value="585385000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-2" width="1680" height="1052" extended-state="6" />
@@ -838,15 +837,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="8909">
           <caret line="552" column="28" lean-forward="true" selection-start-line="552" selection-start-column="28" selection-end-line="552" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+        <state relative-caret-position="349">
+          <caret line="103" column="71" lean-forward="true" selection-start-line="103" selection-start-column="71" selection-end-line="103" selection-end-column="71" />
         </state>
       </provider>
     </entry>

@@ -99,7 +99,7 @@ const StaticSceneEditor = {
                             <template v-if="isDevAdjShow">
                                 <div class="material-list">
                                       <div class="adj-dropdown">
-                                        <div v-for="(range, id) in adjDeviceRanges[index]" :key="index" class="block adj-device-bar adj-bar" >
+                                        <div v-for="(range, id) in adjDeviceRanges[index]" :key="id" class="block adj-device-bar adj-bar" >
                                             <div class="adj-bar__icon">
                                                 <img :src="range.icon">
                                             </div>
@@ -161,7 +161,6 @@ const StaticSceneEditor = {
             </div>
         </div>
     `,
-
   data: function() {
     return {
       layers: [],
@@ -414,6 +413,7 @@ const StaticSceneEditor = {
             }
         },
         colorAdjDeviceBar(id, item, index) {
+            console.log(id, item, index)
             this.AdjustmentsEffectDevice(id, item, index)
             // this.hideAdjBarBtn();
             let bar = document.getElementsByClassName("adj-device-bar")[id].querySelector('.el-slider__bar');
