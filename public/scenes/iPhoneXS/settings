@@ -1,0 +1,9 @@
+{
+"name":"iPhone X",
+"loop":false,
+"background-color" : ["F9F9F9"],
+"width":6000,
+"height":4500,
+"blendmode" : "SCREEN",
+"animated" : false
+}

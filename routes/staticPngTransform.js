@@ -4,6 +4,7 @@ const router = express.Router();
 const path = require('path');
 var fs = require("fs");
 var im = require('imagemagick');
+var resizer = require('node-image-resizer')
 // Ловим роут GET\POST к конкретному изображению с указнанием разрешения
 router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture', function (req, res, next) {
     var sceneid = req.params.sceneid;
@@ -24,15 +25,19 @@ router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture',
     res.contentType('image/png');
     res.end(stdout, 'binary');*/
 
+
+
     var pathtoorig = `${config.path}${sceneid}/${scenedir}/devices/${device}/${filename}`;
     console.log(pathtoorig)
 
     if (fs.existsSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`)) {
+        console.log(`exist!`)
         var stdout = fs.readFileSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`, 'binary')
         res.contentType('image/png');
         res.end(stdout, 'binary');
     } else {
         // Ресайзим изображение
+
         im.resize({
                 srcPath: pathtoorig,
                 width: width,
@@ -48,6 +53,5 @@ router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture',
                 res.end(stdout, 'binary');
             })
     }
-
 })
 module.exports = router;

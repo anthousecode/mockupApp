@@ -11,23 +11,14 @@ router.all('/:sceneid/:scenelayer/Shadow/:width/:height/:picture', function (req
     var filename = req.params.picture;
     var width = req.params.width
     var height = req.params.height
-    var device = req.params.device
 
     console.log(width, height)
-
-    /*
-        console.log(`${sceneid}/${scenedir}/devices/${device}/${filename}`)
-
-
-
-        var stdout = fs.readFileSync(pathtoorig, 'binary');
-        res.contentType('image/png');
-        res.end(stdout, 'binary');*/
 
     var pathtoorig = `${config.path}${sceneid}/${scenelayer}/Shadow/${filename}`;
     console.log(pathtoorig)
 
     if (fs.existsSync(`${config.path}${sceneid}/${scenelayer}/Shadow/${width}/${filename}`)) {
+        console.log(`exists!`)
         var stdout = fs.readFileSync(`${config.path}${sceneid}/${scenelayer}/Shadow/${width}/${filename}`, 'binary')
         res.contentType('image/png');
         res.end(stdout, 'binary');

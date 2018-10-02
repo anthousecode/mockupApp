@@ -24,7 +24,7 @@ const StaticSceneEditor = {
                     </div>
                 </div>
 
-                <div class="device-wrap">
+                <div class="device-wrap"  v-for="(layer, index) in layers" :key="layer.id">
                     <div class="adj-btn" @click="showDevice">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
@@ -32,11 +32,11 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <template v-if="isDeviceShow">
-                         <span v-for="(layer, index) in layers" :key="layer.id">
-                            <div v-if="layer.controller == 'mockup'">
+                         <span>
+                            <div>
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
                                  <div class="arrow-icon"></div>
-                                    <div class="device-upload button-mockup"  :style="{ 'background-image' : 'url(' + cover_object[layer.id].texture.baseTexture.imageUrl + ')' }">
+                                    <div class="device-upload button-mockup"  :style="{ 'background-image' : 'url(' + cover_object[index].texture.baseTexture.imageUrl + ')' }">
                                         <div class="upload-icon"></div>
                                     </div>
                                 </div>
@@ -52,13 +52,13 @@ const StaticSceneEditor = {
                             </div>
                             <template v-if="isMaterialsShow">
                                 <div class="material-list">
-                                    <div class="material-list__item" v-for="(item, i) in devices" :key="i" @click="deviceHandler(item)">
+                                    <div class="material-list__item" v-for="(item, i) in devices" :key="i" @click="deviceHandler(item, index)">
                                         <div class="color-icon" :style="{backgroundColor: item.color}"></div>
                                         <span>{{item.i_img_title}}</span>
                                     </div>
                                     <div class="material-list__item" @click="calcDevWidjetHeight">
                                         <div class="color-icon color"></div>
-                                        <span @click="activeChangeableDevice">Changeable</span>
+                                        <span @click="activeChangeableDevice(index)">Changeable</span>
                                          <el-color-picker v-model="devColor" @active-change="changeDeviceColor"  :predefine="predefineColors">
                                          </el-color-picker>
                                         <!--<div class="color-btn-wrap">-->
@@ -109,6 +109,8 @@ const StaticSceneEditor = {
                         </div>
                     </template>
                 </div>
+                <el-button type="primary" size="mini" @click="exportLayer" icon="icon-Looped" :class="repeat_btn_class">
+            </el-button>
 
                 <!--<div class="device-color-wrap" v-show="isDevColorShow">-->
                    <!---->
@@ -203,16 +205,16 @@ const StaticSceneEditor = {
       .post('/api/scenes/' + this.$route.params.id)
       .then(function(response) {
         store.commit('loaddata', response.data);
-        console.log(response.data);
         // Генерация события - загрузка данных
         _this.$emit('eventname', true);
       })
       .then(() => {
         this.scenestore = store.state.scenestore;
         this.cover_object = vm.cover_object;
+        console.log(this.cover_object)
         let devicesData = this.scenestore.s_layers[0].l_data;
-        this.layers = vm.layers;
-        console.log(vm.layers);
+        this.layers = this.scenestore.s_layers;
+
         for (let i = 0; i < devicesData.length; i++) {
             this.devices.push(devicesData[i])
           if(devicesData[i].i_img_title == `White Clay`){
@@ -231,17 +233,18 @@ const StaticSceneEditor = {
         })
     },
     methods:{
+        async exportLayer(){
+          await vm.preloadHiresStaticScene()
+            vm.compositeStaticLayer()
+        },
         changeShadowBlending(blendValue){
             vm.changeShadowBlending(blendValue)
         },
-        activeChangeableDevice(){
-            console.log(vm.activeChangeableDevice)
-            vm.activeChangeableDevice = true
-            console.log(vm.activeChangeableDevice)
+        activeChangeableDevice(index){
+            vm.activeChangeableDevice[index] = true
         },
         changeDeviceColor(color) {
             vm.activeChangeableDevice = true
-          /*console.log(this.rgbToHex(color))*/
             vm.changeableDeviceColor = "0x"+ this.rgbToHex(color)
             this.devColor = '#' + this.rgbToHex(color)
         },
@@ -272,9 +275,9 @@ const StaticSceneEditor = {
         changeShadowOpacity(){
             vm.shadow_opacity = this.opacity
         },
-        deviceHandler(item){
+        deviceHandler(item, index){
             vm.activeChangeableDevice = false
-            vm.changeDevice(item)
+            vm.changeDevice(item, index)
         },
         showDevice(){
             this.isDeviceShow = !this.isDeviceShow;
@@ -351,10 +354,6 @@ const StaticSceneEditor = {
             }
         },
         AdjustmentsEffectScene(id, item) {
-            console.log(vm.effectgamma)
-            console.log(vm.effectcontrast)
-            console.log(vm.effectbrightness)
-            console.log( vm.effectsaturation)
             switch (id) {
                 case 0:
                     if(item.value[0] < 0) {
@@ -394,7 +393,7 @@ const StaticSceneEditor = {
                     if(item.value[0] < 0) {
                         vm.devicesFilters.effectgamma= item.value[0]
                     }
-                    if(item.value[1] > 0)vm.devicesFilters.effectgamma+= item.value[1]
+                    if(item.value[1] > 0)vm.devicesFilters.effectgamma= item.value[1]
                     if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters.effectgamma= item.value[1]
                     break;
                 case 1:
@@ -419,7 +418,7 @@ const StaticSceneEditor = {
                     if(item.value[1] == 0 && item.value[0] == 0)vm.devicesFilters.effectsaturation= item.value[1]
                     break;
                 default:
-                    return
+                    break
             }
         },
         calcDevWidjetHeight() {

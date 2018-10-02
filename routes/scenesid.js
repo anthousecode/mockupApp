@@ -149,6 +149,7 @@ router.all('/:id', function (req, res, next) {
 
 				}
 
+
 				xy_arr = {
 					LowerLeft: {},
 					LowerRight: {},
@@ -286,6 +287,7 @@ router.all('/:id', function (req, res, next) {
 				var dimensions = sizeOf(l_id_path + '/screen.jpg');
 
 				s_layers[s_layers.length] = {
+				    id: k,
 					l_id: l_id,
           			l_crop: l_crop,
 					l_name: l_name,
@@ -294,7 +296,8 @@ router.all('/:id', function (req, res, next) {
 					l_mask_height: dimensions.height,
 					l_icon_uri: i_icon_uri,
 					l_data: Frames_arr,
-					l_enable: true
+					l_enable: true,
+                    l_zIndex: setup.Zindex
 				}
 
 			}
@@ -310,6 +313,7 @@ router.all('/:id', function (req, res, next) {
 				s_mcount: layers.length,
 				s_looped: settings.loop,
 				s_frames: frames,
+
 				s_layers: s_layers,
                 s_animated: settings.animated
 			};

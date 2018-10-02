@@ -46,7 +46,7 @@ const router = new VueRouter({
 	/////////////////////////////////////////////////////////////////
 var vm = new Vue({
 		el: '#app',
-		mixins: [definitions, keyEvents, mouseEvent, /*renderCore,*/ renderStaticCore, exportTools, helpersTools, toolsActivators, shapesDrawers],
+		mixins: [definitions, keyEvents, mouseEvent, /*renderCore,*/ renderStaticCore, exportStaticTools, exportTools, helpersTools, toolsActivators, shapesDrawers],
 		delimiters: ['${', '}'],
 		router: router,
 		components: {
@@ -86,7 +86,8 @@ var vm = new Vue({
 			rendertype: '',
 			origratio: '',
 			origratiolock: true,
-			origsize: [6500, 4500],
+			origsize: [],
+            sceneSize: [],
 			exportsize: [3250, 2250],
 			size: [0, 0],
 			fileList: [{
@@ -803,11 +804,16 @@ function generateThumbnail(i) {
 				vm.origsize[0] = vm.scenestore.s_width;
 				vm.origsize[1] = vm.scenestore.s_height;
 
+                vm.origsize = [vm.scenestore.s_width, vm.scenestore.s_height]
+                var sceneWidth = 1310
+                var sceneHeigth = (sceneWidth * vm.scenestore.s_height)/vm.scenestore.s_width
+                vm.sceneSize = [sceneWidth, sceneHeigth]
+
 				//Выставляем исходное разрешение для рендера
 				//vm.renderScene(1920, 1080);
 				//vm.renderScene(1280, 720);
         //vm.renderScene(800, 450);
-				vm.renderScene(1310, 843);
+				vm.renderScene(vm.sceneSize[0], vm.sceneSize[1]);
 			},
 			/********************* Show rubber band ***********************/
 			// Инициализация выделялки объекта
