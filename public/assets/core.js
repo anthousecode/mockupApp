@@ -206,13 +206,13 @@ var vm = new Vue({
         }
         ],
         gradienttypevalue: 'linear',
-        gp: new Grapick({
-				el: '#grapick',
-				direction: 'to right',
-				min: 1,
-				max: 99,
-				height: '19px'
-				}),
+        // gp: new Grapick({
+			// 	el: '#grapick',
+			// 	direction: 'to right',
+			// 	min: 1,
+			// 	max: 99,
+			// 	height: '19px'
+			// 	}),
 				x1:0,
 				y1:0,
 				x2:0,

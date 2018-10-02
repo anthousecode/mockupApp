@@ -5,7 +5,7 @@ const StaticSceneEditor = {
                 <canvas id="canvas" class="el-workspace-background"></canvas>
             </div>
             <div class="st-scene__aside">
-                <div class="adj-wrap">
+                <div :class="{'block_active':isAdjShow, 'adj-wrap': true}">
                     <div class="adj-btn" @click="showFilters">
                         <div class="adj-icon" alt="Icon"></div>
                         <span class="adj-text">Adjustments</span>
@@ -24,7 +24,7 @@ const StaticSceneEditor = {
                     </div>
                 </div>
 
-                <div class="device-wrap"  v-for="(layer, index) in layers" :key="layer.id">
+                <div :class="{'block_active':isDeviceShow, 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
                     <div class="adj-btn" @click="showDevice">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
@@ -56,15 +56,17 @@ const StaticSceneEditor = {
                                         <div class="color-icon" :style="{backgroundColor: item.color}"></div>
                                         <span>{{item.i_img_title}}</span>
                                     </div>
-                                    <div class="material-list__item" @click="calcDevWidjetHeight">
+                                    <div class="material-list__item color-picker">
                                         <div class="color-icon color"></div>
                                         <span @click="activeChangeableDevice(index)">Changeable</span>
-                                         <el-color-picker v-model="devColor" @active-change="changeDeviceColor"  :predefine="predefineColors">
-                                         </el-color-picker>
-                                        <!--<div class="color-btn-wrap">-->
-                                            <!--<div class="color-btn" @click="isDevColorShow = !isDevColorShow"></div>-->
-                                        <!--</div>-->
+                                        <div class="color-btn-wrap">
+                                            <div class="color-btn" @click="isDevColorShow = !isDevColorShow" :style="{backgroundColor: calcDevColor}"></div>
+                                        </div>
+                                         <!--<el-color-picker v-model="devColor" @active-change="changeDeviceColor"  :predefine="predefineColors">-->
+                                         <!--</el-color-picker>-->
                                     </div>
+                                    <colorpicker v-model="devColor[index]" @input="changeDeviceColor(index)" v-show="isDevColorShow">
+                                    </colorpicker>
                                 </div>
                             </template>
                         </div>
@@ -109,27 +111,71 @@ const StaticSceneEditor = {
                         </div>
                     </template>
                 </div>
-                <el-button type="primary" size="mini" @click="exportLayer" icon="icon-Looped" :class="repeat_btn_class">
-            </el-button>
-
-                <!--<div class="device-color-wrap" v-show="isDevColorShow">-->
-                   <!---->
-                <!--</div>-->
+                <div :class="{'block_active':isBgShow, 'bg-wrap': true}">
+                    <div class="adj-btn" @click="showBgPicker">
+                            <div class="bg-icon" alt="Icon"></div>
+                            <span class="adj-text">Background</span>
+                            <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isBgShow"></i>
+                            <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
+                    </div>
+                    <div v-show="isBgShow">
+                        <div class="tabs-wrap">
+                            <el-radio-group  style="">
+                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="flat" class="grad flat"></el-radio-button>
+                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="linear" class="grad linear"></el-radio-button>
+                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="radial" class="grad radial"></el-radio-button>
+                            </el-radio-group>
+                        </div>
+                        <div class="rad-slider-wrap" v-show="gradientType='linear'">
+                            <rad-slider name="rad" :degree="rad" @rotate="rotate"></rad-slider>
+                            <div class="degree-text">{{radDegree}}&#176;</div>
+                        </div>
+                        <div class="gp-wrap" v-show="gradientType='linear'||'radial'">
+                            <div id="grapick"></div>
+                        </div>
+                       <colorpicker v-model="bgColor" @input="changeBgColor" id="staticColorPicker">
+                       </colorpicker>
+                    </div>
+                </div>
+                    
+                <div :class="{'block_active':isExportShow, 'export-wrap': true}">
+                    <div class="adj-btn" @click="showExport">
+                            <span class="adj-text">Export</span>
+                            <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isExportShow"></i>
+                            <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
+                    </div>
+                    <div v-show="isExportShow">
+                        <p>
+                           <input type="text" size="4" v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" v-model="isTransparent">
+                            <span>Transparent</span>
+                        </p>
+                        <p class="export-btn-wrap">
+                            <button class="export-btn" @click="exportLayer" v-show="!isTransparent">jpg</button>
+                            <button class="export-btn" @click="exportLayer" :class="{'btn_full-width': isTransparent}">png</button>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     `,
+
   data: function() {
     return {
       layers: [],
       cover_object: [],
       scenestore: '',
-        changebleDevice: ``,
+      changebleDevice: ``,
       isAdjShow: false,
       isDeviceShow: false,
       isMaterialsShow: false,
       isShadowShow: false,
       isDevAdjShow: false,
       isDevColorShow: false,
+      isBgShow:false,
+      isExportShow:false,
       min: -1,
       max: 1,
       step: 0.1,
@@ -151,7 +197,7 @@ const StaticSceneEditor = {
           icon: '/images/icons/brightness.svg'
         }
       ],
-        adjDeviceRanges: [
+      adjDeviceRanges: [
             {
                 value: [0, 0],
                 icon: '/images/icons/exposure.svg'
@@ -179,27 +225,49 @@ const StaticSceneEditor = {
       blending: null,
       opacity: 1,
       deviceDialog: false,
-      devColor: '#ff5000',
-      predefineColors: [
-        '#e50000',
-        '#ffa200',
-        '#fce600',
-        '#94531d',
-        '#58d700',
-        '#297700',
-        '#cf00e8',
-        '#2490e9',
-        '#00e7c1',
-        '#a9ec77',
-        '#1a1a1a',
-        '#4a4a4a',
-        '#9b9b9b',
-        '#ffffff'
-        // '#ff3900'
-      ]
+      devColor: [],
+      calcDevColor: [],
+      bgColor: '#fff',
+      gradientType: 'flat',
+      radDegree: 130,
+      rad: 130,
+      // predefineColors: [
+      //   '#e50000',
+      //   '#ffa200',
+      //   '#fce600',
+      //   '#94531d',
+      //   '#58d700',
+      //   '#297700',
+      //   '#cf00e8',
+      //   '#2490e9',
+      //   '#00e7c1',
+      //   '#a9ec77',
+      //   '#1a1a1a',
+      //   '#4a4a4a',
+      //   '#9b9b9b',
+      //   '#ffffff'
+      // ],
+      sketch: null,
+      colorgradient:{
+            rgba: {
+                'a': 1,
+                'b': 255,
+                'g': 255,
+                'r': 255
+            },
+      },
+      exportSize: [0,0],
+      proportion: 1,
+      isTransparent: false,
+      activeBlocks: 0
     };
   },
+  created(){
+    Vue.component('colorpicker', VueColor.Sketch);
+    Vue.component('rad-slider', radslider);
+  },
   mounted: function() {
+
     var _this = this;
     axios
       .post('/api/scenes/' + this.$route.params.id)
@@ -211,9 +279,16 @@ const StaticSceneEditor = {
       .then(() => {
         this.scenestore = store.state.scenestore;
         this.cover_object = vm.cover_object;
-        console.log(this.cover_object)
         let devicesData = this.scenestore.s_layers[0].l_data;
-        this.layers = this.scenestore.s_layers;
+          this.layers = this.scenestore.s_layers;
+        console.log(vm.layers);
+        this.exportSize = vm.size;
+        this.proportion = this.exportSize[1]/this.exportSize[0];
+
+          for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+              this.devColor[layersindex] = '#ff5000'
+              this.calcDevColor[layersindex] = '#ff5000'
+          }
 
         for (let i = 0; i < devicesData.length; i++) {
             this.devices.push(devicesData[i])
@@ -241,32 +316,22 @@ const StaticSceneEditor = {
             vm.changeShadowBlending(blendValue)
         },
         activeChangeableDevice(index){
+            console.log(index)
             vm.activeChangeableDevice[index] = true
-        },
-        changeDeviceColor(color) {
-            vm.activeChangeableDevice = true
-            vm.changeableDeviceColor = "0x"+ this.rgbToHex(color)
-            this.devColor = '#' + this.rgbToHex(color)
-        },
-        rgbToHex(color) {
-            color = ""+ color;
-            if (!color || color.indexOf("rgb") < 0) {
-                return;
-            }
 
-            if (color.charAt(0) == "#") {
-                return color;
+            for(var i = 0; i < vm.scenestore.s_layers[index].l_data.length; i++) {
+                if(vm.scenestore.s_layers[index].l_data[i].i_img_title == "White Clay") {
+                    vm.changeDevice(vm.scenestore.s_layers[index].l_data[i], index)
+                }
             }
-            var nums = /(.*?)rgb\((\d+),\s*(\d+),\s*(\d+)\)/i.exec(color),
-                r = parseInt(nums[2], 10).toString(16),
-                g = parseInt(nums[3], 10).toString(16),
-                b = parseInt(nums[4], 10).toString(16);
-
-            return (
-                (r.length == 1 ? "0"+ r : r) +
-                (g.length == 1 ? "0"+ g : g) +
-                (b.length == 1 ? "0"+ b : b)
-            );
+        },
+        changeDeviceColor(index) {
+            this.calcDevColor[index] = this.devColor[index].hex;
+            vm.activeChangeableDevice[index] = true
+            let color = this.calcDevColor[index].substring(1);
+            console.log('color - ',color)
+            vm.changeableDeviceColor[index] = "0x"+ color
+            // this.devColor = '#' + this.rgbToHex(color)
         },
         showUploadWindow(index){
             vm.openUploader(index)
@@ -276,7 +341,7 @@ const StaticSceneEditor = {
             vm.shadow_opacity = this.opacity
         },
         deviceHandler(item, index){
-            vm.activeChangeableDevice = false
+            vm.activeChangeableDevice[index] = false
             vm.changeDevice(item, index)
         },
         showDevice(){
@@ -296,6 +361,9 @@ const StaticSceneEditor = {
             if(this.isAdjShow){
                 //this.hideAdjBarBtn();
             }
+        },
+        showExport(){
+            this.isExportShow = !this.isExportShow;
         },
         hideAdjBarBtn(){
             let elements = document.querySelectorAll('.adj-dropdown .el-slider__runway');
@@ -421,21 +489,11 @@ const StaticSceneEditor = {
                     break
             }
         },
-        calcDevWidjetHeight() {
-            this.deviceHandler(this.changebleDevice)
-            this.activeChangeableDevice()
-            // customize color picker display
-            let devWidjet = document.querySelector('.device-wrap');
-            let colorPicker = document.querySelectorAll(
-                '.el-color-dropdown.el-color-picker__panel'
-            )[0];
-            let devHeight = devWidjet.offsetHeight;
-
-            colorPicker.style.marginTop = `55px`;
-            colorPicker.style.width = `198px`;
-            colorPicker.style.marginRight = `17px`;
-            colorPicker.style.borderRadius = `6px`;
-            colorPicker.style.boxShadow = `-6px 6px 10px rgba(84, 104, 115, 0.12)`;
+        showBgPicker(){
+            this.isBgShow = !this.isBgShow;
+        },
+        changeGradientPicker(){
+            console.log('choose color')
         },
         nextTooltip() {
             this.tooltips.unshift(false);
@@ -451,6 +509,19 @@ const StaticSceneEditor = {
         onDeviceDialogShow(){
             vm.staticDeviceDialog = true;
         },
+        onChangeSize(){
+            this.exportSize[1] = Math.round(this.exportSize[0]*this.proportion);
+        },
+        changeBgColor(){
+          console.log(this.bgColor.hex)
+        },
+        rotate(name, degree){
+          console.log(degree);
+          this.radDegree = degree;
+        },
+      changeGradientType(){
+          console.log('gradient - ', this.gradientType)
+      }
     },
 
     beforeDestroy() {

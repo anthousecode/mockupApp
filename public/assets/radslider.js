@@ -11,7 +11,7 @@ var radslider = {
         @touchmove="move" 
         @touchend="stop"
         >
-      <div class="label">{{procdegree}}&deg;</div>
+      <div class="label">{{procdegree}}</div>
     </div>
   `,
 		props: {

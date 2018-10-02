@@ -30,7 +30,7 @@ var renderStaticCore = {
         scene_bgimage: new PIXI.Container(),
         global_project: [],
         distort_layers: [],
-        changeableDeviceColor: 0xff5000,
+        changeableDeviceColor: [],
         mockup_blink_layers: [],
         mockup_object_blink_screen_layers: [],
         shadow_blend_mode: PIXI.BLEND_MODES.NORMAL,
@@ -108,6 +108,7 @@ var renderStaticCore = {
         changeDevice(device, index) {
             //vm.current_device = device
             //let devices = vm.scenestore.s_layers[0].l_data
+            console.log(device)
 
             console.log(index)
             let devices = vm.scenestore.s_layers[index].l_data
@@ -219,6 +220,7 @@ var renderStaticCore = {
         renderScene(width, height) {
 
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                vm.changeableDeviceColor[layersindex] =  0xff5000
                 vm.activeWhiteClayDevice[layersindex] = false
                 vm.activeChangeableDevice[layersindex] = false
                 vm.current_device[layersindex] = vm.scenestore.s_layers[layersindex].l_data[0]
@@ -558,7 +560,7 @@ var renderStaticCore = {
                         }
 
                         if(vm.activeChangeableDevice[layersindex]) {
-                            vm.mockup_object[layersindex].tint = vm.changeableDeviceColor
+                            vm.mockup_object[layersindex].tint = vm.changeableDeviceColor[layersindex]
                             vm.mockup_object_blink[layersindex].tint = 16777215
                         }else {
                             vm.mockup_object[layersindex].tint = 16777215
