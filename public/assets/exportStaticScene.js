@@ -188,17 +188,17 @@ var exportStaticTools = {
 
 
                     cover_container.filters = [new PIXI.filters.AdjustmentFilter({
-                        gamma: vm.devicesFilters.effectgamma+1 ,
-                        contrast:  vm.devicesFilters.effectcontrast+1,
-                        saturation:  vm.devicesFilters.effectsaturation+1,
-                        brightness:  vm.devicesFilters.effectbrightness+1,
+                        gamma: vm.devicesFilters[layersindex].effectgamma+1 ,
+                        contrast:  vm.devicesFilters[layersindex].effectcontrast+1,
+                        saturation:  vm.devicesFilters[layersindex].effectsaturation+1,
+                        brightness:  vm.devicesFilters[layersindex].effectbrightness+1,
                     })];
-                    if(vm.activeWhiteClayDevice) {
+                    if(vm.activeWhiteClayDevice[layersindex]) {
                         cover_container[layersindex].addChild(vm.mockup_object_blink_screen_layers[layersindex]);
                         vm.hires_mockup_object_blink[layersindex].blendMode = PIXI.BLEND_MODES.MULTIPLY
                     }else  vm.hires_mockup_object_blink[layersindex].blendMode = vm.blend_mode
 
-                    if(vm.activeChangeableDevice) {
+                    if(vm.activeChangeableDevice[layersindex]) {
                         mockup_layer.tint = vm.changeableDeviceColor
                         vm.hires_mockup_object_blink[layersindex].tint = 16777215
                     }else {

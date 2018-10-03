@@ -77,6 +77,7 @@ var renderCore = {
 			square.position.set(x, y);
 			return square;
 		},
+
 		// Предзагрзчик текстур высокого разрешения (разрешения для экспорта видео)
 		preloadHiRes(xx) {
 			vm.exportratio = vm.origsize[0] / vm.exportsize[0];

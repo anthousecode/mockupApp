@@ -24,14 +24,14 @@ const StaticSceneEditor = {
                        </div>
                 </div>
 
-                <div :class="{'block_active':isDeviceShow, 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
-                    <div class="adj-btn" @click="showDevice">
+                <div :class="{'block_active':isDeviceShow[index], 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
+                    <div class="adj-btn" @click="showDevice(index)">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
-                        <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow"></i>
+                        <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow[index]"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                    <template v-if="isDeviceShow">
+                    <template v-if="isDeviceShow[index]">
                          <span>
                             <div>
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
@@ -121,9 +121,9 @@ const StaticSceneEditor = {
                     <div v-show="isBgShow">
                         <div class="tabs-wrap">
                             <el-radio-group  v-model="gradientType" @change="changeGradientType" style="">
-                              <el-radio-button label="flat" class="grad flat"></el-radio-button>
-                              <el-radio-button label="linear" class="grad linear"></el-radio-button>
-                              <el-radio-button label="radial" class="grad radial"></el-radio-button>
+                              <el-radio-button  label="flat" class="grad flat"></el-radio-button>
+                              <el-radio-button  label="linear" class="grad linear"></el-radio-button>
+                              <el-radio-button  label="radial" class="grad radial"></el-radio-button>
                             </el-radio-group>
                         </div>
                         <div class="rad-slider-wrap" v-show="gradientType=='linear'">
@@ -132,9 +132,14 @@ const StaticSceneEditor = {
                         </div>
                         <div class="gp-wrap" v-show="gradientType !=='flat'">
                             <div id="grapick"></div>
+                            <colorpicker v-model="colorgradient" @input="changeGradientPicker" id="staticColorPicker">
+                            </colorpicker>
                         </div>
-                       <colorpicker v-model="bgColor" @input="changeBgColor" id="staticColorPicker">
-                       </colorpicker>
+                        <div class="gp-wrap" v-show="gradientType =='flat'">
+                            <colorpicker v-model="bgColor" @input="changeBgColor"> 
+                            </colorpicker>
+                        </div>
+                       
                     </div>
                 </div>
                     
@@ -169,7 +174,7 @@ const StaticSceneEditor = {
       changebleDevice: ``,
         gp: null,
       isAdjShow: false,
-      isDeviceShow: false,
+      isDeviceShow: [],
       isMaterialsShow: false,
       isShadowShow: false,
       isDevAdjShow: false,
@@ -210,7 +215,6 @@ const StaticSceneEditor = {
       deviceDialog: false,
       devColor: [],
       calcDevColor: [],
-        changeGradientPicker: null,
       bgColor: {
           rgba: {
               'a': 1,
@@ -219,7 +223,8 @@ const StaticSceneEditor = {
               'r': 255
           }
       },
-        colorgradient: null,
+        bgColor: '#fff',
+        bgColorFlat: '#fff',
       gradientType: 'flat',
       radDegree: 130,
       rad: 130,
@@ -259,6 +264,7 @@ const StaticSceneEditor = {
     Vue.component('rad-slider', radslider);
   },
   mounted: function() {
+
     var _this = this;
     axios
       .post('/api/scenes/' + this.$route.params.id)
@@ -276,10 +282,9 @@ const StaticSceneEditor = {
         this.exportSize = vm.size;
         this.proportion = this.exportSize[1]/this.exportSize[0];
           this.gp = vm.gp
-        this.colorgradient = vm.colorgradient
-          this.changeGradientPicker = vm.changeGradientPicker
 
           for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+              this.isDeviceShow[layersindex] = false
               this.devColor[layersindex] = '#ff5000'
               this.calcDevColor[layersindex] = '#ff5000'
 
@@ -303,6 +308,8 @@ const StaticSceneEditor = {
               ]
           }
 
+          console.log(this.isDeviceShow)
+
         for (let i = 0; i < devicesData.length; i++) {
             this.devices.push(devicesData[i])
           if(devicesData[i].i_img_title == `White Clay`){
@@ -321,6 +328,10 @@ const StaticSceneEditor = {
         })
     },
     methods:{
+        changeGradientPicker() {
+          vm.colorgradient = this.colorgradient
+            vm.changeGradientPicker()
+        },
         async exportLayer(){
           await vm.preloadHiresStaticScene()
             vm.compositeStaticLayer()
@@ -357,12 +368,24 @@ const StaticSceneEditor = {
             vm.activeChangeableDevice[index] = false
             vm.changeDevice(item, index)
         },
-        showDevice(){
-          if(!this.isDeviceShow){
+        showDevice(index){
+            /*this.hideAllBlocks();
+            this.hideDevBlocks();*/
+            console.log(this.isDeviceShow)
+          if(!this.isDeviceShow[index]){
             this.hideAllBlocks();
             this.hideDevBlocks();
-            this.isDeviceShow = !this.isDeviceShow;
+              for(let i = 0; i< this.isDeviceShow.length; i++) {
+                  if(i==index){
+                      this.isDeviceShow[i] = true
+                  }else this.isDeviceShow[i] = false
+              }
           }else{
+              for(let i = 0; i< this.isDeviceShow.length; i++) {
+                  if(i==index){
+                      this.isDeviceShow[i] = true
+                  }else this.isDeviceShow[i] = false
+              }
             this.hideAllBlocks();
             this.hideDevBlocks();
           }
@@ -540,9 +563,6 @@ const StaticSceneEditor = {
                     break
             }
         },
-        changeGradientPicker(){
-            console.log('choose color')
-        },
         nextTooltip() {
             this.tooltips.unshift(false);
             this.tooltips.pop();
@@ -570,17 +590,22 @@ const StaticSceneEditor = {
         },
         rotate(name, degree){
           console.log(degree);
+          vm.rotate(name, degree)
           this.radDegree = degree;
         },
         changeGradientType(){
             console.log('gradient - ', this.gradientType)
+            vm.gradienttypevalue = this.gradientType
+            vm.backgroundchanger(this.gradientType)
         },
         hideAllBlocks(){
             this.isAdjShow = false;
             this.isDevColorShow = false;
             this.isBgShow =false;
             this.isExportShow =false;
-            this.isDeviceShow =false;
+            for(let i = 0; i< this.isDeviceShow.length; i++) {
+                this.isDeviceShow[i] = false
+            }
         },
         hideDevBlocks(){
           this.isMaterialsShow = false;
