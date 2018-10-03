@@ -24,7 +24,7 @@ const StaticSceneEditor = {
                        </div>
                 </div>
 
-                <div :class="{'block_active':isDeviceShow[index], 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
+                <div :class="{'block_active':true, 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
                     <div class="adj-btn" @click="showDevice(index)">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
@@ -41,7 +41,7 @@ const StaticSceneEditor = {
                                     </div>
                                 </div>
                             </div>
-                            </span>
+                         </span>
 
 
                         <div class="device-filter-wrap">
@@ -350,6 +350,7 @@ const StaticSceneEditor = {
             }
         },
         changeDeviceColor(index) {
+            this.activeChangeableDevice(index)
             this.calcDevColor[index] = this.devColor[index].hex;
             vm.activeChangeableDevice[index] = true
             let color = this.calcDevColor[index].substring(1);
@@ -369,26 +370,21 @@ const StaticSceneEditor = {
             vm.changeDevice(item, index)
         },
         showDevice(index){
-            /*this.hideAllBlocks();
-            this.hideDevBlocks();*/
+
+            if(this.isDeviceShow[index]) {
+                this.hideAllBlocks();
+                this.hideDevBlocks();
+            }else {
+                this.hideAllBlocks();
+                this.hideDevBlocks();
+                for(let i = 0; i< this.isDeviceShow.length; i++) {
+                    if(i==index){
+                        this.isDeviceShow[index] = true
+                    }
+                }
+            }
+
             console.log(this.isDeviceShow)
-          if(!this.isDeviceShow[index]){
-            this.hideAllBlocks();
-            this.hideDevBlocks();
-              for(let i = 0; i< this.isDeviceShow.length; i++) {
-                  if(i==index){
-                      this.isDeviceShow[i] = true
-                  }else this.isDeviceShow[i] = false
-              }
-          }else{
-              for(let i = 0; i< this.isDeviceShow.length; i++) {
-                  if(i==index){
-                      this.isDeviceShow[i] = true
-                  }else this.isDeviceShow[i] = false
-              }
-            this.hideAllBlocks();
-            this.hideDevBlocks();
-          }
         },
         showMaterials(){
           if(!this.isMaterialsShow){
@@ -589,7 +585,6 @@ const StaticSceneEditor = {
             vm.iconfill='background-color:rgba(' + this.bgColor.rgba.r + ',' + this.bgColor.rgba.g + ',' + this.bgColor.rgba.b + ',' + this.bgColor.rgba.a + ')';
         },
         rotate(name, degree){
-          console.log(degree);
           vm.rotate(name, degree)
           this.radDegree = degree;
         },
@@ -603,14 +598,18 @@ const StaticSceneEditor = {
             this.isDevColorShow = false;
             this.isBgShow =false;
             this.isExportShow =false;
+
             for(let i = 0; i< this.isDeviceShow.length; i++) {
                 this.isDeviceShow[i] = false
             }
+
+            console.log(this.isDeviceShow)
         },
         hideDevBlocks(){
           this.isMaterialsShow = false;
           this.isShadowShow = false;
           this.isDevAdjShow = false;
+            console.log(this.isDeviceShow)
         }
     },
 
