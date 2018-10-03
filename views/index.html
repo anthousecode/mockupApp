@@ -543,9 +543,9 @@ Pixilate <br>
         <vue-slider v-model="sliderVal" :interval="0.001" :min="sliderMin" :max="sliderMax" @callback="onSliderChange" v-bind="defaultSliderZoomOpt">
         </vue-slider>
       </div>
-      <el-button type="primary"  @click.native="onUploadImageClear">Clear
-      </el-button>
-      <el-button type="primary"  @click.native="uploadCroppedImage">Okay
+      <!--<el-button type="primary"  @click.native="onUploadImageClear">Clear-->
+      <!--</el-button>-->
+      <el-button type="primary" class="uploadDialogBtn" @click.native="uploadCroppedImage">Send
       </el-button>
       </span>
     </el-dialog>
