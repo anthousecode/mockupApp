@@ -452,6 +452,7 @@ div[role='slider'] {
     transform: scale(1);
 }
 
+/*Upload dialog customize*/
 .el-dialog .uploadDialogBtn{
     width: 122px;
     height: 32px;
@@ -463,6 +464,7 @@ div[role='slider'] {
     background: #f96f50;
     color: #fff;
     border: 1px solid #d55638;
+    margin-top: 5px;
 }
  .dialog-footer .vue-slider-component .vue-slider{
      height: 6px !important;
@@ -480,4 +482,10 @@ div[role='slider'] {
     border-radius: 6px;
     box-shadow: -2.121px 2.121px 2px rgba(0,0,0,0.17);
     background-color: #ffffff;
+}
+
+/*remove black line from scene*/
+.el-workspace-background{
+    background-color: #fff;
+    background: none;
 }
