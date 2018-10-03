@@ -167,6 +167,7 @@ const StaticSceneEditor = {
       cover_object: [],
       scenestore: '',
       changebleDevice: ``,
+        gp: null,
       isAdjShow: false,
       isDeviceShow: false,
       isMaterialsShow: false,
@@ -209,7 +210,16 @@ const StaticSceneEditor = {
       deviceDialog: false,
       devColor: [],
       calcDevColor: [],
-      bgColor: '#fff',
+        changeGradientPicker: null,
+      bgColor: {
+          rgba: {
+              'a': 1,
+              'b': 255,
+              'g': 255,
+              'r': 255
+          }
+      },
+        colorgradient: null,
       gradientType: 'flat',
       radDegree: 130,
       rad: 130,
@@ -249,7 +259,6 @@ const StaticSceneEditor = {
     Vue.component('rad-slider', radslider);
   },
   mounted: function() {
-
     var _this = this;
     axios
       .post('/api/scenes/' + this.$route.params.id)
@@ -266,6 +275,9 @@ const StaticSceneEditor = {
         console.log(vm.layers);
         this.exportSize = vm.size;
         this.proportion = this.exportSize[1]/this.exportSize[0];
+          this.gp = vm.gp
+        this.colorgradient = vm.colorgradient
+          this.changeGradientPicker = vm.changeGradientPicker
 
           for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
               this.devColor[layersindex] = '#ff5000'
@@ -549,7 +561,12 @@ const StaticSceneEditor = {
             this.exportSize[1] = Math.round(this.exportSize[0]*this.proportion);
         },
         changeBgColor(){
-          console.log(this.bgColor.hex)
+            vm.background_gradient.alpha = 0;
+            vm.colorsstack = [];
+            vm.scene_background.tint = vm.rgb2hex([this.bgColor.rgba.r, this.bgColor.rgba.g, this.bgColor.rgba.b]);
+            vm.scene_background.alpha = this.bgColor.rgba.a;
+
+            vm.iconfill='background-color:rgba(' + this.bgColor.rgba.r + ',' + this.bgColor.rgba.g + ',' + this.bgColor.rgba.b + ',' + this.bgColor.rgba.a + ')';
         },
         rotate(name, degree){
           console.log(degree);
