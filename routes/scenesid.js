@@ -78,11 +78,13 @@ router.all('/:id', function (req, res, next) {
 			var UpperRight;
 			var Offset;
 			var Device;
+			var Icon
 			var Mask;
 			var Frames_arr = [];
 
 			var i_mask_uri = '';
 			var i_img_uri = '';
+			var i_icon = '';
 			var i_device_uri = '';
 			var i_upperright = '';
 			var i_upperleft = '';
@@ -132,6 +134,7 @@ router.all('/:id', function (req, res, next) {
                     Device = glob.sync(l_id_path + '/device/*.png');
 				}else {
                     Device = glob.sync(l_id_path + '/devices/*/*.png');
+                    Icon = glob.sync(l_id_path + '/devices/*/Icon');
 				}
 
 				var temp_case;
@@ -248,7 +251,7 @@ router.all('/:id', function (req, res, next) {
                             i_upperleft: i_upperleft,
                             i_lowerright: i_lowerright,
                             i_lowerleft: i_lowerleft,
-                            i_offset: i_offset
+                            i_offset: i_offset,
                         }
 					}
 
@@ -266,8 +269,11 @@ router.all('/:id', function (req, res, next) {
                     for (var l = 0; l < staticImages.length; l++) {
                         staticImages[l] = `scenes/${id}/${l_id}/devices/${staticImages[l]}/Device.png`
 
+                        i_icon = fs.readFileSync(Icon[l]).toString('utf8')
+
                         Frames_arr.push(
                             {
+                                i_icon_color: i_icon,
                                 i_img_title: imageTitle[l],
                                 i_img_uri: staticImages[l],
                                 i_upperright: i_upperright,
@@ -313,9 +319,9 @@ router.all('/:id', function (req, res, next) {
 				s_mcount: layers.length,
 				s_looped: settings.loop,
 				s_frames: frames,
-
 				s_layers: s_layers,
-                s_animated: settings.animated
+                s_animated: settings.animated,
+				s_shadow: settings.hasShadow
 			};
 
 			res.send(result);

@@ -39,11 +39,11 @@ var exportStaticTools = {
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 //vm.cover_object[layersindex]
                 let shadow
-                 shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.userExportSize[0]}/${vm.userExportSize[1]}/Shadow.png`))
+                if(vm.hasShadow) shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.userExportSize[0]}/${vm.userExportSize[1]}/Shadow.png`))
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
                     //vm.coversequence[layersindex].push(coversequencetpl);
-                    vm.hires_covershadow[layersindex].push(shadow)
-                    vm.hires_covershadow[layersindex].blendMode = PIXI.BLEND_MODES.NORMAL
+                    if(vm.hasShadow)vm.hires_covershadow[layersindex].push(shadow)
+                    if(vm.hasShadow)vm.hires_covershadow[layersindex].blendMode = PIXI.BLEND_MODES.NORMAL
                 }
                 vm.hires_cover_object[layersindex] = vm.cover_object[layersindex]
                 vm.hires_mask_object[layersindex] = vm.mask_object[layersindex]
@@ -87,9 +87,12 @@ var exportStaticTools = {
                 vm.hires_mockup_object_blink[layersindex].width = vm.userExportSize[0]
                 vm.hires_mockup_object_blink[layersindex].height = vm.userExportSize[1]
 
-                vm.hires_shadow_object[layersindex] = vm.hires_covershadow[layersindex][0]
-                vm.hires_shadow_object[layersindex].width = vm.userExportSize[0]
-                vm.hires_shadow_object[layersindex].height = vm.userExportSize[1]
+                if(vm.hasShadow){
+                    vm.hires_shadow_object[layersindex] = vm.hires_covershadow[layersindex][0]
+                    vm.hires_shadow_object[layersindex].width = vm.userExportSize[0]
+                    vm.hires_shadow_object[layersindex].height = vm.userExportSize[1]
+                }
+
             }
 
 
@@ -186,7 +189,6 @@ var exportStaticTools = {
                     cover_container.mask = mask_layer;
 
 
-
                     cover_container.filters = [new PIXI.filters.AdjustmentFilter({
                         gamma: vm.devicesFilters[layersindex].effectgamma+1 ,
                         contrast:  vm.devicesFilters[layersindex].effectcontrast+1,
@@ -207,10 +209,10 @@ var exportStaticTools = {
                     }
 
 
-                    vm.hires_shadow_object[layersindex].blendMode = vm.shadow_blend_mode
+                    if(vm.hasShadow)vm.hires_shadow_object[layersindex].blendMode = vm.shadow_blend_mode
 
 
-                    subrenderer_client.stage.addChild(vm.hires_shadow_object[layersindex]);
+                    if(vm.hasShadow) subrenderer_client.stage.addChild(vm.hires_shadow_object[layersindex]);
                     subrenderer_client.stage.addChild(mockup_layer);
                     subrenderer_client.stage.addChild(cover_container);
                 }

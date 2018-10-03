@@ -53,7 +53,7 @@ const StaticSceneEditor = {
                             <template v-if="isMaterialsShow">
                                 <div class="material-list">
                                     <div class="material-list__item" v-for="(item, i) in devices" :key="i" @click="deviceHandler(item, index)">
-                                        <div class="color-icon" :style="{backgroundColor: item.color}"></div>
+                                        <div class="color-icon" :style="{backgroundColor: item.i_icon_color}"></div>
                                         <span>{{item.i_img_title}}</span>
                                     </div>
                                     <div class="material-list__item color-picker">
@@ -103,7 +103,7 @@ const StaticSceneEditor = {
                                             <div class="adj-bar__icon">
                                                 <img :src="range.icon">
                                             </div>
-                                            <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjDeviceBar(id, range, index)"></el-slider>
+                                            <el-slider v-model="range.value" range :min="min" :max="max" :step="step" @input="colorAdjDeviceBar(id, range, index, range.value)"></el-slider>
                                         </div>
                                       </div>
                                 </div>
@@ -168,6 +168,7 @@ const StaticSceneEditor = {
     `,
   data: function() {
     return {
+        deviceAdj: [],
       layers: [],
       cover_object: [],
       scenestore: '',
@@ -274,6 +275,7 @@ const StaticSceneEditor = {
         _this.$emit('eventname', true);
       })
       .then(() => {
+          vm.hasShadow = store.state.scenestore.s_shadow
         this.scenestore = store.state.scenestore;
         this.cover_object = vm.cover_object;
         let devicesData = this.scenestore.s_layers[0].l_data;
@@ -288,7 +290,7 @@ const StaticSceneEditor = {
               this.devColor[layersindex] = '#ff5000'
               this.calcDevColor[layersindex] = '#ff5000'
 
-              this.adjDeviceRanges[layersindex] = [
+              this.adjDeviceRanges[`${layersindex}`] = [
                   {
                       value: [0, 0],
                       icon: '/images/icons/exposure.svg'
@@ -480,10 +482,18 @@ const StaticSceneEditor = {
                 bar.style.backgroundColor = '#ffe100';
             }
         },
-        colorAdjDeviceBar(id, item, index) {
-            console.log(id, item, index)
-            this.AdjustmentsEffectDevice(id, item, index)
+        setPrewValue(){
+            console.log(`unclick!`)
+            this.adjDeviceRanges = this.deviceAdj
+        },
+        colorAdjDeviceBar(id, item, index, value) {
+            console.log(this.adjDeviceRanges)
+            //console.log(id, item, index, value)
+            //this.adjDeviceRanges[index][id] = value
+            this.AdjustmentsEffectDevice(id, item, index, value)
+
             // this.hideAdjBarBtn();
+            //this.adjDeviceRanges[layersindex][id] = item
             let bar = document.getElementsByClassName("adj-device-bar")[id].querySelector('.el-slider__bar');
             if(item.value[0] < 0){
                 bar.style.backgroundColor = '#f97050';
@@ -525,7 +535,8 @@ const StaticSceneEditor = {
                     return
             }
         },
-        AdjustmentsEffectDevice(id, item, index) {
+        AdjustmentsEffectDevice(id, item, index, value) {
+
             switch (id) {
                 case 0:
                     if(item.value[0] < 0) {
@@ -558,6 +569,11 @@ const StaticSceneEditor = {
                 default:
                     break
             }
+
+            if(item.value[0] != 0  || item.value[1] !=0) {
+                this.deviceAdj = this.adjDeviceRanges
+                this.deviceAdj[index][id] = item
+            }
         },
         nextTooltip() {
             this.tooltips.unshift(false);
@@ -577,12 +593,8 @@ const StaticSceneEditor = {
             this.exportSize[1] = Math.round(this.exportSize[0]*this.proportion);
         },
         changeBgColor(){
-            vm.background_gradient.alpha = 0;
-            vm.colorsstack = [];
-            vm.scene_background.tint = vm.rgb2hex([this.bgColor.rgba.r, this.bgColor.rgba.g, this.bgColor.rgba.b]);
-            vm.scene_background.alpha = this.bgColor.rgba.a;
-
-            vm.iconfill='background-color:rgba(' + this.bgColor.rgba.r + ',' + this.bgColor.rgba.g + ',' + this.bgColor.rgba.b + ',' + this.bgColor.rgba.a + ')';
+            vm.backgroundcolor = this.bgColor
+            vm.updateValue()
         },
         rotate(name, degree){
           vm.rotate(name, degree)
@@ -592,6 +604,7 @@ const StaticSceneEditor = {
             console.log('gradient - ', this.gradientType)
             vm.gradienttypevalue = this.gradientType
             vm.backgroundchanger(this.gradientType)
+            vm.gradientchange()
         },
         hideAllBlocks(){
             this.isAdjShow = false;
