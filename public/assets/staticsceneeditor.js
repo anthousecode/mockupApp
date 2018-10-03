@@ -132,9 +132,14 @@ const StaticSceneEditor = {
                         </div>
                         <div class="gp-wrap" v-show="gradientType !=='flat'">
                             <div id="grapick"></div>
+                            <colorpicker v-model="bgColor" @input="changeBgColor" id="staticColorPicker">
+                            </colorpicker>
                         </div>
-                       <colorpicker v-model="bgColor" @input="changeBgColor" id="staticColorPicker">
-                       </colorpicker>
+                        <div class="gp-wrap" v-show="gradientType =='flat'">
+                            <colorpicker v-model="bgColor" @input="changeBgColor"> 
+                            </colorpicker>
+                        </div>
+                       
                     </div>
                 </div>
                     
@@ -210,6 +215,7 @@ const StaticSceneEditor = {
       devColor: [],
       calcDevColor: [],
       bgColor: '#fff',
+      bgColorFlat: '#fff',
       gradientType: 'flat',
       radDegree: 130,
       rad: 130,
