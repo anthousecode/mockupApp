@@ -229,8 +229,6 @@ var vm = new Vue({
 						'r': 255
 					},
 				},
-				sendBackground: true,
-				cover_base64_arr: [],
             	staticDeviceDialog: false
 
 		},
@@ -417,9 +415,9 @@ vm.handler.setColor('rgba('+vm.colorgradient.rgba.r+','+vm.colorgradient.rgba.g+
 
 // Метод автосмены типа залифки фона от выбора соотвествующего таба на пенели
 backgroundchanger: function(e){
-if(e.paneName == '0'){this.background_gradient.alpha = 0;this.scene_bgimage.alpha = 0;}
-if(e.paneName == '1'){this.gp.change();this.background_gradient.alpha = 1;this.scene_bgimage.alpha = 0;}
-if(e.paneName == '2'){this.background_gradient.alpha = 0;this.scene_bgimage.alpha = 1;}
+if(e == 'flat'){this.background_gradient.alpha = 0;this.scene_bgimage.alpha = 0;}
+if(e == 'linear'){this.gp.change();this.background_gradient.alpha = 1;this.scene_bgimage.alpha = 0;}
+if(e == 'radial'){this.background_gradient.alpha = 0;this.scene_bgimage.alpha = 1;}
 },
 
 // Метод для установки градиента из некой внешне svg_data - то что мы получаем из готовых градиентов
