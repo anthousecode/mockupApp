@@ -12,16 +12,16 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isAdjShow"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                    <div v-show="isAdjShow">
-                        <div class="adj-dropdown">
-                            <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
-                                <div class="adj-bar__icon">
-                                    <img :src="range.icon">
+                      <div v-show="isAdjShow">
+                            <div class="adj-dropdown">
+                                <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
+                                    <div class="adj-bar__icon">
+                                        <img :src="range.icon">
+                                    </div>
+                                    <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
                                 </div>
-                                <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
                             </div>
-                        </div>
-                    </div>
+                       </div>
                 </div>
 
                 <div :class="{'block_active':isDeviceShow, 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
@@ -120,17 +120,17 @@ const StaticSceneEditor = {
                     </div>
                     <div v-show="isBgShow">
                         <div class="tabs-wrap">
-                            <el-radio-group  style="">
-                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="flat" class="grad flat"></el-radio-button>
-                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="linear" class="grad linear"></el-radio-button>
-                              <el-radio-button  v-model="gradientType" @change="changeGradientType" label="radial" class="grad radial"></el-radio-button>
+                            <el-radio-group  v-model="gradientType" @change="changeGradientType" style="">
+                              <el-radio-button label="flat" class="grad flat"></el-radio-button>
+                              <el-radio-button label="linear" class="grad linear"></el-radio-button>
+                              <el-radio-button label="radial" class="grad radial"></el-radio-button>
                             </el-radio-group>
                         </div>
-                        <div class="rad-slider-wrap" v-show="gradientType='linear'">
+                        <div class="rad-slider-wrap" v-show="gradientType=='linear'">
                             <rad-slider name="rad" :degree="rad" @rotate="rotate"></rad-slider>
                             <div class="degree-text">{{radDegree}}&#176;</div>
                         </div>
-                        <div class="gp-wrap" v-show="gradientType='linear'||'radial'">
+                        <div class="gp-wrap" v-show="gradientType !=='flat'">
                             <div id="grapick"></div>
                         </div>
                        <colorpicker v-model="bgColor" @input="changeBgColor" id="staticColorPicker">
@@ -346,25 +346,62 @@ const StaticSceneEditor = {
             vm.changeDevice(item, index)
         },
         showDevice(){
+          if(!this.isDeviceShow){
+            this.hideAllBlocks();
+            this.hideDevBlocks();
             this.isDeviceShow = !this.isDeviceShow;
+          }else{
+            this.hideAllBlocks();
+            this.hideDevBlocks();
+          }
         },
         showMaterials(){
+          if(!this.isMaterialsShow){
+            this.hideDevBlocks();
             this.isMaterialsShow = !this.isMaterialsShow;
+          }else{
+            this.hideDevBlocks();
+          }
         },
         showShadow(){
+          if(!this.isShadowShow){
+            this.hideDevBlocks();
             this.isShadowShow = !this.isShadowShow;
+          }else{
+            this.hideDevBlocks();
+          }
         },
         showDevAdj(){
+          if(!this.isDevAdjShow){
+            this.hideDevBlocks();
             this.isDevAdjShow = !this.isDevAdjShow;
+          }else{
+            this.hideDevBlocks();
+          }
         },
         showFilters(){
+          if(!this.isAdjShow){
+            this.hideAllBlocks();
             this.isAdjShow = !this.isAdjShow;
-            if(this.isAdjShow){
-                //this.hideAdjBarBtn();
-            }
+          }else{
+            this.hideAllBlocks();
+          }
+        },
+        showBgPicker(){
+          if(!this.isBgShow){
+            this.hideAllBlocks();
+            this.isBgShow = !this.isBgShow;
+          }else{
+            this.hideAllBlocks();
+          }
         },
         showExport(){
+          if(!this.isExportShow){
+            this.hideAllBlocks();
             this.isExportShow = !this.isExportShow;
+          }else{
+            this.hideAllBlocks();
+          }
         },
         hideAdjBarBtn(){
             let elements = document.querySelectorAll('.adj-dropdown .el-slider__runway');
@@ -491,9 +528,6 @@ const StaticSceneEditor = {
                     break
             }
         },
-        showBgPicker(){
-            this.isBgShow = !this.isBgShow;
-        },
         changeGradientPicker(){
             console.log('choose color')
         },
@@ -521,9 +555,21 @@ const StaticSceneEditor = {
           console.log(degree);
           this.radDegree = degree;
         },
-      changeGradientType(){
-          console.log('gradient - ', this.gradientType)
-      }
+        changeGradientType(){
+            console.log('gradient - ', this.gradientType)
+        },
+        hideAllBlocks(){
+            this.isAdjShow = false;
+            this.isDevColorShow = false;
+            this.isBgShow =false;
+            this.isExportShow =false;
+            this.isDeviceShow =false;
+        },
+        hideDevBlocks(){
+          this.isMaterialsShow = false;
+          this.isShadowShow = false;
+          this.isDevAdjShow = false;
+        }
     },
 
     beforeDestroy() {

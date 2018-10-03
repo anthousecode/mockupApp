@@ -39,12 +39,14 @@
 .bg-wrap,
 .export-wrap{
   width: 215px;
+  min-height: 48px;
   padding: 8px;
   margin-bottom: 8px;
   box-sizing: border-box;
   border-radius: 6px;
   background-color: #fff;
   box-shadow: -0.7px 0.7px 3px rgba(0,0,0,0.1);
+  transition: height .5s ease;
 }
 
 /* Filters dropdown panel */
@@ -131,6 +133,7 @@ div[role='slider'] {
   height: 6px;
   background-color: #fff;
   border-radius: 3px;
+  margin: 11px 0;
 }
 
 /* Device */
@@ -308,10 +311,13 @@ div[role='slider'] {
   align-items: center;
   height: 40px;
   border-bottom: 1px solid #e4e6e9;
-  margin-top: 8px;
+  margin: 8px 0;
 }
 .tabs-wrap .el-radio-button .el-radio-button__inner{
   display: none;
+}
+.tabs-wrap label.is-active{
+  border: 1px solid #f96f50;
 }
 .tabs-wrap .grad{
   width: 25px;
@@ -336,7 +342,7 @@ div[role='slider'] {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 8px 0;
+  margin-bottom: 8px;
 }
 .rad-slider-wrap .rad-slider{
   background-color: #ffffff;
