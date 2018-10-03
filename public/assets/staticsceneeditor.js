@@ -1,6 +1,9 @@
 const StaticSceneEditor = {
     template: `
         <div class="st-scene-wrap">
+            <div class="back-btn-wrap">
+                <div class="back-btn" @click="goHomePage"></div>
+            </div>
             <div id="workspace" class="st-scene__main">
                 <canvas id="canvas" class="el-workspace-background"></canvas>
             </div>
@@ -12,16 +15,18 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isAdjShow"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                      <div v-show="isAdjShow">
-                            <div class="adj-dropdown">
-                                <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
-                                    <div class="adj-bar__icon">
-                                        <img :src="range.icon">
-                                    </div>
-                                    <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
-                                </div>
-                            </div>
-                       </div>
+                      <transition name="slide">
+                        <div v-show="isAdjShow">
+                              <div class="adj-dropdown">
+                                  <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
+                                      <div class="adj-bar__icon">
+                                          <img :src="range.icon">
+                                      </div>
+                                      <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
+                                  </div>
+                              </div>
+                         </div>
+                       </transition>
                 </div>
 
                 <div :class="{'block_active':isDeviceShow[index], 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
@@ -264,7 +269,7 @@ const StaticSceneEditor = {
     Vue.component('rad-slider', radslider);
   },
   mounted: function() {
-
+    console.log("mounted")
     var _this = this;
     axios
       .post('/api/scenes/' + this.$route.params.id)
@@ -611,13 +616,19 @@ const StaticSceneEditor = {
           this.isMaterialsShow = false;
           this.isShadowShow = false;
           this.isDevAdjShow = false;
+        },
+        goHomePage(){
+          // vm.destroyRender();
+          this.$router.replace('/');
+          this.$router.go();
+          // console.log('router', this.$router)
         }
     },
 
     beforeDestroy() {
-        store.commit('loaddata', []);
+        // store.commit('loaddata', []);
         //window.removeEventListener('resize', this.getWindowWidth);
         //window.removeEventListener('resize', this.getWindowHeight);
-        _this.$emit('endsession', true)
+        // this.$emit('endsession', true)
     }
 };

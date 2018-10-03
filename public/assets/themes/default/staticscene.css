@@ -10,6 +10,22 @@
   display: flex;
   justify-content: space-between;
 }
+.back-btn-wrap{
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+.back-btn{
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    box-shadow: -0.7px 0.7px 2px rgba(133,147,156,0.3);
+    background: #ffffff url("/images/icons/left-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: center;
+    cursor: pointer;
+}
 .st-scene__main {
   width: 100%;
   box-sizing: border-box;
@@ -488,4 +504,18 @@ div[role='slider'] {
 .el-workspace-background{
     background-color: #fff;
     background: none;
+}
+
+.slide-enter-active, .slide-leave-active {
+    transition: all .3s ease;
+}
+
+.slide-enter, .slide-leave-to {
+    height: 0;
+    opacity: 0;
+}
+
+.slide-enter-to, .slide-leave {
+    height: 136px;
+    opacity: 1;
 }
