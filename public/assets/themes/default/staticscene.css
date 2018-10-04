@@ -62,7 +62,6 @@
   border-radius: 6px;
   background-color: #fff;
   box-shadow: -0.7px 0.7px 3px rgba(0,0,0,0.1);
-  transition: height .5s ease;
 }
 
 /* Filters dropdown panel */
@@ -76,6 +75,7 @@
   font-weight: 500;
   line-height: 24px;
   position: relative;
+  cursor: pointer;
 }
 
 /* Adjustments */
@@ -506,8 +506,9 @@ div[role='slider'] {
     background: none;
 }
 
+/*block animation*/
 .slide-enter-active, .slide-leave-active {
-    transition: all .3s ease;
+    transition: all .1s ease;
 }
 
 .slide-enter, .slide-leave-to {
@@ -519,6 +520,8 @@ div[role='slider'] {
     height: 136px;
     opacity: 1;
 }
+
+/*back button*/
 .back-btn-wrap{
     position: absolute;
     top: 20px;

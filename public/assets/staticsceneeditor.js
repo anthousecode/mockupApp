@@ -15,7 +15,7 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isAdjShow"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                      <transition name="slide">
+                      <!--<transition name="slide">-->
                         <div v-show="isAdjShow">
                               <div class="adj-dropdown">
                                   <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
@@ -26,7 +26,7 @@ const StaticSceneEditor = {
                                   </div>
                               </div>
                          </div>
-                       </transition>
+                       <!--</transition>-->
                 </div>
 
                 <div :class="{'block_active':isDeviceShow[layer.id], 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
