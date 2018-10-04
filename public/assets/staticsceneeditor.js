@@ -22,7 +22,7 @@ const StaticSceneEditor = {
                                       <div class="adj-bar__icon">
                                           <img :src="range.icon">
                                       </div>
-                                      <el-slider v-model="range.value" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
+                                      <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
                                   </div>
                               </div>
                          </div>
@@ -190,19 +190,19 @@ const StaticSceneEditor = {
       step: 0.1,
       adjRanges: [
         {
-          value: 0,
+          value: [0,0],
           icon: '/images/icons/exposure.svg'
         },
         {
-          value: 0,
+          value: [0,0],
           icon: '/images/icons/saturation.svg'
         },
         {
-          value: 0,
+          value: [0,0],
           icon: '/images/icons/contrast.svg'
         },
         {
-          value: 0,
+          value: [0,0],
           icon: '/images/icons/brightness.svg'
         }
       ],
