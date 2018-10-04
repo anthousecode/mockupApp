@@ -10,6 +10,22 @@
   display: flex;
   justify-content: space-between;
 }
+.back-btn-wrap{
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+.back-btn{
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    box-shadow: -0.7px 0.7px 2px rgba(133,147,156,0.3);
+    background: #ffffff url("/images/icons/left-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: center;
+    cursor: pointer;
+}
 .st-scene__main {
   width: 100%;
   box-sizing: border-box;
@@ -46,7 +62,6 @@
   border-radius: 6px;
   background-color: #fff;
   box-shadow: -0.7px 0.7px 3px rgba(0,0,0,0.1);
-  transition: height .5s ease;
 }
 
 /* Filters dropdown panel */
@@ -60,6 +75,7 @@
   font-weight: 500;
   line-height: 24px;
   position: relative;
+  cursor: pointer;
 }
 
 /* Adjustments */
@@ -393,6 +409,9 @@ div[role='slider'] {
   outline: none;
   padding: 4px 2px;
 }
+.export-wrap input[type="number"]{
+    width:40px;
+}
 .export-btn-wrap{
     display: flex;
     justify-content: space-between;
@@ -452,6 +471,7 @@ div[role='slider'] {
     transform: scale(1);
 }
 
+/*Upload dialog customize*/
 .el-dialog .uploadDialogBtn{
     width: 122px;
     height: 32px;
@@ -463,6 +483,7 @@ div[role='slider'] {
     background: #f96f50;
     color: #fff;
     border: 1px solid #d55638;
+    margin-top: 5px;
 }
  .dialog-footer .vue-slider-component .vue-slider{
      height: 6px !important;
@@ -480,4 +501,42 @@ div[role='slider'] {
     border-radius: 6px;
     box-shadow: -2.121px 2.121px 2px rgba(0,0,0,0.17);
     background-color: #ffffff;
+}
+
+/*remove black line from scene*/
+.el-workspace-background{
+    background-color: #fff;
+    background: none;
+}
+
+/*block animation*/
+.slide-enter-active, .slide-leave-active {
+    transition: all .1s ease;
+}
+
+.slide-enter, .slide-leave-to {
+    height: 0;
+    opacity: 0;
+}
+
+.slide-enter-to, .slide-leave {
+    height: 136px;
+    opacity: 1;
+}
+
+/*back button*/
+.back-btn-wrap{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.back-btn{
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    box-shadow: -0.707px 0.707px 2px rgba(133,147,156,0.3);
+    background: #ffffff url("/images/icons/left-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: center;
 }

@@ -6,12 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/exportStaticScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/exportStaticScene.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/left-arrow.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhone-8/iPhone 8/devices/Black Clay/2620/Device.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhoneXS/iPhone 1/devices/Black Clay/1310/Device.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iPhoneXS/iPhone 1/devices/Black Clay/1310/Device.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scenes/iPhoneXS/iPhone 2/devices/Black Clay/1310/Device.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iPhoneXS/iPhone 2/devices/Black Clay/1310/Device.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -172,44 +170,29 @@
       <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="279" column="58" selection-start-line="279" selection-start-column="58" selection-end-line="279" selection-end-column="58" />
+            <state relative-caret-position="137">
+              <caret line="283" column="49" selection-start-line="283" selection-start-column="49" selection-end-line="283" selection-end-column="49" />
               <folding>
-                <element signature="n#!!block;n#changeShadowBlending#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#activeChangeableDevice#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#changeDeviceColor#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#showUploadWindow#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#changeShadowOpacity#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#deviceHandler#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#showDevice#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#showMaterials#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#showShadow#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#showDevAdj#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#showFilters#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#showBgPicker#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#showExport#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#hideAdjBarBtn#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#colorAdjBar#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#AdjustmentsEffectScene#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#nextTooltip#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#getWindowWidth#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#getWindowHeight#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#onDeviceDialogShow#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#rotate#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#changeGradientType#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#hideAllBlocks#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-                <element signature="n#!!block;n#hideDevBlocks#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
                 <element signature="n#!!block;n#beforeDestroy#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exportStaticScene.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="exportStaticScene.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/exportStaticScene.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-156">
+              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.js">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="52">
-              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="29" />
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -271,8 +254,8 @@
       <find>preloadHire</find>
       <find>hasShadow</find>
       <find>Shadow</find>
-      <find>img_</find>
       <find>userExportSize</find>
+      <find>img_</find>
     </findStrings>
     <replaceStrings>
       <replace>Rerere</replace>
@@ -323,7 +306,6 @@
         <option value="$PROJECT_DIR$/routes/sceneslist.js" />
         <option value="$PROJECT_DIR$/routes/staticPngTransform.js" />
         <option value="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" />
-        <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/public/assets/pixi.core.js" />
         <option value="$PROJECT_DIR$/public/assets/core.js" />
         <option value="$PROJECT_DIR$/views/index.html" />
@@ -332,6 +314,7 @@
         <option value="$PROJECT_DIR$/public/assets/staticCore.js" />
         <option value="$PROJECT_DIR$/public/assets/staticsceneeditor.js" />
         <option value="$PROJECT_DIR$/public/assets/exportStaticScene.js" />
+        <option value="$PROJECT_DIR$/config.js" />
       </list>
     </option>
   </component>
@@ -513,7 +496,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="633499000" />
+    <option name="totallyTimeSpent" value="633516000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -528,7 +511,7 @@
     <frame x="1680" y="-2" width="1680" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49669966" visible="true" weight="0.13699457" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49669966" visible="true" weight="0.13699457" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32964602" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
@@ -537,34 +520,46 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info id="Structure" order="0" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.32853982" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.32853982" />
       <window_info id="Favorites" order="1" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49669966" visible="true" weight="0.13699457" />
+      <window_info id="Structure" order="0" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32964602" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32853982" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.32853982" />
+      <window_info id="Favorites" order="1" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.18718593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3939394" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -795,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/components/vue-croppa/vue-croppa.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2566">
@@ -895,33 +883,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="279" column="58" selection-start-line="279" selection-start-column="58" selection-end-line="279" selection-end-column="58" />
+        <state relative-caret-position="137">
+          <caret line="283" column="49" selection-start-line="283" selection-start-column="49" selection-end-line="283" selection-end-column="49" />
           <folding>
-            <element signature="n#!!block;n#changeShadowBlending#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#activeChangeableDevice#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#changeDeviceColor#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#showUploadWindow#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#changeShadowOpacity#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#deviceHandler#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#showDevice#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#showMaterials#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#showShadow#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#showDevAdj#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#showFilters#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#showBgPicker#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#showExport#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#hideAdjBarBtn#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#colorAdjBar#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#AdjustmentsEffectScene#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#nextTooltip#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#getWindowWidth#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#getWindowHeight#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#onDeviceDialogShow#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#rotate#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#changeGradientType#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#hideAllBlocks#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
-            <element signature="n#!!block;n#hideDevBlocks#0;n#!!block;n#methods#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
             <element signature="n#!!block;n#beforeDestroy#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
           </folding>
         </state>
@@ -929,8 +893,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/exportStaticScene.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="29" />
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>

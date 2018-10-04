@@ -1,6 +1,9 @@
 const StaticSceneEditor = {
     template: `
         <div class="st-scene-wrap">
+            <div  class="back-btn-wrap">
+                <div class="back-btn" @click="goHomePage"></div>
+            </div>
             <div id="workspace" class="st-scene__main">
                 <canvas id="canvas" class="el-workspace-background"></canvas>
             </div>
@@ -12,19 +15,21 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isAdjShow"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                      <div v-show="isAdjShow">
-                            <div class="adj-dropdown">
-                                <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
-                                    <div class="adj-bar__icon">
-                                        <img :src="range.icon">
-                                    </div>
-                                    <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
-                                </div>
-                            </div>
-                       </div>
+                      <!--<transition name="slide">-->
+                        <div v-show="isAdjShow">
+                              <div class="adj-dropdown">
+                                  <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
+                                      <div class="adj-bar__icon">
+                                          <img :src="range.icon">
+                                      </div>
+                                      <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
+                                  </div>
+                              </div>
+                         </div>
+                       <!--</transition>-->
                 </div>
 
-                <div :class="{'block_active':true, 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
+                <div :class="{'block_active':isDeviceShow[layer.id], 'device-wrap': true}" v-for="(layer, index) in layers" :key="index">
                     <div class="adj-btn" @click="showDevice(index)">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
@@ -32,16 +37,14 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
                     <template v-if="isDeviceShow[index]">
-                         <span>
-                            <div>
+                        
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
                                  <div class="arrow-icon"></div>
                                     <div class="device-upload button-mockup"  :style="{ 'background-image' : 'url(' + cover_object[index].texture.baseTexture.imageUrl + ')' }">
                                         <div class="upload-icon"></div>
                                     </div>
                                 </div>
-                            </div>
-                         </span>
+                            
 
 
                         <div class="device-filter-wrap">
@@ -151,7 +154,7 @@ const StaticSceneEditor = {
                     </div>
                     <div v-show="isExportShow">
                         <p>
-                           <input type="text" size="4" v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
+                           <input type="number" v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
                         </p>
                         <p>
                             <input type="checkbox" v-model="isTransparent">
@@ -174,7 +177,7 @@ const StaticSceneEditor = {
       cover_object: [],
       scenestore: '',
       changebleDevice: ``,
-        gp: null,
+      gp: null,
       isAdjShow: false,
       isDeviceShow: [],
       isMaterialsShow: false,
@@ -188,19 +191,19 @@ const StaticSceneEditor = {
       step: 0.1,
       adjRanges: [
         {
-          value: [0, 0],
+          value: [0,0],
           icon: '/images/icons/exposure.svg'
         },
         {
-          value: [0, 0],
+          value: [0,0],
           icon: '/images/icons/saturation.svg'
         },
         {
-          value: [0, 0],
+          value: [0,0],
           icon: '/images/icons/contrast.svg'
         },
         {
-          value: [0, 0],
+          value: [0,0],
           icon: '/images/icons/brightness.svg'
         }
       ],
@@ -282,8 +285,10 @@ const StaticSceneEditor = {
         this.cover_object = vm.cover_object;
         let devicesData = this.scenestore.s_layers[0].l_data;
           this.layers = this.scenestore.s_layers;
+        // console.log('layers - ',this.layers);
         this.exportSize = vm.size;
         this.proportion = this.exportSize[1]/this.exportSize[0];
+        this.onChangeSize();
           this.gp = vm.gp
 
           for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
@@ -374,7 +379,7 @@ const StaticSceneEditor = {
             vm.changeDevice(item, index)
         },
         showDevice(index){
-
+            console.log('index', index)
             if(this.isDeviceShow[index]) {
                 this.hideAllBlocks();
                 this.hideDevBlocks();
@@ -383,7 +388,7 @@ const StaticSceneEditor = {
                 this.hideDevBlocks();
                 for(let i = 0; i< this.isDeviceShow.length; i++) {
                     if(i==index){
-                        this.isDeviceShow[index] = true
+                      Vue.set(this.isDeviceShow, index, true);
                     }
                 }
             }
@@ -473,10 +478,12 @@ const StaticSceneEditor = {
                     item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'inline-block';
                 }
             })
-        },        colorAdjBar(id, item) {
+        },
+        colorAdjBar(id, item) {
             this.AdjustmentsEffectScene(id, item)
             // this.hideAdjBarBtn();
             let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
+            let barWidth = bar.style.width;
             if(item.value[0] < 0){
                 bar.style.backgroundColor = '#f97050';
             }else{
@@ -599,6 +606,7 @@ const StaticSceneEditor = {
             vm.updateValue()
         },
         rotate(name, degree){
+          console.log(degree);
           vm.rotate(name, degree)
           this.radDegree = degree;
         },
@@ -615,23 +623,27 @@ const StaticSceneEditor = {
             this.isExportShow =false;
 
             for(let i = 0; i< this.isDeviceShow.length; i++) {
-                this.isDeviceShow[i] = false
+              Vue.set(this.isDeviceShow, i, false);
             }
-
-            console.log(this.isDeviceShow)
         },
         hideDevBlocks(){
           this.isMaterialsShow = false;
           this.isShadowShow = false;
           this.isDevAdjShow = false;
-            console.log(this.isDeviceShow)
+        },
+        goHomePage(){
+          // vm.destroyRender();
+          this.$router.replace('/');
+          this.$router.go();
+          // console.log('router', this.$router)
         }
+
     },
 
     beforeDestroy() {
-        store.commit('loaddata', []);
+        // store.commit('loaddata', []);
         //window.removeEventListener('resize', this.getWindowWidth);
         //window.removeEventListener('resize', this.getWindowHeight);
-        _this.$emit('endsession', true)
+        // this.$emit('endsession', true)
     }
 };
