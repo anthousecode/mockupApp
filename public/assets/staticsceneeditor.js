@@ -154,7 +154,7 @@ const StaticSceneEditor = {
                     </div>
                     <div v-show="isExportShow">
                         <p>
-                           <input type="text" size="4" v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
+                           <input type="number" v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
                         </p>
                         <p>
                             <input type="checkbox" v-model="isTransparent">
@@ -286,6 +286,7 @@ const StaticSceneEditor = {
         // console.log('layers - ',this.layers);
         this.exportSize = vm.size;
         this.proportion = this.exportSize[1]/this.exportSize[0];
+        this.onChangeSize();
           this.gp = vm.gp
 
           for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {

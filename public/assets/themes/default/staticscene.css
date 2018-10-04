@@ -409,6 +409,9 @@ div[role='slider'] {
   outline: none;
   padding: 4px 2px;
 }
+.export-wrap input[type="number"]{
+    width:40px;
+}
 .export-btn-wrap{
     display: flex;
     justify-content: space-between;
