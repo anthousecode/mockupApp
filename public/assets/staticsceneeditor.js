@@ -1,6 +1,9 @@
 const StaticSceneEditor = {
     template: `
         <div class="st-scene-wrap">
+            <div  class="back-btn-wrap">
+                <div class="back-btn" @click="goHomePage"></div>
+            </div>
             <div id="workspace" class="st-scene__main">
                 <canvas id="canvas" class="el-workspace-background"></canvas>
             </div>
@@ -12,36 +15,36 @@ const StaticSceneEditor = {
                         <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isAdjShow"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                      <div v-show="isAdjShow">
-                            <div class="adj-dropdown">
-                                <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
-                                    <div class="adj-bar__icon">
-                                        <img :src="range.icon">
-                                    </div>
-                                    <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
-                                </div>
-                            </div>
-                       </div>
+                      <!--<transition name="slide">-->
+                        <div v-show="isAdjShow">
+                              <div class="adj-dropdown">
+                                  <div v-for="(range, index) in adjRanges" :key="index" class="block adj-bar" >
+                                      <div class="adj-bar__icon">
+                                          <img :src="range.icon">
+                                      </div>
+                                      <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
+                                  </div>
+                              </div>
+                         </div>
+                       <!--</transition>-->
                 </div>
 
-                <div :class="{'block_active':true, 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
-                    <div class="adj-btn" @click="showDevice(index)">
+                <div :class="{'block_active':isDeviceShow[layer.id], 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
+                    <div class="adj-btn" @click="showDevice(layer.id)">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
-                        <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow[index]"></i>
+                        <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow[layer.id]"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                    <template v-if="isDeviceShow[index]">
-                         <span>
-                            <div>
+                    <template v-if="isDeviceShow[layer.id]">
+                        
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
                                  <div class="arrow-icon"></div>
                                     <div class="device-upload button-mockup"  :style="{ 'background-image' : 'url(' + cover_object[index].texture.baseTexture.imageUrl + ')' }">
                                         <div class="upload-icon"></div>
                                     </div>
                                 </div>
-                            </div>
-                         </span>
+                            
 
 
                         <div class="device-filter-wrap">
@@ -168,12 +171,12 @@ const StaticSceneEditor = {
     `,
   data: function() {
     return {
-        deviceAdj: [],
+      deviceAdj: [],
       layers: [],
       cover_object: [],
       scenestore: '',
       changebleDevice: ``,
-        gp: null,
+      gp: null,
       isAdjShow: false,
       isDeviceShow: [],
       isMaterialsShow: false,
@@ -280,7 +283,7 @@ const StaticSceneEditor = {
         this.cover_object = vm.cover_object;
         let devicesData = this.scenestore.s_layers[0].l_data;
           this.layers = this.scenestore.s_layers;
-        console.log(vm.layers);
+        // console.log('layers - ',this.layers);
         this.exportSize = vm.size;
         this.proportion = this.exportSize[1]/this.exportSize[0];
           this.gp = vm.gp
@@ -372,7 +375,7 @@ const StaticSceneEditor = {
             vm.changeDevice(item, index)
         },
         showDevice(index){
-
+            console.log('index', index)
             if(this.isDeviceShow[index]) {
                 this.hideAllBlocks();
                 this.hideDevBlocks();
@@ -381,7 +384,7 @@ const StaticSceneEditor = {
                 this.hideDevBlocks();
                 for(let i = 0; i< this.isDeviceShow.length; i++) {
                     if(i==index){
-                        this.isDeviceShow[index] = true
+                      Vue.set(this.isDeviceShow, index, true);
                     }
                 }
             }
@@ -597,6 +600,7 @@ const StaticSceneEditor = {
             vm.updateValue()
         },
         rotate(name, degree){
+          console.log(degree);
           vm.rotate(name, degree)
           this.radDegree = degree;
         },
@@ -613,23 +617,27 @@ const StaticSceneEditor = {
             this.isExportShow =false;
 
             for(let i = 0; i< this.isDeviceShow.length; i++) {
-                this.isDeviceShow[i] = false
+              Vue.set(this.isDeviceShow, i, false);
             }
-
-            console.log(this.isDeviceShow)
         },
         hideDevBlocks(){
           this.isMaterialsShow = false;
           this.isShadowShow = false;
           this.isDevAdjShow = false;
-            console.log(this.isDeviceShow)
+        },
+        goHomePage(){
+          // vm.destroyRender();
+          this.$router.replace('/');
+          this.$router.go();
+          // console.log('router', this.$router)
         }
+
     },
 
     beforeDestroy() {
-        store.commit('loaddata', []);
+        // store.commit('loaddata', []);
         //window.removeEventListener('resize', this.getWindowWidth);
         //window.removeEventListener('resize', this.getWindowHeight);
-        _this.$emit('endsession', true)
+        // this.$emit('endsession', true)
     }
 };
