@@ -78,6 +78,7 @@ router.all('/:id', function (req, res, next) {
             var UpperRight;
             var Offset;
             var Device;
+            var Icon
             var Mask;
             var Frames_arr = [];
 
@@ -131,8 +132,9 @@ router.all('/:id', function (req, res, next) {
                 if(settings.animated) {
                     Device = glob.sync(l_id_path + '/device/*.png');
                 }else {
-                    Device = glob.sync(l_id_path + '/devices/Silver/*.png');
+                    Device = glob.sync(l_id_path + '/devices/*/*.png');
                 }
+
 
                 var temp_case;
 
@@ -311,7 +313,7 @@ router.all('/:id', function (req, res, next) {
                 s_looped: settings.loop,
                 s_frames: frames,
                 s_layers: s_layers,
-                s_animated: settings.animated
+                s_animated: settings.animated,
             };
 
             res.send(result);

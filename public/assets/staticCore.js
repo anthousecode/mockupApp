@@ -10,6 +10,7 @@ var renderStaticCore = {
         quad: [],
         quad_origin: [],
         activeWhiteClayDevice: [],
+        hasShadow: false,
         //texture_cover: '',
         //texture_cover_mask: '',
         //texture_cover_distort: '',
@@ -344,11 +345,14 @@ var renderStaticCore = {
 
                     console.log(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg')
                     let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
-                    //let shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.size[0]}/${vm.size[1]}/Shadow.png`))
+                    let shadow
+                    if(vm.hasShadow) shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.size[0]}/${vm.size[1]}/Shadow.png`))
                     for (index = 0; index < vm.scenestore.s_frames; index++) {
                         vm.coversequence[layersindex].push(coversequencetpl);
-                        /*vm.covershadow[layersindex].push(shadow)
-                        vm.covershadow[layersindex].blendMode = PIXI.BLEND_MODES.NORMAL*/
+                        if(vm.hasShadow){
+                            vm.covershadow[layersindex].push(shadow)
+                            vm.covershadow[layersindex].blendMode = PIXI.BLEND_MODES.NORMAL
+                        }
                     }
                     console.log(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png')
                     vm.mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png', true, PIXI.SCALE_MODES.LINEAR));
@@ -387,9 +391,12 @@ var renderStaticCore = {
                     vm.mockup_object_blink[layersindex].width = vm.size[0]
                     vm.mockup_object_blink[layersindex].height = vm.size[1]
                     vm.cover_object[layersindex] = vm.coversequence[layersindex][0];
-                    /*vm.shadow_object[layersindex] = vm.covershadow[layersindex][0]
-                    vm.shadow_object[layersindex].width = vm.size[0]
-                    vm.shadow_object[layersindex].height = vm.size[1]*/
+                    if(vm.hasShadow){
+                        vm.shadow_object[layersindex] = vm.covershadow[layersindex][0]
+                        vm.shadow_object[layersindex].width = vm.size[0]
+                        vm.shadow_object[layersindex].height = vm.size[1]
+                    }
+
                 }
 
                 var smart = new PIXI.Graphics()
@@ -501,7 +508,7 @@ var renderStaticCore = {
                                 smart.clear();
                         });
                     vm.global_project[layersindex] = new PIXI.Container()
-                    //vm.global_project[layersindex].addChild(vm.shadow_object[layersindex]);
+                    if(vm.hasShadow) vm.global_project[layersindex].addChild(vm.shadow_object[layersindex]);
                     vm.global_project[layersindex].addChild(vm.mockup_object[layersindex]);
                     vm.global_project[layersindex].addChild(vm.distort_layers[layersindex]);
                 }
@@ -543,7 +550,7 @@ var renderStaticCore = {
 
 
 
-                        //vm.shadow_object[layersindex].blendMode = vm.shadow_blend_mode
+                        if(vm.hasShadow) vm.shadow_object[layersindex].blendMode = vm.shadow_blend_mode
 
                         vm.global_project[layersindex].filters = [new PIXI.filters.AdjustmentFilter({
                             gamma: vm.devicesFilters[layersindex].effectgamma+1 ,
@@ -568,8 +575,7 @@ var renderStaticCore = {
                             vm.mockup_object_blink[layersindex].tint = 16777215
                         }
                         //настройка изменения прозрачности тени
-                        //vm.shadow_object[layersindex].alpha = vm.shadow_opacity
-                        //vm.distort_layers[layersindex].filters = [new PIXI.filters.BlurFilter(1,3,1)]
+                        if(vm.hasShadow)vm.shadow_object[layersindex].alpha = vm.shadow_opacity
 
                     }
 

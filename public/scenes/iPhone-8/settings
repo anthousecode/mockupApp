@@ -7,5 +7,6 @@
 "width":6500,
 "height":4500,
 "blendmode" : "SCREEN",
-"animated" : false
+"animated" : false,
+"hasShadow" : true
 }
