@@ -10,6 +10,7 @@ var exportStaticTools = {
         hires_mockup_object: [],
         hires_mockup_object_blink: [],
         hiResTextureMockup: [],
+        hires_mockup_object_blink_screen_layers: [],
         hires_scene_mask: new PIXI.Graphics(),
         hires_mask_container: new PIXI.Container(),
         hires_scene_background: new PIXI.Graphics(),
@@ -32,7 +33,7 @@ var exportStaticTools = {
                 vm.hires_quad[layersindex] = [];
                 vm.hires_distort_layers[layersindex] = new PIXI.Container();
                 vm.mockup_blink_layers[layersindex] = new PIXI.Container();
-                vm.mockup_object_blink_screen_layers[layersindex] = new PIXI.Container();
+                vm.hires_mockup_object_blink_screen_layers[layersindex] = new PIXI.Container();
             }
 
 
@@ -81,9 +82,10 @@ var exportStaticTools = {
                 vm.hires_mockup_object[layersindex].width = vm.userExportSize[0]
                 vm.hires_mockup_object[layersindex].height = vm.userExportSize[1]
 
-                vm.mockup_object_blink_screen_layers[layersindex] = new PIXI.extras.AnimatedSprite(vm.hiResTextureMockup[layersindex]);
-                vm.mockup_object_blink_screen_layers[layersindex].width = vm.userExportSize[0]
-                vm.mockup_object_blink_screen_layers[layersindex].height = vm.userExportSize[1]
+                vm.hires_mockup_object_blink_screen_layers[layersindex] = new PIXI.extras.AnimatedSprite(vm.hiResTextureMockup[layersindex]);
+                vm.hires_mockup_object_blink_screen_layers[layersindex].width = vm.userExportSize[0]
+                vm.hires_mockup_object_blink_screen_layers[layersindex].height = vm.userExportSize[1]
+                vm.hires_mockup_object_blink_screen_layers[layersindex].blendMode = PIXI.BLEND_MODES.SCREEN
 
                 vm.hires_mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.hiResTextureMockup[layersindex]);
                 vm.hires_mockup_object_blink[layersindex].width = vm.userExportSize[0]
@@ -192,9 +194,17 @@ var exportStaticTools = {
 
                     var cover_container = vm.hires_distort_layers[layersindex]
                     cover_container.addChild(cover_layer);
-                    cover_container.addChild(blink_layer);
                     cover_container.addChild(mask_layer);
                     cover_container.mask = mask_layer;
+
+                    if(vm.activeWhiteClayDevice[layersindex]) {
+                        blink_layer.blendMode = PIXI.BLEND_MODES.MULTIPLY
+                        cover_container.addChild(blink_layer);
+                        //cover_container.addChild(vm.hires_mockup_object_blink_screen_layers[layersindex]);
+                    }else {
+                        blink_layer.blendMode = vm.blend_mode
+                        cover_container.addChild(blink_layer);
+                    }
 
 
                     cover_container.filters = [new PIXI.filters.AdjustmentFilter({
@@ -203,13 +213,10 @@ var exportStaticTools = {
                         saturation:  vm.devicesFilters[layersindex].effectsaturation+1,
                         brightness:  vm.devicesFilters[layersindex].effectbrightness+1,
                     })];
-                    if(vm.activeWhiteClayDevice[layersindex]) {
-                        cover_container[layersindex].addChild(vm.mockup_object_blink_screen_layers[layersindex]);
-                        vm.hires_mockup_object_blink[layersindex].blendMode = PIXI.BLEND_MODES.MULTIPLY
-                    }else  vm.hires_mockup_object_blink[layersindex].blendMode = vm.blend_mode
+
 
                     if(vm.activeChangeableDevice[layersindex]) {
-                        mockup_layer.tint = vm.changeableDeviceColor
+                        mockup_layer.tint = vm.changeableDeviceColor[layersindex]
                         vm.hires_mockup_object_blink[layersindex].tint = 16777215
                     }else {
                         mockup_layer.tint = 16777215
