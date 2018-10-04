@@ -22,21 +22,21 @@ const StaticSceneEditor = {
                                       <div class="adj-bar__icon">
                                           <img :src="range.icon">
                                       </div>
-                                      <el-slider v-model="range.value" range="" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
+                                      <el-slider v-model="range.value" :min="min" :max="max" :step="step" @input="colorAdjBar(index, range)"></el-slider>
                                   </div>
                               </div>
                          </div>
                        <!--</transition>-->
                 </div>
 
-                <div :class="{'block_active':isDeviceShow[layer.id], 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
-                    <div class="adj-btn" @click="showDevice(layer.id)">
+                <div :class="{'block_active':isDeviceShow[layer.id], 'device-wrap': true}" v-for="(layer, index) in layers" :key="index">
+                    <div class="adj-btn" @click="showDevice(index)">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
-                        <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow[layer.id]"></i>
+                        <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow[index]"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                    <template v-if="isDeviceShow[layer.id]">
+                    <template v-if="isDeviceShow[index]">
                         
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
                                  <div class="arrow-icon"></div>
@@ -190,19 +190,19 @@ const StaticSceneEditor = {
       step: 0.1,
       adjRanges: [
         {
-          value: [0, 0],
+          value: 0,
           icon: '/images/icons/exposure.svg'
         },
         {
-          value: [0, 0],
+          value: 0,
           icon: '/images/icons/saturation.svg'
         },
         {
-          value: [0, 0],
+          value: 0,
           icon: '/images/icons/contrast.svg'
         },
         {
-          value: [0, 0],
+          value: 0,
           icon: '/images/icons/brightness.svg'
         }
       ],
@@ -479,6 +479,7 @@ const StaticSceneEditor = {
             this.AdjustmentsEffectScene(id, item)
             // this.hideAdjBarBtn();
             let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
+            let barWidth = bar.style.width;
             if(item.value[0] < 0){
                 bar.style.backgroundColor = '#f97050';
             }else{
