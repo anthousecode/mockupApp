@@ -29,14 +29,14 @@ const StaticSceneEditor = {
                        </transition>
                 </div>
 
-                <div :class="{'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
-                    <div class="adj-btn" @click="showDevice(index)">
+                <div :class="{'block_active':isDeviceShow[layer.id], 'device-wrap': true}" v-for="(layer, index) in layers" :key="layer.id">
+                    <div class="adj-btn" @click="showDevice(layer.id)">
                         <div class="device-icon"></div>
                         <span class="adj-text">{{scenestore.s_name}}</span>
-                        <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="isDeviceShow.indexOf(true) !== index"></i>
+                        <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isDeviceShow[layer.id]"></i>
                         <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                    <template v-if="isDeviceShow[index]">
+                    <template v-if="isDeviceShow[layer.id]">
                         
 		                     <div class="device"  @click="showUploadWindow(layer.id)">
                                  <div class="arrow-icon"></div>
@@ -171,12 +171,12 @@ const StaticSceneEditor = {
     `,
   data: function() {
     return {
-        deviceAdj: [],
+      deviceAdj: [],
       layers: [],
       cover_object: [],
       scenestore: '',
       changebleDevice: ``,
-        gp: null,
+      gp: null,
       isAdjShow: false,
       isDeviceShow: [],
       isMaterialsShow: false,
@@ -283,7 +283,7 @@ const StaticSceneEditor = {
         this.cover_object = vm.cover_object;
         let devicesData = this.scenestore.s_layers[0].l_data;
           this.layers = this.scenestore.s_layers;
-        console.log(vm.layers);
+        // console.log('layers - ',this.layers);
         this.exportSize = vm.size;
         this.proportion = this.exportSize[1]/this.exportSize[0];
           this.gp = vm.gp
@@ -384,7 +384,7 @@ const StaticSceneEditor = {
                 this.hideDevBlocks();
                 for(let i = 0; i< this.isDeviceShow.length; i++) {
                     if(i==index){
-                        this.isDeviceShow[i]= true
+                      Vue.set(this.isDeviceShow, index, true);
                     }
                 }
             }
@@ -617,27 +617,21 @@ const StaticSceneEditor = {
             this.isExportShow =false;
 
             for(let i = 0; i< this.isDeviceShow.length; i++) {
-                this.isDeviceShow[i] = false
+              Vue.set(this.isDeviceShow, i, false);
             }
-
-            console.log(this.isDeviceShow)
         },
         hideDevBlocks(){
           this.isMaterialsShow = false;
           this.isShadowShow = false;
           this.isDevAdjShow = false;
-            console.log(this.isDeviceShow)
         },
         goHomePage(){
           // vm.destroyRender();
           this.$router.replace('/');
           this.$router.go();
           // console.log('router', this.$router)
-        },
-      isDev(i){
-          console.log(i)
-        return this.isDeviceShow.indexOf(true) === i?true:false
-      }
+        }
+
     },
 
     beforeDestroy() {
