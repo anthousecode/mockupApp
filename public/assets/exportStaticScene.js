@@ -52,8 +52,10 @@ var exportStaticTools = {
 
             for (index = 0; index < vm.scenestore.s_frames; index++) {
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+
+
                     //vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}/${vm.scenestore.s_layers[layersindex].l_id}/devices/${vm.current_device.i_img_title}/Device.png`);
-                    vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.userExportSize[0]}/${vm.userExportSize[1]}/${vm.current_device.i_img_uri}`);
+                    vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.userExportSize[0]}/${vm.userExportSize[1]}/${vm.current_device[layersindex].i_img_uri}`);
                     if (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
                         let obj_origin = [
                             vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.x) / vm.hires_reduceratioX, (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y) / vm.hires_reduceratioY),
@@ -116,12 +118,18 @@ var exportStaticTools = {
 
             var loader = new PIXI.loaders.Loader();
 
+             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                 loader.add(`${vm.userExportSize[0]}/${vm.userExportSize[1]}/${vm.current_device[layersindex].i_img_uri}`);
+                 if(vm.hasShadow) loader.add(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.userExportSize[0]}/${vm.userExportSize[1]}/Shadow.png`);
+             }
+
             loader.onProgress.add((x) => {
                 vm.hiResPreloadPercentImg = x.progress
             });
+
             loader.load( async function(loader, resources) {
 
-                console.log(vm.userExportSize)
+                console.log(vm.backgroundcolor)
 
                 var scene_background = new PIXI.Graphics()
                 var background_gradient = new PIXI.Sprite();
@@ -161,8 +169,8 @@ var exportStaticTools = {
                     background_gradient.texture.update();
                 }
 
-                //vm.subrenderer_client.stage.addChild(scene_background);
-                //vm.subrenderer_client.stage.addChild(background_gradient);
+                subrenderer_client.stage.addChild(scene_background);
+                subrenderer_client.stage.addChild(background_gradient);
 
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 
@@ -217,10 +225,6 @@ var exportStaticTools = {
                     subrenderer_client.stage.addChild(cover_container);
                 }
 
-
-
-
-
                 var renderTexture = PIXI.RenderTexture.create(vm.userExportSize[0], vm.userExportSize[1]);
 
                 subrenderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
@@ -230,26 +234,20 @@ var exportStaticTools = {
                     brightness:  vm.effectbrightness+1,
                 })]
 
+                subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
 
-                const render =  async () => {
-                    await subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
-                }
-
-                render()
-                    .then(()=> {
-                        subrenderer_client.renderer.extract.canvas(renderTexture).toBlob(function(b) {
-                            subrenderer_client.destroy(true)
-                            var a = document.createElement('a');
-                            document.body.append(a);
-                            a.download = vm.scenestore.s_name + '.png';
-                            a.href = URL.createObjectURL(b);
-                            a.click();
-                            a.remove();
-                            vm.waitRenderReady = false;
-                            vm.renderwebalpha = false;
-                            vm.hiResPreloadPercentImg = 0;
-                        }, 'image/png');
-                    })
+                subrenderer_client.renderer.extract.canvas(renderTexture).toBlob(function(b) {
+                    subrenderer_client.destroy(true)
+                    var a = document.createElement('a');
+                    document.body.append(a);
+                    a.download = vm.scenestore.s_name + `.${vm.exportFormatType}`;
+                    a.href = URL.createObjectURL(b);
+                    a.click();
+                    a.remove();
+                    vm.waitRenderReady = false;
+                    vm.renderwebalpha = false;
+                    vm.hiResPreloadPercentImg = 0;
+                }, `image/${vm.exportFormatType}`);
 
             });
         },

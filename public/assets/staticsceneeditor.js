@@ -71,7 +71,7 @@ const StaticSceneEditor = {
                             </template>
                         </div>
                         <div class="device-filter-wrap">
-                            <div class="device-filter-header" @click="showShadow">
+                            <div class="device-filter-header" v-if="hasShadow" @click="showShadow">
                                 <i class="el-icon-caret-right el-icon--right mat-arrow" v-if="!isShadowShow"></i>
                                 <i class="el-icon-caret-bottom el-icon--right mat-arrow" v-else></i>
                                 <span class="adj-text">Shadow</span>
@@ -158,8 +158,8 @@ const StaticSceneEditor = {
                             <span>Transparent</span>
                         </p>
                         <p class="export-btn-wrap">
-                            <button class="export-btn" @click="exportLayer" v-show="!isTransparent">jpg</button>
-                            <button class="export-btn" @click="exportLayer" :class="{'btn_full-width': isTransparent}">png</button>
+                            <button class="export-btn" @click="exportLayer('jpeg')" v-show="!isTransparent">jpg</button>
+                            <button class="export-btn" @click="exportLayer('png')" :class="{'btn_full-width': isTransparent}">png</button>
                         </p>
                     </div>
                 </div>
@@ -168,6 +168,7 @@ const StaticSceneEditor = {
     `,
   data: function() {
     return {
+        hasShadow: false,
         deviceAdj: [],
       layers: [],
       cover_object: [],
@@ -276,11 +277,11 @@ const StaticSceneEditor = {
       })
       .then(() => {
           vm.hasShadow = store.state.scenestore.s_shadow
+          this.hasShadow = store.state.scenestore.s_shadow
         this.scenestore = store.state.scenestore;
         this.cover_object = vm.cover_object;
         let devicesData = this.scenestore.s_layers[0].l_data;
           this.layers = this.scenestore.s_layers;
-        console.log(vm.layers);
         this.exportSize = vm.size;
         this.proportion = this.exportSize[1]/this.exportSize[0];
           this.gp = vm.gp
@@ -334,7 +335,8 @@ const StaticSceneEditor = {
           vm.colorgradient = this.colorgradient
             vm.changeGradientPicker()
         },
-        async exportLayer(){
+        async exportLayer(type){
+            vm.exportFormatType = type
           await vm.preloadHiresStaticScene()
             vm.compositeStaticLayer()
         },
@@ -471,8 +473,7 @@ const StaticSceneEditor = {
                     item.querySelectorAll('.el-slider__button-wrapper')[1].style.display = 'inline-block';
                 }
             })
-        },
-        colorAdjBar(id, item) {
+        },        colorAdjBar(id, item) {
             this.AdjustmentsEffectScene(id, item)
             // this.hideAdjBarBtn();
             let bar = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__bar');
@@ -591,6 +592,7 @@ const StaticSceneEditor = {
         },
         onChangeSize(){
             this.exportSize[1] = Math.round(this.exportSize[0]*this.proportion);
+            vm.userExportSize = this.exportSize
         },
         changeBgColor(){
             vm.backgroundcolor = this.bgColor
