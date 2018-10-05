@@ -151,7 +151,7 @@ const StaticSceneEditor = {
                     </div>
                     <div v-show="isExportShow">
                         <p>
-                           <input type="number" size="4" pattern="/\d/"  v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[0]}}px</span>
+                           <input type="number" size="4" pattern="/\d/"  v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[1]}}px</span>
                         </p>
                         <p>
                             <input type="checkbox" v-model="isTransparent">
