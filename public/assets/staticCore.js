@@ -228,9 +228,6 @@ var renderStaticCore = {
                 }
             }
 
-            console.log(vm.current_device)
-
-
             vm.size[0] = width
             vm.size[1] = height
 
@@ -341,9 +338,6 @@ var renderStaticCore = {
             });
             loader.load(function(loader, resources) {
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                    //vm.cover_object[layersindex]
-
-                    console.log(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg')
                     let coversequencetpl = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/' + 'screen.jpg', true, PIXI.SCALE_MODES.LINEAR));
                     let shadow
                     if(vm.hasShadow) shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.size[0]}/${vm.size[1]}/Shadow.png`))
@@ -354,7 +348,6 @@ var renderStaticCore = {
                             vm.covershadow[layersindex].blendMode = PIXI.BLEND_MODES.NORMAL
                         }
                     }
-                    console.log(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png')
                     vm.mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png', true, PIXI.SCALE_MODES.LINEAR));
                 }
                 for (index = 0; index < vm.scenestore.s_frames; index++) {

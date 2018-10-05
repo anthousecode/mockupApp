@@ -313,6 +313,7 @@ var vm = new Vue({
 
 				// Из полученных данных формируем на фоне канвас, содержимое которого используем в качестве текстуры для объекта в базовом рендере
 				context.fillStyle = grd;
+                    vm.canvas = canvas
 				context.fill()
 				vm.background_gradient.alpha = 1;
 				vm.background_gradient.texture = new PIXI.Texture.fromCanvas(canvas);

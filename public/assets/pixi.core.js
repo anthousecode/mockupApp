@@ -150,8 +150,8 @@ var renderCore = {
 		},
 		// Основной метод сборки сцены
 		renderScene(width, height) {
-			vm.size[0] = width
-			vm.size[1] = height
+			/*vm.size[0] = width
+			vm.size[1] = height*/
 			vm.origratio = vm.origsize[0] / vm.origsize[1]
 			vm.reduceratio = vm.origsize[0] / vm.size[0]
 			var frames = vm.scenestore;

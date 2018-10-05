@@ -79,22 +79,24 @@ var exportStaticTools = {
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 // Loading sequences
                 vm.hires_mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.hiResTextureMockup[layersindex]);
-                vm.hires_mockup_object[layersindex].width = vm.userExportSize[0]
-                vm.hires_mockup_object[layersindex].height = vm.userExportSize[1]
+                vm.hires_mockup_object[layersindex]._texture.baseTexture.width = vm.userExportSize[0]
+                vm.hires_mockup_object[layersindex]._texture.baseTexture.height = vm.userExportSize[1]
+                console.log(vm.hires_mockup_object[layersindex])
+
 
                 vm.hires_mockup_object_blink_screen_layers[layersindex] = new PIXI.extras.AnimatedSprite(vm.hiResTextureMockup[layersindex]);
-                vm.hires_mockup_object_blink_screen_layers[layersindex].width = vm.userExportSize[0]
-                vm.hires_mockup_object_blink_screen_layers[layersindex].height = vm.userExportSize[1]
+                vm.hires_mockup_object_blink_screen_layers[layersindex]._texture.baseTexture.width = vm.userExportSize[0]
+                vm.hires_mockup_object_blink_screen_layers[layersindex]._texture.baseTexture.height = vm.userExportSize[1]
                 vm.hires_mockup_object_blink_screen_layers[layersindex].blendMode = PIXI.BLEND_MODES.SCREEN
 
                 vm.hires_mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.hiResTextureMockup[layersindex]);
-                vm.hires_mockup_object_blink[layersindex].width = vm.userExportSize[0]
-                vm.hires_mockup_object_blink[layersindex].height = vm.userExportSize[1]
+                vm.hires_mockup_object_blink[layersindex]._texture.baseTexture.width = vm.userExportSize[0]
+                vm.hires_mockup_object_blink[layersindex]._texture.baseTexture.height = vm.userExportSize[1]
 
                 if(vm.hasShadow){
                     vm.hires_shadow_object[layersindex] = vm.hires_covershadow[layersindex][0]
-                    vm.hires_shadow_object[layersindex].width = vm.userExportSize[0]
-                    vm.hires_shadow_object[layersindex].height = vm.userExportSize[1]
+                    vm.hires_shadow_object[layersindex]._texture.baseTexture.width = vm.userExportSize[0]*2
+                    vm.hires_shadow_object[layersindex]._texture.baseTexture.height = vm.userExportSize[1]*2
                 }
 
             }
@@ -115,8 +117,9 @@ var exportStaticTools = {
                 powerPreference: "high-performance"
             });
             //document.getElementById('techzone').appendChild(subrenderer_client.view);
-            subrenderer_client.renderer.width = vm.userExportSize[0];
-            subrenderer_client.renderer.height = vm.userExportSize[1];
+             subrenderer_client.renderer.width = vm.userExportSize[0]
+             subrenderer_client.renderer.height = vm.userExportSize[1]
+
 
             var loader = new PIXI.loaders.Loader();
 
@@ -214,6 +217,13 @@ var exportStaticTools = {
                         brightness:  vm.devicesFilters[layersindex].effectbrightness+1,
                     })];
 
+                    mockup_layer.filters = [new PIXI.filters.AdjustmentFilter({
+                        gamma: vm.devicesFilters[layersindex].effectgamma+1 ,
+                        contrast:  vm.devicesFilters[layersindex].effectcontrast+1,
+                        saturation:  vm.devicesFilters[layersindex].effectsaturation+1,
+                        brightness:  vm.devicesFilters[layersindex].effectbrightness+1,
+                    })];
+
 
                     if(vm.activeChangeableDevice[layersindex]) {
                         mockup_layer.tint = vm.changeableDeviceColor[layersindex]
@@ -228,6 +238,7 @@ var exportStaticTools = {
 
 
                     if(vm.hasShadow) subrenderer_client.stage.addChild(vm.hires_shadow_object[layersindex]);
+
                     subrenderer_client.stage.addChild(mockup_layer);
                     subrenderer_client.stage.addChild(cover_container);
                 }
@@ -241,9 +252,25 @@ var exportStaticTools = {
                     brightness:  vm.effectbrightness+1,
                 })]
 
+                /*subrenderer_client.stage._texture.baseTexture.width = vm.userExportSize[0]*2
+                subrenderer_client.stage._texture.baseTexture.height = vm.userExportSize[1]*2*/
+                console.log(subrenderer_client)
+                subrenderer_client.stage.cacheAsBitmap = true
+                console.log(renderTexture)
+                //subrenderer_client.stage.scale.set(0.5)
+                PIXI.settings.PRECISION_FRAGMENT = PIXI.PRECISION.HIGH
+                subrenderer_client.stage.filters = [new PIXI.filters.FXAAFilter()]
                 subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
+                /*renderTexture.cacheAsBitmap = true
+                renderTexture.scale.set(0.5);*/
+
+                /*renderTexture.width = vm.userExportSize[0]*2
+                renderTexture.height = vm.userExportSize[1]*2
+                renderTexture.cacheAsBitmap = true
+                renderTexture.scale.set(0.5);*/
 
                 subrenderer_client.renderer.extract.canvas(renderTexture).toBlob(function(b) {
+                    console.log(b)
                     subrenderer_client.destroy(true)
                     var a = document.createElement('a');
                     document.body.append(a);
