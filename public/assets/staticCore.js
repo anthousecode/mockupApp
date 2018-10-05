@@ -536,8 +536,11 @@ var renderStaticCore = {
                 vm.initresize();
                 var loadedframe = 0;
                 var loadcounter = 0;
+                PIXI.settings.PRECISION_FRAGMENT = PIXI.PRECISION.HIGH
                 var iop = vm.renderer_client.ticker.add(function(deltaTime) {
                     //var current_frame = vm.currentframe;
+
+                    vm.renderer_client.stage.filters = [new PIXI.filters.FXAAFilter()]
 
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 

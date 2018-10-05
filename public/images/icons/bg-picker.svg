@@ -1,12 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-	<defs>
-		<filter id="flt1"> <feColorMatrix in="SourceGraphic" type="matrix" values="0.96 0 0 0 0   0 0.96 0 0 0   0 0 0.96 0 0   0 0 0 1 0" /> </filter>
-	</defs>
-	<style>
-		tspan { white-space:pre }
-		.shp0 { filter: url(#flt1);fill: #f6f7f7 } 
-		.shp1 { fill: #ffffff } 
-	</style>
-	<path id="Rectangle 16" class="shp0" d="M0,5.06v21.17c0,2.77 2.24,5 5,5h22c2.77,0 5,-2.23 5,-5v-21.17c0,-2.77 -2.23,-5 -5,-5h-22c-2.76,0 -5,2.24 -5,5z" />
-	<path id="Shape" class="shp1" d="M16,7c0,0 -6,6.41 -6,10.46c0,3.36 2.66,6.04 6,6.04c3.34,0 6,-2.67 6,-6.04c0,-4.05 -6,-10.46 -6,-10.46z" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0.0596273292" width="32" height="31.1652174" rx="5"></rect>
+        <path d="M16,7 C16,7 10,13.4061399 10,17.4607448 C10,20.8253649 12.65725,23.5 16,23.5 C19.34275,23.5 22,20.8253649 22,17.4607448 C22,13.4061399 16,7 16,7 Z" id="path-2"></path>
+        <filter x="-8.3%" y="-6.1%" width="133.3%" height="124.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0691236413 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Background" transform="translate(-8.000000, -8.000000)" fill-rule="nonzero">
+            <g id="Group" transform="translate(8.000000, 8.000000)">
+                <g id="Rectangle-16">
+                    <use fill="transparent" xlink:href="#path-1"></use>
+                    <use fill="transparent" xlink:href="#path-1"></use>
+                </g>
+                <g id="Shape">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -60,7 +60,7 @@ const StaticSceneEditor = {
                                         <div class="color-icon color"></div>
                                         <span @click="activeChangeableDevice(index)">Changeable</span>
                                         <div class="color-btn-wrap">
-                                            <div class="color-btn" @click="isDevColorShow = !isDevColorShow" :style="{backgroundColor: calcDevColor}"></div>
+                                            <div class="color-btn" @click="isDevColorShow = !isDevColorShow" :style="{backgroundColor: calcDevColor[index]}"></div>
                                         </div>
                                          <!--<el-color-picker v-model="devColor" @active-change="changeDeviceColor"  :predefine="predefineColors">-->
                                          <!--</el-color-picker>-->
@@ -113,7 +113,7 @@ const StaticSceneEditor = {
                 </div>
                 <div :class="{'block_active':isBgShow, 'bg-wrap': true}">
                     <div class="adj-btn" @click="showBgPicker">
-                            <div class="bg-icon" alt="Icon"></div>
+                            <div class="bg-icon" id="bgIcon" alt="Icon"></div>
                             <span class="adj-text">Background</span>
                             <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isBgShow"></i>
                             <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
@@ -151,7 +151,7 @@ const StaticSceneEditor = {
                     </div>
                     <div v-show="isExportShow">
                         <p>
-                           <input type="number" v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[1]}}px</span>
+                           <input type="number" size="4" pattern="/\d/"  v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[0]}}px</span>
                         </p>
                         <p>
                             <input type="checkbox" v-model="isTransparent">
@@ -318,7 +318,8 @@ const StaticSceneEditor = {
     methods:{
         changeGradientPicker() {
           vm.colorgradient = this.colorgradient
-            vm.changeGradientPicker()
+          vm.changeGradientPicker()
+          document.querySelector('#bgIcon').style.backgroundColor = this.colorgradient.hex;
         },
         async exportLayer(type){
             vm.exportFormatType = type
@@ -434,10 +435,6 @@ const StaticSceneEditor = {
               bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
             }
         },
-        setPrewValue(){
-            console.log(`unclick!`)
-            this.adjDeviceRanges = this.deviceAdj
-        },
         colorAdjDeviceBar(id, item, index, value) {
             this.AdjustmentsEffectDevice(id, item, index, value)
 
@@ -472,13 +469,15 @@ const StaticSceneEditor = {
                     return
             }
         },
-        AdjustmentsEffectDevice(id, item, index, value) {
-          console.log('adj id', id)
-          console.log('adj item', item)
-          console.log('adj index', index)
+        AdjustmentsEffectDevice(id, item, index) {
+          console.log('!!!!!!!!!!!!')
             switch (id) {
                 case 0:
+                  console.log('item1 - ',item.value)
+                  // Vue.set(this.adjDeviceRanges[index], id, {value:item.value});
+                  //   this.adjDeviceRanges[index][id].value = item.value
                     vm.devicesFilters[index].effectgamma= item.value
+                    console.log(vm.devicesFilters[index].effectgamma)
                     break;
                 case 1:
                     vm.devicesFilters[index].effectcontrast= item.value
@@ -492,27 +491,13 @@ const StaticSceneEditor = {
                 default:
                     break
             }
-
-        // case 0:
-        //   Vue.set(vm.devicesFilters, index, {effectgamma:item.value});
-        //   break;
-        // case 1:
-        //   Vue.set(vm.devicesFilters, index, {effectcontrast:item.value});
-        //   break;
-        // case 2:
-        //   Vue.set(vm.devicesFilters, index, {effectbrightness:item.value});
-        //   break;
-        // case 3:
-        //   Vue.set(vm.devicesFilters, index, {effectsaturation:item.value});
-        //   break;
-        // default:
-        //   break
-
+          console.log(vm.devicesFilters[index].effectgamma)
+          console.log('item2 - ',item.value)
         },
         nextTooltip() {
-            this.tooltips.unshift(false);
-            this.tooltips.pop();
-            if (this.tooltips.indexOf(true) == -1) this.showtooltips = false;
+            // this.tooltips.unshift(false);
+            // this.tooltips.pop();
+            // if (this.tooltips.indexOf(true) == -1) this.showtooltips = false;
         },
         getWindowWidth(event) {
             document.getElementById("canvas").style.width = (document.getElementById("workspace").offsetWidth) + 'px';
@@ -531,6 +516,7 @@ const StaticSceneEditor = {
         changeBgColor(){
             vm.backgroundcolor = this.bgColor
             vm.updateValue()
+            document.querySelector('#bgIcon').style.backgroundColor = this.bgColor.hex;
         },
         rotate(name, degree){
           console.log(degree);
