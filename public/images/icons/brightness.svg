@@ -1,7 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12">
-	<style>
-		tspan { white-space:pre }
-		.shp0 { fill: #3b4952 } 
-	</style>
-	<path id="Shape" class="shp0" d="M4.5,0c0.28,0 0.5,0.22 0.5,0.5v11c0,0.28 -0.22,0.5 -0.5,0.5h-4c-0.28,0 -0.5,-0.22 -0.5,-0.5v-11c0,-0.28 0.22,-0.5 0.5,-0.5zM1,11h3v-10h-3zM8.01,1.16l2.83,2.83c0.19,0.2 0.19,0.51 0,0.71l-2.12,2.12l-2.12,2.12l-0.6,0.6v-1.9l0.24,0.24l1.41,-1.42l-1.66,-1.66v-2.34l1.3,-1.3c0.09,-0.09 0.22,-0.14 0.35,-0.14c0.13,0 0.26,0.05 0.36,0.14zM6.24,3.63l2.12,2.12l1.41,-1.41l-2.12,-2.12zM11.5,7c0.28,0 0.5,0.22 0.5,0.5v4c0,0.28 -0.22,0.5 -0.5,0.5h-5.5v-1h2v-2.05l1.43,-1.43l0.52,-0.52zM9,11h2v-3h-2zM3,9.5c0,0.28 -0.22,0.5 -0.5,0.5c-0.28,0 -0.5,-0.22 -0.5,-0.5c0,-0.28 0.22,-0.5 0.5,-0.5c0.28,0 0.5,0.22 0.5,0.5z" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-2.8%" y="-2.4%" width="104.7%" height="105.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="-1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0960427989 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Adjustment-expanded" transform="translate(-16.000000, -139.000000)" fill="#3B4952" fill-rule="nonzero">
+            <g id="Adjustment">
+                <g id="Mockup-Layer-Copy-5" filter="url(#filter-1)">
+                    <g id="Group-9" transform="translate(8.000000, 46.000000)">
+                        <g id="Row-/-Black-Clay-Copy-4" transform="translate(12.000000, 95.000000)">
+                            <path d="M0.5,4.4408921e-16 C0.223869062,2.76089527e-05 2.76089527e-05,0.223869062 0,0.5 L4.4408921e-16,11.5 C2.76089527e-05,11.7761309 0.223869062,11.9999724 0.5,12 L4.5,12 C4.77613094,11.9999724 4.99997239,11.7761309 5,11.5 L5,0.5 C4.99997239,0.223869062 4.77613094,2.76089527e-05 4.5,0 L0.5,4.4408921e-16 Z M1,1 L4,1 L4,11 L1,11 L1,1 Z M7.65625,1.0175781 C7.526375,1.0175781 7.3981875,1.0642031 7.3046875,1.1582031 L6,2.4628906 L6,4.8046875 L7.65625,6.4609375 L6.2421875,7.8769531 L6,7.6328125 L6,9.533203 L6.5957031,8.9375 L8.716797,6.8144531 L10.837891,4.6933594 C11.033891,4.4983594 11.034844,4.1813281 10.839844,3.9863281 L8.011719,1.1582031 C7.9177187,1.0642031 7.786125,1.0175781 7.65625,1.0175781 Z M7.65625,2.21875 L9.777344,4.3417969 L8.363281,5.7558594 L6.2421875,3.6347656 L7.65625,2.21875 Z M9.947266,7 L9.425781,7.5214844 L8,8.947266 L8,11 L6,11 L6,12 L8.5,12 L11.5,12 C11.776,12 12,11.776 12,11.5 L12,7.5 C12,7.224 11.776,7 11.5,7 L9.947266,7 Z M9,8 L11,8 L11,11 L9,11 L9,8 Z M2.5,9.001953 C2.22385763,9.001953 2,9.22581063 2,9.501953 C2,9.77809537 2.22385763,10.001953 2.5,10.001953 C2.77614237,10.001953 3,9.77809537 3,9.501953 C3,9.22581063 2.77614237,9.001953 2.5,9.001953 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -88,6 +88,7 @@
   width: 33px;
   height: 32px;
   margin-right: 8px;
+  background-repeat: no-repeat;
 }
 .adj-icon {
   background-image: url('/images/icons/imgedit.svg');
@@ -133,8 +134,8 @@
   margin-right: 12px;
 }
 .adj-bar__icon img {
-  width: 100%;
-  height: 100%;
+  width: 16px;
+  height: 16px;
 }
 
 div[role='slider'] {
@@ -183,10 +184,13 @@ div[role='slider'] {
   align-items: center;
 }
 .upload-icon {
-  width: 13px;
-  height: 13px;
-  background-image: url('/images/icons/upload.svg');
-  cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/icons/upload.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .device-filter-wrap {
@@ -229,6 +233,8 @@ div[role='slider'] {
 
 .color-icon.color {
   background: url('/images/icons/color.svg');
+  width: 14px;
+  height: 14px;
 }
 .color-btn-wrap {
   position: absolute;
@@ -328,6 +334,7 @@ div[role='slider'] {
   height: 31px;
   border-radius: 5px;
   background: url("/images/icons/bg-picker.svg");
+  background-color: #f6f7f7;
   margin-right: 8px;
 }
 .tabs-wrap{
@@ -394,6 +401,10 @@ div[role='slider'] {
 }
 .gp-wrap{
   margin-bottom: 8px;
+}
+
+.bg-wrap .vc-sketch-alpha-wrap{
+    margin-top: 8px;
 }
 /*export*/
 .export-wrap{

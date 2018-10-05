@@ -1,7 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 12" width="14" height="12">
-	<style>
-		tspan { white-space:pre }
-		.shp0 { fill: #3b4952 } 
-	</style>
-	<path id="Shape" class="shp0" d="M12.5,0c0.82,0 1.5,0.68 1.5,1.5v9c0,0.82 -0.68,1.5 -1.5,1.5h-11c-0.82,0 -1.5,-0.68 -1.5,-1.5v-9c0,-0.82 0.68,-1.5 1.5,-1.5zM1,1.5v9c0,0.28 0.22,0.5 0.5,0.5h11c0.28,0 0.5,-0.22 0.5,-0.5v-9c0,-0.28 -0.22,-0.5 -0.5,-0.5h-11c-0.28,0 -0.5,0.22 -0.5,0.5zM8.25,3h1.75v1.75l1,1.25l-1,1.25v1.75h-1.75l-1.25,1l-1.25,-1h-1.75v-1.75l-1,-1.25l1,-1.25v-1.75h1.75l1.25,-1zM7,8.72l0.9,-0.72h1.1v-1.1l0.72,-0.9l-0.72,-0.9v-1.1h-1.1l-0.9,-0.72z" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-2.8%" y="-2.4%" width="104.7%" height="105.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="-1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0960427989 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Adjustment-expanded" transform="translate(-16.000000, -111.000000)" fill="#3B4952" fill-rule="nonzero">
+            <g id="Adjustment">
+                <g id="Mockup-Layer-Copy-5" filter="url(#filter-1)">
+                    <g id="Group-9" transform="translate(8.000000, 46.000000)">
+                        <g id="Row-/-Black-Clay-Copy-3" transform="translate(12.000000, 67.000000)">
+                            <path d="M1.5,0 C0.675781,0 0,0.675781 0,1.5 L0,10.5 C0,11.324219 0.675781,12 1.5,12 L12.5,12 C13.324219,12 14,11.324219 14,10.5 L14,1.5 C14,0.675781 13.324219,0 12.5,0 L1.5,0 Z M1.5,1 L12.5,1 C12.78125,1 13,1.21875 13,1.5 L13,10.5 C13,10.78125 12.78125,11 12.5,11 L1.5,11 C1.21875,11 1,10.78125 1,10.5 L1,1.5 C1,1.21875 1.21875,1 1.5,1 Z M7,2 L5.75,3 L4,3 L4,4.75 L3,6 L4,7.25 L4,9 L5.75,9 L7,10 L8.25,9 L10,9 L10,7.25 L11,6 L10,4.75 L10,3 L8.25,3 L7,2 Z M7,3.28125 L7.898438,4 L9,4 L9,5.101563 L9.71875,6 L9,6.898438 L9,8 L7.898438,8 L7,8.71875 L7,3.28125 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

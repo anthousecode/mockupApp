@@ -1,19 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">  <image id="image0" width="14" height="14" x="0" y="0"
-    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
-AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABPlBMVEUAAACDAP+eAP+9AP/b
-AP/6AP9GAP9bAP//AL//AIEeAP//ACkXJv8ZFv//AgD/GAATPv//MgAPWP//UQABs///wQAAxOj+
-1wAA07364wAA3KAA44z28AD46QAA9FkA/zrQ/wjy/AA9/ypn/yB2AP+WAP+4AP/bAP/+APwxAP9J
-AP9mAP+IAP+wAP/+APL/AKX/AGIcA/9RAP+lAP/+AN7/AIH/ADQVMP8XIf8bCf9bAP//AL//AE3/
-AgD/HwAQUP8SQ/8ZFv//KAD/QAALdf8LcP8Ma/8OYP//XQD/awD/dAAGlf//AAD/mgABuP8AvvsA
-wfAAx98A070A7HOY/xX46QD82wD/1AD/ygAAzNEA3KAU/zTz+AD74AAA2KwA4JUA+0U9/yrx/wD1
-8gAA9lNS/yXe/wUs/y5g/yL///8XJDcLAAAAJHRSTlMAUH+ff09Q399QYGAg7+8gkJDg37CwYGDQ
-0BDQ0BCA4OCAEEBfr2t/AAAAAWJLR0RpvGvEtAAAAAd0SU1FB+IJGQIsFeAxMWYAAAC0SURBVAjX
-Y2AAAkYmZhZWBihgY1dRVVPX4OAE87g0tbR1dNX19A24gTweXkNNIxVjdRNTMz5+BgYBcwtLTStV
-dWsbWztBBgYhewdzR00VdVNbJ2dhBgYXVzd3e3NNdVtnD08vBgZvCPDxBQEGBhE//4DAoOCQ0LDw
-CFEGBrHAyKCo4OiQmNDYMHGgTRJx8cEJiSFJyaGSIGdISQenRKeGpMXIyEJcKSefnhGioMgAB0rK
-UAYA/U0gYSB676YAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDktMjVUMDI6NDQ6MjEtMDc6MDDF
-rhgdAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA5LTI1VDAyOjQ0OjIxLTA3OjAwtPOgoQAAAABJ
-RU5ErkJggg==" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Bitmap</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <image id="Bitmap" x="0" y="0" width="13" height="13" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABGdBTUEAALGOGCHvlwAAAeVJREFUKBVVkk9vElEUxX/DzBTUEimgGAwtaRqrpklDonElMSb1M+DKjZ+hGxatWhK/CXHhxi/QhIWGqKnGPwstsYuiqMUWKy0wf55nCIv2Jee9ufedc8+77w2cGKmKKaVvm3puzrRnMcMypv0AU3+MKZ2gEYuCO5vGSTwxa36KZpikYhLkA4spG/IJqAjNZ5g1g1EKnGhqHFC1s6xbQ4gdQjitpKvNEUSfM4oysP4lIsMjh5ftUjjqV419bpyxBmD/AjMFcYnSyl4SLgt5qBr2Xzic3VnFSbrGyeCdUVrD/iO3D3L5BwXFCxPYfJb/t9VIVCauU/sdSHTwrhdFSRN/r+pK3VS0yK7mV0JL6JQdprez4/5CFQnjkHqHly7QY4WHbyPBUxFfCz8FNcww65Bs7ckmT8zTLegmnENyTo+NpftcpQt18eRIX1CPBOxFTo04fiWFr4Y9rnDMPfapDLoEd9WfeOiofBcOhCMa1oK5UZph0MwxcosMWFbJFe1e+Bvg6kLcHxPRjtbfqtrjVmzberN1jaPakkpEgmWtaT9QfyLp6cPzWosTzFGznrM1ftx5ZmsFPjLPoCo31/LBkshIZCLGRTmMqJFhQ9Hp8dW4pV5Avd+nfdxlONyl7beom0+c+vf+A8RyrrDCL8M+AAAAAElFTkSuQmCC"></image>
+    </g>
 </svg>

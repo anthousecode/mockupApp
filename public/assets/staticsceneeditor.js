@@ -60,7 +60,7 @@ const StaticSceneEditor = {
                                         <div class="color-icon color"></div>
                                         <span @click="activeChangeableDevice(index)">Changeable</span>
                                         <div class="color-btn-wrap">
-                                            <div class="color-btn" @click="isDevColorShow = !isDevColorShow" :style="{backgroundColor: calcDevColor}"></div>
+                                            <div class="color-btn" @click="isDevColorShow = !isDevColorShow" :style="{backgroundColor: calcDevColor[index]}"></div>
                                         </div>
                                          <!--<el-color-picker v-model="devColor" @active-change="changeDeviceColor"  :predefine="predefineColors">-->
                                          <!--</el-color-picker>-->
@@ -113,7 +113,7 @@ const StaticSceneEditor = {
                 </div>
                 <div :class="{'block_active':isBgShow, 'bg-wrap': true}">
                     <div class="adj-btn" @click="showBgPicker">
-                            <div class="bg-icon" alt="Icon"></div>
+                            <div class="bg-icon" id="bgIcon" alt="Icon"></div>
                             <span class="adj-text">Background</span>
                             <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isBgShow"></i>
                             <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
@@ -319,7 +319,8 @@ const StaticSceneEditor = {
     methods:{
         changeGradientPicker() {
           vm.colorgradient = this.colorgradient
-            vm.changeGradientPicker()
+          vm.changeGradientPicker()
+          document.querySelector('#bgIcon').style.backgroundColor = this.colorgradient.hex;
         },
         async exportLayer(type){
             vm.exportFormatType = type
@@ -473,10 +474,11 @@ const StaticSceneEditor = {
                     return
             }
         },
-        AdjustmentsEffectDevice(id, item, index, value) {
+        AdjustmentsEffectDevice(id, item, index) {
           console.log('!!!!!!!!!!!!')
             switch (id) {
                 case 0:
+                  console.log('item1 - ',item.value)
                   // Vue.set(this.adjDeviceRanges[index], id, {value:item.value});
                   //   this.adjDeviceRanges[index][id].value = item.value
                     vm.devicesFilters[index].effectgamma= item.value
@@ -495,6 +497,7 @@ const StaticSceneEditor = {
                     break
             }
           console.log(vm.devicesFilters[index].effectgamma)
+          console.log('item2 - ',item.value)
         },
         nextTooltip() {
             // this.tooltips.unshift(false);
@@ -517,6 +520,7 @@ const StaticSceneEditor = {
         changeBgColor(){
             vm.backgroundcolor = this.bgColor
             vm.updateValue()
+            document.querySelector('#bgIcon').style.backgroundColor = this.bgColor.hex;
         },
         rotate(name, degree){
           console.log(degree);

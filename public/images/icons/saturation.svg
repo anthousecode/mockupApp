@@ -1,7 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="14" height="14">
-	<style>
-		tspan { white-space:pre }
-		.shp0 { fill: #3b4952 } 
-	</style>
-	<path id="Shape" class="shp0" d="M14,7.5c0,3.58 -2.92,6.5 -6.5,6.5c-0.17,0 -0.33,-0.01 -0.5,-0.03c-3.35,-0.26 -6,-3.06 -6,-6.47c0,-3.42 2.65,-6.22 6,-6.47c0.17,-0.01 0.33,-0.03 0.5,-0.03c3.58,0 6.5,2.92 6.5,6.5zM2,7.5c0,2.87 2.19,5.22 5,5.47v-10.95c-2.81,0.25 -5,2.6 -5,5.47zM9,5c0,0.55 0.45,1 1,1c0.55,0 1,-0.45 1,-1c0,-0.55 -0.45,-1 -1,-1c-0.55,0 -1,0.45 -1,1zM5,5.5c0,0.28 -0.22,0.5 -0.5,0.5c-0.28,0 -0.5,-0.22 -0.5,-0.5c0,-0.28 0.22,-0.5 0.5,-0.5c0.28,0 0.5,0.22 0.5,0.5zM6,9c0,0.55 -0.45,1 -1,1c-0.55,0 -1,-0.45 -1,-1c0,-0.55 0.45,-1 1,-1c0.55,0 1,0.45 1,1zM11,8.5c0,0.28 0.22,0.5 0.5,0.5c0.28,0 0.5,-0.22 0.5,-0.5c0,-0.28 -0.22,-0.5 -0.5,-0.5c-0.28,0 -0.5,0.22 -0.5,0.5z" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-2.8%" y="-2.4%" width="104.7%" height="105.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="-1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0960427989 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Adjustment-expanded" transform="translate(-16.000000, -83.000000)" fill="#3B4952" fill-rule="nonzero">
+            <g id="Adjustment">
+                <g id="Mockup-Layer-Copy-5" filter="url(#filter-1)">
+                    <g id="Group-9" transform="translate(8.000000, 46.000000)">
+                        <g id="Row-/-Black-Clay-Copy-2" transform="translate(12.000000, 39.000000)">
+                            <path d="M6.5,0 C6.331,0 6.166,0.0133906 6,0.0253906 C2.6493796,0.2821938 0,3.0847334 0,6.5 C0,9.915267 2.6493796,12.717806 6,12.974609 C6.166,12.987609 6.331,13 6.5,13 C10.083929,13 13,10.083929 13,6.5 C13,2.9160714 10.083929,0 6.5,0 Z M6,1.0253906 L6,11.974609 C3.1926242,11.722293 1,9.374417 1,6.5 C1,3.6255829 3.1926242,1.2777074 6,1.0253906 Z M9,3 C9.552,3 10,3.448 10,4 C10,4.552 9.552,5 9,5 C8.448,5 8,4.552 8,4 C8,3.448 8.448,3 9,3 Z M3.5,4 C3.22385763,4 3,4.22385763 3,4.5 C3,4.77614237 3.22385763,5 3.5,5 C3.77614237,5 4,4.77614237 4,4.5 C4,4.22385763 3.77614237,4 3.5,4 Z M4,7 C3.44771525,7 3,7.44771525 3,8 C3,8.55228475 3.44771525,9 4,9 C4.55228475,9 5,8.55228475 5,8 C5,7.44771525 4.55228475,7 4,7 Z M10.5,7 C10.776,7 11,7.224 11,7.5 C11,7.776 10.776,8 10.5,8 C10.224,8 10,7.776 10,7.5 C10,7.224 10.224,7 10.5,7 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>
