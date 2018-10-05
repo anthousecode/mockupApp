@@ -151,7 +151,7 @@ const StaticSceneEditor = {
                     </div>
                     <div v-show="isExportShow">
                         <p>
-                           <input type="number" v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
+                           <input type="number" size="4" pattern="/\d/"  v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
                         </p>
                         <p>
                             <input type="checkbox" v-model="isTransparent">
@@ -439,10 +439,6 @@ const StaticSceneEditor = {
               bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
             }
         },
-        setPrewValue(){
-            console.log(`unclick!`)
-            this.adjDeviceRanges = this.deviceAdj
-        },
         colorAdjDeviceBar(id, item, index, value) {
             this.AdjustmentsEffectDevice(id, item, index, value)
 
@@ -478,12 +474,13 @@ const StaticSceneEditor = {
             }
         },
         AdjustmentsEffectDevice(id, item, index, value) {
-          console.log('adj id', id)
-          console.log('adj item', item)
-          console.log('adj index', index)
+          console.log('!!!!!!!!!!!!')
             switch (id) {
                 case 0:
+                  // Vue.set(this.adjDeviceRanges[index], id, {value:item.value});
+                  //   this.adjDeviceRanges[index][id].value = item.value
                     vm.devicesFilters[index].effectgamma= item.value
+                    console.log(vm.devicesFilters[index].effectgamma)
                     break;
                 case 1:
                     vm.devicesFilters[index].effectcontrast= item.value
@@ -497,27 +494,12 @@ const StaticSceneEditor = {
                 default:
                     break
             }
-
-        // case 0:
-        //   Vue.set(vm.devicesFilters, index, {effectgamma:item.value});
-        //   break;
-        // case 1:
-        //   Vue.set(vm.devicesFilters, index, {effectcontrast:item.value});
-        //   break;
-        // case 2:
-        //   Vue.set(vm.devicesFilters, index, {effectbrightness:item.value});
-        //   break;
-        // case 3:
-        //   Vue.set(vm.devicesFilters, index, {effectsaturation:item.value});
-        //   break;
-        // default:
-        //   break
-
+          console.log(vm.devicesFilters[index].effectgamma)
         },
         nextTooltip() {
-            this.tooltips.unshift(false);
-            this.tooltips.pop();
-            if (this.tooltips.indexOf(true) == -1) this.showtooltips = false;
+            // this.tooltips.unshift(false);
+            // this.tooltips.pop();
+            // if (this.tooltips.indexOf(true) == -1) this.showtooltips = false;
         },
         getWindowWidth(event) {
             document.getElementById("canvas").style.width = (document.getElementById("workspace").offsetWidth) + 'px';
