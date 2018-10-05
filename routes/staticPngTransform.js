@@ -40,8 +40,8 @@ router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture',
 
         im.resize({
                 srcPath: pathtoorig,
-                width: width,
-                height: height,
+                width: parseInt(width),
+                height: parseInt(height),
                 format: 'png',
             },
             function (err, stdout, stderr) {
