@@ -91,23 +91,23 @@ const StaticSceneEditor = {
                             </template>
                         </div>
                         <div class="device-filter-wrap">
-                            <div class="device-filter-header" @click="showDevAdj">
+                            <div class="device-filter-header" @click="showDevAdj(index)">
                                 <i class="el-icon-caret-right el-icon--right mat-arrow" v-if="!isDevAdjShow"></i>
                                 <i class="el-icon-caret-bottom el-icon--right mat-arrow" v-else></i>
                                 <span class="adj-text">Adjustments</span>
                             </div>
-                            <template v-if="isDevAdjShow">
-                                <div class="material-list">
+                            <!--<template >-->
+                                <div v-show="isDevAdjShow" class="material-list">
                                       <div class="adj-dropdown">
                                         <div v-for="(range, id) in adjDeviceRanges[index]" :key="id" class="block adj-device-bar adj-bar" >
                                             <div class="adj-bar__icon">
                                                 <img :src="range.icon">
                                             </div>
-                                            <el-slider v-model="range.value" :min="min" :max="max" :step="step" @input="colorAdjDeviceBar(id, range, index, range.value)" @change="colorAdjDeviceBar(id, range, index, range.value)"></el-slider>
+                                            <el-slider v-model="devRanges[index][id]" :min="min" :max="max" :step="step" @change="colorAdjDeviceBar(id, range, index)" @input="colorAdjDeviceBar(id, range, index)"></el-slider>
                                         </div>
                                       </div>
                                 </div>
-                            </template>
+                            <!--</template>-->
                         </div>
                     </template>
                 </div>
@@ -204,7 +204,8 @@ const StaticSceneEditor = {
           icon: '/images/icons/brightness.svg'
         }
       ],
-      adjDeviceRanges: [],
+      adjDeviceRanges: {},
+      devRanges:[],
       devices: [],
       blendingItems: [
           { value: 'NORMAL', label: 'Normal' },
@@ -242,7 +243,8 @@ const StaticSceneEditor = {
       exportUserSize: [],
       proportion: 1,
       isTransparent: false,
-      activeBlocks: 0
+      activeBlocks: 0,
+      currentDevAdjVal: 0
     };
   },
   created(){
@@ -296,6 +298,8 @@ const StaticSceneEditor = {
                       icon: '/images/icons/brightness.svg'
                   }
               ]
+
+              Vue.set(this.devRanges, layersindex, [0,0,0,0]);
           }
 
         for (let i = 0; i < devicesData.length; i++) {
@@ -388,13 +392,14 @@ const StaticSceneEditor = {
             this.hideDevBlocks();
           }
         },
-        showDevAdj(){
+        showDevAdj(index){
           if(!this.isDevAdjShow){
             this.hideDevBlocks();
             this.isDevAdjShow = !this.isDevAdjShow;
           }else{
             this.hideDevBlocks();
           }
+          this.setAdjDeviceBarColor(index);
         },
         showFilters(){
           if(!this.isAdjShow){
@@ -435,21 +440,36 @@ const StaticSceneEditor = {
               bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
             }
         },
-        colorAdjDeviceBar(id, item, index, value) {
-            this.AdjustmentsEffectDevice(id, item, index, value)
-
+        colorAdjDeviceBar(id, item, index) {
+            let value  = this.devRanges[index][id];
+            this.AdjustmentsEffectDevice(id, value, index);
             let bar = document.getElementsByClassName("adj-device-bar")[id].querySelector('.el-slider__bar');
             let barWidth = parseInt(bar.style.width);
-
             let bg = document.getElementsByClassName("adj-device-bar")[id].querySelector('.el-slider__runway');
 
-            if(item.value < 0){
+            if(value < 0){
               let bgWidth = 50 - barWidth;
               bg.style.background = `linear-gradient(to left, #fff, #fff 50%, #f96f50 50%, #f96f50 ${bgWidth +50}%, #fff ${bgWidth + 50}%, #fff)`;
-            } else if (item.value > 0) {
+            } else if (value > 0) {
               let bgWidth = barWidth;
               bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
             }
+        },
+        setAdjDeviceBarColor(index){
+          let bars = document.getElementsByClassName("adj-device-bar");
+          for (let i = 0; i < bars.length; i++) {
+            let bar = bars[i].querySelector('.el-slider__bar');
+            let barWidth = parseInt(bar.style.width);
+            let bg = bars[i].querySelector('.el-slider__runway');
+            let value = this.devRanges[index][i];
+              if(value < 0){
+                let bgWidth = 50 - barWidth;
+                bg.style.background = `linear-gradient(to left, #fff, #fff 50%, #f96f50 50%, #f96f50 ${bgWidth +50}%, #fff ${bgWidth + 50}%, #fff)`;
+              } else if (value > 0) {
+                let bgWidth = barWidth;
+                bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
+              }
+          }
         },
         AdjustmentsEffectScene(id, item) {
             switch (id) {
@@ -469,30 +489,23 @@ const StaticSceneEditor = {
                     return
             }
         },
-        AdjustmentsEffectDevice(id, item, index) {
-          console.log('!!!!!!!!!!!!')
+        AdjustmentsEffectDevice(id, value, index) {
             switch (id) {
                 case 0:
-                  console.log('item1 - ',item.value)
-                  // Vue.set(this.adjDeviceRanges[index], id, {value:item.value});
-                  //   this.adjDeviceRanges[index][id].value = item.value
-                    vm.devicesFilters[index].effectgamma= item.value
-                    console.log(vm.devicesFilters[index].effectgamma)
+                    vm.devicesFilters[index].effectgamma = value;
                     break;
                 case 1:
-                    vm.devicesFilters[index].effectcontrast= item.value
+                    vm.devicesFilters[index].effectcontrast = value;
                     break;
                 case 2:
-                    vm.devicesFilters[index].effectbrightness= item.value
+                    vm.devicesFilters[index].effectbrightness= value;
                     break;
                 case 3:
-                    vm.devicesFilters[index].effectsaturation= item.value
+                    vm.devicesFilters[index].effectsaturation= value;
                     break;
                 default:
                     break
             }
-          console.log(vm.devicesFilters[index].effectgamma)
-          console.log('item2 - ',item.value)
         },
         nextTooltip() {
             // this.tooltips.unshift(false);
