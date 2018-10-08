@@ -492,8 +492,8 @@ margin:0 auto;
   }
   .uploadlayer{padding:65px 130px 30px 130px;text-align: center;}
 
-  .txt_title{position: relative;color:#fff;font-size:16px;text-align: left;padding:20px;box-sizing: border-box;height: 60%;}
-  .txt_drop{position: relative;color:#fff;font-size:22px;text-align: left;padding:20px;box-sizing: border-box;height: 24%;}
+  .txt_title{position: relative;color:#fff;font-size:16px;text-align: left;padding: 5px 16px;box-sizing: border-box;height: 60%;}
+  .txt_drop{position: relative;color:#fff;font-size:22px;text-align: left;padding:8px 16px 16px;box-sizing: border-box;height: 24%;}
   .txt_subdrop{position: relative;color:#d4d4d4;font-size:11px;text-align: left;padding:20px;box-sizing: border-box;}
 
   .el-popover{background-color:#222224;color:#fff!important;border:none;border-radius: 6px;padding:9px;-webkit-box-shadow: -7px 9px 24px -3px rgba(0,0,0,0.75);
