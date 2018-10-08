@@ -199,6 +199,11 @@ div[role='slider'] {
   font-size: 11px;
   border-radius: 4px;
   padding: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.device-filter-wrap:last-child{
+  margin-bottom: 0;
 }
 .device-filter-header {
   display: flex;
@@ -233,8 +238,6 @@ div[role='slider'] {
 
 .color-icon.color {
   background: url('/images/icons/color.svg');
-  width: 14px;
-  height: 14px;
 }
 .color-btn-wrap {
   position: absolute;
@@ -313,7 +316,6 @@ div[role='slider'] {
 }
 
 .static-device-wrap .croppa-container canvas {
-  background-color: #f6f7f7 !important;
   border: 2px dashed #f96f50;
 }
 
@@ -512,6 +514,9 @@ input[type=number]::-webkit-outer-spin-button {
     border: 1px solid #d55638;
     margin-top: 5px;
 }
+  .txt_drop .uploadDialogBtn{
+      font-size: 14px;
+  }
  .dialog-footer .vue-slider-component .vue-slider{
      height: 6px !important;
      border-radius: 3px;
@@ -566,4 +571,9 @@ input[type=number]::-webkit-outer-spin-button {
     background-repeat: no-repeat;
     background-size: 25%;
     background-position: center;
+}
+/*grapick drag cudtomize*/
+.grp-handler-selected .grp-handler-drag{
+    width: 12px;
+    margin: 0;
 }

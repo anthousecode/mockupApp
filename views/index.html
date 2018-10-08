@@ -523,8 +523,11 @@ Pixilate <br>
         <div :style="cover_size_style" class="coverblock" v-show="iscover">
           <div class="txt_title">${cover_recommended}
           </div>
-          <div class="txt_drop">Drop your design here or <br>
+          <div class="txt_drop">
+            Drop your design here or <br>
             CMD+V it
+            <el-button type="primary" class="uploadDialogBtn">Choose File
+            </el-button>
           </div>
           <!--<div class="txt_subdrop">Your can choose also mp4-->
           <!--</div>-->

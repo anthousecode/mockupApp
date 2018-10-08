@@ -100,14 +100,8 @@ var renderStaticCore = {
                     vm.shadow_blend_mode = PIXI.BLEND_MODES[value]
                 }
             }
-            console.log(vm.shadow_blend_mode)
         },
         changeDevice(device, index) {
-            //vm.current_device = device
-            //let devices = vm.scenestore.s_layers[0].l_data
-            console.log(device)
-
-            console.log(index)
             let devices = vm.scenestore.s_layers[index].l_data
 
             for(let i = 0; i < devices.length; i++) {
@@ -124,8 +118,6 @@ var renderStaticCore = {
                 vm.mockup_object[layersindex].texture = new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device[layersindex].i_img_uri}`)
                 vm.mockup_object_blink[layersindex].texture = (new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device[layersindex].i_img_uri}`))
             }
-
-            console.log(vm.mockup_object)
 
         },
         // Предзагрзчик текстур высокого разрешения (разрешения для экспорта видео)
@@ -313,8 +305,7 @@ var renderStaticCore = {
             var index;
             var layersindex;
 
-            vm.uploaderIcon = new PIXI.Sprite.fromImage(`/images/icons/upload.svg`)
-            console.log(vm.uploaderIcon)
+            vm.uploaderIcon = new PIXI.Sprite.fromImage(`/images/icons/upload2.svg`)
 
             var coversequence=[];
             // Init data
