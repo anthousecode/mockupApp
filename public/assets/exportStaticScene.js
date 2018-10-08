@@ -37,6 +37,8 @@ var exportStaticTools = {
             }
 
 
+
+
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 //vm.cover_object[layersindex]
                 let shadow
@@ -100,6 +102,7 @@ var exportStaticTools = {
                 }
 
             }
+
 
 
         },

@@ -225,7 +225,6 @@ const StaticSceneEditor = {
               'r': 255
           }
       },
-        bgColor: '#fff',
         bgColorFlat: '#fff',
       gradientType: 'flat',
       radDegree: 130,
@@ -321,9 +320,9 @@ const StaticSceneEditor = {
           vm.changeGradientPicker()
           document.querySelector('#bgIcon').style.backgroundColor = this.colorgradient.hex;
         },
-        async exportLayer(type){
+        exportLayer(type){
             vm.exportFormatType = type
-          await vm.preloadHiresStaticScene()
+            vm.preloadHiresStaticScene()
             vm.compositeStaticLayer()
         },
         changeShadowBlending(blendValue){
