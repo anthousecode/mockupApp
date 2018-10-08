@@ -70,8 +70,8 @@ const StaticSceneEditor = {
                                 </div>
                             </template>
                         </div>
-                        <div class="device-filter-wrap">
-                            <div class="device-filter-header" v-if="hasShadow" @click="showShadow">
+                        <div v-if="hasShadow" class="device-filter-wrap">
+                            <div class="device-filter-header"  @click="showShadow">
                                 <i class="el-icon-caret-right el-icon--right mat-arrow" v-if="!isShadowShow"></i>
                                 <i class="el-icon-caret-bottom el-icon--right mat-arrow" v-else></i>
                                 <span class="adj-text">Shadow</span>
@@ -151,7 +151,7 @@ const StaticSceneEditor = {
                     </div>
                     <div v-show="isExportShow">
                         <p>
-                           <input type="number" size="4" pattern="/\d/"  v-model="exportSize[0]" @input="onChangeSize"><span> x {{exportSize[1]}}px</span>
+                           <input type="number" size="4" pattern="/\d/"  v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[1]}}px</span>
                         </p>
                         <p>
                             <input type="checkbox" v-model="isTransparent">
@@ -239,7 +239,7 @@ const StaticSceneEditor = {
                 'r': 255
             },
       },
-      exportSize: [0,0],
+      exportUserSize: [],
       proportion: 1,
       isTransparent: false,
       activeBlocks: 0
@@ -267,10 +267,11 @@ const StaticSceneEditor = {
         let devicesData = this.scenestore.s_layers[0].l_data;
           this.layers = this.scenestore.s_layers;
         // console.log('layers - ',this.layers);
-        this.exportSize = vm.size;
-        this.proportion = this.exportSize[1]/this.exportSize[0];
+
+        this.exportUserSize = [vm.size[0], vm.size[1]];
+        this.proportion = this.exportUserSize[1]/this.exportUserSize[0];
         this.onChangeSize();
-          this.gp = vm.gp
+          //this.gp = vm.gp
 
           for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
               this.isDeviceShow[layersindex] = false
@@ -296,8 +297,6 @@ const StaticSceneEditor = {
                   }
               ]
           }
-
-          console.log(this.isDeviceShow)
 
         for (let i = 0; i < devicesData.length; i++) {
             this.devices.push(devicesData[i])
@@ -331,7 +330,6 @@ const StaticSceneEditor = {
             vm.changeShadowBlending(blendValue)
         },
         activeChangeableDevice(index){
-            console.log(index)
             vm.activeChangeableDevice[index] = true
 
             for(var i = 0; i < vm.scenestore.s_layers[index].l_data.length; i++) {
@@ -361,7 +359,6 @@ const StaticSceneEditor = {
             vm.changeDevice(item, index)
         },
         showDevice(index){
-            console.log('index', index)
             if(this.isDeviceShow[index]) {
                 this.hideAllBlocks();
                 this.hideDevBlocks();
@@ -374,8 +371,6 @@ const StaticSceneEditor = {
                     }
                 }
             }
-
-            console.log(this.isDeviceShow)
         },
         showMaterials(){
           if(!this.isMaterialsShow){
@@ -514,8 +509,9 @@ const StaticSceneEditor = {
             vm.staticDeviceDialog = true;
         },
         onChangeSize(){
-            this.exportSize[1] = Math.round(this.exportSize[0]*this.proportion);
-            vm.userExportSize = this.exportSize
+            console.log(vm.scene_background)
+            this.exportUserSize[1] = Math.round(this.exportUserSize[0]*this.proportion);
+            vm.userExportSize = this.exportUserSize
         },
         changeBgColor(){
             vm.backgroundcolor = this.bgColor

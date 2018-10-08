@@ -26,8 +26,8 @@ router.all('/:sceneid/:scenelayer/Shadow/:width/:height/:picture', function (req
         // Ресайзим изображение
         im.resize({
                 srcPath: pathtoorig,
-                width: width,
-                height: height,
+                width: parseInt(width),
+                height: parseInt(height),
                 format: 'png',
             },
             function (err, stdout, stderr) {
