@@ -4,6 +4,7 @@ const router = express.Router();
 const path = require('path');
 var fs = require("fs");
 var im = require('imagemagick');
+var rmdir = require('rimraf');
 // Ловим роут GET\POST к конкретному изображению с указнанием разрешения
 router.all('/:sceneid/:scenelayer/Shadow/:width/:height/:picture', function (req, res, next) {
     var sceneid = req.params.sceneid;
@@ -37,6 +38,7 @@ router.all('/:sceneid/:scenelayer/Shadow/:width/:height/:picture', function (req
                 if (!fs.existsSync(`${config.path}${sceneid}/${scenelayer}/Shadow/${width}/${filename}`)) fs.writeFileSync(`${config.path}${sceneid}/${scenelayer}/Shadow/${width}/${filename}`, stdout, 'binary'); // Кешируем изображение в нужном рахрешении если его нет
                 res.contentType('image/png');
                 res.end(stdout, 'binary');
+                rmdir(`${config.path}${sceneid}/${scenelayer}/Shadow/${width}/`, function(error){console.log(error)});
             })
     }
 

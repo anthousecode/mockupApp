@@ -270,7 +270,7 @@ const StaticSceneEditor = {
         this.exportUserSize = [vm.size[0], vm.size[1]];
         this.proportion = this.exportUserSize[1]/this.exportUserSize[0];
         this.onChangeSize();
-          //this.gp = vm.gp
+          this.gp = vm.gp
 
           for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
               this.isDeviceShow[layersindex] = false

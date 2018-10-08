@@ -148,7 +148,7 @@ var exportStaticTools = {
                 scene_background.tint = vm.rgb2hex([vm.backgroundcolor.rgba.r, vm.backgroundcolor.rgba.g, vm.backgroundcolor.rgba.b]);
                 scene_background.alpha = vm.backgroundcolor.rgba.a;
 
-                if (vm.colorsstack.length) {
+                if (vm.gradienttypevalue != `flat`) {
                     var canvas = document.getElementById('subrender1');
                     canvas.width = vm.userExportSize[0]
                     canvas.height = vm.userExportSize[1]
@@ -160,6 +160,8 @@ var exportStaticTools = {
                         grd = context.createLinearGradient(vm.x1, vm.y1, vm.userExportSize[0], vm.userExportSize[1] );
                     if(vm.gradienttypevalue == 'radial')
                         grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
+
+                    console.log(vm.colorsstack)
 
                     vm.colorsstack.forEach(function(element) {
                         let color = [];

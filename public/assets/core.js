@@ -282,6 +282,7 @@ var vm = new Vue({
 		this.gp.on('change', complete => {
 				if(vm.gradientrender === true){
 				let colors = this.gp.getColorValue();
+				console.log(`colors`, colors)
 				let csscolors = this.gp.getValue();
 				vm.iconfill = 'background:'+csscolors
 				vm.colorsstack = colors.split("%, ");
@@ -437,36 +438,39 @@ vm.gp.change()
 
 // Обработчик на любую смену градиента
 gradientchange: function(e){
-				let colors = this.gp.getColorValue();
-				vm.colorsstack = colors.split("%, ");
-				var canvas = document.getElementById('subrender2');
-				canvas.width = vm.size[0]
-				canvas.height = vm.size[1]
-				var context = canvas.getContext('2d');
-				context.rect(0, 0, canvas.width, canvas.height);
 
-					if(vm.gradienttypevalue == 'linear')
-					var grd = context.createLinearGradient(vm.x1, vm.y1, vm.x2, vm.y2 );
-					if(vm.gradienttypevalue == 'radial')
-					var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
+				if(vm.gradienttypevalue != `flat`) {
+                    let colors = this.gp.getColorValue();
+                    vm.colorsstack = colors.split("%, ");
+                    var canvas = document.getElementById('subrender2');
+                    canvas.width = vm.size[0]
+                    canvas.height = vm.size[1]
+                    var context = canvas.getContext('2d');
+                    context.rect(0, 0, canvas.width, canvas.height);
 
-				let csscolors = this.gp.getValue();
-				vm.iconfill = 'background:'+csscolors
+                    if(vm.gradienttypevalue == 'linear')
+                        var grd = context.createLinearGradient(vm.x1, vm.y1, vm.x2, vm.y2 );
+                    if(vm.gradienttypevalue == 'radial')
+                        var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
 
-				vm.colorsstack.forEach(function(element) {
-					let color = [];
-					if (element.match(/rgba/)) {
-						color = element.split(') ');
-						color[0] = color[0] + ')';
-					} else color = element.split(' ');
-					color[1] = parseInt(color[1]) / 100;
-					grd.addColorStop(color[1], color[0]);
-				});
-				context.fillStyle = grd;
-				context.fill()
-				vm.background_gradient.alpha = 1;
-				vm.background_gradient.texture = new PIXI.Texture.fromCanvas(canvas);
-				vm.background_gradient.texture.update();
+                    let csscolors = this.gp.getValue();
+                    vm.iconfill = 'background:'+csscolors
+
+                    vm.colorsstack.forEach(function(element) {
+                        let color = [];
+                        if (element.match(/rgba/)) {
+                            color = element.split(') ');
+                            color[0] = color[0] + ')';
+                        } else color = element.split(' ');
+                        color[1] = parseInt(color[1]) / 100;
+                        grd.addColorStop(color[1], color[0]);
+                    });
+                    context.fillStyle = grd;
+                    context.fill()
+                    vm.background_gradient.alpha = 1;
+                    vm.background_gradient.texture = new PIXI.Texture.fromCanvas(canvas);
+                    vm.background_gradient.texture.update();
+				}
 			},
 // Обработчик который используется для отрисовки направления градиента в зависимости от исходного угла полученного из компонента слайцдера
 // В математике расчета есть ошибка в нижней левой верхней получетверти	- нужно поправить

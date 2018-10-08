@@ -1,5 +1,6 @@
 var renderStaticCore = {
     data: {
+        uploaderIcon: null,
         isTypeText: false,
         activeChangeableDevice: [],
         changeableDeviceColor: ``,
@@ -312,6 +313,9 @@ var renderStaticCore = {
             var index;
             var layersindex;
 
+            vm.uploaderIcon = new PIXI.Sprite.fromImage(`/images/icons/upload.svg`)
+            console.log(vm.uploaderIcon)
+
             var coversequence=[];
             // Init data
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
@@ -456,7 +460,6 @@ var renderStaticCore = {
                     var maskcoverb64 = vm.renderer_client.renderer.extract.base64(vm.mask_container)
                     var maskcover = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(maskcoverb64))
 
-
 //=======================================
                     // LAYERS COMPOSITE
 
@@ -466,6 +469,7 @@ var renderStaticCore = {
                     vm.distort_layers[layersindex].addChild(vm.mockup_object_blink[layersindex]);
                     vm.distort_layers[layersindex].addChild(vm.mask_object[layersindex]);
                     vm.distort_layers[layersindex].mask = vm.mask_object[layersindex]
+                    vm.distort_layers[layersindex].addChild(vm.uploaderIcon);
                     vm.distort_layers[layersindex].interactive = true;
                     vm.distort_layers[layersindex].buttonMode = true;
                     vm.distort_layers[layersindex].moveWhenInside = false;
@@ -484,20 +488,23 @@ var renderStaticCore = {
                             this.filters = [new PIXI.filters.AdjustmentFilter({
                                 saturation: 0
                             })];
+                            vm.uploaderIcon.position.set(centerRect[vm.isMockupOver][vm.currentframe].x - 29.5, centerRect[vm.isMockupOver][vm.currentframe].y - 29.5)
                             smart.clear();
-                            smart.beginFill(0xFFFFFF, 0.2);
+                            /*smart.beginFill(0xFFFFFF, 0.2);
                             smart.lineStyle(2, 0xff9c00);
                             smart.drawCircle(centerRect[vm.isMockupOver][vm.currentframe].x, centerRect[vm.isMockupOver][vm.currentframe].y, 40);
                             smart.moveTo(centerRect[vm.isMockupOver][vm.currentframe].x, centerRect[vm.isMockupOver][vm.currentframe].y - 25)
                             smart.lineTo(centerRect[vm.isMockupOver][vm.currentframe].x, centerRect[vm.isMockupOver][vm.currentframe].y + 25)
                             smart.moveTo(centerRect[vm.isMockupOver][vm.currentframe].x - 25, centerRect[vm.isMockupOver][vm.currentframe].y)
-                            smart.lineTo(centerRect[vm.isMockupOver][vm.currentframe].x + 25, centerRect[vm.isMockupOver][vm.currentframe].y)
+                            smart.lineTo(centerRect[vm.isMockupOver][vm.currentframe].x + 25, centerRect[vm.isMockupOver][vm.currentframe].y)*/
+                            smart.addChild(vm.uploaderIcon)
                             smart.closePath();
                             smart.endFill();
                         })
                         .on('mouseout', function(event) {
                             this.filters = [];
                             if (vm.isMockupOver === this.indexoflayer)
+                                smart.removeChild(vm.uploaderIcon)
                                 smart.clear();
                         });
                     vm.global_project[layersindex] = new PIXI.Container()

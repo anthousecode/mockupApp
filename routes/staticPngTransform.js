@@ -4,7 +4,7 @@ const router = express.Router();
 const path = require('path');
 var fs = require("fs");
 var im = require('imagemagick');
-var Jimp = require('jimp');
+var rmdir = require('rimraf');
 // Ловим роут GET\POST к конкретному изображению с указнанием разрешения
 router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture', function (req, res, next) {
     var sceneid = req.params.sceneid;
@@ -16,16 +16,6 @@ router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture',
 
     console.log(width, height)
 
-/*
-    console.log(`${sceneid}/${scenedir}/devices/${device}/${filename}`)
-
-
-
-    var stdout = fs.readFileSync(pathtoorig, 'binary');
-    res.contentType('image/png');
-    res.end(stdout, 'binary');*/
-
-
 
     var pathtoorig = `${config.path}${sceneid}/${scenedir}/devices/${device}/${filename}`;
     console.log(pathtoorig)
@@ -35,23 +25,8 @@ router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture',
         var stdout = fs.readFileSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`, 'binary')
         res.contentType('image/png');
         res.end(stdout, 'binary');
-    } /*else if(!fs.existsSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`) && width > 2000) {
-        console.log(`more than 2000!`)
-        if (!fs.existsSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}`))
-            fs.mkdirSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}`);
-        Jimp.read(pathtoorig)
-            .then(img => {
-                return img
-                    .resize(parseInt(width), parseInt(height)) // resize
-                    .quality(100) // set JPEG quality
-                    .write(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`); // save
-            })
-            .catch(err => {
-                console.error(err);
-            });
-    } */else {
+    } else {
         // Ресайзим изображение
-
         im.resize({
                 srcPath: pathtoorig,
                 width: parseInt(width),
@@ -65,6 +40,7 @@ router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture',
                 if (!fs.existsSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`)) fs.writeFileSync(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/${filename}`, stdout, 'binary'); // Кешируем изображение в нужном рахрешении если его нет
                 res.contentType('image/png');
                 res.end(stdout, 'binary');
+                rmdir(`${config.path}${sceneid}/${scenedir}/devices/${device}/${width}/`, function(error){console.log(error)});
             })
     }
 })
