@@ -9,6 +9,7 @@ const store = new Vuex.Store({
 	state: {
 		scenestore: [],
 		isAnimated: null,
+		iconfill: ''
 	},
 	mutations: {
 		loaddata(state, data) {
@@ -94,7 +95,7 @@ var vm = new Vue({
 				name: 'test.jpeg',
 				url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
 		}],
-		iconfill : '',
+		// iconfill : '',
 			backgroundcolor: {
 				rgba: {
 					'a': 1,
@@ -235,7 +236,10 @@ var vm = new Vue({
 		computed: {
 			scenestore() {
 				return store.state.scenestore
-			}
+			},
+      iconfill(){
+        return store.state.iconfill;
+      }
 		},
 		mounted: function() {
 // Инициализация всего и вся
@@ -283,7 +287,7 @@ var vm = new Vue({
 				if(vm.gradientrender === true){
 				let colors = this.gp.getColorValue();
 				let csscolors = this.gp.getValue();
-				vm.iconfill = 'background:'+csscolors
+				store.state.iconfill = 'background:'+csscolors
 				vm.colorsstack = colors.split("%, ");
 				var canvas = document.getElementById('subrender2');
 				canvas.width = vm.size[0]
@@ -451,7 +455,7 @@ gradientchange: function(e){
 					var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
 
 				let csscolors = this.gp.getValue();
-				vm.iconfill = 'background:'+csscolors
+				store.state.iconfill = 'background:'+csscolors
 
 				vm.colorsstack.forEach(function(element) {
 					let color = [];
@@ -884,7 +888,7 @@ function generateThumbnail(i) {
 				vm.scene_background.tint = vm.rgb2hex([vm.backgroundcolor.rgba.r, vm.backgroundcolor.rgba.g, vm.backgroundcolor.rgba.b]);
 				vm.scene_background.alpha = vm.backgroundcolor.rgba.a;
 
-				vm.iconfill='background-color:rgba(' + vm.backgroundcolor.rgba.r + ',' + vm.backgroundcolor.rgba.g + ',' + vm.backgroundcolor.rgba.b + ',' + vm.backgroundcolor.rgba.a + ')';
+				store.state.iconfill='background-color:rgba(' + vm.backgroundcolor.rgba.r + ',' + vm.backgroundcolor.rgba.g + ',' + vm.backgroundcolor.rgba.b + ',' + vm.backgroundcolor.rgba.a + ')';
 
 
 			},

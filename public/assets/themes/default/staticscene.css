@@ -111,7 +111,7 @@
 .device {
   background-color: #f6f7f7;
   border-radius: 4px;
-  padding: 12px;
+  padding: 8px 12px 7px;
   margin-top: 5px;
 }
 .adj-bar {
@@ -129,13 +129,21 @@
     z-index: 1001;
 }
 .adj-bar__icon {
-  width: 14px;
-  height: 14px;
+  /*width: 14px;*/
+  /*height: 14px;*/
   margin-right: 12px;
 }
 .adj-bar__icon img {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
+}
+.adj-bar:nth-child(3) .adj-bar__icon img{
+    width: 14px;
+    height: 12px;
+}
+.adj-bar:nth-child(4) .adj-bar__icon img{
+    width: 12px;
+    height: 12px;
 }
 
 div[role='slider'] {
@@ -159,7 +167,7 @@ div[role='slider'] {
   height: 6px;
   background-color: #fff;
   border-radius: 3px;
-  margin: 11px 0;
+  margin: 10px 0;
 }
 
 /* Device */
@@ -198,7 +206,7 @@ div[role='slider'] {
   color: #747b7f;
   font-size: 11px;
   border-radius: 4px;
-  padding: 6px;
+  padding: 9px 6px;
   margin-bottom: 8px;
   cursor: pointer;
 }
@@ -331,13 +339,16 @@ div[role='slider'] {
 }
 
 /*background color picker*/
+.bg-icon-wrap{
+    background-color: #f6f7f7;
+    border-radius: 5px;
+    margin-right: 8px;
+}
 .bg-icon{
   width: 32px;
   height: 31px;
-  border-radius: 5px;
   background: url("/images/icons/bg-picker.svg");
-  background-color: #f6f7f7;
-  margin-right: 8px;
+
 }
 .tabs-wrap{
   display: flex;
