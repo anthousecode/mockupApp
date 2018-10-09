@@ -389,7 +389,7 @@ document.getElementById(e).getElementsByClassName('el-slider__button-wrapper')[1
 ////////////////////////////////////////////////////////////////////////////////
 
 // Метод удаляющий "цветовую точку" в градиенте, при условии что она не последняя
-deleteGradientPicker: function(e){
+/*deleteGradientPicker: function(e){
 if(vm.gp.getHandlers().length > 1){
 vm.handler = vm.gp.getSelected();
 vm.handler.remove();
@@ -397,7 +397,7 @@ vm.handler.remove();
 var handlerList = vm.gp.getHandlers();
 vm.handler = handlerList[0];
 vm.handler.select()
-},
+},*/
 // Метод отправляет на бек градиент и бэкграунд сцены
 sendBackGrad(background, gradient){
 	if(vm.sendBackground){
@@ -986,7 +986,7 @@ function generateThumbnail(i) {
 	})
 	/* Global events handlers */
 window.addEventListener('keydown', function(e) {
-	vm.handleGlobalKeyDown(e)
+	//vm.handleGlobalKeyDown(e)
 });
 window.addEventListener('keyup', function(e) {
 	vm.handleGlobalKeyUp(e)
