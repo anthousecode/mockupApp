@@ -4,8 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/public/assets/staticCore.js" line="180" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
+    <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/public/assets/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/core.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -167,8 +166,8 @@
       <file leaf-file-name="core.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/core.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="983" column="39" lean-forward="true" selection-start-line="983" selection-start-column="39" selection-end-line="983" selection-end-column="39" />
+            <state relative-caret-position="260">
+              <caret line="986" lean-forward="true" selection-start-line="986" selection-end-line="986" />
             </state>
           </provider>
         </entry>
@@ -498,7 +497,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="686037000" />
+    <option name="totallyTimeSpent" value="686788000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -511,7 +510,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="25" width="1680" height="1025" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49669966" visible="true" weight="0.16596258" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32964602" />
@@ -522,7 +520,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info id="Structure" order="0" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.1949829" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.42759407" />
       <window_info id="Favorites" order="1" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -570,6 +568,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Default Changelist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -909,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/core.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="983" column="39" lean-forward="true" selection-start-line="983" selection-start-column="39" selection-end-line="983" selection-end-column="39" />
+        <state relative-caret-position="260">
+          <caret line="986" lean-forward="true" selection-start-line="986" selection-end-line="986" />
         </state>
       </provider>
     </entry>
