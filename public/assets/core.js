@@ -984,6 +984,7 @@ function generateThumbnail(i) {
 			togglevisibility(index) {},
 		}
 	})
+
 	/* Global events handlers */
 window.addEventListener('keydown', function(e) {
 	//vm.handleGlobalKeyDown(e)
