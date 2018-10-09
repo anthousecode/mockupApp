@@ -179,8 +179,10 @@ var exportStaticTools = {
                     background_gradient.texture.update();
                 }
 
-                subrenderer_client.stage.addChild(scene_background);
-                subrenderer_client.stage.addChild(background_gradient);
+                if(!vm.isTransparent) {
+                    subrenderer_client.stage.addChild(scene_background);
+                    subrenderer_client.stage.addChild(background_gradient);
+                }
 
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 

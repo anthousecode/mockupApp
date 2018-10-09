@@ -154,8 +154,8 @@ const StaticSceneEditor = {
                            <input type="number" size="4" pattern="/\d/"  v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[1]}}px</span>
                         </p>
                         <p>
-                            <input type="checkbox" v-model="isTransparent">
-                            <span>Transparent</span>
+                            <input type="checkbox" @click="changeTranperent" v-model="isTransparent">
+                            <span @click="changeTranperent">Transparent</span>
                         </p>
                         <p class="export-btn-wrap">
                             <button class="export-btn" @click="exportLayer('jpeg')" v-show="!isTransparent">jpg</button>
@@ -311,6 +311,7 @@ const StaticSceneEditor = {
             .catch(function (error) {
             console.log(error);
         });
+
         this.$nextTick(function() {
             window.addEventListener('resize', this.getWindowWidth);
             window.addEventListener('resize', this.getWindowHeight);
@@ -340,6 +341,10 @@ const StaticSceneEditor = {
                     vm.changeDevice(vm.scenestore.s_layers[index].l_data[i], index)
                 }
             }
+        },
+        changeTranperent(){
+            this.isTransparent = !this.isTransparent
+            vm.isTransparent = !vm.isTransparent
         },
         changeDeviceColor(index) {
             this.activeChangeableDevice(index)

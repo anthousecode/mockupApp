@@ -1,5 +1,6 @@
 var renderStaticCore = {
     data: {
+        isTransparent: false,
         uploaderIcon: null,
         isTypeText: false,
         activeChangeableDevice: [],

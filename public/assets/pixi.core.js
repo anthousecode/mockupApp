@@ -137,6 +137,7 @@ var renderCore = {
 					}
 				}
 		},
+
 		// Метод для открытия окна загрузки изображения на слой
 		openUploader(indexofplayer){
 							vm.isMockupMove1 = true;

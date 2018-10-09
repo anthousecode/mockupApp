@@ -238,6 +238,8 @@ var vm = new Vue({
 			}
 		},
 		mounted: function() {
+
+
 // Инициализация всего и вся
 			this.rendertype = "WebGL"
 // Работаем только в WEBGL так как в canvas режиме у нас нет матрицы деформации 3x3x3
@@ -612,6 +614,32 @@ gradientchange: function(e){
 			onUploadImageClear(){
 					this.croppa.remove();
 			},
+			pasteImage (event) {
+                console.log(event)
+                // use event.originalEvent.clipboard for newer chrome versions
+                var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+                //console.log(JSON.stringify(items)); // will give you the mime types
+                // find pasted image among pasted items
+                var blob = null;
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].type.indexOf("image") === 0) {
+                        blob = items[i].getAsFile();
+                    }
+                }
+                // load image if there is a pasted image
+                if (blob !== null) {
+                    var reader = new FileReader();
+                    reader.onload = function (event) {
+                        console.log(event.target.result); // data url!
+                        //document.getElementById("pastedImage").src = event.target.result;
+                        for (index = 0; index < vm.scenestore.s_frames; index++) {
+                            vm.coversequence[vm.currentMockup][index].texture = PIXI.Texture.fromImage(event.target.result);
+
+                        }
+                    };
+                    reader.readAsDataURL(blob);
+                }
+            },
 			// Обработчик для аплоада фото или видео в мокап
 			uploadCroppedImage() {
                 vm.staticDeviceDialog = false;
