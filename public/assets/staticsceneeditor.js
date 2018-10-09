@@ -156,8 +156,8 @@ const StaticSceneEditor = {
                            <input type="number" size="4" pattern="/\d/"  v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[1]}}px</span>
                         </p>
                         <p>
-                            <input type="checkbox" v-model="isTransparent">
-                            <span>Transparent</span>
+                            <input type="checkbox" @click="changeTranperent" v-model="isTransparent">
+                            <span @click="changeTranperent">Transparent</span>
                         </p>
                         <p class="export-btn-wrap">
                             <button class="export-btn" @click="exportLayer('jpeg')" v-show="!isTransparent">jpg</button>
@@ -228,7 +228,6 @@ const StaticSceneEditor = {
               'r': 255
           }
       },
-        bgColor: '#fff',
         bgColorFlat: '#fff',
       gradientType: 'flat',
       radDegree: 130,
@@ -275,7 +274,7 @@ const StaticSceneEditor = {
         this.exportUserSize = [vm.size[0], vm.size[1]];
         this.proportion = this.exportUserSize[1]/this.exportUserSize[0];
         this.onChangeSize();
-          //this.gp = vm.gp
+          this.gp = vm.gp
 
           for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
               this.isDeviceShow[layersindex] = false
@@ -314,6 +313,7 @@ const StaticSceneEditor = {
             .catch(function (error) {
             console.log(error);
         });
+
         this.$nextTick(function() {
             window.addEventListener('resize', this.getWindowWidth);
             window.addEventListener('resize', this.getWindowHeight);
@@ -326,9 +326,9 @@ const StaticSceneEditor = {
           vm.colorgradient = this.colorgradient
           vm.changeGradientPicker()
         },
-        async exportLayer(type){
+        exportLayer(type){
             vm.exportFormatType = type
-          await vm.preloadHiresStaticScene()
+            vm.preloadHiresStaticScene()
             vm.compositeStaticLayer()
         },
         changeShadowBlending(blendValue){
@@ -343,12 +343,15 @@ const StaticSceneEditor = {
                 }
             }
         },
+        changeTranperent(){
+            this.isTransparent = !this.isTransparent
+            vm.isTransparent = !vm.isTransparent
+        },
         changeDeviceColor(index) {
             this.activeChangeableDevice(index)
             this.calcDevColor[index] = this.devColor[index].hex;
             vm.activeChangeableDevice[index] = true
             let color = this.calcDevColor[index].substring(1);
-            console.log('color - ',color)
             vm.changeableDeviceColor[index] = "0x"+ color
             // this.devColor = '#' + this.rgbToHex(color)
         },
@@ -523,7 +526,6 @@ const StaticSceneEditor = {
             vm.staticDeviceDialog = true;
         },
         onChangeSize(){
-            console.log(vm.scene_background)
             this.exportUserSize[1] = Math.round(this.exportUserSize[0]*this.proportion);
             vm.userExportSize = this.exportUserSize
         },
@@ -533,12 +535,10 @@ const StaticSceneEditor = {
             document.querySelector('#bgIcon').style.backgroundColor = this.bgColor.hex;
         },
         rotate(name, degree){
-          console.log(degree);
           vm.rotate(name, degree)
           this.radDegree = degree;
         },
         changeGradientType(){
-            console.log('gradient - ', this.gradientType)
             vm.gradienttypevalue = this.gradientType
             vm.backgroundchanger(this.gradientType)
             vm.gradientchange()

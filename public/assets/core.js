@@ -242,6 +242,8 @@ var vm = new Vue({
       }
 		},
 		mounted: function() {
+
+
 // Инициализация всего и вся
 			this.rendertype = "WebGL"
 // Работаем только в WEBGL так как в canvas режиме у нас нет матрицы деформации 3x3x3
@@ -286,6 +288,7 @@ var vm = new Vue({
 		this.gp.on('change', complete => {
 				if(vm.gradientrender === true){
 				let colors = this.gp.getColorValue();
+				console.log(`colors`, colors)
 				let csscolors = this.gp.getValue();
 				store.state.iconfill = 'background:'+csscolors
 				vm.colorsstack = colors.split("%, ");
@@ -390,7 +393,7 @@ document.getElementById(e).getElementsByClassName('el-slider__button-wrapper')[1
 ////////////////////////////////////////////////////////////////////////////////
 
 // Метод удаляющий "цветовую точку" в градиенте, при условии что она не последняя
-deleteGradientPicker: function(e){
+/*deleteGradientPicker: function(e){
 if(vm.gp.getHandlers().length > 1){
 vm.handler = vm.gp.getSelected();
 vm.handler.remove();
@@ -398,7 +401,7 @@ vm.handler.remove();
 var handlerList = vm.gp.getHandlers();
 vm.handler = handlerList[0];
 vm.handler.select()
-},
+},*/
 // Метод отправляет на бек градиент и бэкграунд сцены
 sendBackGrad(background, gradient){
 	if(vm.sendBackground){
@@ -441,36 +444,40 @@ vm.gp.change()
 
 // Обработчик на любую смену градиента
 gradientchange: function(e){
-				let colors = this.gp.getColorValue();
-				vm.colorsstack = colors.split("%, ");
-				var canvas = document.getElementById('subrender2');
-				canvas.width = vm.size[0]
-				canvas.height = vm.size[1]
-				var context = canvas.getContext('2d');
-				context.rect(0, 0, canvas.width, canvas.height);
 
-					if(vm.gradienttypevalue == 'linear')
-					var grd = context.createLinearGradient(vm.x1, vm.y1, vm.x2, vm.y2 );
-					if(vm.gradienttypevalue == 'radial')
-					var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
+				if(vm.gradienttypevalue != `flat`) {
+                    let colors = this.gp.getColorValue();
+                    vm.colorsstack = colors.split("%, ");
+                    var canvas = document.getElementById('subrender2');
+                    canvas.width = vm.size[0]
+                    canvas.height = vm.size[1]
+                    var context = canvas.getContext('2d');
+                    context.rect(0, 0, canvas.width, canvas.height);
+
+                    if(vm.gradienttypevalue == 'linear')
+                        var grd = context.createLinearGradient(vm.x1, vm.y1, vm.x2, vm.y2 );
+                    if(vm.gradienttypevalue == 'radial')
+                        var grd = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width);
 
 				let csscolors = this.gp.getValue();
 				store.state.iconfill = 'background:'+csscolors
+                    let csscolors = this.gp.getValue();
 
-				vm.colorsstack.forEach(function(element) {
-					let color = [];
-					if (element.match(/rgba/)) {
-						color = element.split(') ');
-						color[0] = color[0] + ')';
-					} else color = element.split(' ');
-					color[1] = parseInt(color[1]) / 100;
-					grd.addColorStop(color[1], color[0]);
-				});
-				context.fillStyle = grd;
-				context.fill()
-				vm.background_gradient.alpha = 1;
-				vm.background_gradient.texture = new PIXI.Texture.fromCanvas(canvas);
-				vm.background_gradient.texture.update();
+                    vm.colorsstack.forEach(function(element) {
+                        let color = [];
+                        if (element.match(/rgba/)) {
+                            color = element.split(') ');
+                            color[0] = color[0] + ')';
+                        } else color = element.split(' ');
+                        color[1] = parseInt(color[1]) / 100;
+                        grd.addColorStop(color[1], color[0]);
+                    });
+                    context.fillStyle = grd;
+                    context.fill()
+                    vm.background_gradient.alpha = 1;
+                    vm.background_gradient.texture = new PIXI.Texture.fromCanvas(canvas);
+                    vm.background_gradient.texture.update();
+				}
 			},
 // Обработчик который используется для отрисовки направления градиента в зависимости от исходного угла полученного из компонента слайцдера
 // В математике расчета есть ошибка в нижней левой верхней получетверти	- нужно поправить
@@ -612,6 +619,32 @@ gradientchange: function(e){
 			onUploadImageClear(){
 					this.croppa.remove();
 			},
+			pasteImage (event) {
+                console.log(event)
+                // use event.originalEvent.clipboard for newer chrome versions
+                var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+                //console.log(JSON.stringify(items)); // will give you the mime types
+                // find pasted image among pasted items
+                var blob = null;
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].type.indexOf("image") === 0) {
+                        blob = items[i].getAsFile();
+                    }
+                }
+                // load image if there is a pasted image
+                if (blob !== null) {
+                    var reader = new FileReader();
+                    reader.onload = function (event) {
+                        console.log(event.target.result); // data url!
+                        //document.getElementById("pastedImage").src = event.target.result;
+                        for (index = 0; index < vm.scenestore.s_frames; index++) {
+                            vm.coversequence[vm.currentMockup][index].texture = PIXI.Texture.fromImage(event.target.result);
+
+                        }
+                    };
+                    reader.readAsDataURL(blob);
+                }
+            },
 			// Обработчик для аплоада фото или видео в мокап
 			uploadCroppedImage() {
                 vm.staticDeviceDialog = false;
@@ -956,9 +989,10 @@ function generateThumbnail(i) {
 			togglevisibility(index) {},
 		}
 	})
+
 	/* Global events handlers */
 window.addEventListener('keydown', function(e) {
-	vm.handleGlobalKeyDown(e)
+	//vm.handleGlobalKeyDown(e)
 });
 window.addEventListener('keyup', function(e) {
 	vm.handleGlobalKeyUp(e)

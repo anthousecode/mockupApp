@@ -486,6 +486,7 @@ Pixilate <br>
 
 <el-dialog title="" :visible.sync="dlgMockupUploader" :close-on-click-modal="false" :center="true">
   <div class="uploadlayer" :style="cover_upsize_style">
+    <input id="uploadInput" type="hidden" >
     <croppa class="uploadbox" v-model="croppa" :prevent-white-space="true" :width="cover_width" :height="cover_height" :video-enabled="true" placeholder="" placeholder-color="#fff" :placeholder-font-size="16" canvas-color="transparent" accept=".png,.jpg,.gif,.mp4" :show-remove-button="false" initial-size="cover" initial-position="center" @new-image-drawn="onNewImage" @zoom="onZoom" @image-remove="onImageRemove">
     </croppa>
     <div :style="cover_size_style" class="coverblock" v-show="iscover">
@@ -516,7 +517,7 @@ Pixilate <br>
   </span>
 </el-dialog>
     <!-- Static Scene Device dialog   -->
-    <el-dialog  :visible.sync="staticDeviceDialog" width="595px" :close-on-click-modal="false" :center="true" class="static-device-wrap">
+    <el-dialog ref="uploadDialog" :visible.sync="staticDeviceDialog" width="595px" :close-on-click-modal="false" :center="true" class="static-device-wrap">
       <div class="uploadlayer" :style="cover_upsize_style">
         <croppa class="uploadbox" v-model="croppa" :prevent-white-space="true" :width="cover_width" :height="cover_height" :video-enabled="true" placeholder="" placeholder-color="#fff" :placeholder-font-size="16" canvas-color="transparent" accept=".png,.jpg,.gif,.mp4" :show-remove-button="false" initial-size="cover" initial-position="center" @new-image-drawn="onNewImage" @zoom="onZoom" @image-remove="onImageRemove">
         </croppa>
