@@ -197,7 +197,6 @@ var exportStaticTools = {
                     var blink_layer = new PIXI.Sprite(vm.hires_mockup_object_blink[layersindex].texture);
                     var cover_layer = new PIXI.Sprite(renderTextureCover);
                     var mask_layer = new PIXI.Sprite(renderTextureMask)
-                    blink_layer.blendMode = vm.blend_mode;
 
                     var cover_container = vm.hires_distort_layers[layersindex]
                     cover_container.addChild(cover_layer);
