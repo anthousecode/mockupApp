@@ -461,7 +461,7 @@ gradientchange: function(e){
 
 				let csscolors = this.gp.getValue();
 				store.state.iconfill = 'background:'+csscolors
-                    let csscolors = this.gp.getValue();
+                    // let csscolors = this.gp.getValue();
 
                     vm.colorsstack.forEach(function(element) {
                         let color = [];
