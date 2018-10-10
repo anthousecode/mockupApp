@@ -497,7 +497,7 @@ div[role='slider'] {
     position: relative;
     margin-right: 5px;
     left: 1px;
-    top: 5px;
+    top: 3px;
 }
 [type="checkbox"]:not(:checked):before,
 [type="checkbox"]:checked:before {
