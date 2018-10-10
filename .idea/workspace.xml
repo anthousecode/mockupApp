@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/public/assets/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/exportStaticScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/exportStaticScene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/staticCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticCore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scenes/iPhoneXS/iPhone 1/mask/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/scenes/iPhoneXS/iPhone 1/mask/mask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -157,26 +161,35 @@
       <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            <state relative-caret-position="650">
+              <caret line="235" column="34" lean-forward="true" selection-start-line="235" selection-start-column="34" selection-end-line="235" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="exporter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2600">
+              <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="102" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/core.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="986" lean-forward="true" selection-start-line="986" selection-end-line="986" />
+            <state relative-caret-position="12636">
+              <caret line="486" column="36" selection-start-line="486" selection-start-column="36" selection-end-line="486" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exportStaticScene.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="exportStaticScene.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/exportStaticScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="177" column="62" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
+            <state relative-caret-position="205">
+              <caret line="306" column="36" lean-forward="true" selection-start-line="306" selection-start-column="36" selection-end-line="306" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -184,11 +197,20 @@
       <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="526" column="23" lean-forward="true" selection-start-line="526" selection-start-column="23" selection-end-line="526" selection-end-column="23" />
+            <state relative-caret-position="275">
+              <caret line="327" column="26" selection-start-line="327" selection-start-column="26" selection-end-line="327" selection-end-column="26" />
               <folding>
                 <element signature="n#!!block;n#beforeDestroy#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="staticPngTransform.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/staticPngTransform.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -205,8 +227,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="519" column="52" lean-forward="true" selection-start-line="519" selection-start-column="52" selection-end-line="519" selection-end-column="52" />
+            <state relative-caret-position="312">
+              <caret line="559" column="75" selection-start-line="559" selection-start-column="75" selection-end-line="559" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -222,13 +244,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>exportSize</find>
-      <find>exportUserSize</find>
-      <find>backgro</find>
-      <find>bgcolo</find>
-      <find>can</find>
-      <find>getColorValue</find>
-      <find>colorsstack</find>
       <find>addColorStop</find>
       <find>grap</find>
       <find>grapick</find>
@@ -251,7 +266,14 @@
       <find>open</find>
       <find>mount</find>
       <find>scene_background</find>
+      <find>blur</find>
+      <find>colorsstack</find>
+      <find>changeDe</find>
       <find>changeTranperent</find>
+      <find>background</find>
+      <find>mockup_object_blink_screen_layers</find>
+      <find>mockup_object_blink</find>
+      <find>mask</find>
     </findStrings>
     <replaceStrings>
       <replace>Rerere</replace>
@@ -307,12 +329,12 @@
         <option value="$PROJECT_DIR$/routes/staticPngTransform.js" />
         <option value="$PROJECT_DIR$/routes/pngShadowTransform.js" />
         <option value="$PROJECT_DIR$/public/assets/pixi.core.js" />
-        <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/public/assets/staticCore.js" />
-        <option value="$PROJECT_DIR$/public/assets/staticsceneeditor.js" />
-        <option value="$PROJECT_DIR$/public/assets/exportStaticScene.js" />
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/public/assets/core.js" />
+        <option value="$PROJECT_DIR$/public/assets/staticCore.js" />
+        <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/public/assets/staticsceneeditor.js" />
+        <option value="$PROJECT_DIR$/public/assets/exportStaticScene.js" />
       </list>
     </option>
   </component>
@@ -344,6 +366,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -371,13 +394,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="core&#9;FILE&#9;file:///home/user/Projects/mockupApp/node_modules/lodash/core.js&#10;index&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;expo&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/exporter.js&#10;sceneId&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;scenelist&#9;null&#9;null&#10;scene&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;inde&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;sceneid&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;pixi&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/pixi.core.js&#10;png&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngShadowTransform.js&#10;co&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/core.js&#10;expor&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/exporter.js&#10;штву&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;зтп&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngtransform.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -493,11 +515,13 @@
       <workItem from="1538725941569" duration="20448000" />
       <workItem from="1538985156839" duration="18702000" />
       <workItem from="1539067607179" duration="5903000" />
+      <workItem from="1539093057723" duration="1215000" />
+      <workItem from="1539163228471" duration="7903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="686788000" />
+    <option name="totallyTimeSpent" value="702386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,32 +539,20 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32964602" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32853982" />
+      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32853982" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
-      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info id="Structure" order="0" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.42759407" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.3945268" />
       <window_info id="Favorites" order="1" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49669966" visible="true" weight="0.16596258" />
-      <window_info id="Structure" order="0" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32964602" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32853982" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32853982" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.22348917" />
-      <window_info id="Favorites" order="1" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32853982" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -808,13 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2600">
-          <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="102" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/staticSceneId.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3848">
@@ -850,24 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/staticPngTransform.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="139" selection-start-line="139" selection-end-line="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="519" column="52" lean-forward="true" selection-start-line="519" selection-start-column="52" selection-end-line="519" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -878,20 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/exportStaticScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="177" column="62" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -899,20 +876,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12636">
+          <caret line="486" column="36" selection-start-line="486" selection-start-column="36" selection-end-line="486" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2600">
+          <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="102" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="235" column="34" lean-forward="true" selection-start-line="235" selection-start-column="34" selection-end-line="235" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="559" column="75" selection-start-line="559" selection-start-column="75" selection-end-line="559" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/staticPngTransform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="526" column="23" lean-forward="true" selection-start-line="526" selection-start-column="23" selection-end-line="526" selection-end-column="23" />
+        <state relative-caret-position="275">
+          <caret line="327" column="26" selection-start-line="327" selection-start-column="26" selection-end-line="327" selection-end-column="26" />
           <folding>
             <element signature="n#!!block;n#beforeDestroy#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/exportStaticScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="986" lean-forward="true" selection-start-line="986" selection-end-line="986" />
+        <state relative-caret-position="205">
+          <caret line="306" column="36" lean-forward="true" selection-start-line="306" selection-start-column="36" selection-end-line="306" selection-end-column="36" />
         </state>
       </provider>
     </entry>

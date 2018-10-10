@@ -370,9 +370,15 @@ var renderStaticCore = {
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                     // Loading sequences
                     vm.mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
+                    /*console.log(vm.mockup_object[layersindex]._texture.baseTexture.height)
+                    console.log(vm.mockup_object[layersindex].texture.baseTexture.height)
                     vm.mockup_object[layersindex].width = vm.size[0]
-                    vm.mockup_object[layersindex].height = vm.size[1]
+                    vm.mockup_object[layersindex].height = vm.size[1]*/
+                    vm.mockup_object[layersindex].scale.set(2)
+                    vm.mockup_object[layersindex].texture.cacheAsBitmap = true;
+                    vm.mockup_object[layersindex].scale.set(1)
 
+                    console.log(vm.current_device)
                     vm.mockup_object_blink_screen_layers[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
                     vm.mockup_object_blink_screen_layers[layersindex].width = vm.size[0]
                     vm.mockup_object_blink_screen_layers[layersindex].height = vm.size[1]
@@ -388,7 +394,7 @@ var renderStaticCore = {
 
                 }
 
-                var smart = new PIXI.Graphics()
+                var smart = new PIXI.Container()
                 var centerRect = []
                 var squaresRect = []
                 var minX = []
@@ -481,7 +487,7 @@ var renderStaticCore = {
                                 saturation: 0
                             })];
                             vm.uploaderIcon.position.set(centerRect[vm.isMockupOver][vm.currentframe].x - 29.5, centerRect[vm.isMockupOver][vm.currentframe].y - 29.5)
-                            smart.clear();
+                            //smart.destroy(true);
                             /*smart.beginFill(0xFFFFFF, 0.2);
                             smart.lineStyle(2, 0xff9c00);
                             smart.drawCircle(centerRect[vm.isMockupOver][vm.currentframe].x, centerRect[vm.isMockupOver][vm.currentframe].y, 40);
@@ -490,14 +496,14 @@ var renderStaticCore = {
                             smart.moveTo(centerRect[vm.isMockupOver][vm.currentframe].x - 25, centerRect[vm.isMockupOver][vm.currentframe].y)
                             smart.lineTo(centerRect[vm.isMockupOver][vm.currentframe].x + 25, centerRect[vm.isMockupOver][vm.currentframe].y)*/
                             smart.addChild(vm.uploaderIcon)
-                            smart.closePath();
-                            smart.endFill();
+                            /*smart.closePath();
+                            smart.endFill();*/
                         })
                         .on('mouseout', function(event) {
                             this.filters = [];
                             if (vm.isMockupOver === this.indexoflayer)
                                 smart.removeChild(vm.uploaderIcon)
-                                smart.clear();
+                            //smart.destroy(true);
                         });
                     vm.global_project[layersindex] = new PIXI.Container()
                     if(vm.hasShadow) vm.global_project[layersindex].addChild(vm.shadow_object[layersindex]);
@@ -555,10 +561,10 @@ var renderStaticCore = {
                         })];
 
                         if(vm.activeWhiteClayDevice[layersindex]) {
-                            vm.distort_layers[layersindex].addChild(vm.mockup_object_blink_screen_layers[layersindex]);
+                            //vm.distort_layers[layersindex].addChild(vm.mockup_object_blink_screen_layers[layersindex]);
                             vm.mockup_object_blink[layersindex].blendMode = PIXI.BLEND_MODES.MULTIPLY
                         }else  {
-                            vm.distort_layers[layersindex].removeChild(vm.mockup_object_blink_screen_layers[layersindex])
+                            //vm.distort_layers[layersindex].removeChild(vm.mockup_object_blink_screen_layers[layersindex])
                             vm.mockup_object_blink[layersindex].blendMode = vm.blend_mode
                         }
 
@@ -648,12 +654,12 @@ var renderStaticCore = {
                         vm.mask_object[layersindex].proj.mapSprite(vm.mask_object[layersindex], vm.quad[layersindex][vm.currentframe]);
                         //	smart.hitArea = new PIXI.Rectangle(minX,minY,maxX,maxY);
                         // BLUR CORRECTION
-                        if ((squaresRect[layersindex][vm.currentframe] / maxArea[layersindex]) * 100 < 45) {
+                        /*if ((squaresRect[layersindex][vm.currentframe] / maxArea[layersindex]) * 100 < 45) {
                             let $blurdelta = (-0.98 * (squaresRect[layersindex][vm.currentframe] / maxArea[layersindex]) + 0.4455) / 0.45;
                             vm.cover_object[layersindex].filters = [new PIXI.filters.BlurFilter($blurdelta, 40)];
                         } else {
                             vm.cover_object[layersindex].filters = [];
-                        }
+                        }*/
                     }
                     //Finalise stop state in non-loop mode
 

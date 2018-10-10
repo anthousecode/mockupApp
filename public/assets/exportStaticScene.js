@@ -53,11 +53,8 @@ var exportStaticTools = {
             }
 
 
-            for (index = 0; index < vm.scenestore.s_frames; index++) {
-                for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-
-
-                    //vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}/${vm.scenestore.s_layers[layersindex].l_id}/devices/${vm.current_device.i_img_title}/Device.png`);
+            for (index = 0; index < 1; index++) {
+                for (layersindex = 0; layersindex < vm.current_device.length; layersindex++) {
                     vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.userExportSize[0]}/${vm.userExportSize[1]}/${vm.current_device[layersindex].i_img_uri}`);
                     if (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
                         let obj_origin = [
@@ -120,8 +117,8 @@ var exportStaticTools = {
                 powerPreference: "high-performance"
             });
             //document.getElementById('techzone').appendChild(subrenderer_client.view);
-             subrenderer_client.renderer.width = vm.userExportSize[0]
-             subrenderer_client.renderer.height = vm.userExportSize[1]
+             subrenderer_client.renderer.width = vm.userExportSize[0]/4
+             subrenderer_client.renderer.height = vm.userExportSize[1]/4
 
 
             var loader = new PIXI.loaders.Loader();
@@ -250,6 +247,8 @@ var exportStaticTools = {
                     subrenderer_client.stage.addChild(cover_container);
                 }
 
+                subrenderer_client.stage.cacheAsBitmap = true
+
                 var renderTexture = PIXI.RenderTexture.create(vm.userExportSize[0], vm.userExportSize[1]);
 
                 subrenderer_client.stage.filters = [new PIXI.filters.AdjustmentFilter({
@@ -265,8 +264,6 @@ var exportStaticTools = {
                 subrenderer_client.stage.cacheAsBitmap = true
                 console.log(renderTexture)
                 //subrenderer_client.stage.scale.set(0.5)
-                PIXI.settings.PRECISION_FRAGMENT = PIXI.PRECISION.HIGH
-                subrenderer_client.stage.filters = [new PIXI.filters.FXAAFilter()]
                 subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
                 /*renderTexture.cacheAsBitmap = true
                 renderTexture.scale.set(0.5);*/
@@ -275,6 +272,8 @@ var exportStaticTools = {
                 renderTexture.height = vm.userExportSize[1]*2
                 renderTexture.cacheAsBitmap = true
                 renderTexture.scale.set(0.5);*/
+
+                console.log(renderTexture)
 
                 subrenderer_client.renderer.extract.canvas(renderTexture).toBlob(function(b) {
                     console.log(b)
