@@ -151,7 +151,7 @@ const StaticSceneEditor = {
                             <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isExportShow"></i>
                             <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                    <div v-show="isExportShow">
+                    <div v-show="isExportShow" class="export-text">
                         <p>
                            <input type="number" size="4" pattern="/\d/"  v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[1]}}px</span>
                         </p>
@@ -532,7 +532,7 @@ const StaticSceneEditor = {
         changeBgColor(){
             vm.backgroundcolor = this.bgColor
             vm.updateValue()
-            document.querySelector('#bgIcon').style.backgroundColor = this.bgColor.hex;
+            // document.querySelector('#bgIcon').style.backgroundColor = this.bgColor.hex;
         },
         rotate(name, degree){
           vm.rotate(name, degree)

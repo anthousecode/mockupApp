@@ -763,10 +763,10 @@ padding:3px 0px 0!important;
 
 .vc-hue-picker ,.vc-alpha-picker{
 
-    margin-top: -2px!important;
-    width: 8px!important;
+    margin-top: -1px!important;
+    width: 7px!important;
 
-    height: 15px!important;
+    height: 10px!important;
 
 }
 
@@ -789,9 +789,10 @@ padding:3px 0px 0!important;
     }
 
  .vc-sketch-presets {
-    padding-top: 3px!important;
-    border-top: none!important;
-        height: 43px;
+    padding: 8px!important;
+    margin: 0 -8px 0 -8px !important;
+    border-top-color: #e4e6e9;
+    height: 43px;
     overflow: hidden;
 }   
 
