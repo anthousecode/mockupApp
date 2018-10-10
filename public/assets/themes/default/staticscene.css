@@ -329,8 +329,8 @@ div[role='slider'] {
 
 /* Upload modal window */
 .static-device-wrap .el-dialog {
-  width: 545px;
-  height: 745px;
+  /*width: 545px;*/
+  /*height: 745px;*/
   border-radius: 6px;
   background-color: #fff;
   box-shadow: -6px 6px 10px rgba(84, 104, 115, 0.12);
@@ -350,7 +350,9 @@ div[role='slider'] {
   line-height: 24px;
   color: #747b7f;
 }
-
+.static-device-wrap .el-dialog--center .el-dialog__body{
+    padding: 45px 25px;
+}
 /*background color picker*/
 .bg-icon-wrap{
     background-color: #f6f7f7;
@@ -507,7 +509,7 @@ div[role='slider'] {
     content: '\2713\0020';
     position: absolute;
     left:1px;
-    top:0;
+    top:0   ;
     font-size: 1.3em;
     line-height: 0.8;
     color: #1d2224;
