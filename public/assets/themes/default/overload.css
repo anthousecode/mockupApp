@@ -456,7 +456,8 @@ background-color: #242424
 }
 
 .el-dialog__footer {
-    padding: 10px 65px 30px 65px;
+    padding: 0 65px 30px 65px;
+    margin-top: -35px;
     text-align: left;
     box-sizing: border-box;
 }
@@ -490,7 +491,7 @@ z-index:1;
 margin:0 auto;
 
   }
-  .uploadlayer{padding:65px 130px 30px 130px;text-align: center;}
+  .uploadlayer{padding:0 130px;text-align: center;}
 
   .txt_title{position: relative;color:#fff;font-size:16px;text-align: left;padding: 5px 16px;box-sizing: border-box;height: 60%;}
   .txt_drop{position: relative;color:#fff;font-size:22px;text-align: left;padding:8px 16px 22px;box-sizing: border-box;height: 40%;display: flex; flex-direction: column; justify-content: flex-end;}
@@ -763,10 +764,10 @@ padding:3px 0px 0!important;
 
 .vc-hue-picker ,.vc-alpha-picker{
 
-    margin-top: -2px!important;
-    width: 8px!important;
+    margin-top: -1px!important;
+    width: 7px!important;
 
-    height: 15px!important;
+    height: 10px!important;
 
 }
 
@@ -789,9 +790,10 @@ padding:3px 0px 0!important;
     }
 
  .vc-sketch-presets {
-    padding-top: 3px!important;
-    border-top: none!important;
-        height: 43px;
+    padding: 8px!important;
+    margin: 0 -8px 0 -8px !important;
+    border-top-color: #e4e6e9;
+    height: 43px;
     overflow: hidden;
 }   
 

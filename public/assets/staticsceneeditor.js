@@ -113,7 +113,9 @@ const StaticSceneEditor = {
                 </div>
                 <div :class="{'block_active':isBgShow, 'bg-wrap': true}">
                     <div class="adj-btn" @click="showBgPicker">
-                            <div class="bg-icon" id="bgIcon" alt="Icon"></div>
+                            <div class="bg-icon-wrap"  :style="iconfill">
+                                <div class="bg-icon" alt="Icon"></div>
+                            </div>
                             <span class="adj-text">Background</span>
                             <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isBgShow"></i>
                             <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
@@ -149,7 +151,7 @@ const StaticSceneEditor = {
                             <i class="el-icon-caret-right el-icon--right adj-arrow" v-if="!isExportShow"></i>
                             <i class="el-icon-caret-bottom el-icon--right adj-arrow" v-else></i>
                     </div>
-                    <div v-show="isExportShow">
+                    <div v-show="isExportShow" class="export-text">
                         <p>
                            <input type="number" size="4" pattern="/\d/"  v-model="exportUserSize[0]" @input="onChangeSize"><span> x {{exportUserSize[1]}}px</span>
                         </p>
@@ -323,7 +325,6 @@ const StaticSceneEditor = {
         changeGradientPicker() {
           vm.colorgradient = this.colorgradient
           vm.changeGradientPicker()
-          document.querySelector('#bgIcon').style.backgroundColor = this.colorgradient.hex;
         },
         exportLayer(type){
             vm.exportFormatType = type
@@ -531,7 +532,7 @@ const StaticSceneEditor = {
         changeBgColor(){
             vm.backgroundcolor = this.bgColor
             vm.updateValue()
-            document.querySelector('#bgIcon').style.backgroundColor = this.bgColor.hex;
+            // document.querySelector('#bgIcon').style.backgroundColor = this.bgColor.hex;
         },
         rotate(name, degree){
           vm.rotate(name, degree)
@@ -565,7 +566,11 @@ const StaticSceneEditor = {
         }
 
     },
-
+    computed:{
+      iconfill(){
+        return store.state.iconfill;
+      }
+    },
     beforeDestroy() {
         // store.commit('loaddata', []);
         //window.removeEventListener('resize', this.getWindowWidth);
