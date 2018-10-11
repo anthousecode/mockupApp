@@ -141,6 +141,7 @@ const StaticSceneEditor = {
                             <colorpicker v-model="bgColor" @input="changeBgColor"> 
                             </colorpicker>
                         </div>
+    `,
     methods:{
         changeGradientPicker() {
           vm.colorgradient = this.colorgradient
