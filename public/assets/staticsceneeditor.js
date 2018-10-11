@@ -168,152 +168,152 @@ const StaticSceneEditor = {
             </div>
         </div>
     `,
-  data: function() {
-    return {
-        hasShadow: false,
-        deviceAdj: [],
-      layers: [],
-      cover_object: [],
-      scenestore: '',
-      changebleDevice: ``,
-      gp: null,
-      isAdjShow: false,
-      isDeviceShow: [],
-      isMaterialsShow: false,
-      isShadowShow: false,
-      isDevAdjShow: false,
-      isDevColorShow: false,
-      isBgShow:false,
-      isExportShow:false,
-      min: -1,
-      max: 1,
-      step: 0.1,
-      adjRanges: [
-        {
-          value: 0,
-          icon: '/images/icons/exposure.svg'
-        },
-        {
-          value: 0,
-          icon: '/images/icons/saturation.svg'
-        },
-        {
-          value: 0,
-          icon: '/images/icons/contrast.svg'
-        },
-        {
-          value: 0,
-          icon: '/images/icons/brightness.svg'
-        }
-      ],
-      adjDeviceRanges: {},
-      devRanges:[],
-      devices: [],
-      blendingItems: [
-          { value: 'NORMAL', label: 'Normal' },
-          { value: 'MULTIPLY', label: 'Multiply' },
-          { value: 'COLOR_BURN', label: 'Color burn' },
-          { value: 'OVERLAY', label: 'Overlay' },
-          ],
-      blending: null,
-      opacity: 1,
-      deviceDialog: false,
-      devColor: [],
-      calcDevColor: [],
-      bgColor: {
-          rgba: {
-              'a': 1,
-              'b': 255,
-              'g': 255,
-              'r': 255
-          }
-      },
-        bgColorFlat: '#fff',
-      gradientType: 'flat',
-      radDegree: 130,
-      rad: 130,
-      sketch: null,
-      colorgradient:{
-            rgba: {
-                'a': 1,
-                'b': 255,
-                'g': 255,
-                'r': 255
+    data: function() {
+        return {
+            hasShadow: false,
+            deviceAdj: [],
+            layers: [],
+            cover_object: [],
+            scenestore: '',
+            changebleDevice: ``,
+            gp: null,
+            isAdjShow: false,
+            isDeviceShow: [],
+            isMaterialsShow: false,
+            isShadowShow: false,
+            isDevAdjShow: false,
+            isDevColorShow: false,
+            isBgShow:false,
+            isExportShow:false,
+            min: -1,
+            max: 1,
+            step: 0.1,
+            adjRanges: [
+                {
+                    value: 0,
+                    icon: '/images/icons/exposure.svg'
+                },
+                {
+                    value: 0,
+                    icon: '/images/icons/saturation.svg'
+                },
+                {
+                    value: 0,
+                    icon: '/images/icons/contrast.svg'
+                },
+                {
+                    value: 0,
+                    icon: '/images/icons/brightness.svg'
+                }
+            ],
+            adjDeviceRanges: {},
+            devRanges:[],
+            devices: [],
+            blendingItems: [
+                { value: 'NORMAL', label: 'Normal' },
+                { value: 'MULTIPLY', label: 'Multiply' },
+                { value: 'COLOR_BURN', label: 'Color burn' },
+                { value: 'OVERLAY', label: 'Overlay' },
+            ],
+            blending: null,
+            opacity: 1,
+            deviceDialog: false,
+            devColor: [],
+            calcDevColor: [],
+            bgColor: {
+                rgba: {
+                    'a': 1,
+                    'b': 255,
+                    'g': 255,
+                    'r': 255
+                }
             },
-      },
-      exportUserSize: [],
-      proportion: 1,
-      isTransparent: false,
-      activeBlocks: 0,
-      currentDevAdjVal: 0,
-      activeDevice: null
-    };
-  },
-  created(){
-    Vue.component('colorpicker', VueColor.Sketch);
-    Vue.component('rad-slider', radslider);
-  },
-  mounted: function() {
+            bgColorFlat: '#fff',
+            gradientType: 'flat',
+            radDegree: 130,
+            rad: 130,
+            sketch: null,
+            colorgradient:{
+                rgba: {
+                    'a': 1,
+                    'b': 255,
+                    'g': 255,
+                    'r': 255
+                },
+            },
+            exportUserSize: [],
+            proportion: 1,
+            isTransparent: false,
+            activeBlocks: 0,
+            currentDevAdjVal: 0,
+            activeDevice: null
+        };
+    },
+    created(){
+        Vue.component('colorpicker', VueColor.Sketch);
+        Vue.component('rad-slider', radslider);
+    },
+    mounted: function() {
 
-    var _this = this;
-    axios
-      .post('/api/scenes/' + this.$route.params.id)
-      .then(function(response) {
-        store.commit('loaddata', response.data);
-        // Генерация события - загрузка данных
-        _this.$emit('eventname', true);
-      })
-      .then(() => {
-          vm.hasShadow = store.state.scenestore.s_shadow
-          this.hasShadow = store.state.scenestore.s_shadow
-        this.scenestore = store.state.scenestore;
-        this.cover_object = vm.cover_object;
-        let devicesData = this.scenestore.s_layers[0].l_data;
-          this.layers = this.scenestore.s_layers;
-        // console.log('layers - ',this.layers);
+        var _this = this;
+        axios
+            .post('/api/scenes/' + this.$route.params.id)
+            .then(function(response) {
+                store.commit('loaddata', response.data);
+                // Генерация события - загрузка данных
+                _this.$emit('eventname', true);
+            })
+            .then(() => {
+                vm.hasShadow = store.state.scenestore.s_shadow
+                this.hasShadow = store.state.scenestore.s_shadow
+                this.scenestore = store.state.scenestore;
+                this.cover_object = vm.cover_object;
+                let devicesData = this.scenestore.s_layers[0].l_data;
+                this.layers = this.scenestore.s_layers;
+                // console.log('layers - ',this.layers);
 
-        this.exportUserSize = [vm.size[0], vm.size[1]];
-        this.proportion = this.exportUserSize[1]/this.exportUserSize[0];
-        this.onChangeSize();
-          this.gp = vm.gp
+                this.exportUserSize = [vm.size[0], vm.size[1]];
+                this.proportion = this.exportUserSize[1]/this.exportUserSize[0];
+                this.onChangeSize();
+                this.gp = vm.gp
 
-          for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-              this.isDeviceShow[layersindex] = false
-              this.devColor[layersindex] = '#ff5000'
-              this.calcDevColor[layersindex] = '#ff5000'
+                for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                    this.isDeviceShow[layersindex] = false
+                    this.devColor[layersindex] = '#ff5000'
+                    this.calcDevColor[layersindex] = '#ff5000'
 
-              this.adjDeviceRanges[`${layersindex}`] = [
-                  {
-                      value: 0,
-                      icon: '/images/icons/exposure.svg'
-                  },
-                  {
-                      value: 0,
-                      icon: '/images/icons/saturation.svg'
-                  },
-                  {
-                      value: 0,
-                      icon: '/images/icons/contrast.svg'
-                  },
-                  {
-                      value: 0,
-                      icon: '/images/icons/brightness.svg'
-                  }
-              ]
+                    this.adjDeviceRanges[`${layersindex}`] = [
+                        {
+                            value: 0,
+                            icon: '/images/icons/exposure.svg'
+                        },
+                        {
+                            value: 0,
+                            icon: '/images/icons/saturation.svg'
+                        },
+                        {
+                            value: 0,
+                            icon: '/images/icons/contrast.svg'
+                        },
+                        {
+                            value: 0,
+                            icon: '/images/icons/brightness.svg'
+                        }
+                    ]
 
-              Vue.set(this.devRanges, layersindex, [0,0,0,0]);
-          }
+                    Vue.set(this.devRanges, layersindex, [0,0,0,0]);
+                }
 
-        for (let i = 0; i < devicesData.length; i++) {
-            this.devices.push(devicesData[i])
-          if(devicesData[i].i_img_title == `White Clay`){
-                this.changebleDevice = devicesData[i]
-          }
-        }
+                for (let i = 0; i < devicesData.length; i++) {
+                    this.devices.push(devicesData[i])
+                    if(devicesData[i].i_img_title == `White Clay`){
+                        this.changebleDevice = devicesData[i]
+                    }
+                }
             })
             .catch(function (error) {
-            console.log(error);
-        });
+                console.log(error);
+            });
 
         this.$nextTick(function() {
             window.addEventListener('resize', this.getWindowWidth);
@@ -324,8 +324,8 @@ const StaticSceneEditor = {
     },
     methods:{
         changeGradientPicker() {
-          vm.colorgradient = this.colorgradient
-          vm.changeGradientPicker()
+            vm.colorgradient = this.colorgradient
+            vm.changeGradientPicker()
         },
         exportLayer(type){
             vm.exportFormatType = type
@@ -377,59 +377,59 @@ const StaticSceneEditor = {
                 this.hideDevBlocks();
                 for(let i = 0; i< this.isDeviceShow.length; i++) {
                     if(i==index){
-                      Vue.set(this.isDeviceShow, index, true);
+                        Vue.set(this.isDeviceShow, index, true);
                     }
                 }
             }
         },
         showMaterials(){
-          if(!this.isMaterialsShow){
-            this.hideDevBlocks();
-            this.isMaterialsShow = !this.isMaterialsShow;
-          }else{
-            this.hideDevBlocks();
-          }
+            if(!this.isMaterialsShow){
+                this.hideDevBlocks();
+                this.isMaterialsShow = !this.isMaterialsShow;
+            }else{
+                this.hideDevBlocks();
+            }
         },
         showShadow(){
-          if(!this.isShadowShow){
-            this.hideDevBlocks();
-            this.isShadowShow = !this.isShadowShow;
-          }else{
-            this.hideDevBlocks();
-          }
+            if(!this.isShadowShow){
+                this.hideDevBlocks();
+                this.isShadowShow = !this.isShadowShow;
+            }else{
+                this.hideDevBlocks();
+            }
         },
         showDevAdj(index){
-          if(!this.isDevAdjShow){
-            this.hideDevBlocks();
-            this.isDevAdjShow = !this.isDevAdjShow;
-          }else{
-            this.hideDevBlocks();
-          }
-          this.setAdjDeviceBarColor(index);
+            if(!this.isDevAdjShow){
+                this.hideDevBlocks();
+                this.isDevAdjShow = !this.isDevAdjShow;
+            }else{
+                this.hideDevBlocks();
+            }
+            this.setAdjDeviceBarColor(index);
         },
         showFilters(){
-          if(!this.isAdjShow){
-            this.hideAllBlocks();
-            this.isAdjShow = !this.isAdjShow;
-          }else{
-            this.hideAllBlocks();
-          }
+            if(!this.isAdjShow){
+                this.hideAllBlocks();
+                this.isAdjShow = !this.isAdjShow;
+            }else{
+                this.hideAllBlocks();
+            }
         },
         showBgPicker(){
-          if(!this.isBgShow){
-            this.hideAllBlocks();
-            this.isBgShow = !this.isBgShow;
-          }else{
-            this.hideAllBlocks();
-          }
+            if(!this.isBgShow){
+                this.hideAllBlocks();
+                this.isBgShow = !this.isBgShow;
+            }else{
+                this.hideAllBlocks();
+            }
         },
         showExport(){
-          if(!this.isExportShow){
-            this.hideAllBlocks();
-            this.isExportShow = !this.isExportShow;
-          }else{
-            this.hideAllBlocks();
-          }
+            if(!this.isExportShow){
+                this.hideAllBlocks();
+                this.isExportShow = !this.isExportShow;
+            }else{
+                this.hideAllBlocks();
+            }
         },
         colorAdjBar(id, item) {
             this.AdjustmentsEffectScene(id, item)
@@ -439,11 +439,11 @@ const StaticSceneEditor = {
             let bg = document.getElementsByClassName("adj-bar")[id].querySelector('.el-slider__runway');
 
             if(item.value < 0){
-              let bgWidth = 50 - barWidth;
-              bg.style.background = `linear-gradient(to left, #fff, #fff 50%, #f96f50 50%, #f96f50 ${bgWidth +50}%, #fff ${bgWidth + 50}%, #fff)`;
+                let bgWidth = 50 - barWidth;
+                bg.style.background = `linear-gradient(to left, #fff, #fff 50%, #f96f50 50%, #f96f50 ${bgWidth +50}%, #fff ${bgWidth + 50}%, #fff)`;
             } else if (item.value > 0) {
-              let bgWidth = barWidth;
-              bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
+                let bgWidth = barWidth;
+                bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
             }
         },
         colorAdjDeviceBar(id, item, index) {
@@ -454,28 +454,28 @@ const StaticSceneEditor = {
             let bg = document.getElementsByClassName("adj-device-bar")[id].querySelector('.el-slider__runway');
 
             if(value < 0){
-              let bgWidth = 50 - barWidth;
-              bg.style.background = `linear-gradient(to left, #fff, #fff 50%, #f96f50 50%, #f96f50 ${bgWidth +50}%, #fff ${bgWidth + 50}%, #fff)`;
+                let bgWidth = 50 - barWidth;
+                bg.style.background = `linear-gradient(to left, #fff, #fff 50%, #f96f50 50%, #f96f50 ${bgWidth +50}%, #fff ${bgWidth + 50}%, #fff)`;
             } else if (value > 0) {
-              let bgWidth = barWidth;
-              bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
+                let bgWidth = barWidth;
+                bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
             }
         },
         setAdjDeviceBarColor(index){
-          let bars = document.getElementsByClassName("adj-device-bar");
-          for (let i = 0; i < bars.length; i++) {
-            let bar = bars[i].querySelector('.el-slider__bar');
-            let barWidth = parseInt(bar.style.width);
-            let bg = bars[i].querySelector('.el-slider__runway');
-            let value = this.devRanges[index][i];
-              if(value < 0){
-                let bgWidth = 50 - barWidth;
-                bg.style.background = `linear-gradient(to left, #fff, #fff 50%, #f96f50 50%, #f96f50 ${bgWidth +50}%, #fff ${bgWidth + 50}%, #fff)`;
-              } else if (value > 0) {
-                let bgWidth = barWidth;
-                bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
-              }
-          }
+            let bars = document.getElementsByClassName("adj-device-bar");
+            for (let i = 0; i < bars.length; i++) {
+                let bar = bars[i].querySelector('.el-slider__bar');
+                let barWidth = parseInt(bar.style.width);
+                let bg = bars[i].querySelector('.el-slider__runway');
+                let value = this.devRanges[index][i];
+                if(value < 0){
+                    let bgWidth = 50 - barWidth;
+                    bg.style.background = `linear-gradient(to left, #fff, #fff 50%, #f96f50 50%, #f96f50 ${bgWidth +50}%, #fff ${bgWidth + 50}%, #fff)`;
+                } else if (value > 0) {
+                    let bgWidth = barWidth;
+                    bg.style.background = `linear-gradient(to left, #fff, #fff ${100 - bgWidth}%, #ffe100 ${100 - bgWidth}%, #ffe100 50%, #fff 50%, #fff)`;
+                }
+            }
         },
         AdjustmentsEffectScene(id, item) {
             switch (id) {
@@ -537,8 +537,8 @@ const StaticSceneEditor = {
             // document.querySelector('#bgIcon').style.backgroundColor = this.bgColor.hex;
         },
         rotate(name, degree){
-          vm.rotate(name, degree)
-          this.radDegree = degree;
+            vm.rotate(name, degree)
+            this.radDegree = degree;
         },
         changeGradientType(){
             vm.gradienttypevalue = this.gradientType
@@ -552,26 +552,26 @@ const StaticSceneEditor = {
             this.isExportShow =false;
 
             for(let i = 0; i< this.isDeviceShow.length; i++) {
-              Vue.set(this.isDeviceShow, i, false);
+                Vue.set(this.isDeviceShow, i, false);
             }
         },
         hideDevBlocks(){
-          this.isMaterialsShow = false;
-          this.isShadowShow = false;
-          this.isDevAdjShow = false;
+            this.isMaterialsShow = false;
+            this.isShadowShow = false;
+            this.isDevAdjShow = false;
         },
         goHomePage(){
-          // vm.destroyRender();
-          this.$router.replace('/');
-          this.$router.go();
-          // console.log('router', this.$router)
+            // vm.destroyRender();
+            this.$router.replace('/');
+            this.$router.go();
+            // console.log('router', this.$router)
         }
 
     },
     computed:{
-      iconfill(){
-        return store.state.iconfill;
-      }
+        iconfill(){
+            return store.state.iconfill;
+        }
     },
     beforeDestroy() {
         // store.commit('loaddata', []);

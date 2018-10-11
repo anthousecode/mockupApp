@@ -1,7 +1,7 @@
 /* Конфигурация приложения */
 
-const path = '/home/natalia/WORK/mockup/mockupApp'
-// const path = '/home/user/Projects/mockupApp';
+//const path = '/home/natalia/WORK/mockup/mockupApp'
+const path = '/home/user/Projects/mockupApp';
 //const path = `/var/www`
 var config = {
   port: 8080,
