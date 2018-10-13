@@ -16,7 +16,6 @@ router.all('/:width/:height/scenes/:sceneid/:scenedir/devices/:device/:picture',
 
     console.log(width, height)
 
-
     var pathtoorig = `${config.path}${sceneid}/${scenedir}/devices/${device}/${filename}`;
     console.log(pathtoorig)
 

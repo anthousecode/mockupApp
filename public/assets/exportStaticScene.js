@@ -19,13 +19,15 @@ var exportStaticTools = {
         hires_scene_bgimage: new PIXI.Container(),
         hires_global_project: [],
         hires_distort_layers: [],
-        hires_quad: []
+        hires_quad: [],
+        exportScaleValue: 1,
     },
     methods: {
         preloadHiresStaticScene() {
+            vm.userExportSize[0] < 2300 ?  vm.exportScaleValue = 4 : vm.exportScaleValue = 4
 
-            vm.hires_reduceratioX = vm.origsize[0] / vm.userExportSize[0]
-            vm.hires_reduceratioY = vm.origsize[1] / vm.userExportSize[1]
+            vm.hires_reduceratioX = vm.origsize[0] / (vm.userExportSize[0] * vm.exportScaleValue)
+            vm.hires_reduceratioY = vm.origsize[1] / (vm.userExportSize[1] * vm.exportScaleValue)
 
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 vm.hiResTextureMockup[layersindex] = [];
@@ -35,9 +37,6 @@ var exportStaticTools = {
                 vm.mockup_blink_layers[layersindex] = new PIXI.Container();
                 vm.hires_mockup_object_blink_screen_layers[layersindex] = new PIXI.Container();
             }
-
-
-
 
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 //vm.cover_object[layersindex]
@@ -108,7 +107,7 @@ var exportStaticTools = {
          compositeStaticLayer() {
 
             // Для сборки используется доп рендер subrenderer_client отличный от основного
-            var subrenderer_client = new PIXI.Application({
+            const subrenderer_client = new PIXI.Application({
                 width: vm.userExportSize[0],
                 height: vm.userExportSize[1],
                 transparent: true,
@@ -117,8 +116,8 @@ var exportStaticTools = {
                 powerPreference: "high-performance"
             });
             //document.getElementById('techzone').appendChild(subrenderer_client.view);
-             subrenderer_client.renderer.width = vm.userExportSize[0]/4
-             subrenderer_client.renderer.height = vm.userExportSize[1]/4
+             subrenderer_client.renderer.width = vm.userExportSize[0]
+             subrenderer_client.renderer.height = vm.userExportSize[1]
 
 
             var loader = new PIXI.loaders.Loader();
@@ -185,8 +184,8 @@ var exportStaticTools = {
 
                     var texture_cover_distort = new PIXI.projection.Sprite2d(vm.hires_cover_object[layersindex].texture);
                     var texture_cover_distort_mask = new PIXI.projection.Sprite2d(vm.hires_mask_object[layersindex].texture);
-                    var renderTextureCover = PIXI.RenderTexture.create(vm.userExportSize[0], vm.userExportSize[1]);
-                    var renderTextureMask = PIXI.RenderTexture.create(vm.userExportSize[0], vm.userExportSize[1]);
+                    var renderTextureCover = PIXI.RenderTexture.create(vm.userExportSize[0] * vm.exportScaleValue, vm.userExportSize[1] * vm.exportScaleValue);
+                    var renderTextureMask = PIXI.RenderTexture.create(vm.userExportSize[0] * vm.exportScaleValue, vm.userExportSize[1] * vm.exportScaleValue);
                     texture_cover_distort.proj.mapSprite(texture_cover_distort, vm.hires_quad[layersindex][0]);
                     texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, vm.hires_quad[layersindex][0]);
                      subrenderer_client.renderer.render(texture_cover_distort, renderTextureCover);
@@ -198,10 +197,16 @@ var exportStaticTools = {
                     var cover_layer = new PIXI.Sprite(renderTextureCover);
                     var mask_layer = new PIXI.Sprite(renderTextureMask)
 
-                    var cover_container = vm.hires_distort_layers[layersindex]
+                    cover_layer.cacheAsBitmap = true
+                    cover_layer.scale.set(1/vm.exportScaleValue)
+                    mask_layer.cacheAsBitmap = true
+                    mask_layer.scale.set(1/vm.exportScaleValue)
+                    var a = subrenderer_client.renderer.extract.base64(cover_layer)
+                    var cover_container = new PIXI.Container()
                     cover_container.addChild(cover_layer);
                     cover_container.addChild(mask_layer);
                     cover_container.mask = mask_layer;
+
 
                     if(vm.activeWhiteClayDevice[layersindex]) {
                         blink_layer.blendMode = PIXI.BLEND_MODES.MULTIPLY
@@ -211,7 +216,6 @@ var exportStaticTools = {
                         blink_layer.blendMode = vm.blend_mode
                         cover_container.addChild(blink_layer);
                     }
-
 
                     cover_container.filters = [new PIXI.filters.AdjustmentFilter({
                         gamma: vm.devicesFilters[layersindex].effectgamma+1 ,
@@ -246,7 +250,7 @@ var exportStaticTools = {
                     subrenderer_client.stage.addChild(cover_container);
                 }
 
-                subrenderer_client.stage.cacheAsBitmap = true
+                //subrenderer_client.stage.cacheAsBitmap = true
 
                 var renderTexture = PIXI.RenderTexture.create(vm.userExportSize[0], vm.userExportSize[1]);
 
@@ -259,9 +263,6 @@ var exportStaticTools = {
 
                 /*subrenderer_client.stage._texture.baseTexture.width = vm.userExportSize[0]*2
                 subrenderer_client.stage._texture.baseTexture.height = vm.userExportSize[1]*2*/
-                console.log(subrenderer_client)
-                subrenderer_client.stage.cacheAsBitmap = true
-                console.log(renderTexture)
                 //subrenderer_client.stage.scale.set(0.5)
                 subrenderer_client.renderer.render(subrenderer_client.stage, renderTexture);
                 /*renderTexture.cacheAsBitmap = true
@@ -271,8 +272,7 @@ var exportStaticTools = {
                 renderTexture.height = vm.userExportSize[1]*2
                 renderTexture.cacheAsBitmap = true
                 renderTexture.scale.set(0.5);*/
-
-                console.log(renderTexture)
+                console.log(`vm.exportScaleValue`, vm.exportScaleValue)
 
                 subrenderer_client.renderer.extract.canvas(renderTexture).toBlob(function(b) {
                     console.log(b)

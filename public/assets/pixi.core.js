@@ -477,7 +477,7 @@ new PIXI.filters.PixelateFilter(vm.effectpixilate)
 						//	vm.cover_object.texture.baseTexture.source.currentTime = vm.currentframe;
 						for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
 							//console.log(layersindex)
-							vm.cover_object[layersindex].proj.mapSprite(vm.coversequence[layersindex][vm.currentframe], vm.quad[layersindex][vm.currentframe]);
+							//vm.cover_object[layersindex].proj.mapSprite(vm.coversequence[layersindex][vm.currentframe], vm.quad[layersindex][vm.currentframe]);
 							vm.mask_object[layersindex].proj.mapSprite(vm.mask_object[layersindex], vm.quad[layersindex][vm.currentframe]);
 							//	smart.hitArea = new PIXI.Rectangle(minX,minY,maxX,maxY);
 							// BLUR CORRECTION
