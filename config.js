@@ -1,10 +1,10 @@
 /* Конфигурация приложения */
 
 //const path = '/home/natalia/WORK/mockup/mockupApp'
-const path = '/home/user/Projects/mockupApp';
-//const path = `/var/www`
+//const path = '/home/user/Projects/mockupApp';
+const path = `/var/www`
 var config = {
-  port: 8080,
+  port: 80,
   path: `${path}/public/scenes/`,
   storage: `${path}/public/store/`,
   public_path: `${path}/public`,

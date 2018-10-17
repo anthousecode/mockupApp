@@ -456,6 +456,7 @@ div[role='slider'] {
 }
 .export-text p:nth-child(2){
     margin-top: 12px;
+    display: flex;
 }
 .export-wrap input, input[type="checkbox"]{
   color:#313a40;
@@ -497,7 +498,7 @@ div[role='slider'] {
     position: relative;
     margin-right: 5px;
     left: 1px;
-    top: 3px;
+    /*top: 3px;*/
 }
 [type="checkbox"]:not(:checked):before,
 [type="checkbox"]:checked:before {
