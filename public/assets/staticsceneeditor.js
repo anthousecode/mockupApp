@@ -52,7 +52,7 @@ const StaticSceneEditor = {
                             </div>
                             <template v-if="isMaterialsShow">
                                 <div class="material-list">
-                                    <div :class="{'material-list__item': true, 'material-list__item_active': item == activeDevice}" v-for="(item, i) in devices" :key="i" @click="deviceHandler(item, index)">
+                                    <div :class="{'material-list__item': true, 'material-list__item_active': item == activeDevice[index]}" v-for="(item, i) in devices" :key="i" @click="deviceHandler(item, i, index)">
                                         <div class="color-icon" :style="{backgroundColor: item.i_icon_color}"></div>
                                         <span>{{item.i_img_title}}</span>
                                     </div>
@@ -246,7 +246,7 @@ const StaticSceneEditor = {
             isTransparent: false,
             activeBlocks: 0,
             currentDevAdjVal: 0,
-            activeDevice: null
+            activeDevice: []
         };
     },
     created(){
@@ -363,10 +363,10 @@ const StaticSceneEditor = {
         changeShadowOpacity(){
             vm.shadow_opacity = this.opacity
         },
-        deviceHandler(item, index){
+        deviceHandler(item, i, index){
             vm.activeChangeableDevice[index] = false
             vm.changeDevice(item, index)
-            this.activeDevice = vm.current_device[0];
+            Vue.set(this.activeDevice, index, this.devices[i]);
         },
         showDevice(index){
             if(this.isDeviceShow[index]) {
