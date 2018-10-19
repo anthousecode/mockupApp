@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/public/assets/staticCore.js" line="182" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a138178c-c661-4501-9edb-cee7c0a82aeb" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/exportStaticScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/exportStaticScene.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/staticCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticCore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/staticsceneeditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/scenesid.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/scenesid.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -152,20 +159,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="staticCore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="386" column="28" lean-forward="true" selection-start-line="386" selection-start-column="28" selection-end-line="386" selection-end-column="28" />
+            <state relative-caret-position="129">
+              <caret line="689" column="34" selection-start-line="689" selection-start-column="34" selection-end-line="689" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staticSceneId.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/staticSceneId.js">
+      <file leaf-file-name="scenesid.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="313" column="26" selection-start-line="313" selection-start-column="26" selection-end-line="313" selection-end-column="32" />
+            <state relative-caret-position="553">
+              <caret line="317" column="40" lean-forward="true" selection-start-line="317" selection-start-column="40" selection-end-line="317" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -173,8 +180,8 @@
       <file leaf-file-name="pixi.core.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9308">
-              <caret line="358" column="28" selection-start-line="358" selection-start-column="28" selection-end-line="358" selection-end-column="28" />
+            <state relative-caret-position="-811">
+              <caret line="82" column="21" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -191,8 +198,17 @@
       <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/core.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1976">
-              <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
+            <state relative-caret-position="265">
+              <caret line="851" column="25" selection-start-line="851" selection-start-column="25" selection-end-line="851" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-301">
+              <caret line="558" column="9" selection-start-line="558" selection-start-column="9" selection-end-line="558" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -200,8 +216,8 @@
       <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+            <state relative-caret-position="78">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -212,17 +228,8 @@
       <file leaf-file-name="exportStaticScene.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/exportStaticScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staticsceneeditor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="197" column="24" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="24" />
+            <state relative-caret-position="1066">
+              <caret line="50" column="66" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -238,18 +245,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>openU</find>
-      <find>el-dialog el-dialog--center</find>
-      <find>Choo</find>
-      <find>uploadCroppedImage</find>
-      <find>vm.uploaderWindow.removeEventListener(&quot;paste&quot;, vm.pasteImage)</find>
-      <find>canvas</find>
-      <find>drop</find>
-      <find>vm.staticDeviceDialog</find>
-      <find>isTra</find>
-      <find>open</find>
-      <find>mount</find>
-      <find>scene_background</find>
       <find>blur</find>
       <find>colorsstack</find>
       <find>changeDe</find>
@@ -268,6 +263,18 @@
       <find>smart</find>
       <find>icon</find>
       <find>scaleValue</find>
+      <find>onChangeSize</find>
+      <find>userExportSize</find>
+      <find>pixi-svg-graphics</find>
+      <find>export</find>
+      <find>isRetinaDisplay</find>
+      <find>vm.renderer_client</find>
+      <find>cacheAsBitmap</find>
+      <find>iop</find>
+      <find>renderSce</find>
+      <find>loadedframe</find>
+      <find>vm.loadedframe</find>
+      <find>loadcounter</find>
     </findStrings>
     <replaceStrings>
       <replace>Rerere</replace>
@@ -319,19 +326,19 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/sceneslist.js" />
         <option value="$PROJECT_DIR$/public/assets/themes/default/staticscene.css" />
-        <option value="$PROJECT_DIR$/routes/scenesid.js" />
         <option value="$PROJECT_DIR$/routes/pngShadowTransform.js" />
-        <option value="$PROJECT_DIR$/public/assets/core.js" />
-        <option value="$PROJECT_DIR$/config.js" />
-        <option value="$PROJECT_DIR$/public/assets/staticsceneeditor.js" />
         <option value="$PROJECT_DIR$/public/assets/pixi.core.js" />
         <option value="$PROJECT_DIR$/routes/staticPngTransform.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/public/assets/exportStaticScene.js" />
         <option value="$PROJECT_DIR$/public/assets/root.js" />
-        <option value="$PROJECT_DIR$/public/assets/staticCore.js" />
         <option value="$PROJECT_DIR$/routes/staticSceneId.js" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/public/assets/exportStaticScene.js" />
+        <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/routes/scenesid.js" />
+        <option value="$PROJECT_DIR$/public/assets/staticsceneeditor.js" />
+        <option value="$PROJECT_DIR$/public/assets/core.js" />
+        <option value="$PROJECT_DIR$/public/assets/staticCore.js" />
       </list>
     </option>
   </component>
@@ -394,9 +401,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="sc&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/staticsceneeditor.js&#10;sta&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/staticsceneeditor.js&#10;core&#9;FILE&#9;file:///home/user/Projects/mockupApp/node_modules/lodash/core.js&#10;index&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;expo&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/exporter.js&#10;sceneId&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;scenelist&#9;null&#9;null&#10;scene&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;inde&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;sceneid&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;pixi&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/pixi.core.js&#10;png&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngShadowTransform.js&#10;co&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/core.js&#10;expor&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/exporter.js&#10;штву&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;зтп&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngtransform.js" />
+    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;sc&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/staticsceneeditor.js&#10;sta&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/staticsceneeditor.js&#10;core&#9;FILE&#9;file:///home/user/Projects/mockupApp/node_modules/lodash/core.js&#10;expo&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/exporter.js&#10;sceneId&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;scenelist&#9;null&#9;null&#10;scene&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;inde&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;sceneid&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/staticSceneId.js&#10;pixi&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/pixi.core.js&#10;png&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngShadowTransform.js&#10;co&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/core.js&#10;expor&#9;FILE&#9;file:///home/user/Projects/mockupApp/public/assets/exporter.js&#10;штву&#9;FILE&#9;file:///home/user/Projects/mockupApp/views/index.html&#10;зтп&#9;FILE&#9;file:///home/user/Projects/mockupApp/routes/pngtransform.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../alkorad" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -521,11 +528,12 @@
       <workItem from="1539436585564" duration="610000" />
       <workItem from="1539588914122" duration="382000" />
       <workItem from="1539763270841" duration="935000" />
+      <workItem from="1539936426509" duration="16054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="745987000" />
+    <option name="totallyTimeSpent" value="763031000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -544,11 +552,12 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32964602" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003018" side_tool="true" weight="0.6691974" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32853982" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32853982" />
       <window_info id="npm" order="2" sideWeight="0.5011389" side_tool="true" weight="0.15087508" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info id="Structure" order="0" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.19612315" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49969825" visible="true" weight="0.015963512" />
       <window_info id="Favorites" order="1" sideWeight="0.5033003" side_tool="true" weight="0.13699457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -557,7 +566,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32853982" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -598,8 +606,32 @@
           <line>350</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/assets/staticCore.js</url>
+          <line>901</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/assets/staticCore.js</url>
+          <line>691</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/assets/staticCore.js</url>
+          <line>696</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/assets/staticCore.js</url>
+          <line>636</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="56" />
+      <option name="time" value="61" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -790,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="323" column="44" selection-start-line="323" selection-start-column="44" selection-end-line="323" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/pngShadowTransform.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
@@ -832,27 +857,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/exporter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2600">
           <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="102" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1976">
-          <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -885,52 +893,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/root.js" />
+    <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9308">
-          <caret line="358" column="28" selection-start-line="358" selection-start-column="28" selection-end-line="358" selection-end-column="28" />
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="560" column="11" selection-start-line="560" selection-start-column="11" selection-end-line="560" selection-end-column="11" />
+        <state relative-caret-position="-301">
+          <caret line="558" column="9" selection-start-line="558" selection-start-column="9" selection-end-line="558" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/exportStaticScene.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/pixi.core.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        <state relative-caret-position="-811">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/scenesid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="317" column="40" lean-forward="true" selection-start-line="317" selection-start-column="40" selection-end-line="317" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/staticsceneeditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="197" column="24" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="24" />
+        <state relative-caret-position="355">
+          <caret line="329" column="26" selection-start-line="329" selection-start-column="26" selection-end-line="329" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!block;n#data#0;n#data#0;n#!!block;n#StaticSceneEditor#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/root.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/exportStaticScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="962" lean-forward="true" selection-start-line="962" selection-end-line="962" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="386" column="28" lean-forward="true" selection-start-line="386" selection-start-column="28" selection-end-line="386" selection-end-column="28" />
+        <state relative-caret-position="1066">
+          <caret line="50" column="66" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/staticSceneId.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="313" column="26" selection-start-line="313" selection-start-column="26" selection-end-line="313" selection-end-column="32" />
+        <state relative-caret-position="-1745">
+          <caret line="224" column="28" selection-start-line="224" selection-start-column="28" selection-end-line="224" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="851" column="25" selection-start-line="851" selection-start-column="25" selection-end-line="851" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/staticCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="689" column="34" selection-start-line="689" selection-start-column="34" selection-end-line="689" selection-end-column="34" />
         </state>
       </provider>
     </entry>

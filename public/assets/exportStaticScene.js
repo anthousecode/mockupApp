@@ -1,6 +1,6 @@
 var exportStaticTools = {
     data: {
-        userExportSize: [1310, 907],
+        userExportSize: [],
         hires_mask_object: [],
         hires_cover_object: [],
         hires_covershadow: [],
@@ -20,14 +20,41 @@ var exportStaticTools = {
         hires_global_project: [],
         hires_distort_layers: [],
         hires_quad: [],
-        exportScaleValue: 1,
+        exportScaleValue: 4,
     },
     methods: {
+        renderCurrentScene(){
+
+            let scaleRatio = vm.userExportSize[0] / vm.size[0]
+            var container = new PIXI.Container()
+            container.addChild(vm.renderer_client.stage)
+            container.scale.set(scaleRatio)
+            var renderTexture = PIXI.RenderTexture.create(vm.userExportSize[0], vm.userExportSize[1]);
+            vm.renderer_client.renderer.render(container, renderTexture);
+            vm.renderer_client.renderer.extract.canvas(renderTexture).toBlob(function(b) {
+                console.log(b)
+                var a = document.createElement('a');
+                document.body.append(a);
+                a.download = vm.scenestore.s_name + `.${vm.exportFormatType}`;
+                a.href = URL.createObjectURL(b);
+                a.click();
+                a.remove();
+                vm.waitRenderReady = false;
+                vm.renderwebalpha = false;
+                vm.hiResPreloadPercentImg = 0;
+            }, `image/${vm.exportFormatType}`);
+        },
+
         preloadHiresStaticScene() {
-            vm.userExportSize[0] < 2300 ?  vm.exportScaleValue = 4 : vm.exportScaleValue = 4
+
+            if(vm.userExportSize[0] > 2000) vm.exportScaleValue = 4
+            else if(vm.userExportSize[0] > 3000) vm.exportScaleValue = 2.5
+            else if(vm.userExportSize[0] > 4000) vm.exportScaleValue = 1.5
 
             vm.hires_reduceratioX = vm.origsize[0] / (vm.userExportSize[0] * vm.exportScaleValue)
             vm.hires_reduceratioY = vm.origsize[1] / (vm.userExportSize[1] * vm.exportScaleValue)
+
+            console.log(vm.exportScaleValue)
 
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                 vm.hiResTextureMockup[layersindex] = [];

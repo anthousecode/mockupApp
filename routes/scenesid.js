@@ -318,7 +318,7 @@ router.all('/:id', function (req, res, next) {
 				s_uri_preview: previews,
 				s_mcount: layers.length,
 				s_looped: settings.loop,
-				s_frames: frames,
+				s_frames: settings.animated ? frames : 1,
 				s_layers: s_layers,
                 s_animated: settings.animated,
 				s_shadow: settings.hasShadow

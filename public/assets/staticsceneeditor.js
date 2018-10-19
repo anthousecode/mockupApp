@@ -329,8 +329,12 @@ const StaticSceneEditor = {
         },
         exportLayer(type){
             vm.exportFormatType = type
-            vm.preloadHiresStaticScene()
-            vm.compositeStaticLayer()
+            if(vm.userExportSize[0] <= vm.size[0]) {
+                vm.renderCurrentScene()
+            }else {
+                vm.preloadHiresStaticScene()
+                vm.compositeStaticLayer()
+            }
         },
         changeShadowBlending(blendValue){
             vm.changeShadowBlending(blendValue)
