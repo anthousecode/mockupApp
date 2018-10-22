@@ -1,6 +1,6 @@
 var renderStaticCore = {
     data: {
-        scaleValue: 3,
+        scaleValue: 4,
         isTransparent: false,
         uploaderIcon: null,
         isTypeText: false,
@@ -27,7 +27,7 @@ var renderStaticCore = {
         current_device: [],
         currentMockup: {},
         scene_mask: new PIXI.Graphics(),
-        mask_container: new PIXI.Container(),
+        mask_container: [],
         scene_background: new PIXI.Graphics(),
         background_gradient: new PIXI.Sprite(),
         scene_gradient: new PIXI.Container(),
@@ -145,6 +145,7 @@ var renderStaticCore = {
                     vm.covershadow[layersindex].blendMode = PIXI.BLEND_MODES.NORMAL*/
                 }
                 vm.mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png', true, PIXI.SCALE_MODES.LINEAR));
+                vm.mask_container[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png', true, PIXI.SCALE_MODES.LINEAR));
             }
 
             for (index = 0; index < vm.scenestore.s_frames; index++) {
@@ -268,7 +269,6 @@ var renderStaticCore = {
                 }
 
                 vm.renderer_client.destroy(true, true);
-                vm.mask_container.destroy(true);
             }
             vm.renderer_client = new PIXI.Application({
                 width: vm.size[0],
@@ -343,6 +343,7 @@ var renderStaticCore = {
                         }
                     }
                     vm.mask_object[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png', true, PIXI.SCALE_MODES.LINEAR));
+                    vm.mask_container[layersindex] = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(vm.scenestore.s_uri + vm.scenestore.s_layers[layersindex].l_id + '/mask/' + 'mask.png', true, PIXI.SCALE_MODES.LINEAR));
                 }
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
@@ -365,15 +366,15 @@ var renderStaticCore = {
                     }
                 }
 
-              /*  for (index = 0; index < vm.scenestore.s_frames; index++) {
+                for (index = 0; index < vm.scenestore.s_frames; index++) {
                     for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                        vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device[layersindex].i_img_uri}`);
+                        //vm.loResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.size[0]}/${vm.size[1]}/${vm.current_device[layersindex].i_img_uri}`);
                         if (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
                             let obj = [
-                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.x) / (vm.reduceratioX/4), (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y) / (vm.reduceratioY/4)),
-                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.x) / (vm.reduceratioX/4), (vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.y) / (vm.reduceratioY/4)),
-                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.x) / (vm.reduceratioX/4), (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.y) / (vm.reduceratioY/4)),
-                                vm.setPoint((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x) / (vm.reduceratioX/4), (vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y) / (vm.reduceratioY/4)),
+                                vm.setPoint(((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.x) / vm.reduceratioX), ((vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft.y) / vm.reduceratioY)-30),
+                                vm.setPoint(((vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.x) / vm.reduceratioX)+30, ((vm.scenestore.s_layers[layersindex].l_data[index].i_upperright.y) / vm.reduceratioY)-30),
+                                vm.setPoint(((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.x) / vm.reduceratioX)+30, ((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerright.y) / vm.reduceratioY)+30),
+                                vm.setPoint(((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.x) / vm.reduceratioX)-30, ((vm.scenestore.s_layers[layersindex].l_data[index].i_lowerleft.y) / vm.reduceratioY)+30),
                             ];
                             vm.scaled_quad[layersindex].push(obj.map(function(s) {
                                 return s.position
@@ -384,7 +385,7 @@ var renderStaticCore = {
                             }));
                         }
                     }
-                }*/
+                }
                 for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
                     // Loading sequences
                     vm.mockup_object[layersindex] = new PIXI.extras.AnimatedSprite(vm.loResTextureMockup[layersindex]);
@@ -470,6 +471,8 @@ var renderStaticCore = {
                     var maskcoverb64 = vm.renderer_client.renderer.extract.base64(vm.mask_container)
                     var maskcover = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage(maskcoverb64))
                     maskcover.scale.set(1/1.5)*/
+                    //vm.cover_object[layersindex].texture.baseTexture.width
+
 
 //=======================================
 
@@ -483,6 +486,7 @@ var renderStaticCore = {
 
                     vm.cover_object[layersindex].scale.set(1/vm.scaleValue)
                     vm.mask_object[layersindex].scale.set(1/vm.scaleValue)
+                    vm.mask_container[layersindex].scale.set(1/vm.scaleValue)
 
                     vm.cover_object[layersindex].texture.baseTexture.mipmap=false;
                     vm.distort_layers[layersindex].addChild(vm.cover_object[layersindex]);
@@ -492,8 +496,8 @@ var renderStaticCore = {
 
                     var container = new PIXI.Container()
                     container.addChild(vm.distort_layers[layersindex])
-                    container.addChild(vm.mask_object[layersindex])
-                    container.mask= vm.mask_object[layersindex]
+                    container.addChild(vm.mask_container[layersindex])
+                    container.mask= vm.mask_container[layersindex]
 
                     container.interactive = true;
                     container.buttonMode = true;
@@ -674,6 +678,7 @@ var renderStaticCore = {
                         //console.log(layersindex)
                         vm.cover_object[layersindex].proj.mapSprite(vm.coversequence[layersindex][vm.currentframe], vm.quad[layersindex][vm.currentframe]);
                         vm.mask_object[layersindex].proj.mapSprite(vm.mask_object[layersindex], vm.quad[layersindex][vm.currentframe]);
+                        vm.mask_container[layersindex].proj.mapSprite(vm.mask_object[layersindex], vm.scaled_quad[layersindex][vm.currentframe]);
                     }
                     //Finalise stop state in non-loop mode
 

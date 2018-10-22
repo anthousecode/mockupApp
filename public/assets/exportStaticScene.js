@@ -158,7 +158,7 @@ var exportStaticTools = {
                 vm.hiResPreloadPercentImg = x.progress
             });
 
-            loader.load( async function(loader, resources) {
+            loader.load(function(loader, resources) {
 
                 console.log(vm.backgroundcolor)
 
