@@ -7,6 +7,7 @@ var exportStaticTools = {
         hires_shadow_object: [],
         hires_reduceratioX: 0,
         hires_reduceratioY: 0,
+        screen_mode_device: [],
         hires_mockup_object: [],
         hires_mockup_object_blink: [],
         hiResTextureMockup: [],
@@ -60,17 +61,18 @@ var exportStaticTools = {
                 vm.hiResTextureMockup[layersindex] = [];
                 vm.hires_covershadow[layersindex] = []
                 vm.hires_quad[layersindex] = [];
+                vm.screen_mode_device[layersindex] = [];
                 vm.hires_distort_layers[layersindex] = new PIXI.Container();
                 vm.mockup_blink_layers[layersindex] = new PIXI.Container();
                 vm.hires_mockup_object_blink_screen_layers[layersindex] = new PIXI.Container();
             }
 
             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                //vm.cover_object[layersindex]
+
                 let shadow
                 if(vm.hasShadow) shadow = new PIXI.Sprite(new PIXI.Texture.fromImage(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.userExportSize[0]}/${vm.userExportSize[1]}/Shadow.png`))
                 for (index = 0; index < vm.scenestore.s_frames; index++) {
-                    //vm.coversequence[layersindex].push(coversequencetpl);
+
                     if(vm.hasShadow)vm.hires_covershadow[layersindex].push(shadow)
                     if(vm.hasShadow)vm.hires_covershadow[layersindex].blendMode = PIXI.BLEND_MODES.NORMAL
                 }
@@ -81,6 +83,21 @@ var exportStaticTools = {
 
             for (index = 0; index < 1; index++) {
                 for (layersindex = 0; layersindex < vm.current_device.length; layersindex++) {
+
+                    if(vm.current_device[layersindex].i_img_title == `White Clay`) {
+
+                        var str =  vm.current_device[layersindex].i_img_uri.split(`/`)
+                        var urlStr = str.map((el, i , arr) => {
+                            console.log(arr[arr.length - 2])
+                            if(arr[i] == arr[arr.length - 2]) el = `Black Clay`
+                            return el
+                        })
+                        var url = urlStr.join(`/`)
+                        vm.screen_mode_device[layersindex][index] = new PIXI.Texture.fromImage(`${vm.userExportSize[0]}/${vm.userExportSize[1]}/${url}`);
+                    }else {
+                        vm.screen_mode_device[layersindex] = null
+                    }
+
                     vm.hiResTextureMockup[layersindex][index] = new PIXI.Texture.fromImage(`${vm.userExportSize[0]}/${vm.userExportSize[1]}/${vm.current_device[layersindex].i_img_uri}`);
                     if (vm.scenestore.s_layers[layersindex].l_data[index].i_upperleft !== false) {
                         let obj_origin = [
@@ -108,11 +125,12 @@ var exportStaticTools = {
                 vm.hires_mockup_object[layersindex]._texture.baseTexture.height = vm.userExportSize[1]
                 console.log(vm.hires_mockup_object[layersindex])
 
-
-                vm.hires_mockup_object_blink_screen_layers[layersindex] = new PIXI.extras.AnimatedSprite(vm.hiResTextureMockup[layersindex]);
-                vm.hires_mockup_object_blink_screen_layers[layersindex]._texture.baseTexture.width = vm.userExportSize[0]
-                vm.hires_mockup_object_blink_screen_layers[layersindex]._texture.baseTexture.height = vm.userExportSize[1]
-                vm.hires_mockup_object_blink_screen_layers[layersindex].blendMode = PIXI.BLEND_MODES.SCREEN
+                if(vm.current_device[layersindex].i_img_title == `White Clay`){
+                    vm.hires_mockup_object_blink_screen_layers[layersindex] = new PIXI.extras.AnimatedSprite(vm.screen_mode_device[layersindex]);
+                    vm.hires_mockup_object_blink_screen_layers[layersindex]._texture.baseTexture.width = vm.userExportSize[0]
+                    vm.hires_mockup_object_blink_screen_layers[layersindex]._texture.baseTexture.height = vm.userExportSize[1]
+                    vm.hires_mockup_object_blink_screen_layers[layersindex].blendMode = PIXI.BLEND_MODES.SCREEN
+                }
 
                 vm.hires_mockup_object_blink[layersindex] = new PIXI.extras.AnimatedSprite(vm.hiResTextureMockup[layersindex]);
                 vm.hires_mockup_object_blink[layersindex]._texture.baseTexture.width = vm.userExportSize[0]
@@ -131,7 +149,7 @@ var exportStaticTools = {
         },
 
         // Основной метод, отвечающий за рендер одного кадра (механизм сборки повторяет базовый из файло pixi.core.js но для одного кадра)
-         compositeStaticLayer() {
+        compositeStaticLayer() {
 
             // Для сборки используется доп рендер subrenderer_client отличный от основного
             const subrenderer_client = new PIXI.Application({
@@ -143,20 +161,21 @@ var exportStaticTools = {
                 powerPreference: "high-performance"
             });
             //document.getElementById('techzone').appendChild(subrenderer_client.view);
-             subrenderer_client.renderer.width = vm.userExportSize[0]
-             subrenderer_client.renderer.height = vm.userExportSize[1]
+            subrenderer_client.renderer.width = vm.userExportSize[0]
+            subrenderer_client.renderer.height = vm.userExportSize[1]
 
 
             var loader = new PIXI.loaders.Loader();
 
-             for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
-                 loader.add(`${vm.userExportSize[0]}/${vm.userExportSize[1]}/${vm.current_device[layersindex].i_img_uri}`);
-                 if(vm.hasShadow) loader.add(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.userExportSize[0]}/${vm.userExportSize[1]}/Shadow.png`);
-             }
+            for (layersindex = 0; layersindex < vm.scenestore.s_mcount; layersindex++) {
+                loader.add(`${vm.userExportSize[0]}/${vm.userExportSize[1]}/${vm.current_device[layersindex].i_img_uri}`);
+                if(vm.hasShadow) loader.add(`${vm.scenestore.s_uri}${vm.scenestore.s_layers[layersindex].l_id}/Shadow/${vm.userExportSize[0]}/${vm.userExportSize[1]}/Shadow.png`);
+            }
 
             loader.onProgress.add((x) => {
                 vm.hiResPreloadPercentImg = x.progress
             });
+
 
             loader.load(function(loader, resources) {
 
@@ -215,8 +234,8 @@ var exportStaticTools = {
                     var renderTextureMask = PIXI.RenderTexture.create(vm.userExportSize[0] * vm.exportScaleValue, vm.userExportSize[1] * vm.exportScaleValue);
                     texture_cover_distort.proj.mapSprite(texture_cover_distort, vm.hires_quad[layersindex][0]);
                     texture_cover_distort_mask.proj.mapSprite(texture_cover_distort_mask, vm.hires_quad[layersindex][0]);
-                     subrenderer_client.renderer.render(texture_cover_distort, renderTextureCover);
-                     subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask);
+                    subrenderer_client.renderer.render(texture_cover_distort, renderTextureCover);
+                    subrenderer_client.renderer.render(texture_cover_distort_mask, renderTextureMask);
 
                     var mockup_layer = new PIXI.Sprite(vm.hires_mockup_object[layersindex].texture);
                     console.log(mockup_layer)
@@ -238,7 +257,7 @@ var exportStaticTools = {
                     if(vm.activeWhiteClayDevice[layersindex]) {
                         blink_layer.blendMode = PIXI.BLEND_MODES.MULTIPLY
                         cover_container.addChild(blink_layer);
-                        //cover_container.addChild(vm.hires_mockup_object_blink_screen_layers[layersindex]);
+                        cover_container.addChild(vm.hires_mockup_object_blink_screen_layers[layersindex]);
                     }else {
                         blink_layer.blendMode = vm.blend_mode
                         cover_container.addChild(blink_layer);

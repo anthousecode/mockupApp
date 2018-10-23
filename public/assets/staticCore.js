@@ -1,6 +1,6 @@
 var renderStaticCore = {
     data: {
-        scaleValue: 4,
+        scaleValue: 5,
         isTransparent: false,
         uploaderIcon: null,
         isTypeText: false,
